@@ -1,27 +1,20 @@
 import {
     Box,
     Button,
+    Tag,
     chakra,
     useClipboard,
 } from "@chakra-ui/core"
 import theme from "prism-react-renderer/themes/nightOwl"
 import React, { useState } from "react"
-import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live"
+import { LiveEditor, LivePreview, LiveProvider } from "react-live"
 import scope from "./react-live-scope"
 
 export const liveEditorStyle = {
     fontSize: 14,
     overflowX: "auto",
     fontFamily: "SF Mono, Menlo, monospace",
-}
-
-export const liveErrorStyle = {
-    fontFamily: "SF Mono, Menlo, monospace",
-    fontSize: 14,
-    padding: "1em",
-    overflowX: "auto",
-    color: "white",
-    backgroundColor: "red",
+    tabSize: 4,
 }
 
 const LiveCodePreview = chakra(LivePreview, {
@@ -49,39 +42,38 @@ const CopyButton = (props) => (
     />
 )
 
-const EditableNotice = (props) => {
-    return (
-        <Box
-            position="absolute"
-            width="full"
-            top="-1.25em"
-            roundedTop="8px"
-            bg="#011627"
-            py="2"
-            zIndex="0"
-            letterSpacing="wide"
-            color="gray.400"
-            fontSize="xs"
-            fontWeight="semibold"
-            textAlign="center"
-            textTransform="uppercase"
-            pointerEvents="none"
-            {...props}
-        >
-            Editable Example
-        </Box>
-    )
-}
+const CodeLanguageTag = (props) => (
+  <Tag
+    size="sm"
+    position="absolute"
+    textTransform="uppercase"
+    colorScheme="teal"
+    fontSize="xs"
+    height="24px"
+    top={0}
+    zIndex="1"
+    left="1.25em"
+    {...props}
+  />
+)
 
 const CodeContainer = (props) => (
     <Box padding="5" rounded="8px" my="8" bg="#011627" {...props} />
 )
 
 function CodeBlock(props) {
-    const { className, live = true, manual, render, children, ...rest } = props
+    const { className, manual, render, children, ...rest } = props
     const [editorCode, setEditorCode] = useState(children.trim())
 
-    const language = className && className.replace(/language-/, "")
+    // Default language to PHP.
+    let language = "php";
+    let classes = className.split(" ");
+    classes.forEach(element => {
+      if (element.includes("lang-")) {
+        language = element.replace(/lang-/, "")
+      }
+    })
+
     const { hasCopied, onCopy } = useClipboard(editorCode)
 
     const liveProviderProps = {
@@ -93,41 +85,17 @@ function CodeBlock(props) {
         ...rest,
     }
 
-    const onChange = (newCode) => setEditorCode(newCode.trim())
-
-    if (language === "jsx" && live === true) {
-        return (
-            <LiveProvider {...liveProviderProps}>
-                <LiveCodePreview zIndex="1" />
-                <Box position="relative" zIndex="0">
-                    <CodeContainer>
-                        <LiveEditor onChange={onChange} style={liveEditorStyle} />
-                    </CodeContainer>
-                    <CopyButton onClick={onCopy}>
-                        {hasCopied ? "copied" : "copy"}
-                    </CopyButton>
-                    <EditableNotice />
-                </Box>
-                <LiveError style={liveErrorStyle} />
-            </LiveProvider>
-        )
-    }
-
-    if (render) {
-        return (
-            <div style={{ marginTop: 32 }}>
-                <LiveProvider {...liveProviderProps}>
-                    <LiveCodePreview />
-                </LiveProvider>
-            </div>
-        )
-    }
-
     return (
         <LiveProvider disabled {...liveProviderProps}>
-            <CodeContainer>
-                <LiveEditor style={liveEditorStyle} />
-            </CodeContainer>
+            <Box position="relative" zIndex="0">
+                <CodeLanguageTag>{language}</CodeLanguageTag>
+                <CodeContainer>
+                    <LiveEditor style={liveEditorStyle} />
+                </CodeContainer>
+                <CopyButton onClick={onCopy}>
+                    {hasCopied ? "copied" : "copy"}
+                </CopyButton>
+            </Box>
         </LiveProvider>
     )
 }
