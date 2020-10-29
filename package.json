@@ -1,0 +1,52 @@
+{
+  "name": "gatsby-starter-base",
+  "version": "0.3.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "dev": "gatsby clean && gatsby develop",
+    "preview": "gatsby build && gatsby serve"
+  },
+  "dependencies": {
+    "@chakra-ui/core": "^1.0.0-rc.7",
+    "@chakra-ui/icons": "^1.0.0-next.3",
+    "@emotion/core": "^10.0.35",
+    "@emotion/is-prop-valid": "^0.8.8",
+    "@emotion/styled": "^10.0.27",
+    "@reflexjs/components": "^0.3.2",
+    "@theme-ui/core": "^0.3.1",
+    "@theme-ui/match-media": "^0.3.1",
+    "@theme-ui/prism": "^0.3.0",
+    "copy-to-clipboard": "^3.3.1",
+    "emotion-theming": "^10.0.27",
+    "formik": "^2.2.1",
+    "framer-motion": "^2.6.0",
+    "gatsby": "^2.24.87",
+    "gatsby-plugin-chakra-ui": "^1.0.0-rc.7",
+    "gatsby-plugin-react-helmet": "^3.1.3",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-sharp": "^2.6.38",
+    "gatsby-source-filesystem": "^2.3.32",
+    "gatsby-source-wordpress-experimental": "^2.0.0",
+    "gatsby-transformer-sharp": "2.5.16",
+    "prism-react-renderer": "^1.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-focus-lock": "^2.4.1",
+    "react-helmet": "^5.2.1",
+    "react-html-parser": "^2.0.2",
+    "react-icons": "^3.11.0",
+    "react-live": "^2.2.2",
+    "react-lorem-component": "^0.13.0",
+    "react-spinners": "^0.9.0",
+    "typeface-inter": "^3.12.0",
+    "underscore": "^1.10.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.1.2"
+  }
+}
