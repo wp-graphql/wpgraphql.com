@@ -2,11 +2,11 @@ import React from "react";
 import {Box, Flex, Heading} from '@chakra-ui/core'
 import Layout from "../components/layout";
 import Container from "../components/container";
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import PageTransition from "../components/page-transition";
 import { ParseHtml } from "../components/parse-html"
 
-const WpContentNode = ({data}) => {
+const WpCodeSnippet = ({data}) => {
 
     const { wpContentNode: { title, content } } = data;
 
@@ -44,4 +44,4 @@ query($id: String) {
 }
 `;
 
-export default WpContentNode
+export default WpCodeSnippet

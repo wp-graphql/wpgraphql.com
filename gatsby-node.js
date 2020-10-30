@@ -1,13 +1,20 @@
-const fs = require('fs');
+const fs = require('fs')
+const { ensureTrailingSlash } = require('./src/utils')
 
 exports.createPages = async ({actions, graphql, reporter}) => {
     const result = await graphql(`
     {
-      allWpContentNode {
+      allContent: allWpContentNode {
         nodes {
           __typename
           id
           databaseId
+          uri
+        }
+      }
+      snippetTags: allWpCodeSnippetTag {
+        nodes {
+          id
           uri
         }
       }
@@ -18,9 +25,13 @@ exports.createPages = async ({actions, graphql, reporter}) => {
         reporter.error("There was an error fetching docs.", result.errors)
     }
 
-    const {nodes} = result.data.allWpContentNode
-    if (nodes.length) {
-        nodes.forEach((doc) => {
+    const {
+      allContent,
+      snippetTags,
+    } = result.data;
+
+    if (allContent.nodes.length) {
+        allContent.nodes.map(doc => {
 
             // Set the default template to use if a specific one doesn't exist
             let template = require.resolve(`./src/templates/WpContentNode.js`);
@@ -37,7 +48,7 @@ exports.createPages = async ({actions, graphql, reporter}) => {
 
             if (doc.uri.length) {
                 actions.createPage({
-                    path: doc.uri,
+                    path: ensureTrailingSlash(doc.uri),
                     component: template,
                     context: {
                         id: doc.id,
@@ -46,6 +57,19 @@ exports.createPages = async ({actions, graphql, reporter}) => {
                 })
             }
         })
+    }
+
+    if (snippetTags.nodes.length) {
+      snippetTags.nodes.map(snippetTag =>
+        actions.createPage({
+          path: ensureTrailingSlash(snippetTag.uri),
+          component: require.resolve(`./src/templates/SnippetTag.js`),
+          context: {
+            id: snippetTag.id,
+            uri: snippetTag.uri,
+          },
+        })
+      )
     }
 
 }

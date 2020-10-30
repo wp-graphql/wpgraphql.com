@@ -17,16 +17,6 @@ export const liveEditorStyle = {
     tabSize: 4,
 }
 
-const LiveCodePreview = chakra(LivePreview, {
-    baseStyle: {
-        fontFamily: "body",
-        mt: 5,
-        p: 3,
-        borderWidth: 1,
-        borderRadius: "12px",
-    },
-})
-
 const CopyButton = (props) => (
     <Button
         size="sm"

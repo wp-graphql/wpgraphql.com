@@ -1,8 +1,10 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import {Box, Flex, Heading, Stack} from '@chakra-ui/core'
 import Layout from '../components/layout'
 import Container from "../components/container";
 import SnippetPreview from '../components/snippetPreview'
+import SnippetSidebar from "../components/snippets-sidebar"
 import PageTransition from "../components/page-transition";
 
 const Snippets = ({ data }) => {
@@ -11,6 +13,7 @@ const Snippets = ({ data }) => {
       <Layout>
           <Container>
               <Flex>
+                  <SnippetSidebar />
                   <div style={{flex: 1}}>
                       <Box pt={3} px={5} mt="0" mx="auto" maxW="48rem" minH="80vh">
                           <PageTransition>
@@ -48,6 +51,7 @@ export const data = graphql`
           nodes {
             name
             id
+            uri
             snippetTagFields {
               color
             }
