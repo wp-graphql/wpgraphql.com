@@ -1,7 +1,6 @@
 import React from 'react';
 import { chakra, Box, useColorModeValue } from '@chakra-ui/core'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { flatListToHierarchical } from '../utils'
 
 const SnippetsSidebar = () => {
 

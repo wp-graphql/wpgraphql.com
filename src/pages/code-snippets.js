@@ -6,7 +6,6 @@ import Container from "../components/container";
 import SnippetPreview from '../components/snippetPreview'
 import SnippetSidebar from "../components/snippets-sidebar"
 import PageTransition from "../components/page-transition";
-import { graphql } from 'gatsby'
 
 const Snippets = ({ data }) => {
   const snippets = data.allWpCodeSnippet.nodes
