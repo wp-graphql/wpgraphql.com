@@ -14,14 +14,15 @@ const Snippets = ({ data }) => {
                   <div style={{flex: 1}}>
                       <Box pt={3} px={5} mt="0" mx="auto" maxW="48rem" minH="80vh">
                           <PageTransition>
-                              <Heading as="h1" fontSize={`4xl`}>Snippets</Heading>
-                              <Stack spacing={8}>
+                              <Heading as="h1" fontSize={`4xl`}>Code Snippets</Heading>
+                              <Stack mt={5} spacing={8}>
                               {snippets.map(snippet => (
                                 <SnippetPreview
                                   key={snippet.id}
                                   title={snippet.title}
                                   path={snippet.uri}
                                   content={snippet.content}
+                                  tags={snippet.codeSnippetTags.nodes}
                                 />
                               ))}
                               </Stack>
@@ -43,10 +44,13 @@ export const data = graphql`
         content
         date
         uri
-        tags {
+        codeSnippetTags {
           nodes {
             name
             id
+            snippetTagFields {
+              color
+            }
           }
         }
       }
