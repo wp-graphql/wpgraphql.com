@@ -1,23 +1,36 @@
-import React from "react";
+import React from "react"
 import {Box, Flex, Heading} from '@chakra-ui/core'
-import Layout from "../components/layout";
-import Container from "../components/container";
+import Layout from "../components/layout"
+import Container from "../components/container"
 import { graphql } from 'gatsby'
-import PageTransition from "../components/page-transition";
+import PageTransition from "../components/page-transition"
 import { ParseHtml } from "../components/parse-html"
+import Breadcrumb from "../components/breadcrumb/breadcrumb"
 
 const WpCodeSnippet = ({data}) => {
 
-    const { wpContentNode: { title, content } } = data;
+    const { wpContentNode: { title, content, uri } } = data;
+    const crumbs = [
+      {
+        title: `Code Snippets`,
+        path: `/code-snippets`,
+      },
+      {
+        title: title,
+        path: uri,
+        isCurrentPage: true,
+      }
+    ];
 
     return (
         <Layout>
             <Container>
                 <Flex>
                     <div style={{flex: 1}}>
-                        <Box pt={3} px={5} mt="0" mx="auto" maxW="48rem" minH="80vh">
+                        <Box pt={3} px={5} mt="0" mx="auto" maxW="60rem" minH="80vh">
                             <PageTransition>
-                                <Heading as="h1" fontSize={`4xl`}>{title}.</Heading>
+                                <Breadcrumb crumbs={crumbs} />
+                                <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
                                 <div>{ParseHtml(content)}</div>
                             </PageTransition>
                         </Box>
