@@ -1,4 +1,4 @@
-export const flatListToHierarchical = (
+exports.flatListToHierarchical = (
     data = [],
     {idKey = 'id', parentKey = 'parentId', childrenKey = 'children'} = {}
 ) => {
@@ -18,3 +18,5 @@ export const flatListToHierarchical = (
     });
     return tree;
 };
+
+exports.ensureTrailingSlash = str => (str.endsWith('/') ? str : `${str}/`)

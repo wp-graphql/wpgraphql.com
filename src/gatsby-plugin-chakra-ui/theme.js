@@ -1,7 +1,5 @@
 import { theme as defaultTheme } from "@chakra-ui/core"
 
-console.log( defaultTheme );
-
 const theme = {
     ...defaultTheme,
     colors: {

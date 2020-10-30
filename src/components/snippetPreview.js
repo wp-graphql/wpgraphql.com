@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Heading, Text, Tag, Stack, Button} from '@chakra-ui/core'
+import {Box, Heading, Tag, Stack, Button} from '@chakra-ui/core'
 import {FaArrowRight} from 'react-icons/fa'
 import { Link } from "gatsby";
 import { ParseHtml } from "../components/parse-html"
@@ -14,9 +14,11 @@ const SnippetPreview = ({key, title, path, content, tags}) => (
       right="1.25em"
     >
       {tags.map(tag => (
-        <Tag size="sm" key={tag.id} color="#fff" backgroundColor={tag.snippetTagFields.color}>
-          {tag.name}
-        </Tag>
+        <Link to={tag.uri}>
+          <Tag size="sm" key={tag.id} color="#fff" backgroundColor={tag.snippetTagFields.color}>
+            {tag.name}
+          </Tag>
+        </Link>
       ))}
     </Stack>
     <Link to={path}>
