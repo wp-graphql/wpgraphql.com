@@ -43,6 +43,15 @@ export const InlineCode = (props) => (
     />
 );
 
+export const Code = (props) => (
+    <chakra.code
+        apply="wp.code"
+        color={useColorModeValue("gray.700", "gray.200")}
+        background={useColorModeValue("gray.200", "gray.700")}
+        {...props}
+    />
+)
+
 export const Br = (props) => (
     <Box height="24px" {...props} />
 );
