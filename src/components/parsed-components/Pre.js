@@ -7,7 +7,7 @@ export const Pre = props => {
     const code = children && children[0].props && children[0].props.children && children[0].props.children[0] ? children[0].props.children[0] : null;
     return code ? (
         <chakra.div position="relative" {...props}>
-            <CodeBlock live={true} {...props}>{code}</CodeBlock>
+            <CodeBlock {...props}>{code}</CodeBlock>
         </chakra.div>
     ) : null;
 };
