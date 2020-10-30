@@ -4,7 +4,7 @@ import {FaArrowRight} from 'react-icons/fa'
 import { Link } from "gatsby";
 import { ParseHtml } from "../components/parse-html"
 
-const SnippetPreview = ({key, title, path, content}) => (
+const SnippetPreview = ({key, title, path, content, tags}) => (
   <Box p={5} shadow="md" borderWidth="1px" key={key} position="relative">
     <Stack spacing={4}
       isInline
@@ -13,9 +13,9 @@ const SnippetPreview = ({key, title, path, content}) => (
       zIndex="1"
       right="1.25em"
     >
-      {["Tag 1", "Tag 2", "Tag 3"].map(tag => (
-        <Tag size="sm" key={tag} variantColor="gray">
-          {tag}
+      {tags.map(tag => (
+        <Tag size="sm" key={tag.id} color="#fff" backgroundColor={tag.snippetTagFields.color}>
+          {tag.name}
         </Tag>
       ))}
     </Stack>
@@ -24,7 +24,7 @@ const SnippetPreview = ({key, title, path, content}) => (
     </Link>
     <div>{ParseHtml(content)[0]}</div>
     <Link to={path}>
-      <Button size="sm" colorScheme="blue" variant="outline" rightIcon={<FaArrowRight fontSize="0.8em"/>}>View Snippet</Button>
+      <Button mt={3} size="sm" colorScheme="blue" variant="outline" rightIcon={<FaArrowRight fontSize="0.8em"/>}>View Snippet</Button>
     </Link>
   </Box>
 );
