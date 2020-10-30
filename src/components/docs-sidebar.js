@@ -1,7 +1,83 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { chakra, Box, useColorModeValue } from '@chakra-ui/core'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { flatListToHierarchical } from '../utils'
+import { useLocation } from '@reach/router'
+
+
+const DocSubNav = ({ items, observe, onClick, ...props }) => {
+
+    const { pathname } = useLocation();
+    const hoverColor = useColorModeValue("gray.900", "whiteAlpha.900");
+    const linkBg = useColorModeValue("gray.100", "blue.800");
+    const color = useColorModeValue("gray.700", "whiteAlpha.900");
+
+    return items && items.map(({ value, url, type, items: _items }, key) => {
+
+        const isActiveParent = false
+        const isActiveItem = url === pathname
+
+        return (
+            <Fragment key={key}>
+                <chakra.span
+                    userSelect="none"
+                    display="flex"
+                    alignItems="center"
+                    lineHeight="1.5rem"
+                    mt={'2'}
+                    transition="all 0.2s"
+                    {...props}
+                >
+                    <Link to={url}>
+                        <chakra.span
+                            aria-current={isActiveItem ? "page" : undefined}
+                            width="100%"
+                            px="3"
+                            py="1"
+                            rounded="md"
+                            fontSize="xl"
+                            fontWeight="medium"
+                            pl="0"
+                            mt={7}
+                            color={color}
+                            display="inline-block"
+                            _hover={{
+                                transform: isActiveItem ? undefined : "translateX(1px)",
+                            }}
+                            {...props}
+                        >
+                            {value}
+                        </chakra.span>
+                    </Link>
+                </chakra.span>
+                {_items && (<DocSubNav
+                    observe={isActiveParent}
+                    items={_items}
+                    sx={{
+                        a: {
+                            span: {
+                                fontWeight: "normal",
+                                fontSize: "md",
+                                mt: 0,
+                                pl: 3,
+                                _hover: {
+                                    color: hoverColor,
+                                    background: linkBg,
+                                },
+                                _activeLink: {
+                                    bg: linkBg,
+                                    color: hoverColor,
+                                    background: linkBg
+                                }
+                            }
+                        },
+                    }}
+                />)}
+            </Fragment>
+        )
+    })
+
+}
 
 const DocsSidebar = () => {
 
@@ -24,12 +100,7 @@ const DocsSidebar = () => {
         childrenKey: 'items'
     });
 
-    console.log( items );
-
     const ref = React.useRef(null)
-    const hoverColor = useColorModeValue("gray.900", "whiteAlpha.900")
-    const activeColor = useColorModeValue("gray.800", "teal.200")
-    const color = useColorModeValue("gray.700", "whiteAlpha.900")
 
     return(
         <Box
@@ -49,43 +120,24 @@ const DocsSidebar = () => {
         >
             {items.map(({ value, url, type, items: _items }, key) => {
 
-                return(
-                    <>
-                    <chakra.h2 fontSize="xl" fontWeight="semibold" my="1.25rem">{value}</chakra.h2>
-                    {_items.map(({ value, url, type, items: children }, key) => {
-                        return (
-                            <>
-                            <chakra.h3 key={key} fontSize="lg" fontWeight="semibold" my="1.25rem">{value}</chakra.h3>
-                            {
-                                children.map((props, key) => {
-                                    const {value, url, type, items: children} = props;
-
-                                    return(
-                                        <Link to={url} isExternal={false} >
-                                            <chakra.a
-                                                ref={ref}
-                                                color={color}
-                                                transition="all 0.2s"
-                                                _hover={{
-                                                    color: hoverColor,
-                                                }}
-                                                _activeLink={{
-                                                    color: activeColor,
-                                                    fontWeight: "semibold",
-                                                }}
-                                                {...props}
-                                            >
-                                                {value}
-                                            </chakra.a>
-                                        </Link>
-                                    )
-                                })
-                            }
-                            </>
-                        )
-                    })}
-                    </>
-                )
+                return (
+                    <Fragment key={key}>
+                        {type === "link" && (
+                            <Link to={url}>
+                                <chakra.h2
+                                    key={key}
+                                    fontSize="2xl"
+                                    fontWeight="semibold"
+                                    mt="1.25rem"
+                                    pt={key !== 0 && 4}
+                                >
+                                    {value}
+                                </chakra.h2>
+                            </Link>
+                        )}
+                        {_items ? <DocSubNav items={_items} /> : null}
+                    </Fragment>
+                );
             })}
         </Box>
     );

@@ -74,8 +74,8 @@ const Testimonials = () => {
                 const {testimonialFields: {avatarurl, content, tweeturl, name, handle}} = testimonial;
 
                 return (
-                    <Link to={tweeturl} target="_blank">
-                        <WrapItem maxWidth="280px" key={idx} bg={bg} p="10" rounded="lg" shadow="base">
+                    <a href={tweeturl} target="_blank" key={idx} rel="noreferrer">
+                        <WrapItem maxWidth="280px" bg={bg} p="10" rounded="lg" shadow="base">
                             <Avatar mr="34px" size="md" src={avatarurl} name={name} loading="lazy" />
                             <Box fontSize="sm">
                                 <p>
@@ -93,7 +93,7 @@ const Testimonials = () => {
                                 />
                             </Box>
                         </WrapItem>
-                    </Link>
+                    </a>
                 )
             })}
             </Wrap>
@@ -129,20 +129,20 @@ const Home = () => {
                                 justify="center"
                                 direction={{base: "column", sm: "row"}}
                             >
-                                <Link to="/docs/">
+                                <a href="/docs/">
                                     <Button as="span" colorScheme="blue" variant="solid"
                                             maxW={`300px`} m={`3`} mb={`20`}
                                             rightIcon={<FaArrowRight fontSize="0.8em"/>}>
                                         Read the Docs
                                     </Button>
-                                </Link>
-                                <Link to="https://wordpress.org/plugins/wp-graphql">
+                                </a>
+                                <a href="https://wordpress.org/plugins/wp-graphql">
                                     <Button as="span" colorScheme="orange" variant="solid"
                                             maxW={`300px`} m={`3`} mb={`20`}
                                             rightIcon={<FaWordpress fontSize="0.8em"/>}>
                                         Download the Plugin
                                     </Button>
-                                </Link>
+                                </a>
                             </Stack>
 
                         </Box>
@@ -231,7 +231,7 @@ const Home = () => {
                             >
                                 <WrapItem key="dfuzr" bg="#ee0d00" p="1" rounded="md">
 
-                                    <Link to={"https://www.dfuzr.com/"} target="_blank">
+                                    <a href={"https://www.dfuzr.com/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Dfuzr Industries: Digital Experience Agency"
                                                  aria-label="Dfuzr Industries Logo" placement="top">
                                             <Image alt="Dfuzr Logo"
@@ -241,12 +241,12 @@ const Home = () => {
                                                    loading="lazy"
                                             />
                                         </Tooltip>
-                                    </Link>
+                                    </a>
 
                                 </WrapItem>
                                 <WrapItem key="funkhaus" bg="white" p="1" rounded="md">
 
-                                    <Link to={"https://funkhaus.us/"} target="_blank">
+                                    <a href={"https://funkhaus.us/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Funkhaus: Digital Creative Agency"
                                                  aria-label="Funkhaus Logo" placement="top">
                                             <Image alt="Funkhaus Logo"
@@ -256,12 +256,12 @@ const Home = () => {
                                                    loading="lazy"
                                             />
                                         </Tooltip>
-                                    </Link>
+                                    </a>
 
                                 </WrapItem>
                                 <WrapItem key="Valu" bg="#df2e30" p="1" rounded="md">
 
-                                    <Link to={"https://www.valu.fi/en"} target="_blank">
+                                    <a href={"https://www.valu.fi/en"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Valu Digital" aria-label="Valu Digital Logo"
                                                  placement="top">
                                             <Image alt="Dfuzr Logo"
@@ -272,10 +272,10 @@ const Home = () => {
                                             />
 
                                         </Tooltip>
-                                    </Link>
+                                    </a>
                                 </WrapItem>
                                 <WrapItem key="Harness" bg="white" p="1" rounded="md">
-                                    <Link to={"http://www.harnessup.com/"} target="_blank">
+                                    <a href={"http://www.harnessup.com/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Harness Software"
                                                  aria-label="Harness Software Logo" placement="top">
                                             <Image alt="Harness Software Logo"
@@ -285,10 +285,10 @@ const Home = () => {
                                                    loading="lazy"
                                             />
                                         </Tooltip>
-                                    </Link>
+                                    </a>
                                 </WrapItem>
                                 <WrapItem key="Denver Post" bg="white" p="3" rounded="md">
-                                    <Link to={"https://www.denverpost.com/"} target="_blank">
+                                    <a href={"https://www.denverpost.com/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Denver Post" aria-label="Denver Post Logo"
                                                  placement="top">
 
@@ -299,12 +299,12 @@ const Home = () => {
                                                    loading="lazy"
                                             />
                                         </Tooltip>
-                                    </Link>
+                                    </a>
 
                                 </WrapItem>
                                 <WrapItem key="Twin Cities" bg="white" p="3" rounded="md">
 
-                                    <Link to={"https://www.twincities.com/"} target="_blank">
+                                    <a href={"https://www.twincities.com/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Twin Cities" aria-label="Twin Cities Logo"
                                                  placement="top">
                                             <Image alt="Twin Cities Logo"
@@ -315,11 +315,11 @@ const Home = () => {
                                             />
 
                                         </Tooltip>
-                                    </Link>
+                                    </a>
                                 </WrapItem>
                                 <WrapItem key="Quartz" bg="#111111" p="3" rounded="md">
 
-                                    <Link to={"https://qz.com/"} target="_blank">
+                                    <a href={"https://qz.com/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Quartz" aria-label="Quartz Logo"
                                                  placement="top">
                                             <Image alt="Quartz Logo"
@@ -330,10 +330,10 @@ const Home = () => {
                                             />
 
                                         </Tooltip>
-                                    </Link>
+                                    </a>
                                 </WrapItem>
                                 <WrapItem key="Hope Lab" bg="white" p="3" rounded="md">
-                                    <Link to={"https://hopelab.org/"} target="_blank">
+                                    <a href={"https://hopelab.org/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Hope Lab" aria-label="Hope Lab Logo"
                                                  placement="top">
 
@@ -344,11 +344,11 @@ const Home = () => {
                                                    loading="lazy"
                                             />
                                         </Tooltip>
-                                    </Link>
+                                    </a>
 
                                 </WrapItem>
                                 <WrapItem key="WebDev Studios" bg="white" p="1" rounded="md">
-                                    <Link to={"https://webdevstudios.com/"} target="_blank">
+                                    <a href={"https://webdevstudios.com/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="WebDev Studios"
                                                  aria-label="WebDev Studios Logo"
                                                  placement="top">
@@ -360,11 +360,11 @@ const Home = () => {
                                                    loading="lazy"
                                             />
                                         </Tooltip>
-                                    </Link>
+                                    </a>
 
                                 </WrapItem>
                                 <WrapItem key="Apollo GraphQL" bg="white" p="1" rounded="md">
-                                    <Link to={"https://www.apollographql.com/"} target="_blank">
+                                    <a href={"https://www.apollographql.com/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Apollo GraphQL"
                                                  aria-label="Apollo GraphQL Logo"
                                                  placement="top">
@@ -376,11 +376,11 @@ const Home = () => {
                                                    loading="lazy"
                                             />
                                         </Tooltip>
-                                    </Link>
+                                    </a>
 
                                 </WrapItem>
                                 <WrapItem key="Credit Karma" bg="white" p="1" rounded="md">
-                                    <Link to={"https://blog.creditkarma.com/"} target="_blank">
+                                    <a href={"https://blog.creditkarma.com/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Credit Karma" aria-label="Credit Karma Logo"
                                                  placement="top">
 
@@ -391,11 +391,11 @@ const Home = () => {
                                                    loading="lazy"
                                             />
                                         </Tooltip>
-                                    </Link>
+                                    </a>
 
                                 </WrapItem>
                                 <WrapItem key="Gatsby" bg="white" p="1" rounded="md">
-                                    <Link to={"https://gatsbyjs.com/"} target="_blank">
+                                    <a href={"https://gatsbyjs.com/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Gatsby" aria-label="Gatsby Logo"
                                                  placement="top">
 
@@ -406,11 +406,11 @@ const Home = () => {
                                                    loading="lazy"
                                             />
                                         </Tooltip>
-                                    </Link>
+                                    </a>
 
                                 </WrapItem>
                                 <WrapItem key="The Players Tribune" bg="white" p="2" rounded="md">
-                                    <Link to={"https://www.theplayerstribune.com/"} target="_blank">
+                                    <a href={"https://www.theplayerstribune.com/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="The Players Tribune"
                                                  aria-label="The Players Tribune"
                                                  placement="top">
@@ -422,11 +422,11 @@ const Home = () => {
                                                    loading="lazy"
                                             />
                                         </Tooltip>
-                                    </Link>
+                                    </a>
 
                                 </WrapItem>
                                 <WrapItem key="Zillow" bg="white" p="1" rounded="md">
-                                    <Link to={"https://www.zillow.com/"} target="_blank">
+                                    <a href={"https://www.zillow.com/"} target="_blank" rel="noreferrer">
                                         <Tooltip label="Zillow" aria-label="Zillow"
                                                  placement="top">
                                             <Image alt="Zillow Logo"
@@ -436,7 +436,7 @@ const Home = () => {
                                                    loading="lazy"
                                             />
                                         </Tooltip>
-                                    </Link>
+                                    </a>
                                 </WrapItem>
                             </Wrap>
                         </Box>
@@ -483,13 +483,13 @@ const Home = () => {
                                         Read the Docs
                                     </Button>
                                 </Link>
-                                <Link to="https://wordpress.org/plugins/wp-graphql">
+                                <a href="https://wordpress.org/plugins/wp-graphql">
                                     <Button as="span" colorScheme="orange" variant="solid"
                                             maxW={`300px`} m={`3`} mb={`5`}
                                             rightIcon={<FaWordpress fontSize="0.8em"/>}>
                                         Download the Plugin
                                     </Button>
-                                </Link>
+                                </a>
                             </Stack>
                         </Box>
                     </Flex>

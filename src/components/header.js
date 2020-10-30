@@ -23,7 +23,7 @@ const HeaderContent = () => {
         <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
             <Flex maxW="720px" align="center" color="gray.400">
                 <HStack spacing="5">
-                    <Link isExternal aria-label="GitHub" href={`https://github.com/wp-graphql/wp-graphql`}>
+                    <a aria-label="GitHub" href={`https://github.com/wp-graphql/wp-graphql`}>
                         <Icon
                             as={GithubIcon}
                             transition="color 0.2s"
@@ -31,7 +31,7 @@ const HeaderContent = () => {
                             h="5"
                             _hover={{ color: "gray.600" }}
                         />
-                    </Link>
+                    </a>
                 </HStack>
                 <IconButton
                     size="md"

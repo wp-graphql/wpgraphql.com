@@ -1,5 +1,14 @@
 import React from "react";
-import {chakra, Box, Button, Flex, HStack, useColorMode, useColorModeValue, Text } from "@chakra-ui/core";
+import {
+    chakra,
+    Box,
+    Button,
+    Flex,
+    HStack,
+    useColorMode,
+    useColorModeValue,
+    Text
+} from "@chakra-ui/core";
 import {FaMoon, FaSun, FaGithub, FaWordpress, FaYoutube, FaSlack} from "react-icons/fa"
 import {Link} from 'gatsby'
 import Logo from "./logo";
@@ -49,16 +58,20 @@ function Layout(props) {
                         </Flex>
                         <Flex maxW="720px" align="center" color="gray.400">
                             <HStack spacing="5">
-                                <Button>
-                                    <Link to="https://github.org/wp-graphql/wp-graphql">
+
+                                <a href="https://github.org/wp-graphql/wp-graphql">
+                                    <Button>
                                         <FaGithub/>
-                                    </Link>
-                                </Button>
-                                <Button>
-                                    <Link to="https://wordpress.org/plugins/wp-graphql">
+                                    </Button>
+                                </a>
+
+
+                                <a href="https://wordpress.org/plugins/wp-graphql">
+                                    <Button>
                                         <FaWordpress/>
-                                    </Link>
-                                </Button>
+                                    </Button>
+                                </a>
+
                                 <Button onClick={toggleColorMode}>
                                     <SwitchIcon/>
                                 </Button>
@@ -90,7 +103,11 @@ function Layout(props) {
                         justify="space-around"
                         border="0"
                     >
-                        <Text >Development sponsored by <Link  to={`https://gatsbyjs.com/`} target={`_blank`}><Text as={`span`} border="0" color={`blue.400`}>Gatsby</Text></Link></Text>
+                        <Text>Development sponsored by <a href={`https://gatsbyjs.com/`}
+                                                          target={`_blank`} rel="noreferrer"><Text
+                            as={`span`}
+                            border="0"
+                            color={`blue.400`}>Gatsby</Text></a></Text>
                     </Flex>
                     <Flex
                         border="0"
@@ -105,26 +122,26 @@ function Layout(props) {
 
                             <HStack spacing="5">
                                 <Button>
-                                    <Link to="https://github.org/wp-graphql/wp-graphql">
+                                    <a href="https://github.org/wp-graphql/wp-graphql">
                                         <FaGithub/>
-                                    </Link>
+                                    </a>
                                 </Button>
                                 <Button>
-                                    <Link to="https://wordpress.org/plugins/wp-graphql">
+                                    <a href="https://wordpress.org/plugins/wp-graphql">
                                         <FaWordpress/>
-                                    </Link>
+                                    </a>
                                 </Button>
                                 <Button>
-                                    <Link
-                                        to="https://www.youtube.com/channel/UCwav5UKLaEufn0mtvaFAkYw">
+                                    <a
+                                        href="https://www.youtube.com/channel/UCwav5UKLaEufn0mtvaFAkYw">
                                         <FaYoutube/>
-                                    </Link>
+                                    </a>
                                 </Button>
                                 <Button>
-                                    <Link
-                                        to="https://join.slack.com/t/wp-graphql/shared_invite/zt-3vloo60z-PpJV2PFIwEathWDOxCTTLA">
+                                    <a
+                                        href="https://join.slack.com/t/wp-graphql/shared_invite/zt-3vloo60z-PpJV2PFIwEathWDOxCTTLA">
                                         <FaSlack/>
-                                    </Link>
+                                    </a>
                                 </Button>
                             </HStack>
                         </Flex>

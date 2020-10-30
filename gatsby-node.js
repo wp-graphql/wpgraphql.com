@@ -22,8 +22,6 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     if (nodes.length) {
         nodes.forEach((doc) => {
 
-            console.log(doc.__typename);
-
             // Set the default template to use if a specific one doesn't exist
             let template = require.resolve(`./src/templates/WpContentNode.js`);
 
@@ -36,8 +34,6 @@ exports.createPages = async ({actions, graphql, reporter}) => {
             } catch (err) {
                 console.error(err)
             }
-
-            console.log( template );
 
             if (doc.uri.length) {
                 actions.createPage({
