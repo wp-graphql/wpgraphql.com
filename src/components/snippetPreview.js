@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Heading, Text, Tag, Stack, Button} from '@chakra-ui/core'
+import {Box, Heading, Tag, Stack, Button} from '@chakra-ui/core'
 import {FaArrowRight} from 'react-icons/fa'
 import { Link } from "gatsby";
 import { ParseHtml } from "../components/parse-html"

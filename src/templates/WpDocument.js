@@ -5,11 +5,11 @@ import Container from "../components/container";
 import {graphql} from 'gatsby'
 import PageTransition from "../components/page-transition";
 import DocsSidebar from "../components/docs-sidebar"
-import { ParseHtml } from "../components/parse-html"
+import {ParseHtml} from "../components/parse-html"
 
 const WpContentNode = ({data}) => {
 
-    const { wpContentNode: { title, content } } = data;
+    const {wpContentNode: {title, content}} = data;
 
     return (
 
