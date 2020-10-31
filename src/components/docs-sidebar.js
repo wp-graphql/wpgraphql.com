@@ -13,7 +13,7 @@ const DocsSidebar = () => {
           title: label
           path
           target
-          parentId
+          parent: parentId
         }
       }
     }
@@ -21,7 +21,8 @@ const DocsSidebar = () => {
 
     const routes = flatListToHierarchical(data.allWpMenuItem.nodes, {
         idKey: 'id',
-        childrenKey: 'routes'
+        childrenKey: 'routes',
+        parentKey: 'parent'
     });
 
     return <Sidebar routes={routes} />

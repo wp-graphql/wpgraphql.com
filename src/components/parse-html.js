@@ -1,6 +1,5 @@
 import React from "react"
 import ReactHtmlParser from "react-html-parser"
-import * as ParsedComponents from "./parsed-components/parsed-components"
 import * as DocsComponents from "./parsed-components/index"
 
 const formatStringToCamelCase = (str) => {
@@ -66,6 +65,7 @@ export const ParseHtmlToReact = (html, components) => {
                             return child.data
                         }
 
+
                         return transform(child, i)
                     })}
                 </Component>
@@ -85,4 +85,4 @@ export const ParseHtmlToReact = (html, components) => {
 }
 
 export const ParseHtml = (html, overrideComponents) =>
-    ParseHtmlToReact(html, { ...ParsedComponents, ...DocsComponents, ...overrideComponents })
+    ParseHtmlToReact(html, { ...DocsComponents, ...overrideComponents })

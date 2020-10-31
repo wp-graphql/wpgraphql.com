@@ -21,12 +21,13 @@ const CopyButton = (props) => (
         size="sm"
         position="absolute"
         textTransform="uppercase"
-        colorScheme="teal"
+        colorScheme="blue"
         fontSize="xs"
         height="24px"
         top={0}
         zIndex="1"
         right="1.25em"
+        mt="3"
         {...props}
     />
 )
@@ -36,18 +37,19 @@ const CodeLanguageTag = (props) => (
         size="sm"
         position="absolute"
         textTransform="uppercase"
-        colorScheme="teal"
+        colorScheme="purple"
         fontSize="xs"
         height="24px"
         top={0}
         zIndex="1"
         left="1.25em"
+        mt="3"
         {...props}
     />
 )
 
 const CodeContainer = (props) => (
-    <Box padding="5" rounded="8px" my="8" bg="#011627" {...props} />
+    <Box padding="5" pt="10" rounded="8px" my="8" bg="#011627" {...props} />
 )
 
 function CodeBlock(props) {
@@ -56,10 +58,11 @@ function CodeBlock(props) {
 
     // Default language to PHP.
     let language = "php";
+    let setLanguage = '';
     let classes = className.split(" ");
     classes.forEach(element => {
         if (element.includes("lang-")) {
-            language = element.replace(/lang-/, "")
+            setLanguage = element.replace(/lang-/, "")
         }
     })
 
@@ -77,7 +80,7 @@ function CodeBlock(props) {
     return (
         <LiveProvider disabled {...liveProviderProps}>
             <Box position="relative" zIndex="0">
-                <CodeLanguageTag>{language}</CodeLanguageTag>
+                { setLanguage && <CodeLanguageTag>{setLanguage}</CodeLanguageTag> }
                 <CodeContainer>
                     <LiveEditor style={liveEditorStyle}/>
                 </CodeContainer>

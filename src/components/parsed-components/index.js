@@ -1,34 +1,87 @@
 import React from "react"
+import { Link as GatsbyLink } from 'gatsby'
 import {
     Box,
     Heading,
     chakra,
     Alert,
+    Link,
     useColorModeValue
 } from "@chakra-ui/core"
+import slugger from 'slugger'
 
-export const H1 = React.forwardRef((props, ref) => {
-    return <Heading apply="wp.h1" as={`h1`} ref={ref} {...props}>{props.children}</Heading>
+export const H1 = ((props) => {
+    return <Heading apply="wp.h1" as={`h1`} {...props}>{props.children}</Heading>
 });
 
-export const H2 = React.forwardRef((props, ref) => {
-    return <Heading apply="wp.h2" as={`h2`} ref={ref} {...props}>{props.children} <chakra.span color={useColorModeValue("gray.500", "gray.200")} >#</chakra.span></Heading>
+export const H2 = ((props) => {
+    const slug = slugger(props.children[0]);
+    return (
+        <Heading apply="wp.h2" as={`h2`} {...props}>
+            <GatsbyLink to={'#' + slug}>
+                <Link>
+                    {props.children}
+                </Link>
+            </GatsbyLink>
+            <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
+        </Heading>
+    )
 });
 
-export const H3 = React.forwardRef((props, ref) => {
-    return <Heading apply="wp.h3" as={`h3`} ref={ref} {...props}>{props.children} <chakra.span color={useColorModeValue("gray.500", "gray.200")} >#</chakra.span></Heading>
+export const H3 = ((props) => {
+    const slug = slugger(props.children[0]);
+    return (
+        <Heading apply="wp.h3" as={`h3`} {...props}>
+            <GatsbyLink to={'#' + slug}>
+                <Link>
+                    <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
+                    {props.children}
+                </Link>
+            </GatsbyLink>
+        </Heading>
+    )
 });
 
-export const H4 = React.forwardRef((props, ref) => {
-    return <Heading apply="wp.h4" as={`h4`} ref={ref} {...props}>{props.children}</Heading>
+export const H4 = ((props) => {
+    const slug = slugger(props.children[0]);
+    return (
+        <Heading apply="wp.h4" as={`h4`} {...props}>
+            <GatsbyLink to={'#' + slug}>
+                <Link>
+                    <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
+                    {props.children}
+                </Link>
+            </GatsbyLink>
+        </Heading>
+    )
 });
 
-export const H5 = React.forwardRef((props, ref) => {
-    return <Heading apply="wp.h5" as={`h5`} ref={ref} {...props}>{props.children}</Heading>
+export const H5 = ((props) => {
+    const slug = slugger(props.children[0]);
+    return (
+        <Heading apply="wp.h5" as={`h5`} {...props}>
+            <GatsbyLink to={'#' + slug}>
+                <Link>
+                    <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
+                    {props.children}
+                </Link>
+            </GatsbyLink>
+        </Heading>
+    )
 });
 
-export const H6 = React.forwardRef((props, ref) => {
-    return <Heading apply="wp.h6" as={`h6`} ref={ref} {...props}>{props.children}</Heading>
+export const H6 = ((props) => {
+    const slug = slugger(props.children[0]);
+    return (
+        <Heading apply="wp.h6" as={`h6`} {...props}>
+            <GatsbyLink to={'#' + slug}>
+                <Link>
+                    <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
+                    {props.children}
+                </Link>
+            </GatsbyLink>
+        </Heading>
+    )
 });
 
 export const Strong = React.forwardRef((props, ref) => {

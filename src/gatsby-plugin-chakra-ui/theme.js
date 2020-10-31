@@ -107,7 +107,7 @@ const theme = {
                 bg: "transparent",
             },
         },
-    }
+    },
 }
 
 export default theme

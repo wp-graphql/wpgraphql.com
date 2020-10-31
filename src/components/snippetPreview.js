@@ -14,11 +14,9 @@ const SnippetPreview = ({key, title, path, content, tags}) => (
       right="1.25em"
     >
       {tags.map(tag => (
-        <Link to={tag.uri}>
-          <Tag size="sm" key={tag.id} color="#fff" backgroundColor={tag.snippetTagFields.color}>
-            {tag.name}
-          </Tag>
-        </Link>
+        <Tag size="sm" key={tag.id} color="#fff" backgroundColor={tag.snippetTagFields.color}>
+          {tag.name}
+        </Tag>
       ))}
     </Stack>
     <Link to={path}>
