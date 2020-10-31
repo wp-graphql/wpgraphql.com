@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import PageTransition from "../components/page-transition"
 import { ParseHtml } from "../components/parse-html"
 import Breadcrumb from "../components/breadcrumb/breadcrumb"
+import SnippetSidebar from "../components/snippets-sidebar"
 
 const WpCodeSnippet = ({data}) => {
 
@@ -26,6 +27,7 @@ const WpCodeSnippet = ({data}) => {
         <Layout>
             <Container>
                 <Flex>
+                    <SnippetSidebar />
                     <div style={{flex: 1}}>
                         <Box pt={3} px={5} mt="0" mx="auto" maxW="60rem" minH="80vh">
                             <PageTransition>

@@ -5,8 +5,8 @@ import {
     HStack,
     Icon,
     IconButton,
-    Link,
 } from "@chakra-ui/core"
+import Container from "./container";
 
 const GithubIcon = (props) => (
     <svg viewBox="0 0 20 20" {...props}>
@@ -61,9 +61,9 @@ const Header = (props) => {
             width="full"
             {...props}
         >
-            <chakra.div height="4.5rem" mx="auto" maxW="1200px">
+            <Container height="4.5rem" mx="auto">
                 <HeaderContent />
-            </chakra.div>
+            </Container>
         </chakra.header>
     )
 }

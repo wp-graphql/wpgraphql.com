@@ -13,6 +13,7 @@ import {FaMoon, FaSun, FaGithub, FaWordpress, FaYoutube, FaSlack} from "react-ic
 import {Link} from 'gatsby'
 import Logo from "./logo";
 import NavLink from "./header-nav-link"
+import Container from "./container";
 
 function Layout(props) {
     const {toggleColorMode} = useColorMode()
@@ -31,7 +32,7 @@ function Layout(props) {
                 width="full"
                 {...props}
             >
-                <chakra.div height="4.5rem" mx="auto" maxW="1200px">
+                <Container pt={0} px={0} mt="0" height="auto" mx="auto" minHeight="0" >
                     <Flex
                         w="100%"
                         h="100%"
@@ -78,7 +79,7 @@ function Layout(props) {
                             </HStack>
                         </Flex>
                     </Flex>
-                </chakra.div>
+                </Container>
             </chakra.header>
             <Box as="main" mt={"70"}>
                 {props.children}

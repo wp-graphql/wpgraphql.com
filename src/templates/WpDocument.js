@@ -13,8 +13,8 @@ import { Link as ScrollLink } from "react-scroll";
 const TableOfContents = ({ content }) => {
 
     const [activeLink, setActiveLink] = useState(0);
-    const linkColor = useColorModeValue("gray.900", "white");
-    const activeLinkColor = useColorModeValue("blue.500", "brandOrange");
+    const linkColor = useColorModeValue("black", "white");
+    const activeLinkColor = useColorModeValue("gray.500", "brandOrange");
     const activeBgColor = useColorModeValue("transparent", "transparent");
     const bgColor = useColorModeValue("transparent", "transparent");
 
@@ -29,7 +29,8 @@ const TableOfContents = ({ content }) => {
             case 'h1':
                 headingProps = {
                     as: 'h1',
-                    fontSize: '2rem'
+                    fontSize: '2rem',
+                    fontWeight: 'sm',
                 };
                 break;
             case 'h2':
@@ -37,6 +38,7 @@ const TableOfContents = ({ content }) => {
                     as: 'h2',
                     fontSize: 'lg',
                     lineHeight: 'lg',
+                    fontWeight: 'sm',
                     my: 3
                 };
                 break;
@@ -44,7 +46,7 @@ const TableOfContents = ({ content }) => {
                 headingProps = {
                     as: 'h3',
                     fontSize: 'sm',
-                    fontWeight: 'medium',
+                    fontWeight: 'sm',
                     lineHeight: 'sm',
                     display: 'inline-block',
                     pl: 3,
@@ -55,8 +57,8 @@ const TableOfContents = ({ content }) => {
                 headingProps = {
                     as: 'h3',
                     fontSize: 'xs',
-                    fontWeight: 'sm',
                     lineHeight: 'sm',
+                    fontWeight: 'sm',
                     display: 'inline-block',
                     pl: 5,
                     my: 2,
@@ -86,7 +88,7 @@ const TableOfContents = ({ content }) => {
             const slug = slugger(title);
             return (
 
-                    <Heading { ...headingProps } >
+                    <Heading { ...headingProps } width="100%">
                         <Link
                             as={ScrollLink}
                             to={slug}
@@ -97,6 +99,7 @@ const TableOfContents = ({ content }) => {
                             display="inline-block"
                             px="2"
                             py="0"
+                            width="100%"
                             onSetActive={() => {
                                 setActiveLink(slug)
                             }}
@@ -108,6 +111,7 @@ const TableOfContents = ({ content }) => {
                                 transform: slug === activeLink ? undefined : "translateX(2px)",
                                 backgroundColor: slug === activeLink ? activeBgColor : bgColor,
                             }}
+
                         >
                             {title}
                         </Link>
@@ -125,10 +129,11 @@ const TableOfContents = ({ content }) => {
         <Box as="aside"
              pos="sticky"
              top="6.5rem"
-             w="200px"
+             w="220px"
              pr="0"
              pb="8"
-             pl="8"
+             pl="0"
+             ml="8"
              overflowY="auto"
              className="table-of-contents"
              flexShrink={0}

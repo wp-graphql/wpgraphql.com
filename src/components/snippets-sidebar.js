@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 import Sidebar from "./sidebar/sidebar";
 
 const SnippetsSidebar = () => {
@@ -21,33 +21,34 @@ const SnippetsSidebar = () => {
     `);
 
     let taglist = [
-      {
-        title: `View All (${data.allWpCodeSnippet.totalCount})`,
-        path: `/code-snippets`,
-      }
+        {
+            title: `View All (${data.allWpCodeSnippet.totalCount})`,
+            path: `/code-snippets`,
+        }
     ]
     data.allWpCodeSnippetTag.nodes.map(tag => {
-      taglist.push({
-        title: `${tag.name} (${tag.count})`,
-        path: tag.uri,
-      })
+        taglist.push({
+            title: `${tag.name} (${tag.count})`,
+            path: tag.uri,
+        })
+        return tag;
     })
 
     const routes = [
-      {
-        heading: false,
-        routes: [
-          {
-            title: `Code Snippet Tags`,
-            open: true,
-            path: `/code-snippets`,
-            routes: taglist
-          }
-        ]
-      }
+        {
+            heading: false,
+            routes: [
+                {
+                    title: `Code Snippet Tags`,
+                    open: true,
+                    path: `/code-snippets`,
+                    routes: taglist
+                }
+            ]
+        }
     ]
 
-    return <Sidebar routes={routes} />
+    return <Sidebar routes={routes}/>
 
 
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Breadcrumb as ChakraBreadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/core"
-import { Link } from "gatsby";
 
 const Breadcrumb = ({ crumbs }) => {
     return (

@@ -3,10 +3,10 @@ import { Box } from "@chakra-ui/core"
 
 const Container = ({children, ...rest}) => (
     <Box
-        as="main"
+        as="div"
         minH="40vh"
         mx="auto"
-        maxW="1200px"
+        maxW="1300px"
         pt={8}
         px={5}
         mt="4rem"
