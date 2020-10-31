@@ -4,8 +4,8 @@ import {FaArrowRight} from 'react-icons/fa'
 import { Link } from "gatsby";
 import { ParseHtml } from "../components/parse-html"
 
-const SnippetPreview = ({key, title, path, content, tags}) => (
-  <Box p={5} shadow="md" borderWidth="1px" key={key} position="relative">
+const SnippetPreview = ({title, path, content, tags}) => (
+  <Box p={5} shadow="md" borderWidth="1px" key={path} position="relative">
     <Stack spacing={4}
       isInline
       position="absolute"
