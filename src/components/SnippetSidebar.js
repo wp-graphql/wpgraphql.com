@@ -1,8 +1,8 @@
 import React from 'react';
 import {useStaticQuery, graphql} from 'gatsby'
-import Sidebar from "./sidebar/sidebar";
+import Sidebar from "./sidebar/Sidebar";
 
-const SnippetsSidebar = () => {
+const SnippetSidebar = () => {
 
     const data = useStaticQuery(graphql`
     {
@@ -53,4 +53,4 @@ const SnippetsSidebar = () => {
 
 };
 
-export default SnippetsSidebar;
+export default SnippetSidebar;

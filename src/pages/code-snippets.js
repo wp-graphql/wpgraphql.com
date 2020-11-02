@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import {Box, Flex, Heading, Stack} from '@chakra-ui/core'
-import Layout from '../components/layout'
-import Container from "../components/container";
-import SnippetPreview from '../components/snippetPreview'
-import SnippetSidebar from "../components/snippets-sidebar"
-import PageTransition from "../components/page-transition"
-import Breadcrumb from "../components/breadcrumb/breadcrumb";
+import Layout from '../components/Layout'
+import Container from "../components/Container";
+import SnippetPreview from '../components/SnippetPreview'
+import SnippetSidebar from "../components/SnippetSidebar"
+import PageTransition from "../components/PageTransition"
+import Breadcrumb from "../components/breadcrumb/Breadcrumb";
 
 const Snippets = ({ data }) => {
   const snippets = data.allWpCodeSnippet.nodes

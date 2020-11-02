@@ -6,7 +6,7 @@ import {
     Icon,
     IconButton,
 } from "@chakra-ui/core"
-import Container from "./container";
+import Container from "./Container";
 
 const GithubIcon = (props) => (
     <svg viewBox="0 0 20 20" {...props}>

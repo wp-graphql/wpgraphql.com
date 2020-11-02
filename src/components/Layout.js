@@ -7,18 +7,66 @@ import {
     HStack,
     useColorMode,
     useColorModeValue,
-    Text
+    Text,
+    Drawer,
+    DrawerBody,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
+    useDisclosure,
+    Link as ChakraLink
 } from "@chakra-ui/core";
-import {FaMoon, FaSun, FaGithub, FaWordpress, FaYoutube, FaSlack} from "react-icons/fa"
+import {FaMoon, FaSun, FaGithub, FaWordpress, FaBars} from "react-icons/fa"
 import {Link} from 'gatsby'
-import Logo from "./logo";
-import NavLink from "./header-nav-link"
-import Container from "./container";
+import Logo from "./Logo";
+
+import Container from "./Container";
+import PrimaryNav from './PrimaryNav'
+import PrimaryNavMobile from './PrimaryNavMobile'
+import FooterSocialLinks from './FooterSocialLinks'
+
+const DrawerNav = () => {
+
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const btnRef = React.useRef()
+
+    return(
+        <>
+            <Button ref={btnRef} colorScheme="blue" onClick={onOpen} display={['block', 'block', 'none']}>
+                <FaBars/>
+            </Button>
+            <Drawer
+                isOpen={isOpen}
+                placement="right"
+                onClose={onClose}
+                finalFocusRef={btnRef}
+            >
+                <DrawerOverlay>
+                    <DrawerContent>
+                        <DrawerCloseButton />
+                        <DrawerHeader>WPGraphQL</DrawerHeader>
+
+                        <DrawerBody>
+                            <PrimaryNavMobile display="flex" />
+                        </DrawerBody>
+
+                        <DrawerFooter>
+                            <FooterSocialLinks />
+                        </DrawerFooter>
+                    </DrawerContent>
+                </DrawerOverlay>
+            </Drawer>
+        </>
+    );
+}
 
 function Layout(props) {
     const {toggleColorMode} = useColorMode()
     const SwitchIcon = useColorModeValue(FaMoon, FaSun)
     const bg = useColorModeValue("white", "gray.800")
+    const btnRef = React.useRef()
     return (
         <Box>
             <chakra.header
@@ -45,37 +93,25 @@ function Layout(props) {
                             <Link to="/">
                                 <Logo/>
                             </Link>
-                            <HStack
-                                as="nav"
-                                spacing="4"
-                                ml="24px"
-                                display={{base: "none", md: "flex"}}
-                            >
-                                <NavLink href="/docs/quick-start/">Docs</NavLink>
-                                <NavLink href="/community">Community</NavLink>
-                                <NavLink href="/blog">Blog</NavLink>
-                                <NavLink href="/extensions">Extensions</NavLink>
-                            </HStack>
+                            <PrimaryNav display={{base: "none", md: "flex"}}/>
+
                         </Flex>
                         <Flex maxW="720px" align="center" color="gray.400">
                             <HStack spacing="5">
-
-                                <a href="https://github.org/wp-graphql/wp-graphql">
+                                <ChakraLink href="https://github.org/wp-graphql/wp-graphql" display={['none', 'none', 'block']}>
                                     <Button>
                                         <FaGithub/>
                                     </Button>
-                                </a>
-
-
-                                <a href="https://wordpress.org/plugins/wp-graphql">
+                                </ChakraLink>
+                                <ChakraLink href="https://wordpress.org/plugins/wp-graphql" display={['none', 'none', 'block']}>
                                     <Button>
                                         <FaWordpress/>
                                     </Button>
-                                </a>
-
+                                </ChakraLink>
                                 <Button onClick={toggleColorMode}>
                                     <SwitchIcon/>
                                 </Button>
+                                <DrawerNav btnRef={btnRef} />
                             </HStack>
                         </Flex>
                     </Flex>
@@ -119,39 +155,15 @@ function Layout(props) {
                         align="center"
                         justify="space-around"
                     >
-                        <Flex border="0" maxW="720px" align="center" color="gray.400">
-
-                            <HStack spacing="5">
-                                <Button>
-                                    <a href="https://github.org/wp-graphql/wp-graphql">
-                                        <FaGithub/>
-                                    </a>
-                                </Button>
-                                <Button>
-                                    <a href="https://wordpress.org/plugins/wp-graphql">
-                                        <FaWordpress/>
-                                    </a>
-                                </Button>
-                                <Button>
-                                    <a
-                                        href="https://www.youtube.com/channel/UCwav5UKLaEufn0mtvaFAkYw">
-                                        <FaYoutube/>
-                                    </a>
-                                </Button>
-                                <Button>
-                                    <a
-                                        href="https://join.slack.com/t/wp-graphql/shared_invite/zt-3vloo60z-PpJV2PFIwEathWDOxCTTLA">
-                                        <FaSlack/>
-                                    </a>
-                                </Button>
-                            </HStack>
-                        </Flex>
+                        <FooterSocialLinks />
                     </Flex>
                 </chakra.div>
             </chakra.footer>
         </Box>
     );
 }
+
+
 
 export default Layout;
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby'
 import { flatListToHierarchical } from '../utils'
-import Sidebar from "./sidebar/sidebar";
+import Sidebar from "./sidebar/Sidebar";
 
-const DocsSidebar = () => {
+const DocsSidebar = ({ title }) => {
 
     const data = useStaticQuery(graphql`
     {
@@ -25,7 +25,7 @@ const DocsSidebar = () => {
         parentKey: 'parent'
     });
 
-    return <Sidebar routes={routes} />
+    return <Sidebar routes={routes} title={title} />
 }
 
 export default DocsSidebar;

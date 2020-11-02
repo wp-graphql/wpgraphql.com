@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Flex, Heading, Text, Button, Image } from '@chakra-ui/core'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 
 const Home = () => {
     return (

@@ -15,8 +15,8 @@ import {
 } from '@chakra-ui/core'
 import {Link, useStaticQuery, graphql} from 'gatsby'
 import {FaArrowRight, FaWordpress} from 'react-icons/fa'
-import Layout from '../components/layout'
-import Container from "../components/container";
+import Layout from '../components/Layout'
+import Container from "../components/Container";
 import queryPosts from '../img/query-posts.png'
 import multipleRootResources from '../img/query-multiple-root-resources.png'
 import logoDfuzr from '../img/logo-dfuzr.png'
@@ -129,7 +129,7 @@ const Home = () => {
                                 justify="center"
                                 direction={{base: "column", sm: "row"}}
                             >
-                                <a href="/docs/">
+                                <a href="/docs/introduction">
                                     <Button as="span" colorScheme="blue" variant="solid"
                                             maxW={`300px`} m={`3`} mb={`20`}
                                             rightIcon={<FaArrowRight fontSize="0.8em"/>}>
@@ -476,7 +476,7 @@ const Home = () => {
                                 justify="center"
                                 direction={{base: "column", sm: "row"}}
                             >
-                                <Link to="/docs/">
+                                <Link to="/docs/introduction">
                                     <Button as="span" colorScheme="blue" variant="solid"
                                             maxW={`300px`} m={`3`} mb={`5`}
                                             rightIcon={<FaArrowRight fontSize="0.8em"/>}>
