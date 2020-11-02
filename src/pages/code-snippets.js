@@ -14,6 +14,7 @@ const Snippets = ({ data }) => {
     {
       title: `Code Snippets`,
       path: `/code-snippets`,
+      isCurrentPage: true,
     }
   ];
 
