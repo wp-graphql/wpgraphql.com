@@ -1,0 +1,60 @@
+import React from "react"
+import {Box, Flex, Heading} from '@chakra-ui/core'
+import Layout from "../components/layout"
+import Container from "../components/container"
+import { graphql } from 'gatsby'
+import PageTransition from "../components/page-transition"
+import { ParseHtml } from "../components/parse-html"
+import Breadcrumb from "../components/breadcrumb/breadcrumb"
+
+const WpExtensionPlugin = ({data}) => {
+
+    const { wpContentNode: { title, content, uri } } = data;
+    const crumbs = [
+      {
+        title: `Extensions`,
+        path: `/extensions`,
+      },
+      {
+        title: title,
+        path: uri,
+        isCurrentPage: true,
+      }
+    ];
+
+    return (
+        <Layout>
+            <Container>
+                <Flex>
+                    <div style={{flex: 1}}>
+                        <Box pt={3} px={5} mt="0" mx="auto" maxW="60rem" minH="80vh">
+                            <PageTransition>
+                                <Breadcrumb crumbs={crumbs} />
+                                <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
+                                <div>{ParseHtml(content)}</div>
+                            </PageTransition>
+                        </Box>
+                    </div>
+                </Flex>
+            </Container>
+        </Layout>
+    );
+}
+
+export const query = graphql`
+query($id: String) {
+  wpContentNode(id: { eq: $id }) {
+    __typename
+    id
+    uri
+    ...on WpNodeWithTitle {
+      title
+    }
+    ...on WpNodeWithContentEditor {
+      content
+    }
+  }
+}
+`;
+
+export default WpExtensionPlugin

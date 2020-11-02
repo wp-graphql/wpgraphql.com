@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import {Box, BreadcrumbLink, Flex, Heading, Stack} from '@chakra-ui/core'
+import {Box, Flex, Heading, Stack} from '@chakra-ui/core'
 import Layout from '../components/layout'
 import Container from "../components/container";
 import SnippetPreview from '../components/snippetPreview'
@@ -14,6 +14,7 @@ const Snippets = ({ data }) => {
     {
       title: `Code Snippets`,
       path: `/code-snippets`,
+      isCurrentPage: true,
     }
   ];
 
