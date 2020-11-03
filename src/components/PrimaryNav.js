@@ -60,6 +60,7 @@ const PrimaryNav = () => {
                                 href={path}
                                 rightIcon={routes.length ? <FaChevronDown/> : null }
                                 color={linkColor}
+                                background="transparent"
                                 py="1"
                                 px="3"
                                 borderRadius="4px"

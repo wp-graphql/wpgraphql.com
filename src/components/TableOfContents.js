@@ -89,6 +89,7 @@ const TableOfContents = ({ content }) => {
                         spy={true}
                         smooth={true}
                         duration={300}
+                        offset={75}
                         activeClass="active"
                         display="inline-block"
                         px="2"
