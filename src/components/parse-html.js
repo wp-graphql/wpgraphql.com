@@ -1,5 +1,6 @@
 import React from "react"
 import ReactHtmlParser from "react-html-parser"
+import * as ParsedComponents from "./parsed-components/ParsedComponents"
 import * as DocsComponents from "./parsed-components/index"
 
 const formatStringToCamelCase = (str) => {
@@ -45,6 +46,10 @@ export const ParseHtmlToReact = (html, components) => {
 
         const componentName = node.name.charAt(0).toUpperCase() + node.name.slice(1)
 
+        if ( ! components[componentName] ) {
+            console.error( `No component was found for ${node.type}, ${node.name}` );
+        }
+
         const Component = components[componentName]
 
         const props = {
@@ -65,7 +70,6 @@ export const ParseHtmlToReact = (html, components) => {
                             return child.data
                         }
 
-
                         return transform(child, i)
                     })}
                 </Component>
@@ -85,4 +89,4 @@ export const ParseHtmlToReact = (html, components) => {
 }
 
 export const ParseHtml = (html, overrideComponents) =>
-    ParseHtmlToReact(html, { ...DocsComponents, ...overrideComponents })
+    ParseHtmlToReact(html, { ...ParsedComponents, ...DocsComponents, ...overrideComponents })

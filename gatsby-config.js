@@ -10,6 +10,30 @@ module.exports = {
     },
     plugins: [
         {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `WPGraphQL`,
+                short_name: `WPGraphQL`,
+                start_url: `/`,
+                background_color: `#1b202c`,
+                theme_color: `#f7901f`,
+                display: `standalone`,
+                icon: `src/img/icons/icon.png`,
+                icons: [
+                    {
+                        src: `src/img/icons/192x192.png`,
+                        sizes: `192x192`,
+                        type: `image/png`,
+                    },
+                    {
+                        src: `src/img/icons/512x512.png`,
+                        sizes: `512x512`,
+                        type: `image/png`,
+                    },
+                ]
+            },
+        },
+        {
             resolve: "gatsby-plugin-chakra-ui",
             options: {
                 /**

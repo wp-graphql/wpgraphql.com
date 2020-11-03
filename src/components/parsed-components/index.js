@@ -18,11 +18,9 @@ export const H2 = ((props) => {
     const slug = slugger(props.children[0]);
     return (
         <Heading apply="wp.h2" as={`h2`} {...props}>
-            <GatsbyLink to={'#' + slug}>
-                <Link>
-                    {props.children}
-                </Link>
-            </GatsbyLink>
+            <Link as={GatsbyLink} to={'#' + slug}>
+                {props.children}
+            </Link>
             <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
         </Heading>
     )
@@ -32,12 +30,10 @@ export const H3 = ((props) => {
     const slug = slugger(props.children[0]);
     return (
         <Heading apply="wp.h3" as={`h3`} {...props}>
-            <GatsbyLink to={'#' + slug}>
-                <Link>
-                    <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
-                    {props.children}
-                </Link>
-            </GatsbyLink>
+            <Link as={GatsbyLink} to={'#' + slug}>
+                {props.children}
+            </Link>
+            <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
         </Heading>
     )
 });
@@ -46,12 +42,10 @@ export const H4 = ((props) => {
     const slug = slugger(props.children[0]);
     return (
         <Heading apply="wp.h4" as={`h4`} {...props}>
-            <GatsbyLink to={'#' + slug}>
-                <Link>
-                    <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
-                    {props.children}
-                </Link>
-            </GatsbyLink>
+            <Link as={GatsbyLink} to={'#' + slug}>
+                {props.children}
+            </Link>
+            <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
         </Heading>
     )
 });
@@ -60,12 +54,10 @@ export const H5 = ((props) => {
     const slug = slugger(props.children[0]);
     return (
         <Heading apply="wp.h5" as={`h5`} {...props}>
-            <GatsbyLink to={'#' + slug}>
-                <Link>
-                    <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
-                    {props.children}
-                </Link>
-            </GatsbyLink>
+            <Link as={GatsbyLink} to={'#' + slug}>
+                {props.children}
+            </Link>
+            <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
         </Heading>
     )
 });
@@ -74,12 +66,10 @@ export const H6 = ((props) => {
     const slug = slugger(props.children[0]);
     return (
         <Heading apply="wp.h6" as={`h6`} {...props}>
-            <GatsbyLink to={'#' + slug}>
-                <Link>
-                    <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
-                    {props.children}
-                </Link>
-            </GatsbyLink>
+            <Link as={GatsbyLink} to={'#' + slug}>
+                {props.children}
+            </Link>
+            <chakra.span mt="-120px" pb="120px" display="block" id={slug} />
         </Heading>
     )
 });
@@ -132,5 +122,8 @@ export const Blockquote = (props) => (
     />
 );
 
+export const Noscript = (props) => {
+    return <noscript {...props} />
+};
 
 export * from './Pre'

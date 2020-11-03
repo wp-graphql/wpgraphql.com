@@ -82,14 +82,14 @@ const PrimaryNav = () => {
                                 {routes.map(route => {
                                     const { path, title, id } = route;
                                     return(
-                                        <MenuItem id={id} as="a" href={path} >{title}</MenuItem>
+                                        <MenuItem key={id} as="a" href={path} >{title}</MenuItem>
                                     )
                                 })}
                             </MenuList>
                         </Menu>
                     )
             } else {
-                return (<HeaderNavLink href={path}>{title}</HeaderNavLink>)
+                return (<HeaderNavLink key={id} href={path}>{title}</HeaderNavLink>)
             }
         })}
     </HStack>
