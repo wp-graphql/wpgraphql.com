@@ -17,6 +17,7 @@ import * as React from "react"
 import SidebarCategory from "./SidebarCategory"
 import SidebarLink from "./SidebarLink"
 import { FaTimes, FaStream } from "react-icons/fa"
+import { Link } from "gatsby"
 
 export const SidebarNav = (props) => {
     const { routes } = props;
@@ -25,11 +26,24 @@ export const SidebarNav = (props) => {
     const headingColor = useColorModeValue("gray.700", "inherit");
     return (
         <>
-            {/* <Search /> */}
             {routes.map((c1, idx) => {
                 return (
                     <React.Fragment key={idx}>
-                        {c1.title && (
+                        {c1.title && c1.path !== '#' ? (
+                            <chakra.h4
+                                as={Link}
+                                fontSize="sm"
+                                fontWeight="bold"
+                                my="1.25rem"
+                                textTransform="uppercase"
+                                letterSpacing="wider"
+                                color={headingColor}
+                                to={c1.path}
+                                display="block"
+                            >
+                                {c1.title}
+                            </chakra.h4>
+                            ) :
                             <chakra.h4
                                 fontSize="sm"
                                 fontWeight="bold"
@@ -40,7 +54,7 @@ export const SidebarNav = (props) => {
                             >
                                 {c1.title}
                             </chakra.h4>
-                        )}
+                        }
 
                         {c1.routes.map((c2) => {
                             if (!c2.routes.length) {

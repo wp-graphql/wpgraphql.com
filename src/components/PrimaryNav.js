@@ -62,7 +62,6 @@ const PrimaryNav = () => {
                                 color={linkColor}
                                 py="1"
                                 px="3"
-                                background="white"
                                 borderRadius="4px"
                                 transition="all 0.2s"
                                 fontWeight="normal"
