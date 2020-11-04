@@ -180,7 +180,7 @@ const Home = () => {
                                     <Button as="span" colorScheme="blue" variant="solid"
                                             maxW={`300px`} m={`3`} mb={`5`}
                                             rightIcon={<FaArrowRight fontSize="0.8em"/>}>
-                                        Read the Docs
+                                        Get Started
                                     </Button>
                                 </Link>
                                 <a href="https://wordpress.org/plugins/wp-graphql">
