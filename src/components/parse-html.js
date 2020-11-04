@@ -62,7 +62,6 @@ export const ParseHtmlToReact = (html, components, reduceHeadings = false) => {
         }
 
         if (props.class) {
-            console.log(props.class)
             props.className = props.class
             delete props.class
         }

@@ -5,7 +5,7 @@ import {Link} from "gatsby";
 import {ParseHtml} from "../components/parse-html"
 
 const RecipePreview = ({title, path, content, tags}) => (
-    <Box p={5} shadow="md" borderWidth="1px" key={path} position="relative">
+    <Box p={5} borderWidth="1px" key={path} position="relative">
         <Link to={path}>
             <Heading fontSize="xl">{title}</Heading>
         </Link>

@@ -50,7 +50,7 @@ const WpExtensionPlugin = ({data}) => {
                                   <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
                                   <Text mt={4}>{ParseHtml(content)}</Text>
                                   <Stack spacing={4} mt={8}>
-                                    <Box position="relative" p={5} shadow="md" borderWidth="1px">
+                                    <Box position="relative" p={5} borderWidth="1px">
                                       <Tag
                                           size="sm"
                                           position="absolute"

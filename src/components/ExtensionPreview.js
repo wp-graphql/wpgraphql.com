@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { ParseHtml } from "./parse-html"
 
 const ExtensionPreview = ({title, path, content}) => (
-  <Box p={5} shadow="md" borderWidth="1px" key={path} position="relative">
+  <Box p={5} borderWidth="1px" key={path} position="relative">
     <Stack spacing={4}
       isInline
       position="absolute"
