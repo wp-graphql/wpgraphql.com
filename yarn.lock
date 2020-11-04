@@ -7372,6 +7372,13 @@ gatsby-plugin-google-gtag@^2.1.13:
     "@babel/runtime" "^7.11.2"
     minimatch "^3.0.4"
 
+gatsby-plugin-hubspot@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-hubspot/-/gatsby-plugin-hubspot-1.3.4.tgz#2fe3d78f414b3740b7ef7e8e5f3c3ab9f6556a3a"
+  integrity sha512-gprtNDFe0TAQBPLSh2DHE2ZUGvdy647uLuBFP1PbdbSWQnurXEJ/SdJkZtl3bkBo9qmUbu9BwYlb1UQ7fyiioA==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+
 gatsby-plugin-manifest@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.5.1.tgz#278e8dc4d11f3ded81d0e55173a43d7f83a4810d"
