@@ -4,7 +4,7 @@ import {FaArrowRight} from 'react-icons/fa'
 import {Link} from "gatsby";
 import {ParseHtml} from "../components/parse-html"
 
-const SnippetPreview = ({title, path, content, tags}) => (
+const RecipePreview = ({title, path, content, tags}) => (
     <Box p={5} shadow="md" borderWidth="1px" key={path} position="relative">
         <Link to={path}>
             <Heading fontSize="xl">{title}</Heading>
@@ -38,4 +38,4 @@ const SnippetPreview = ({title, path, content, tags}) => (
     </Box>
 );
 
-export default SnippetPreview;
+export default RecipePreview;

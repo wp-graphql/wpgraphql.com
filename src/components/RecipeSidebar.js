@@ -2,7 +2,7 @@ import React from 'react';
 import {useStaticQuery, graphql} from 'gatsby'
 import Sidebar from "./sidebar/Sidebar";
 
-const SnippetSidebar = () => {
+const RecipeSidebar = () => {
 
     const data = useStaticQuery(graphql`
     {
@@ -23,7 +23,7 @@ const SnippetSidebar = () => {
     let taglist = [
         {
             title: `View All (${data.allWpCodeSnippet.totalCount})`,
-            path: `/code-snippets`,
+            path: `/recipes`,
         }
     ]
     data.allWpCodeSnippetTag.nodes.map(tag => {
@@ -39,9 +39,9 @@ const SnippetSidebar = () => {
             heading: false,
             routes: [
                 {
-                    title: `Code Snippet Tags`,
+                    title: `Recipe Tags`,
                     open: true,
-                    path: `/code-snippets`,
+                    path: `/recipes`,
                     routes: taglist
                 }
             ]
@@ -53,4 +53,4 @@ const SnippetSidebar = () => {
 
 };
 
-export default SnippetSidebar;
+export default RecipeSidebar;

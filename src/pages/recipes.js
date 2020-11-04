@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import {Box, Flex, Heading, Stack} from '@chakra-ui/core'
+import {Box, Flex, Heading, Stack, Text} from '@chakra-ui/core'
 import Layout from '../components/Layout'
 import Container from "../components/Container";
-import SnippetPreview from '../components/SnippetPreview'
-import SnippetSidebar from "../components/SnippetSidebar"
+import RecipePreview from '../components/RecipePreview'
+import RecipeSidebar from "../components/RecipeSidebar"
 import PageTransition from "../components/PageTransition"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 
@@ -12,8 +12,8 @@ const Snippets = ({ data }) => {
   const snippets = data.allWpCodeSnippet.nodes
   const crumbs = [
     {
-      title: `Code Snippets`,
-      path: `/code-snippets`,
+      title: `Recipes`,
+      path: `/recipes`,
       isCurrentPage: true,
     }
   ];
@@ -22,15 +22,16 @@ const Snippets = ({ data }) => {
     <Layout>
         <Container>
             <Flex>
-                <SnippetSidebar />
+                <RecipeSidebar />
                 <div style={{flex: 1}}>
                     <Box pt={3} px={5} mt="0" mx="auto" maxW="60rem" minH="80vh">
                         <PageTransition>
                             <Breadcrumb crumbs={crumbs} />
-                            <Heading as="h1" fontSize={`4xl`}>Code Snippets</Heading>
+                            <Heading as="h1" fontSize={`4xl`}>Recipes</Heading>
+                            <Text mt={5}>WPGraphQL Recipes are bite-size morsels that can help satisfy your craving for a productivity boost when working with WPGraphQL. Here you will find helpful tips and tricks for extending the WPGraphQL Schema, or otherwise modifying the WPGraphQL API.</Text>
                             <Stack mt={5} spacing={8}>
                             {snippets.map(snippet => (
-                              <SnippetPreview
+                              <RecipePreview
                                 key={snippet.id}
                                 title={snippet.title}
                                 path={snippet.uri}
