@@ -13,8 +13,8 @@ const WpCodeSnippet = ({data}) => {
     const { wpContentNode: { title, content, uri } } = data;
     const crumbs = [
       {
-        title: `Code Snippets`,
-        path: `/code-snippets`,
+        title: `Recipes`,
+        path: `/recipes`,
       },
       {
         title: title,

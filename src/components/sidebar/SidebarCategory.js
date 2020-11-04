@@ -28,26 +28,38 @@ function SidebarCategory(props) {
     })
 
     const onClick = () => {
+        console.log( "shouldScroll...");
         setToggle({ toggle: !toggle, shouldScroll: true })
     }
 
     // If a category is selected indirectly, open it. This can happen when using the search input
     useEffect(() => {
         if (selected) {
+            console.log( { selected });
             setToggle({ toggle: true, shouldScroll: true })
         }
     }, [selected])
 
     // Navigate to the start of the category when manually opened
     useEffect(() => {
+        console.log( "go to the start of the category...");
+        console.log({
+            toggle,
+            shouldScroll,
+            current: ref.current,
+        });
         if (toggle && shouldScroll && ref.current != null) {
             const contentEl = contentRef.current
+            console.log( contentEl );
 
             if (toggle === true && contentEl) {
                 // 10 is added for better margin
                 const height =
                     ref.current.offsetTop - (isMobile ? 10 : contentEl.offsetTop)
                 contentEl.scrollTop = height
+
+                console.log( { height } );
+
                 setToggle({ toggle })
             }
         }

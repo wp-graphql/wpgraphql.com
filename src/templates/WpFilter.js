@@ -19,8 +19,8 @@ const WpContentNode = ({data}) => {
             path: `/developer-reference`,
         },
         {
-            title: `Functions`,
-            path: `/functions`,
+            title: `Filters`,
+            path: `/filters`,
         },
         {
             title: title,

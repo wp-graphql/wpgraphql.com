@@ -56,8 +56,8 @@ export const SidebarNav = (props) => {
                             </chakra.h4>
                         }
 
-                        {c1.routes.map((c2) => {
-                            if (!c2.routes.length) {
+                        {c1.routes && c1.routes.map((c2) => {
+                            if (! c2.routes || !c2.routes.length) {
                                 return (
                                     <SidebarLink ml="-3" mt="2" key={c2.path} href={c2.path}>
                                         {c2.title}
