@@ -6,7 +6,7 @@ import Container from "../components/Container";
 import SnippetPreview from '../components/SnippetPreview'
 import SnippetSidebar from "../components/SnippetSidebar"
 import PageTransition from "../components/PageTransition"
-import Breadcrumb from "../components/breadcrumb/Breadcrumb";
+import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 
 const Snippets = ({ data }) => {
   const snippets = data.allWpCodeSnippet.nodes

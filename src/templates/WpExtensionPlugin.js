@@ -1,15 +1,30 @@
 import React from "react"
-import {Box, Flex, Heading} from '@chakra-ui/core'
+import {Box, Flex, Heading, Stack, Text, Tag} from '@chakra-ui/core'
 import Layout from "../components/Layout"
 import Container from "../components/Container"
 import { graphql } from 'gatsby'
 import PageTransition from "../components/PageTransition"
 import { ParseHtml } from "../components/parse-html"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
+import PluginSidebar from "../components/extensionplugin/PluginSidebar"
+import TableOfContents from "../components/TableOfContents"
 
 const WpExtensionPlugin = ({data}) => {
 
-    const { wpContentNode: { title, content, uri } } = data;
+    const {
+      wpExtensionPlugin: {
+        title,
+        content,
+        uri,
+        readmeContent,
+        extensionFields: {
+          pluginHost,
+          pluginLink,
+          pluginType,
+        }
+      }
+    } = data;
+
     const crumbs = [
       {
         title: `Extensions`,
@@ -26,15 +41,39 @@ const WpExtensionPlugin = ({data}) => {
         <Layout>
             <Container>
                 <Flex>
-                    <div style={{flex: 1}}>
-                        <Box pt={3} px={5} mt="0" mx="auto" maxW="60rem" minH="80vh">
+                    <Box style={{flex: 1}}>
+                        <Box pt={3} px={5} mt="0" mx="auto" minH="80vh">
                             <PageTransition>
-                                <Breadcrumb crumbs={crumbs} />
-                                <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
-                                <div>{ParseHtml(content)}</div>
+                              <Flex>
+                                <Box pt={3} mt="0" mx="auto" maxW="60rem" minH="80vh">
+                                  <Breadcrumb crumbs={crumbs} />
+                                  <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
+                                  <Text mt={4}>{ParseHtml(content)}</Text>
+                                  <Stack spacing={4} mt={8}>
+                                    <Box position="relative" p={5} shadow="md" borderWidth="1px">
+                                      <Tag
+                                          size="sm"
+                                          position="absolute"
+                                          textTransform="uppercase"
+                                          colorScheme="gray"
+                                          fontSize="s"
+                                          height="30px"
+                                          top={0}
+                                          zIndex="1"
+                                          right="0"
+                                      >Plugin README</Tag>
+                                      <Text mt={4}>{ParseHtml(readmeContent, null, true)}</Text>
+                                    </Box>
+                                  </Stack>
+                                </Box>
+                                <Stack spacing={4} mt={8}>
+                                  <PluginSidebar pluginType={pluginType} pluginHost={pluginHost} pluginLink={pluginLink} />
+                                  <TableOfContents content={readmeContent} reduceHeadings />
+                                </Stack>
+                              </Flex>
                             </PageTransition>
                         </Box>
-                    </div>
+                    </Box>
                 </Flex>
             </Container>
         </Layout>
@@ -43,15 +82,18 @@ const WpExtensionPlugin = ({data}) => {
 
 export const query = graphql`
 query($id: String) {
-  wpContentNode(id: { eq: $id }) {
+  wpExtensionPlugin(id: { eq: $id }) {
     __typename
     id
     uri
-    ...on WpNodeWithTitle {
-      title
-    }
-    ...on WpNodeWithContentEditor {
-      content
+    title
+    content
+    readmeContent
+    extensionFields {
+      pluginReadmeLink
+      pluginHost
+      pluginLink
+      pluginType
     }
   }
 }

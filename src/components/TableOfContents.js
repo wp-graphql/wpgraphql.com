@@ -4,7 +4,7 @@ import ReactHtmlParser from "react-html-parser"
 import slugger from "slugger";
 import { Link as ScrollLink } from "react-scroll";
 
-const TableOfContents = ({ content }) => {
+const TableOfContents = ({ content, reduceHeadings = false }) => {
 
     const [activeLink, setActiveLink] = useState(0);
     const linkColor = useColorModeValue("black", "white");
@@ -18,6 +18,10 @@ const TableOfContents = ({ content }) => {
         }
 
         let headingProps = {};
+
+        if (reduceHeadings && node.name.startsWith("h") && node.name.length === 2) {
+          node.name = `h${parseInt(node.name[1]) + 1}`
+        }
 
         switch ( node.name ) {
             case 'h1':

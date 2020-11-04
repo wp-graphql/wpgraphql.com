@@ -73,7 +73,7 @@ function Layout(props) {
             <chakra.header
                 top="0"
                 position="fixed"
-                zIndex="1"
+                zIndex="99"
                 bg={bg}
                 left="0"
                 right="0"
@@ -163,8 +163,6 @@ function Layout(props) {
         </Box>
     );
 }
-
-
 
 export default Layout;
 

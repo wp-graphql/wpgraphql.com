@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import Container from "../components/Container";
 import ExtensionPreview from '../components/ExtensionPreview'
 import PageTransition from "../components/PageTransition"
-import Breadcrumb from "../components/breadcrumb/Breadcrumb";
+import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 
 const ExtensionPlugins = ({ data }) => {
   const extensions = data.allWpExtensionPlugin.nodes
