@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from 'gatsby'
 import {Box, Flex, Heading, Stack} from '@chakra-ui/core'
-import Layout from "../components/layout"
-import Container from "../components/container"
-import SnippetPreview from '../components/snippetPreview'
-import SnippetSidebar from "../components/snippets-sidebar"
-import PageTransition from "../components/page-transition"
-import Breadcrumb from "../components/breadcrumb/breadcrumb"
+import Layout from "../components/Layout"
+import Container from "../components/Container"
+import SnippetPreview from '../components/SnippetPreview'
+import SnippetSidebar from "../components/SnippetSidebar"
+import PageTransition from "../components/PageTransition"
+import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 
 const SnippetTag = ({data}) => {
 
@@ -29,7 +29,7 @@ const SnippetTag = ({data}) => {
                 <Flex>
                     <SnippetSidebar />
                     <div style={{flex: 1}}>
-                        <Box pt={3} px={5} mt="0" mx="auto" maxW="48rem" minH="80vh">
+                        <Box pt={3} px={5} mt="0" mx="auto" maxW="60rem" minH="80vh">
                             <PageTransition>
                                 <Breadcrumb crumbs={crumbs} />
                                 <Heading as="h1" fontSize={`4xl`}>Code Snippets: {tag.name}</Heading>

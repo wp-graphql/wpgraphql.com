@@ -1,6 +1,6 @@
 import React from "react"
 import ReactHtmlParser from "react-html-parser"
-import * as ParsedComponents from "./parsed-components/parsed-components"
+import * as ParsedComponents from "./parsed-components/ParsedComponents"
 import * as DocsComponents from "./parsed-components/index"
 
 const formatStringToCamelCase = (str) => {
@@ -52,6 +52,10 @@ export const ParseHtmlToReact = (html, components, reduceHeadings = false) => {
 
         console.log(node)
         console.log(componentName)
+
+        if ( ! components[componentName] ) {
+            console.error( `No component was found for ${node.type}, ${node.name}` );
+        }
 
         const Component = components[componentName]
 

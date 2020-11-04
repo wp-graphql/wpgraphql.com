@@ -9,19 +9,22 @@ const NavLink = (props) => {
 
     const group = href.split("/")[1]
     const isActive = location.pathname.includes(group)
+    const linkColor = useColorModeValue("gray.600", "whiteAlpha.800");
+    const hoverBg = useColorModeValue("gray.100", "whiteAlpha.100");
 
     return (
         <Link to={href} {...rest}>
-            <chakra.span
+            <chakra.button
                 aria-current={isActive ? "page" : undefined}
                 display="block"
                 py="1"
                 px="3"
                 borderRadius="4px"
                 transition="all 0.2s"
-                color={useColorModeValue("gray.600", "whiteAlpha.800")}
+                color={linkColor}
                 fontWeight="normal"
-                _hover={{ bg: useColorModeValue("gray.100", "whiteAlpha.100") }}
+                height="2.5rem"
+                _hover={{ bg: hoverBg }}
                 _activeLink={{
                     fontWeight: "semibold",
                     color: "blue.500",
@@ -30,6 +33,8 @@ const NavLink = (props) => {
             />
         </Link>
     )
+
+
 }
 
 export default NavLink

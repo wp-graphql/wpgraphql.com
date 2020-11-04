@@ -1,9 +1,9 @@
 import React from "react";
 import {Box, Flex, Heading} from '@chakra-ui/core'
-import Layout from "../components/layout";
-import Container from "../components/container";
+import Layout from "../components/Layout";
+import Container from "../components/Container";
 import {graphql} from 'gatsby'
-import PageTransition from "../components/page-transition";
+import PageTransition from "../components/PageTransition";
 import { ParseHtml } from "../components/parse-html"
 
 const WpContentNode = ({data}) => {

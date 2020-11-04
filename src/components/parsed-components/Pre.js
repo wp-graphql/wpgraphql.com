@@ -1,6 +1,6 @@
 import React from "react"
 import { chakra } from "@chakra-ui/core"
-import CodeBlock from '../codeblock/codeblock'
+import CodeBlock from '../codeblock/CodeBlock'
 
 export const Pre = props => {
     const { children } = props;

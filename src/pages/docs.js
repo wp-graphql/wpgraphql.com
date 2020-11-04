@@ -1,9 +1,12 @@
 import React from 'react';
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
+import Container from "../components/Container";
 
 const Docs = () => (
     <Layout>
-        <h2>Docs!</h2>
+        <Container>
+            <h2>Docs!</h2>
+        </Container>
     </Layout>
 )
 

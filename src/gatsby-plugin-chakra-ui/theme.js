@@ -2,6 +2,9 @@ import { theme as defaultTheme } from "@chakra-ui/core"
 
 const theme = {
     ...defaultTheme,
+    styles: {
+        ...defaultTheme.styles,
+    },
     colors: {
         ...defaultTheme.colors,
         brandPurple: "#673FB4",
@@ -20,9 +23,6 @@ const theme = {
     lineHeights: {
         body: 1.5,
         heading: 1.125,
-    },
-    styles: {
-        ...defaultTheme.styles,
     },
     wp: {
         h1: {
@@ -107,7 +107,7 @@ const theme = {
                 bg: "transparent",
             },
         },
-    }
+    },
 }
 
 export default theme

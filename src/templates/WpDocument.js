@@ -1,11 +1,13 @@
 import React from "react";
-import {Box, Flex, Heading} from '@chakra-ui/core'
-import Layout from "../components/layout";
-import Container from "../components/container";
-import {graphql} from 'gatsby'
-import PageTransition from "../components/page-transition";
-import DocsSidebar from "../components/docs-sidebar"
+import {Box, Flex, Heading } from '@chakra-ui/core'
+import Layout from "../components/Layout";
+import Container from "../components/Container";
+import {graphql } from 'gatsby'
+import PageTransition from "../components/PageTransition";
+import DocsSidebar from "../components/DocsSidebar"
 import {ParseHtml} from "../components/parse-html"
+import TableOfContents from "../components/TableOfContents";
+
 
 const WpContentNode = ({data}) => {
 
@@ -16,15 +18,20 @@ const WpContentNode = ({data}) => {
         <Layout>
             <Container>
                 <Flex>
-                    <DocsSidebar/>
-                    <div style={{flex: 1}}>
-                        <Box pt={3} px={5} mt="0" mx="auto" maxW="48rem" minH="80vh">
+                    <DocsSidebar title={ "Docs" }/>
+                    <Box style={{flex: 1}}>
+                        <Box pt={3} pl={10} pr={0} mt="0" mx="auto" minH="80vh">
                             <PageTransition>
-                                <Heading as="h1" fontSize={`4xl`}>{title}.</Heading>
-                                <div>{ParseHtml(content)}</div>
+                                <Flex>
+                                    <Box pt={3} mt="0" mx="auto" maxW="48rem" minH="80vh">
+                                        <Heading as="h1" fontSize={`4xl`}>{title}.</Heading>
+                                        {ParseHtml(content)}
+                                    </Box>
+                                    <TableOfContents content={content} contentRef={ParseHtml(content)}/>
+                                </Flex>
                             </PageTransition>
                         </Box>
-                    </div>
+                    </Box>
                 </Flex>
             </Container>
         </Layout>

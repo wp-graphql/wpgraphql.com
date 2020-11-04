@@ -1,17 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import {Box, Flex, Heading, Stack, Text} from '@chakra-ui/core'
-import Layout from '../components/layout'
-import Container from "../components/container";
-import ExtensionPreview from '../components/extensionPreview'
-import PageTransition from "../components/page-transition"
-import Breadcrumb from "../components/breadcrumb/breadcrumb";
+import Layout from '../components/Layout'
+import Container from "../components/Container";
+import ExtensionPreview from '../components/ExtensionPreview'
+import PageTransition from "../components/PageTransition"
+import Breadcrumb from "../components/breadcrumb/Breadcrumb";
 
 const ExtensionPlugins = ({ data }) => {
   const extensions = data.allWpExtensionPlugin.nodes
   const crumbs = [
     {
-      title: `Extensionss`,
+      title: `Extensions`,
       path: `/extensions`,
       isCurrentPage: true,
     }

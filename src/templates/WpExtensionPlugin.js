@@ -3,7 +3,7 @@ import {Box, Flex, Heading, Stack, Text, Tag} from '@chakra-ui/core'
 import Layout from "../components/layout"
 import Container from "../components/container"
 import { graphql } from 'gatsby'
-import PageTransition from "../components/page-transition"
+import PageTransition from "../components/PageTransition"
 import { ParseHtml } from "../components/parse-html"
 import Breadcrumb from "../components/breadcrumb/breadcrumb"
 import PluginLink from "../components/pluginLink"
