@@ -1,7 +1,7 @@
-img {
+.wp-block-image img {
     width: auto!important;
     margin-top: 1rem;
     margin-bottom: 1rem;
     max-width: 100%;
-    height: auto!important;
+    height: auto;
 }
