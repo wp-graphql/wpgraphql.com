@@ -1,4 +1,6 @@
 const fs = require('fs')
+const showdown = require('showdown')
+const axios = require(`axios`)
 const { ensureTrailingSlash } = require('./src/utils')
 
 exports.createPages = async ({actions, graphql, reporter}) => {
@@ -72,4 +74,38 @@ exports.createPages = async ({actions, graphql, reporter}) => {
       )
     }
 
+}
+
+exports.onCreateNode = async ({ node, actions }) => {
+  // If this is an extension node, check if the README field exists.
+  if (node.internal.type != `WpExtensionPlugin`) {
+    return
+  }
+
+  if (!node.extensionFields.pluginReadmeLink) {
+    return
+  }
+
+  try {
+    // Make an http call to pull in the README contents.
+    const data = await axios.get(node.extensionFields.pluginReadmeLink)
+
+    if (data.status == '200' && data.data) {
+      converter = new showdown.Converter()
+
+      // Save the README contents to the readmeContent field.
+      node.readmeContent = converter.makeHtml(data.data)
+    }
+  } catch (e) {
+    return
+  }
+
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type WpExtensionPlugin {
+      readmeContent: String
+    }
+  `)
 }

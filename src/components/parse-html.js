@@ -33,7 +33,7 @@ export const getStyleObjectFromString = (styles) => {
     return style
 }
 
-export const ParseHtmlToReact = (html, components) => {
+export const ParseHtmlToReact = (html, components, reduceHeadings = false) => {
 
     if (!html) {
         return null
@@ -44,7 +44,14 @@ export const ParseHtmlToReact = (html, components) => {
             return
         }
 
-        const componentName = node.name.charAt(0).toUpperCase() + node.name.slice(1)
+        let componentName = node.name.charAt(0).toUpperCase() + node.name.slice(1)
+        // Allow heading sizes to be reduced for large chunks of parsed content.
+        if (reduceHeadings && componentName.startsWith("H") && componentName.length == 2) {
+          componentName = `H${parseInt(componentName[1]) + 1}`
+        }
+
+        console.log(node)
+        console.log(componentName)
 
         const Component = components[componentName]
 
@@ -54,6 +61,7 @@ export const ParseHtmlToReact = (html, components) => {
         }
 
         if (props.class) {
+            console.log(props.class)
             props.className = props.class
             delete props.class
         }
@@ -84,5 +92,5 @@ export const ParseHtmlToReact = (html, components) => {
     return Component
 }
 
-export const ParseHtml = (html, overrideComponents) =>
-    ParseHtmlToReact(html, { ...ParsedComponents, ...DocsComponents, ...overrideComponents })
+export const ParseHtml = (html, overrideComponents, reduceHeadings = false) =>
+    ParseHtmlToReact(html, { ...ParsedComponents, ...DocsComponents, ...overrideComponents }, reduceHeadings)
