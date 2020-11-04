@@ -1,12 +1,13 @@
 import React from "react"
 import {Box, Flex, Heading, Stack, Text, Tag} from '@chakra-ui/core'
-import Layout from "../components/layout"
-import Container from "../components/container"
+import Layout from "../components/Layout"
+import Container from "../components/Container"
 import { graphql } from 'gatsby'
 import PageTransition from "../components/PageTransition"
 import { ParseHtml } from "../components/parse-html"
-import Breadcrumb from "../components/breadcrumb/breadcrumb"
-import PluginLink from "../components/pluginLink"
+import Breadcrumb from "../components/breadcrumb/Breadcrumb"
+import PluginSidebar from "../components/extensionplugin/PluginSidebar"
+import TableOfContents from "../components/TableOfContents"
 
 const WpExtensionPlugin = ({data}) => {
 
@@ -18,7 +19,8 @@ const WpExtensionPlugin = ({data}) => {
         readmeContent,
         extensionFields: {
           pluginHost,
-          pluginLink
+          pluginLink,
+          pluginType,
         }
       }
     } = data;
@@ -39,32 +41,39 @@ const WpExtensionPlugin = ({data}) => {
         <Layout>
             <Container>
                 <Flex>
-                    <div style={{flex: 1}}>
-                        <Box pt={3} px={5} mt="0" mx="auto" maxW="60rem" minH="80vh">
+                    <Box style={{flex: 1}}>
+                        <Box pt={3} px={5} mt="0" mx="auto" minH="80vh">
                             <PageTransition>
-                                <Breadcrumb crumbs={crumbs} />
-                                <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
-                                <PluginLink pluginHost={pluginHost} pluginLink={pluginLink} />
-                                <Text mt={4}>{ParseHtml(content)}</Text>
+                              <Flex>
+                                <Box pt={3} mt="0" mx="auto" maxW="60rem" minH="80vh">
+                                  <Breadcrumb crumbs={crumbs} />
+                                  <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
+                                  <Text mt={4}>{ParseHtml(content)}</Text>
+                                  <Stack spacing={4} mt={8}>
+                                    <Box position="relative" p={5} shadow="md" borderWidth="1px">
+                                      <Tag
+                                          size="sm"
+                                          position="absolute"
+                                          textTransform="uppercase"
+                                          colorScheme="gray"
+                                          fontSize="s"
+                                          height="30px"
+                                          top={0}
+                                          zIndex="1"
+                                          right="0"
+                                      >Plugin README</Tag>
+                                      <Text mt={4}>{ParseHtml(readmeContent, null, true)}</Text>
+                                    </Box>
+                                  </Stack>
+                                </Box>
                                 <Stack spacing={4} mt={8}>
-                                  <Box position="relative" p={5} shadow="md" borderWidth="1px">
-                                    <Tag
-                                        size="sm"
-                                        position="absolute"
-                                        textTransform="uppercase"
-                                        colorScheme="teal"
-                                        fontSize="s"
-                                        height="30px"
-                                        top={0}
-                                        zIndex="1"
-                                        right="1.25em"
-                                    >Plugin README</Tag>
-                                    <Text mt={4}>{ParseHtml(readmeContent, null, true)}</Text>
-                                  </Box>
+                                  <PluginSidebar pluginType={pluginType} pluginHost={pluginHost} pluginLink={pluginLink} />
+                                  <TableOfContents content={readmeContent} reduceHeadings />
                                 </Stack>
+                              </Flex>
                             </PageTransition>
                         </Box>
-                    </div>
+                    </Box>
                 </Flex>
             </Container>
         </Layout>
@@ -84,6 +93,7 @@ query($id: String) {
       pluginReadmeLink
       pluginHost
       pluginLink
+      pluginType
     }
   }
 }

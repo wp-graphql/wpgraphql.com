@@ -46,12 +46,9 @@ export const ParseHtmlToReact = (html, components, reduceHeadings = false) => {
 
         let componentName = node.name.charAt(0).toUpperCase() + node.name.slice(1)
         // Allow heading sizes to be reduced for large chunks of parsed content.
-        if (reduceHeadings && componentName.startsWith("H") && componentName.length == 2) {
+        if (reduceHeadings && componentName.startsWith("H") && componentName.length === 2) {
           componentName = `H${parseInt(componentName[1]) + 1}`
         }
-
-        console.log(node)
-        console.log(componentName)
 
         if ( ! components[componentName] ) {
             console.error( `No component was found for ${node.type}, ${node.name}` );

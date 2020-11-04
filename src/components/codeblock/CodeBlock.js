@@ -58,13 +58,14 @@ function CodeBlock(props) {
 
     // Default language to PHP.
     let language = "php";
+    let setLanguage = '';
     let classes = className ? className.split(" ") : [];
     classes.forEach(element => {
         if (element.includes("lang-")) {
-          language = element.replace(/lang-/, "")
+          setLanguage = element.replace(/lang-/, "")
         }
         else if (element.includes("language-")) {
-          language = element.replace(/language-/, "")
+          setLanguage = element.replace(/language-/, "")
         }
     })
 
