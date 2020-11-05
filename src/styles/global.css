@@ -20,6 +20,10 @@
     margin-top: 1em;
 }
 
+figure {
+    max-width: 100%;
+}
+
 table {
     font-size: 18px;
     padding: 0;
