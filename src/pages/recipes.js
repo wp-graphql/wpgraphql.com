@@ -28,8 +28,8 @@ const Snippets = ({data}) => {
             <Container>
                 <Flex>
                     <RecipeSidebar/>
-                    <div style={{flex: 1}}>
-                        <Box pt={3} px={5} mt="0" mx="auto" maxW="60rem" minH="80vh">
+                    <Box style={{flex: 1}}>
+                        <Box pt={3} pl={10} pr={0} mt="0" mx="auto" minH="80vh">
                             <PageTransition>
                                 <Breadcrumb crumbs={crumbs}/>
                                 <Heading as="h1" fontSize={`4xl`}>Recipes</Heading>
@@ -51,7 +51,7 @@ const Snippets = ({data}) => {
                                 </Stack>
                             </PageTransition>
                         </Box>
-                    </div>
+                    </Box>
                 </Flex>
             </Container>
         </Layout>

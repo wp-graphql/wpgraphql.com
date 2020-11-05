@@ -4,7 +4,12 @@ import CodeBlock from '../codeblock/CodeBlock'
 
 export const Pre = props => {
     const { children } = props;
-    const code = children && children[0].props && children[0].props.children && children[0].props.children[0] ? children[0].props.children[0] : null;
+    let code;
+    if ( props && props.code ) {
+        code = props.code;
+    } else {
+        code = children && children[0].props && children[0].props.children && children[0].props.children[0] ? children[0].props.children[0] : null;
+    }
 
     // Sometimes the classname will be on the code tag and not on the pre tag.
     let additionalProps = {}

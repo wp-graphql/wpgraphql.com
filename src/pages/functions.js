@@ -35,22 +35,17 @@ const Functions = ({ data }) => {
                     <DeveloperReferenceSidebar/>
                     <Box style={{flex: 1}}>
                         <Box pt={3} pl={10} pr={0} mt="0" mx="auto" minH="80vh">
-                            <PageTransition>
-                                <Flex>
-                                    <Box pt={3} mt="0" mx="auto" maxW="48rem" minH="80vh">
-                                        <Breadcrumb crumbs={crumbs} />
-                                        <Heading as="h1">Functions</Heading>
-                                        <Text my={5}>The functions documented below are provided by WPGraphQL to extend the Schema or interact with the GraphQL API.</Text>
+                            <PageTransition><Breadcrumb crumbs={crumbs} />
+                                <Heading as="h1">Functions</Heading>
+                                <Text my={5}>The functions documented below are provided by WPGraphQL to extend the Schema or interact with the GraphQL API.</Text>
 
-                                        {data.allWpFunction.nodes.map( func => {
-                                            return (
-                                                <Box mb={5}>
-                                                    <Link as={GatsbyLink} to={func.uri}>{func.title}</Link>
-                                                </Box>
-                                            );
-                                        })}
-                                    </Box>
-                                </Flex>
+                                {data.allWpFunction.nodes.map( func => {
+                                    return (
+                                        <Box mb={5}>
+                                            <Link as={GatsbyLink} to={func.uri}>{func.title}</Link>
+                                        </Box>
+                                    );
+                                })}
                             </PageTransition>
                         </Box>
                     </Box>
