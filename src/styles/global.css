@@ -1,7 +1,51 @@
 .wp-block-image img {
-    width: auto!important;
     margin-top: 1rem;
     margin-bottom: 1rem;
     max-width: 100%;
     height: auto;
+}
+
+.wp-block-image .aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
+.wp-block-image .aligncenter figcaption {
+    text-align: center;
+}
+
+.wp-block-image figcaption {
+    font-size: 0.75em;
+    margin-top: 1em;
+}
+
+figure {
+    max-width: 100%;
+}
+
+table {
+    font-size: 18px;
+    padding: 0;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+table td {
+    padding: 15px;
+    border-bottom: solid 1px #ccc;
+}
+table tr:nth-child(even) {
+    background: #ccc;
+}
+.chakra-ui-dark table tr:nth-child(even) {
+    background: #1A365D;
+}
+
+.chakra-ui-dark table td {
+    padding: 15px;
+    border-bottom: solid 1px #20222c;
+}
+iframe {
+    margin: 1rem 0;
 }

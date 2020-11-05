@@ -35,20 +35,16 @@ const Filters = ({data}) => {
                     <Box style={{flex: 1}}>
                         <Box pt={3} pl={10} pr={0} mt="0" mx="auto" minH="80vh">
                             <PageTransition>
-                                <Flex>
-                                    <Box pt={3} mt="0" mx="auto" maxW="48rem" minH="80vh">
-                                        <Breadcrumb crumbs={crumbs} />
-                                        <Heading as={'h1'}>Filters</Heading>
-                                        <Text my={5}>WordPress provides an API called "filters" which allow functions to modify data of other functions. WPGraphQL applies many filters throughout its codebase allowing developers to customize the Schema and other parts of the GraphQL server. Below are the filters provided by WPGraphQL that are available for developers to hook into.</Text>
-                                        {data.allWpFilter.nodes.map( filter => {
-                                            return (
-                                                <Box mb={5}>
-                                                    <Link as={GatsbyLink} to={filter.uri}>{filter.title}</Link>
-                                                </Box>
-                                            );
-                                        })}
-                                    </Box>
-                                </Flex>
+                                <Breadcrumb crumbs={crumbs} />
+                                <Heading as={'h1'}>Filters</Heading>
+                                <Text my={5}>WordPress provides an API called "filters" which allow functions to modify data of other functions. WPGraphQL applies many filters throughout its codebase allowing developers to customize the Schema and other parts of the GraphQL server. Below are the filters provided by WPGraphQL that are available for developers to hook into.</Text>
+                                {data.allWpFilter.nodes.map( filter => {
+                                    return (
+                                        <Box mb={5}>
+                                            <Link as={GatsbyLink} to={filter.uri}>{filter.title}</Link>
+                                        </Box>
+                                    );
+                                })}
                             </PageTransition>
                         </Box>
                     </Box>

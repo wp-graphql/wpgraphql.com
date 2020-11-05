@@ -49,6 +49,7 @@
     "react-lorem-component": "^0.13.0",
     "react-scroll": "^1.8.1",
     "react-spinners": "^0.9.0",
+    "react-twitter-embed": "^3.0.3",
     "react-use": "^15.3.4",
     "showdown": "^1.9.1",
     "slugger": "^1.0.1",

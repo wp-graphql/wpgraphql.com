@@ -49,16 +49,15 @@ function SidebarCategory(props) {
             current: ref.current,
         });
         if (toggle && shouldScroll && ref.current != null) {
-            const contentEl = contentRef.current
-            console.log( contentEl );
+            const contentEl = ref.current
+            console.log( { contentRef } );
 
             if (toggle === true && contentEl) {
                 // 10 is added for better margin
-                const height =
-                    ref.current.offsetTop - (isMobile ? 10 : contentEl.offsetTop)
+                const height = ref.current.offsetTop
                 contentEl.scrollTop = height
 
-                console.log( { height } );
+                console.log( { height: height } );
 
                 setToggle({ toggle })
             }

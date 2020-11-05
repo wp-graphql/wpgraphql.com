@@ -35,20 +35,16 @@ const Filters = ({data}) => {
                     <Box style={{flex: 1}}>
                         <Box pt={3} pl={10} pr={0} mt="0" mx="auto" minH="80vh">
                             <PageTransition>
-                                <Flex>
-                                    <Box pt={3} mt="0" mx="auto" maxW="48rem" minH="80vh">
-                                        <Breadcrumb crumbs={crumbs} />
-                                        <Heading as={'h1'}>Actions</Heading>
-                                        <Text my={5}>WordPress provides an API called "actions" which allow functions to be executed at specific times during a request.</Text>
-                                        {data.allWpAction.nodes.map( filter => {
-                                            return (
-                                                <Box mb={5}>
-                                                    <Link as={GatsbyLink} to={filter.uri}>{filter.title}</Link>
-                                                </Box>
-                                            );
-                                        })}
-                                    </Box>
-                                </Flex>
+                                <Breadcrumb crumbs={crumbs} />
+                                <Heading as={'h1'}>Actions</Heading>
+                                <Text my={5}>WordPress provides an API called "actions" which allow functions to be executed at specific times during a request.</Text>
+                                {data.allWpAction.nodes.map( filter => {
+                                    return (
+                                        <Box mb={5}>
+                                            <Link as={GatsbyLink} to={filter.uri}>{filter.title}</Link>
+                                        </Box>
+                                    );
+                                })}
                             </PageTransition>
                         </Box>
                     </Box>

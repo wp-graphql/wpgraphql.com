@@ -53,7 +53,7 @@ const TableOfContents = ({ content, reduceHeadings = false }) => {
                 break;
             case 'h4':
                 headingProps = {
-                    as: 'h3',
+                    as: 'h4',
                     fontSize: 'xs',
                     lineHeight: 'sm',
                     fontWeight: 'sm',

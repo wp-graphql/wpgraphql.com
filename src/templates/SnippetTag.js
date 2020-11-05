@@ -13,8 +13,8 @@ const SnippetTag = ({data}) => {
     const tag = data.wpCodeSnippetTag;
     const crumbs = [
       {
-        title: `Code Snippets`,
-        path: `/code-snippets`,
+        title: `Recipes`,
+        path: `/recipes`,
       },
       {
         title: tag.name,

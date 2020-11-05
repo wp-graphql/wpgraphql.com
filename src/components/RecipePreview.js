@@ -21,7 +21,7 @@ const RecipePreview = ({title, path, content, tags}) => (
                zIndex="1"
                right="1.25em"
         >
-            {tags.map(tag => (
+            {tags && tags.map(tag => (
                 <Tag
                     size="sm"
                     key={tag.id}

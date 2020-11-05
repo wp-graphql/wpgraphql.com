@@ -25,7 +25,8 @@ const RecipeSidebar = () => {
             title: `View All (${data.allWpCodeSnippet.totalCount})`,
             path: `/recipes`,
         }
-    ]
+    ];
+
     data.allWpCodeSnippetTag.nodes.map(tag => {
         taglist.push({
             title: `${tag.name} (${tag.count})`,

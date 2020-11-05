@@ -1,34 +1,7 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby'
 import Sidebar from "./sidebar/Sidebar";
 
 const DeveloperReferenceSidebar = ({ title }) => {
-
-    const data = useStaticQuery(graphql`
-    {
-      allWpFilter(sort: {fields: title, order: ASC}) {
-        nodes {
-          id
-          title
-          path: uri
-        }
-      }
-      allWpAction(sort: {fields: title, order: ASC}) {
-        nodes {
-          id
-          title
-          path: uri
-        }
-      }
-      allWpFunction(sort: {fields: title, order: ASC}) {
-        nodes {
-          id
-          title
-          path: uri
-        }
-      }
-    }
-    `);
 
     const routes = [
         {
