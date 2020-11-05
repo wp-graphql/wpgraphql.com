@@ -1,49 +1,52 @@
 import React from 'react'
-import {
-    Box,
-    Flex,
-    Heading,
-    Link,
-} from "@chakra-ui/core"
-import { graphql, Link as GatsbyLink } from "gatsby";
+import { graphql } from 'gatsby'
+import {Box, Flex, Heading, Stack, Text} from '@chakra-ui/core'
 import Layout from '../components/Layout'
-import Container from "../components/Container"
+import Container from "../components/Container";
+import BlogPreview from '../components/BlogPreview'
 import PageTransition from "../components/PageTransition"
-import Breadcrumb from "../components/breadcrumb/Breadcrumb";
+import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 
-const Filters = ({data}) => {
+const Blog = ({ data }) => {
+  const posts = data.allWpPost.nodes
+  const crumbs = [
+    {
+      title: `Blog`,
+      path: `/blog`,
+      isCurrentPage: true,
+    }
+  ];
 
-    const crumbs = [
-        {
-            title: 'Blog',
-            path: '/blog',
-            isCurrentPage: true,
-        }
-    ];
-
-    return (
-        <Layout>
-            <Container>
-                <Flex>
-                    <Box style={{flex: 1}}>
-                        <Box pt={3} mt="0" mx="auto" maxW="48rem" minH="80vh">
-                            <PageTransition>
-                                <Breadcrumb crumbs={crumbs} />
-                                <Heading mb={10} as={'h1'}>Blog</Heading>
-                                {data.allWpPost.nodes.map( post => {
-                                    return (
-                                        <Box mb={5}>
-                                            <Link as={GatsbyLink} to={post.uri}>{post.title}</Link>
-                                        </Box>
-                                    );
-                                })}
-                            </PageTransition>
-                        </Box>
+  return (
+    <Layout>
+        <Container>
+            <Flex>
+                <div style={{flex: 1}}>
+                    <Box pt={3} px={5} mt="0" mx="auto" maxW="60rem" minH="80vh">
+                        <PageTransition>
+                            <Breadcrumb crumbs={crumbs} />
+                            <Heading as={`h1`} m="0" mb="3" size="4xl">
+                                Blog
+                            </Heading>
+                            <Stack mt={5} spacing={8}>
+                                {posts.map(post => (
+                                  <BlogPreview
+                                    key={post.id}
+                                    title={post.title}
+                                    path={post.uri}
+                                    content={post.excerpt}
+                                    author={post.author.node.name}
+                                    date={post.date}
+                                  />
+                                ))}
+                                </Stack>
+                          </PageTransition>
                     </Box>
-                </Flex>
-            </Container>
-        </Layout>
-    );
+                </div>
+            </Flex>
+        </Container>
+    </Layout>
+  );
 }
 
 export const data = graphql`
@@ -52,12 +55,17 @@ export const data = graphql`
       nodes {
         title
         id
-        content
-        date
+        excerpt
+        date(formatString: "MMMM Do, YYYY")
         uri
+        author {
+          node {
+            name
+          }
+        }
       }
     }
   }
 `
 
-export default Filters;
+export default Blog;
