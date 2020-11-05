@@ -4,7 +4,7 @@ import {FaArrowRight} from 'react-icons/fa'
 import { Link } from "gatsby";
 import { ParseHtml } from "./parse-html"
 
-const BlogPreview = ({title, path, content, author, date}) => (
+const BlogPreview = ({title, path, content, author, authorPath, date}) => (
   <Box p={5} borderWidth="1px" key={path} position="relative">
     <Stack spacing={4}
       isInline
@@ -18,7 +18,7 @@ const BlogPreview = ({title, path, content, author, date}) => (
       <Heading fontSize="xl">{title}</Heading>
     </Link>
     <Box>
-      <Text fontSize="sm">By {author} on {date}</Text>
+      <Text fontSize="sm">By <Link to={authorPath}>{author}</Link> on {date}</Text>
     </Box>
     <div>{ParseHtml(content)}</div>
     <Link to={path}>
