@@ -20,6 +20,17 @@ exports.createPages = async ({actions, graphql, reporter}) => {
           uri
         }
       }
+      blogAuthors: allWpUser {
+        nodes {
+          uri
+          id
+          posts {
+            nodes {
+              id
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -30,6 +41,7 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     const {
       allContent,
       snippetTags,
+      blogAuthors,
     } = result.data;
 
     if (allContent.nodes.length) {
@@ -72,6 +84,21 @@ exports.createPages = async ({actions, graphql, reporter}) => {
           },
         })
       )
+    }
+
+    if (blogAuthors.nodes.length) {
+      blogAuthors.nodes.map(blogAuthor => {
+        if (blogAuthor.posts.nodes.length) {
+          actions.createPage({
+            path: ensureTrailingSlash(blogAuthor.uri),
+            component: require.resolve(`./src/templates/BlogAuthor.js`),
+            context: {
+              id: blogAuthor.id,
+              uri: blogAuthor.uri,
+            },
+          })
+        }
+      })
     }
 
 }
