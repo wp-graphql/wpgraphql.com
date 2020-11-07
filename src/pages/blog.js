@@ -22,7 +22,7 @@ const Blog = ({ data }) => {
         <Container>
             <Flex>
                 <div style={{flex: 1}}>
-                    <Box pt={3} px={5} mt="0" mx="auto" maxW="60rem" minH="80vh">
+                    <Box pt={3} px={5} mt="0" mx="auto" maxW="25rem|32rem|48rem" minH="80vh">
                         <PageTransition>
                             <Breadcrumb crumbs={crumbs} />
                             <Heading as={`h1`} m="0" mb="3" size="4xl">
