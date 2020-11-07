@@ -29,7 +29,7 @@ const Snippets = ({data}) => {
                 <Flex>
                     <RecipeSidebar/>
                     <Box style={{flex: 1}}>
-                        <Box pt={3} pl={10} pr={0} mt="0" maxWidth="25rem|32rem" mx="auto" minH="80vh">
+                        <Box pt={3} pl={10} pr={0} mt="0" maxWidth="20rem|25rem|32rem" mx="auto" minH="80vh">
                             <PageTransition>
                                 <Breadcrumb crumbs={crumbs}/>
                                 <Heading as="h1" fontSize={`4xl`}>Recipes</Heading>
