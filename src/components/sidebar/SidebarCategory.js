@@ -64,8 +64,8 @@ function SidebarCategory(props) {
         }
     }, [toggle, shouldScroll, isMobile, contentRef])
 
-    const buttonColor = useColorModeValue("gray.500", "inherit");
-    const buttonHoverColor = useColorModeValue("gray.600", "inherit");
+    const buttonColor = useColorModeValue("gray.600", "inherit");
+    const buttonHoverColor = useColorModeValue("gray.900", "inherit");
 
     return (
         <chakra.div mt="8" ref={ref} {...rest}>

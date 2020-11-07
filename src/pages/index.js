@@ -86,6 +86,7 @@ const Home = () => {
                     </Flex>
                     <Image
                         src={queryPosts}
+                        alt="Screenshot showing a GraphQL query for a list of posts"
                         h="40|56|80"
                         mt="12|14|16"
                         roundedTop="xl"
@@ -115,6 +116,7 @@ const Home = () => {
                     </Flex>
                     <Image
                         src={multipleRootResources}
+                        alt={"Screenshot showing a GraphQL Query for multiple resources"}
                         h="40|56|80"
                         mt="12|14|16"
                         roundedTop="xl"

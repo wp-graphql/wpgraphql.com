@@ -31,7 +31,7 @@ const WpCodeSnippet = ({data}) => {
                     <Box style={{flex: 1}}>
                         <Box pt={3} pl={10} pr={0} mt="0" mx="auto" minH="80vh">
                             <PageTransition>
-                                <Box pt={3} mt="0" mx="auto" maxW="48rem" minH="80vh">
+                                <Box pt={3} mt="0" mx="auto" maxW="28rem|32rem" minH="80vh">
                                     <Breadcrumb crumbs={crumbs} />
                                     <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
                                     {ParseHtml(content)}

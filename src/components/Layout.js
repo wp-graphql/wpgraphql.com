@@ -99,18 +99,17 @@ function Layout(props) {
                         </Flex>
                         <Flex maxW="720px" align="center" color="gray.400">
                             <HStack spacing="5">
-                                <ChakraLink href="https://github.org/wp-graphql/wp-graphql" display={['none', 'none', 'block']}>
-                                    <Button>
-                                        <FaGithub/>
-                                    </Button>
-                                </ChakraLink>
-                                <ChakraLink href="https://wordpress.org/plugins/wp-graphql" display={['none', 'none', 'block']}>
-                                    <Button>
-                                        <FaWordpress/>
-                                    </Button>
-                                </ChakraLink>
+                                <Button as={ChakraLink} pt={3} href="https://github.com/wp-graphql/wp-graphql" display={['none', 'none', 'block']}>
+                                    <FaGithub/>
+                                    <chakra.span sx={{display: 'none'}}>Link to WPGraphQL on Github</chakra.span>
+                                </Button>
+                                <Button as={ChakraLink} pt={3} href="https://wordpress.org/plugins/wp-graphql" display={['none', 'none', 'block']}>
+                                    <FaWordpress/>
+                                    <chakra.span sx={{display: 'none'}}>Link to WPGraphQL on WordPress.org</chakra.span>
+                                </Button>
                                 <Button onClick={toggleColorMode}>
                                     <SwitchIcon/>
+                                    <chakra.span sx={{display: 'none'}}>Change color theme of the site</chakra.span>
                                 </Button>
                                 <DrawerNav btnRef={btnRef} />
                             </HStack>
@@ -145,7 +144,7 @@ function Layout(props) {
                                                           target={`_blank`} rel="noreferrer"><Text
                             as={`span`}
                             border="0"
-                            color={`blue.400`}>Gatsby</Text></a></Text>
+                            color={`blue.600`}>Gatsby</Text></a></Text>
                     </Flex>
                     <Flex
                         border="0"

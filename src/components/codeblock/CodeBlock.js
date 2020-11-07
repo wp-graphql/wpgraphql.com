@@ -22,6 +22,7 @@ const CopyButton = (props) => (
         position="absolute"
         textTransform="uppercase"
         colorScheme="blue"
+        backgroundColor={'blue.600'}
         fontSize="xs"
         height="24px"
         top={0}
@@ -44,6 +45,7 @@ const CodeLanguageTag = (props) => (
         zIndex="1"
         left="1.25em"
         mt="3"
+        as={"label"}
         {...props}
     />
 )
@@ -76,7 +78,8 @@ function CodeBlock(props) {
         language,
         code: editorCode,
         scope,
-        noInline: manual,
+        disabled: true,
+        noInline: true,
         ...rest,
     }
 

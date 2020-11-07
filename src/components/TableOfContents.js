@@ -8,7 +8,7 @@ const TableOfContents = ({ content, reduceHeadings = false }) => {
 
     const [activeLink, setActiveLink] = useState(0);
     const linkColor = useColorModeValue("black", "white");
-    const activeLinkColor = useColorModeValue("blue.500", "brandOrange");
+    const activeLinkColor = useColorModeValue("blue.600", "brandOrange");
     const activeBgColor = useColorModeValue("transparent", "transparent");
     const bgColor = useColorModeValue("transparent", "transparent");
 

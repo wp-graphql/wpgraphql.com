@@ -60,7 +60,7 @@ const PrimaryNav = () => {
                                 href={path}
                                 rightIcon={routes.length ? <FaChevronDown/> : null }
                                 color={linkColor}
-                                background="transparent"
+                                background={"transparent"}
                                 py="1"
                                 px="3"
                                 borderRadius="4px"
@@ -69,7 +69,7 @@ const PrimaryNav = () => {
                                 _hover={{ bg: hoverBg }}
                                 _activeLink={{
                                     fontWeight: "semibold",
-                                    color: "blue.500",
+                                    color: "blue.600",
                                 }}
                                 sx={{
                                     '& > div': {

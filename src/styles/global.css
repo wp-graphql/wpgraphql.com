@@ -49,3 +49,16 @@ table tr:nth-child(even) {
 iframe {
     margin: 1rem 0;
 }
+
+.chakra-ui-dark .content p a,
+.chakra-ui-dark .content ul a {
+    color: #0cf;
+}
+
+.content h1, h2, h3, h4, h5, h6 {
+    word-break: break-all;
+}
+.table-of-contents h1, h2, h3, h4, h5, h6,
+.sidebar-content h1, h2, h3, h4, h5, h6{
+    word-break: break-word;
+}

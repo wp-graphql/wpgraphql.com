@@ -1,4 +1,4 @@
-import { chakra, useColorModeValue } from "@chakra-ui/core"
+import { Button, useColorModeValue } from "@chakra-ui/core"
 import { Link } from "gatsby"
 import React from "react"
 import { useLocation } from "@reach/router"
@@ -9,29 +9,28 @@ const NavLink = (props) => {
 
     const group = href.split("/")[1]
     const isActive = location.pathname.includes(group)
-    const linkColor = useColorModeValue("gray.600", "whiteAlpha.800");
+    const linkColor = useColorModeValue("gray.800", "primary");
     const hoverBg = useColorModeValue("gray.100", "whiteAlpha.100");
-
+    const activeColor = useColorModeValue("blue.600", "whiteAlpha.100");
     return (
-        <Link to={href} {...rest}>
-            <chakra.button
-                aria-current={isActive ? "page" : undefined}
-                display="block"
-                py="1"
-                px="3"
-                borderRadius="4px"
-                transition="all 0.2s"
-                color={linkColor}
-                fontWeight="normal"
-                height="2.5rem"
-                _hover={{ bg: hoverBg }}
-                _activeLink={{
-                    fontWeight: "semibold",
-                    color: "blue.500",
-                }}
-                {...rest}
-            />
-        </Link>
+        <Button
+              aria-current={isActive ? "page" : undefined}
+              as={Link}
+              to={href}
+              display="block"
+              p="3"
+              borderRadius="4px"
+              transition="all 0.2s"
+              color={linkColor}
+              fontWeight="normal"
+              height="2.5rem"
+              background={'transparent'}
+              _hover={{ bg: hoverBg }}
+              _activeLink={{
+                  fontWeight: "semibold",
+                  color: activeColor,
+              }} {...rest}
+        />
     )
 
 

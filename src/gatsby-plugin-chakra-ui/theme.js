@@ -9,12 +9,14 @@ const theme = {
         ...defaultTheme.colors,
         brandPurple: "#673FB4",
         background: `#0A1D39`,
+        brandLink: `#2b6cb0`,
         modes: {
             dark: {
                 ...defaultTheme.colors,
                 text: '#fff',
                 background: '#000',
                 primary: '#0cf',
+                brandLink: `#0cf`,
                 brandPurple: "#cccccc"
             }
         },
@@ -32,7 +34,8 @@ const theme = {
             fontWeight: "bold",
             fontSize: "1.875rem",
             letterSpacing: "-.025em",
-            color: "red"
+            color: "red",
+            wordBreak: "break-all"
         },
         h2: {
             mt: "4rem",
@@ -41,6 +44,7 @@ const theme = {
             fontWeight: "semibold",
             fontSize: "1.5rem",
             letterSpacing: "-.025em",
+            wordBreak: "break-all",
             "& + h3": {
                 mt: "1.5rem",
             },
@@ -52,15 +56,17 @@ const theme = {
             fontWeight: "semibold",
             fontSize: "1.25rem",
             letterSpacing: "-.025em",
+            wordBreak: "break-all",
         },
         h4: {
             mt: "3rem",
             lineHeight: 1.375,
             fontWeight: "semibold",
             fontSize: "1.125rem",
+            wordBreak: "break-all",
         },
         a: {
-            color: "brandOrange",
+            color: "brandLink",
             fontWeight: "semibold",
             transition: "color 0.15s",
             transitionTimingFunction: "ease-out",
