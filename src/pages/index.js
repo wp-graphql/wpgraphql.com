@@ -17,12 +17,13 @@ import Testimonials from "./HomePage/Testimonials"
 import WhosUsing from "./HomePage/WhosUsing"
 import queryPosts from '../img/query-posts.png'
 import multipleRootResources from '../img/query-multiple-root-resources.png'
-
+import Meta from '../components/Meta'
 
 const Home = () => {
 
     return (
         <Layout>
+            <Meta title="GraphQL API for WordPress" />
             <Box width={`100%`} background={useColorModeValue(`gray.50`, `gray.700`)}
                  borderBottomWidth="1px">
                 <Container mt="0">

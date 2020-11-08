@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/core";
 import {FaMoon, FaSun, FaGithub, FaWordpress, FaBars} from "react-icons/fa"
 import {Link} from 'gatsby'
-import Logo from "./Logo";
+import Logo from "./Logo"
 import "../styles/global.css"
 
 import Container from "./Container";
@@ -37,6 +37,7 @@ const DrawerNav = () => {
         <>
             <Button ref={btnRef} colorScheme="blue" onClick={onOpen} display={['block', 'block', 'none']}>
                 <FaBars/>
+                <chakra.span sx={{display: 'none'}}>Open mobile nav</chakra.span>
             </Button>
             <Drawer
                 isOpen={isOpen}
@@ -93,6 +94,7 @@ function Layout(props) {
                         <Flex align="center">
                             <Link to="/">
                                 <Logo/>
+                                <chakra.span sx={{display: 'none'}}>Homepage</chakra.span>
                             </Link>
                             <PrimaryNav display={{base: "none", md: "flex"}}/>
 

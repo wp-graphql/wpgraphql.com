@@ -7451,6 +7451,13 @@ gatsby-plugin-google-gtag@^2.1.13:
     "@babel/runtime" "^7.11.2"
     minimatch "^3.0.4"
 
+gatsby-plugin-html-attributes@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-html-attributes/-/gatsby-plugin-html-attributes-1.0.5.tgz#811613bdeff119aa4fa61ed33b5147d52d5a7017"
+  integrity sha512-5u9AHfwxYuhl/QT+cI/r0+1oCKba/LPB6PHUaJN65swPOPrsAiNAj++hTSCs3CG3fITcR8Oorcn6hm6rN+uVAg==
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-hubspot@^1.3.4:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-hubspot/-/gatsby-plugin-hubspot-1.3.4.tgz#2fe3d78f414b3740b7ef7e8e5f3c3ab9f6556a3a"
@@ -7483,7 +7490,7 @@ gatsby-plugin-page-creator@^2.3.34:
     graphql "^14.7.0"
     lodash "^4.17.20"
 
-gatsby-plugin-react-helmet@^3.1.3:
+gatsby-plugin-react-helmet@^3.3.14:
   version "3.3.14"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.3.14.tgz#6eac5854e24d008352742783fe68817b18e24151"
   integrity sha512-5GsIVZIVOax2V9g1UL8row1TG3p2zPY2I+8Rq52H0R5xD9QoMTPde2Q4N0Y2td+qzfRdcfkbSj/kokK2I5owPw==

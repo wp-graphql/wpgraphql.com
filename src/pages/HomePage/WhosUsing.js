@@ -64,9 +64,9 @@ const WhosUsing = () => {
             <WrapItem key="Valu" bg="#df2e30" p="1" rounded="md">
 
                 <a href={"https://www.valu.fi/en"} target="_blank" rel="noreferrer">
-                    <Tooltip label="Valu Digital" aria-label="Valu Digital Logo"
+                    <Tooltip label="Valu Digital" aria-label="Valu Digital"
                              placement="top">
-                        <Image alt="Dfuzr Logo"
+                        <Image alt="Valu Digital Logo"
                                h="60px"
                                w="auto"
                                src={logoValu}

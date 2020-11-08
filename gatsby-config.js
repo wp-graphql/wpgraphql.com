@@ -5,10 +5,18 @@ require("dotenv").config({
 module.exports = {
     siteMetadata: {
         title: "WPGraphQL",
-        description: "Documentation for WPGraphQL",
+        description: "Extendable GraphQL API for WordPress",
         siteUrl: process.env.SITE_URL,
+        author: `@wpgraphql`
     },
     plugins: [
+        'gatsby-plugin-react-helmet',
+        {
+            resolve: 'gatsby-plugin-html-attributes',
+            options: {
+                lang: 'en'
+            }
+        },
         {
             resolve: `gatsby-plugin-google-gtag`,
             options: {
