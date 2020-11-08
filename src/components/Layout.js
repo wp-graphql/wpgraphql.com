@@ -18,7 +18,7 @@ import {
     useDisclosure,
     Link as ChakraLink
 } from "@chakra-ui/core";
-import {FaMoon, FaSun, FaGithub, FaWordpress, FaBars} from "react-icons/fa"
+import {FaMoon, FaSun, FaGithub, FaWordpress, FaBars, FaTimes} from "react-icons/fa"
 import {Link} from 'gatsby'
 import Logo from "./Logo"
 import "../styles/global.css"
@@ -35,8 +35,14 @@ const DrawerNav = () => {
 
     return(
         <>
-            <Button ref={btnRef} colorScheme="blue" onClick={onOpen} display={['block', 'block', 'none']}>
-                <FaBars/>
+            <Button
+                ref={btnRef}
+                colorScheme="blue"
+                onClick={isOpen ? onClose : onOpen}
+                display={['block', 'block', 'none']}
+                aria-label="Open Nav"
+            >
+                { isOpen ? <FaTimes/> : <FaBars/> }
                 <chakra.span sx={{display: 'none'}}>Open mobile nav</chakra.span>
             </Button>
             <Drawer
@@ -92,7 +98,7 @@ function Layout(props) {
                         justify="space-between"
                     >
                         <Flex align="center">
-                            <Link to="/">
+                            <Link to="/" aria-label="Home Page">
                                 <Logo/>
                                 <chakra.span sx={{display: 'none'}}>Homepage</chakra.span>
                             </Link>
@@ -101,15 +107,15 @@ function Layout(props) {
                         </Flex>
                         <Flex maxW="720px" align="center" color="gray.400">
                             <HStack spacing="5">
-                                <Button as={ChakraLink} pt={3} href="https://github.com/wp-graphql/wp-graphql" display={['none', 'none', 'block']}>
+                                <Button as={ChakraLink} pt={3} href="https://github.com/wp-graphql/wp-graphql" display={['none', 'none', 'block']} aria-label="Link to WPGraphQL on Github">
                                     <FaGithub/>
                                     <chakra.span sx={{display: 'none'}}>Link to WPGraphQL on Github</chakra.span>
                                 </Button>
-                                <Button as={ChakraLink} pt={3} href="https://wordpress.org/plugins/wp-graphql" display={['none', 'none', 'block']}>
+                                <Button as={ChakraLink} pt={3} href="https://wordpress.org/plugins/wp-graphql" display={['none', 'none', 'block']} aria-label="Link to WPGraphQL on WordPress.org">
                                     <FaWordpress/>
                                     <chakra.span sx={{display: 'none'}}>Link to WPGraphQL on WordPress.org</chakra.span>
                                 </Button>
-                                <Button onClick={toggleColorMode}>
+                                <Button onClick={toggleColorMode} aria-label="Change color theme of the site">
                                     <SwitchIcon/>
                                     <chakra.span sx={{display: 'none'}}>Change color theme of the site</chakra.span>
                                 </Button>

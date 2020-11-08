@@ -110,6 +110,7 @@ export const SidebarDrawer = (props) => {
                 onClick={ isOpen ? onClose : onOpen}
                 rounded="25px"
                 zIndex={75}
+                aria-label="Open Mobile Nav"
             >{ isOpen ? <FaTimes/> : <FaStream /> }<chakra.span sx={{display: 'none'}}>Open Mobile Nav</chakra.span></Button>
             <Drawer
                 isOpen={isOpen}

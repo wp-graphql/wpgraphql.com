@@ -48,13 +48,13 @@ const Home = () => {
                                 direction={{base: "column", sm: "row"}}
                             >
                                 <a href="/docs/introduction">
-                                    <Button as="span" colorScheme="blue" variant="solid"
+                                    <Button as="span" colorScheme="blue" variant="solid" aria-label="Get Started"
                                             maxW={`300px`} m={`3`} mb={`20`}
                                             rightIcon={<FaArrowRight fontSize="0.8em"/>}>
-                                        Read the Docs
+                                        Get Started
                                     </Button>
                                 </a>
-                                <a href="https://wordpress.org/plugins/wp-graphql">
+                                <a href="https://wordpress.org/plugins/wp-graphql" aria-label="Download the Plugin">
                                     <Button as="span" colorScheme="orange" variant="solid"
                                             maxW={`300px`} m={`3`} mb={`20`}
                                             rightIcon={<FaWordpress fontSize="0.8em"/>}>

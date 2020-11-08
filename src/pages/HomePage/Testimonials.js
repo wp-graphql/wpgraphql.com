@@ -38,6 +38,7 @@ const Testimonials = () => {
                 align="center"
                 spacing="10px"
                 mt="20"
+                as={`div`}
             >
                 {data.allWpTestimonial.nodes.map((testimonial, idx) => {
 
@@ -48,8 +49,9 @@ const Testimonials = () => {
                     const {testimonialFields: {avatarurl, content, tweeturl, name, handle}} = testimonial;
 
                     return (
-                        <a href={tweeturl} target="_blank" key={idx} rel="noreferrer">
-                            <WrapItem maxWidth="280px" bg={bg} p="10" rounded="lg" shadow="base">
+
+                        <WrapItem maxWidth="280px" bg={bg} p="10" rounded="lg" shadow="base">
+                            <a href={tweeturl} target="_blank" key={idx} rel="noreferrer">
                                 <Avatar mr="34px" size="md" src={avatarurl} name={`Avatar of ${name}`} loading="lazy" />
                                 <Box fontSize="sm">
                                     <p>
@@ -66,8 +68,9 @@ const Testimonials = () => {
                                         }}
                                     />
                                 </Box>
-                            </WrapItem>
-                        </a>
+                            </a>
+                        </WrapItem>
+
                     )
                 })}
             </Wrap>
