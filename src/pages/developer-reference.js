@@ -72,7 +72,7 @@ const DeveloperReference = () => {
                         <Box pt={3} pl={10} pr={0} mt="0" mx="auto" minH="80vh">
                             <PageTransition>
                                 <Flex>
-                                    <Box pt={3} mt="0" mx="auto" maxW="48rem" minH="80vh">
+                                    <Box pt={3} mt="0" mx="auto" maxWidth={[ `20rem`, '30rem', '100%' ]} minH="80vh">
                                         <Breadcrumb crumbs={crumbs}/>
                                         <Heading wordBreak="break-word" as={`h1`} m="0" mb="3" fontSize={['3xl','4xl']}>
                                             Developer Reference

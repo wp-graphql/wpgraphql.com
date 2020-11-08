@@ -39,7 +39,7 @@ const WpContentNode = ({data}) => {
                         <Box pt={3} px={[ 0, 0, 10 ]}  mt="0" mx="auto" minH="80vh">
                             <PageTransition>
                                 <Flex>
-                                    <Box pt={3} mt="0" mx="auto" maxW="48rem" minH="80vh">
+                                    <Box pt={3} mt="0" mx="auto" maxWidth={[ `20rem`, '30rem', '100%' ]} minH="80vh">
                                         <Breadcrumb crumbs={crumbs}/>
                                         <Heading wordBreak="break-word" as="h1" fontSize={`4xl`}>{title}</Heading>
                                         {ParseHtml(content)}

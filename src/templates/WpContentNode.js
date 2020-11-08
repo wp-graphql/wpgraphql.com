@@ -15,7 +15,7 @@ const WpContentNode = ({data}) => {
             <Container>
                 <Flex>
                     <div style={{flex: 1}}>
-                        <Box pt={3} mt="0" mx="auto" maxWidth={[ `18rem`, '30rem', '50rem' ]} minH="80vh">
+                        <Box pt={3} mt="0" mx="auto" maxWidth={[ `20rem`, '30rem', '100%' ]} minH="80vh">
                             <PageTransition>
                                 <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
                                 <div>{ParseHtml(content)}</div>

@@ -27,7 +27,7 @@ const BlogAuthor = ({ data }) => {
         <Container>
             <Flex>
                 <div style={{flex: 1}}>
-                    <Box pt={3} px={5} mt="0" mx="auto" maxWidth={[ `18rem`, '30rem', '50rem' ]} minH="80vh">
+                    <Box pt={3} px={5} mt="0" mx="auto" maxWidth={[ `20rem`, '30rem', '100%' ]} minH="80vh">
                         <PageTransition>
                             <Breadcrumb crumbs={crumbs} />
                             <Heading as={`h1`} m="0" mb="3" size="4xl">

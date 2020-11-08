@@ -45,7 +45,7 @@ const WpExtensionPlugin = ({data}) => {
                         <Box pt={3} px={5} mt="0" mx="auto" minH="80vh">
                             <PageTransition>
                               <Flex>
-                                <Box pt={3} mt="0" mx="auto" maxW="60rem" minH="80vh">
+                                <Box pt={3} mt="0" mx="auto" maxWidth={[ `20rem`, '30rem', '100%' ]} minH="80vh">
                                   <Breadcrumb crumbs={crumbs} />
                                   <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
                                   <Text mt={4}>{ParseHtml(content)}</Text>

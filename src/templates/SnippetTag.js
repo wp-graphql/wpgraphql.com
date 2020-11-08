@@ -29,7 +29,7 @@ const SnippetTag = ({data}) => {
                 <Flex>
                     <RecipeSidebar />
                     <div style={{flex: 1}}>
-                        <Box pt={3} px={5} mt="0" mx="auto" maxW="60rem" minH="80vh">
+                        <Box pt={3} px={5} mt="0" mx="auto" maxWidth={[ `20rem`, '30rem', '100%' ]} minH="80vh">
                             <PageTransition>
                                 <Breadcrumb crumbs={crumbs} />
                                 <Heading as="h1" fontSize={`4xl`}>Recipes: {tag.name}</Heading>
