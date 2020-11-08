@@ -31,7 +31,7 @@ const DeveloperReference = () => {
                                 <Flex>
                                     <Box pt={3} mt="0" mx="auto" maxW="48rem" minH="80vh">
                                         <Breadcrumb crumbs={crumbs}/>
-                                        <Heading as='h1'>Developer Reference</Heading>
+                                        <Heading wordBreak="break-word" as='h1'>Developer Reference</Heading>
                                     </Box>
                                 </Flex>
                             </PageTransition>

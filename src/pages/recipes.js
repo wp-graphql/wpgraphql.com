@@ -29,10 +29,10 @@ const Snippets = ({data}) => {
                 <Flex>
                     <RecipeSidebar/>
                     <Box style={{flex: 1}}>
-                        <Box pt={3} pl={0|0|10} pr={0} mt="0" maxWidth="20rem|25rem|32rem" mx="auto" minH="80vh">
+                        <Box pt={3} px={[ 0, 0, 10 ]} pr={0} mt="0" maxWidth={[ `18rem`, '30rem', '50rem' ]} mx="auto" minH="80vh">
                             <PageTransition>
                                 <Breadcrumb crumbs={crumbs}/>
-                                <Heading as="h1" fontSize={`4xl`}>Recipes</Heading>
+                                <Heading wordBreak="break-word" as="h1" fontSize={`4xl`}>Recipes</Heading>
                                 <Text mt={5}>WPGraphQL Recipes are bite-size morsels that can help
                                     satisfy your craving for a productivity boost when working with
                                     WPGraphQL. Here you will find helpful tips and tricks for

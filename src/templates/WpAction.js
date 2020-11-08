@@ -41,7 +41,7 @@ const WpContentNode = ({data}) => {
                                 <Flex>
                                     <Box pt={3} mt="0" mx="auto" maxW="48rem" minH="80vh">
                                         <Breadcrumb crumbs={crumbs}/>
-                                        <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
+                                        <Heading as="h1" wordBreak="break-all" fontSize={`4xl`}>{title}</Heading>
                                         {ParseHtml(content)}
                                     </Box>
                                     <TableOfContents content={content}

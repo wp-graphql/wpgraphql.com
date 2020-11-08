@@ -41,7 +41,7 @@ const Filters = ({data}) => {
                                 {data.allWpAction.nodes.map( filter => {
                                     return (
                                         <Box mb={5}>
-                                            <Link as={GatsbyLink} to={filter.uri}>{filter.title}</Link>
+                                            <Link as={GatsbyLink} wordBreak="break-all" to={filter.uri}>{filter.title}</Link>
                                         </Box>
                                     );
                                 })}

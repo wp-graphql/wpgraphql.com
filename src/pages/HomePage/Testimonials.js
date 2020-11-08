@@ -50,8 +50,8 @@ const Testimonials = () => {
 
                     return (
 
-                        <WrapItem maxWidth="280px" bg={bg} p="10" rounded="lg" shadow="base">
-                            <a href={tweeturl} target="_blank" key={idx} rel="noreferrer">
+                        <WrapItem key={idx} maxWidth="280px" bg={bg} p="10" rounded="lg" shadow="base">
+                            <a href={tweeturl} target="_blank" rel="noreferrer">
                                 <Avatar mr="34px" size="md" src={avatarurl} name={`Avatar of ${name}`} loading="lazy" />
                                 <Box fontSize="sm">
                                     <p>

@@ -11,7 +11,7 @@ const NavLink = (props) => {
     const isActive = location.pathname.includes(group)
     const linkColor = useColorModeValue("gray.800", "primary");
     const hoverBg = useColorModeValue("gray.100", "whiteAlpha.100");
-    const activeColor = useColorModeValue("blue.600", "whiteAlpha.100");
+    const activeColor = useColorModeValue("blue.600", "#0cf");
     return (
         <Button
               aria-current={isActive ? "page" : undefined}

@@ -17,7 +17,6 @@ const detailsQuery = graphql`
 const Meta = ({ description, lang, meta = [], keywords, title }) => {
 
     const data = useStaticQuery(detailsQuery);
-    console.log( data );
 
     const metaDescription =
         description || data.site.siteMetadata.description;

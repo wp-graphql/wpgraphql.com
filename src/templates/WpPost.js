@@ -36,7 +36,7 @@ const WpPost = ({data}) => {
                                 <Flex>
                                     <Box pt={3} mt="0" mx="auto" maxW="48rem" minH="80vh">
                                         <Breadcrumb crumbs={crumbs}/>
-                                        <Heading as="h1" fontSize={`4xl`}>{title}</Heading>
+                                        <Heading wordBreak="break-word" as="h1" fontSize={`4xl`}>{title}</Heading>
                                         <PostInfo author={author.node.name} path={author.node.uri} date={date} />
                                         {ParseHtml(content)}
                                     </Box>

@@ -1,3 +1,9 @@
+.wp-block-image .gatsby-image-wrapper,
+.gatsby-image-wrapper {
+    max-width: 100%;
+    width: auto!important;
+}
+
 .wp-block-image img {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -55,9 +61,6 @@ iframe {
     color: #0cf;
 }
 
-.content h1, h2, h3, h4, h5, h6 {
-    word-break: break-all;
-}
 .table-of-contents h1, h2, h3, h4, h5, h6,
 .sidebar-content h1, h2, h3, h4, h5, h6{
     word-break: break-word;

@@ -36,13 +36,13 @@ const Functions = ({ data }) => {
                     <Box style={{flex: 1}}>
                         <Box pt={3} pl={10} pr={0} mt="0" mx="auto" minH="80vh">
                             <PageTransition><Breadcrumb crumbs={crumbs} />
-                                <Heading as="h1">Functions</Heading>
+                                <Heading wordBreak="break-word" as="h1">Functions</Heading>
                                 <Text my={5}>The functions documented below are provided by WPGraphQL to extend the Schema or interact with the GraphQL API.</Text>
 
                                 {data.allWpFunction.nodes.map( func => {
                                     return (
                                         <Box mb={5}>
-                                            <Link as={GatsbyLink} to={func.uri}>{func.title}</Link>
+                                            <Link wordBreak="break-all" as={GatsbyLink} to={func.uri}>{func.title}</Link>
                                         </Box>
                                     );
                                 })}

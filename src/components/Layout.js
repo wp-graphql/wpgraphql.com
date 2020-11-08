@@ -152,7 +152,7 @@ function Layout(props) {
                                                           target={`_blank`} rel="noreferrer"><Text
                             as={`span`}
                             border="0"
-                            color={`blue.600`}>Gatsby</Text></a></Text>
+                            color={useColorModeValue(`blue.600`, `#0cf`)}>Gatsby</Text></a></Text>
                     </Flex>
                     <Flex
                         border="0"

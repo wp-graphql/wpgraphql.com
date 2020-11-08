@@ -15,7 +15,7 @@ const ExtensionPreview = ({title, path, content}) => (
     >
     </Stack>
     <Link to={path}>
-      <Heading fontSize="xl">{title}</Heading>
+      <Heading wordBreak="break-word" fontSize="xl">{title}</Heading>
     </Link>
     <div>{ParseHtml(content)[0]}</div>
     <Link to={path}>

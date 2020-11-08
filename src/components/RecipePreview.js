@@ -7,7 +7,7 @@ import {ParseHtml} from "../components/parse-html"
 const RecipePreview = ({title, path, content, tags}) => (
     <Box p={5} borderWidth="1px" key={path} position="relative">
         <Link to={path}>
-            <Heading fontSize="xl">{title}</Heading>
+            <Heading wordBreak="break-word" fontSize="xl">{title}</Heading>
         </Link>
         <div>{ParseHtml(content)[0]}</div>
         <Link to={path}>
