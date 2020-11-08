@@ -1,6 +1,7 @@
 import React from 'react';
 import {useStaticQuery, graphql} from 'gatsby'
 import Sidebar from "./sidebar/Sidebar";
+import { routes as SidebarRoutes } from './DeveloperReferenceSidebar'
 
 const RecipeSidebar = () => {
 
@@ -47,9 +48,11 @@ const RecipeSidebar = () => {
                 }
             ]
         }
-    ]
+    ];
 
-    return <Sidebar routes={routes}/>
+
+
+    return <Sidebar routes={SidebarRoutes.concat(routes)}/>
 
 
 };
