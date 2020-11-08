@@ -1,11 +1,15 @@
 import React from "react";
-import {Box, Heading, Stack, Button} from '@chakra-ui/core'
+import {Box, Heading, Stack, Button, useColorModeValue} from '@chakra-ui/core'
 import {FaArrowRight} from 'react-icons/fa'
 import { Link } from "gatsby";
 import { ParseHtml } from "./parse-html"
 
 const ExtensionPreview = ({title, path, content}) => (
-  <Box p={5} borderWidth="1px" key={path} position="relative">
+  <Box p={5} rounded="12px"
+       shadow="base"
+       bg={useColorModeValue("white", "gray.700")}
+       key={path}
+       position="relative">
     <Stack spacing={4}
       isInline
       position="absolute"
