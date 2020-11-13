@@ -9,7 +9,7 @@ import {
 const LogoStack = ( { logos, ...props }) => {
   return(
     <Wrap
-      maxW="800px"
+      maxW="900px"
       mx="auto"
       justify="center"
       align="center"

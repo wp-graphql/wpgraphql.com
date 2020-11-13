@@ -36,12 +36,12 @@ const Hero = (
           mr="auto"
       >
         <Heading as="h1" size="2xl">{title}</Heading>
-        <Flex justifyContent="center">
+        <Flex justifyContent="center" flexWrap="wrap">
             <Box
-              textAlign="right"
+              textAlign={{ sm: "center", md: "right" }}
               p={50}
               pr={0}
-              pt={110}
+              pt={[ '20px', '40px', '50px', '110px' ]}
               width={[ '80%', '80%', '45%' ]}
             >
               {children}

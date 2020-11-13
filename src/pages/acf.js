@@ -9,20 +9,15 @@ import {
 } from "@chakra-ui/core";
 import { AiFillThunderbolt } from "react-icons/ai"
 import { FaCloudDownloadAlt } from "react-icons/fa"
-import logoReact from '../img/logo-react.png'
-import logoVue from '../img/logo-vue.png'
-import logoGatsby from '../img/logo-gatsby.png'
-import logoEmber from '../img/logo-ember.png'
-import logoAngular from '../img/logo-angular.png'
 import acfFieldsImage from '../img/acf-fields.jpg'
 import queryGraphQLImage from '../img/query-with-graphql.png'
 import Layout from "../components/Layout";
 import FeatureGrid from "../components/landingpage/FeatureGrid"
 import Accordion from "../components/landingpage/Accordion"
-import LogoStack from "../components/landingpage/LogoStack"
 import TwoColumn from "../components/landingpage/TwoColumn"
 import Hero from "../components/landingpage/Hero"
 import FeatureList from "../components/landingpage/FeatureList"
+import WorksWithJS from "../components/landingpage/WorksWithJS"
 
 const AcfHero = () => (
   <Hero
@@ -140,57 +135,6 @@ const Why = () => {
   )
 };
 
-const WorksWithJS = () => {
-  const imageprops = {
-    h: "110px",
-  }
-
-  const logos = [
-    {
-      link: "https://reactjs.org/",
-      label: "React",
-      alt: "React Logo",
-      image: logoReact,
-      imageprops: imageprops,
-    },
-    {
-      link: "https://vuejs.org/",
-      label: "Vue",
-      alt: "Vue Logo",
-      image: logoVue,
-      imageprops: imageprops,
-    },
-    {
-      link: "https://gatsbyjs.com/",
-      label: "Gatsby",
-      alt: "Gatsby Logo",
-      image: logoGatsby,
-      imageprops: imageprops,
-    },
-    {
-      link: "https://emberjs.com/",
-      label: "Ember",
-      alt: "Ember Logo",
-      image: logoEmber,
-      imageprops: imageprops,
-    },
-    {
-      link: "https://angular.io/",
-      label: "Angular",
-      alt: "Angular Logo",
-      image: logoAngular,
-      imageprops: imageprops,
-    },
-  ]
-
-  return (
-    <Box mb={70}>
-      <Heading as="h2">Works Great with Popular JavaScript Libraries</Heading>
-      <LogoStack logos={logos} mt={10} />
-    </Box>
-  )
-};
-
 const Pricing = () => (
     <Box mb={70}>
         <Heading as="h2" pb={4}>Pricing & Support</Heading>
@@ -278,7 +222,9 @@ const Acf = () => {
             <HowItWorks/>
             <SupportedFields/>
             <Why/>
-            <WorksWithJS/>
+            <WorksWithJS>
+              <Heading as="h2">Works Great with Popular JavaScript Libraries</Heading>
+            </WorksWithJS>
             <Pricing/>
             <FAQ/>
           </Box>

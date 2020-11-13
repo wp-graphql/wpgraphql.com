@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, Grid } from "@chakra-ui/core"
+import { Box } from "@chakra-ui/core"
 
 const Video = ({ videoSrcURL, videoTitle, ...props }) => (
   <Box pb="56.25%" height={0} overflow="hidden" maxW="100%" position="relative" {...props} >
