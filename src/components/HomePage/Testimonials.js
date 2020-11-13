@@ -27,7 +27,7 @@ const Testimonials = () => {
       }
     }
   `)
-    const bg = useColorModeValue("white", "gray.600");
+    const bg = useColorModeValue("gray.50", "gray.700");
 
     return (
         <div>
