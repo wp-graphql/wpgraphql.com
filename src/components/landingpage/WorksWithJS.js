@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading } from "@chakra-ui/core"
+import { Box } from "@chakra-ui/core"
 import LogoStack from "./LogoStack"
 import logoReact from '../../img/logo-react.png'
 import logoVue from '../../img/logo-vue.png'

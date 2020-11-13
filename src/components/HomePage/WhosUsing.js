@@ -1,10 +1,4 @@
 import React from "react";
-import {
-    Wrap,
-    WrapItem,
-    Tooltip,
-    Image,
-} from "@chakra-ui/core"
 import logoDfuzr from '../../img/logo-dfuzr.png'
 import logoValu from '../../img/logo-valu-digital.png'
 import logoFunkhaus from '../../img/logo-funkhaus.png'
