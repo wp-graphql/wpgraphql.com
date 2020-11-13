@@ -13,8 +13,9 @@ import {Link} from 'gatsby'
 import {FaArrowRight, FaWordpress} from 'react-icons/fa'
 import Layout from '../components/Layout'
 import Container from "../components/Container";
-import Testimonials from "./HomePage/Testimonials"
-import WhosUsing from "./HomePage/WhosUsing"
+import Testimonials from "../components/HomePage/Testimonials"
+import WhosUsing from "../components/HomePage/WhosUsing"
+import WorksWithJS from "../components/landingpage/WorksWithJS"
 import queryPosts from '../img/query-posts.png'
 import multipleRootResources from '../img/query-multiple-root-resources.png'
 import Meta from '../components/Meta'
@@ -82,7 +83,27 @@ const Home = () => {
                     </Flex>
                 </Container>
             </Box>
-            <Box width={`100%`} background={useColorModeValue(`gray.100`, `gray.600`)}
+            <Box pt={50} width={`100%`} background={useColorModeValue(`gray.100`, `gray.600`)}
+                 borderBottomWidth="1px">
+              <Container mt="0">
+                    <Flex flexDirection="column" textAlign="center" align="center"
+                          justify="space-between">
+                        <Box maxW="900px" mt={`10`} mb={`20`}>
+                            <WorksWithJS imageBG={useColorModeValue(`gray.100`, `white`)}>
+                              <Heading as={`h2`} m="0" mb="3" size="2xl">
+                                Build rich JavaScript applications with WordPress and GraphQL
+                              </Heading>
+                              <Text fontSize="2xl" mt="10">
+                                WPGraphQL allows you to separate your CMS from your presentation layer.
+                                Content creators can use the CMS they know, while developers
+                                can use the frameworks and tools they love.
+                              </Text>
+                            </WorksWithJS>
+                        </Box>
+                    </Flex>
+                </Container>
+            </Box>
+            <Box width={`100%`} background={useColorModeValue(`gray.50`, `gray.700`)}
                  borderBottomWidth="1px">
                 <Container mt="0">
                     <Flex flexDirection="column" textAlign="center" align="center"
@@ -111,7 +132,7 @@ const Home = () => {
                     />
                 </Container>
             </Box>
-            <Box width={`100%`} background={useColorModeValue(`gray.50`, `gray.700`)}
+            <Box width={`100%`} background={useColorModeValue(`white`, `gray.600`)}
                  borderBottomWidth="1px">
                 <Container mt="0">
                     <Flex flexDirection="column" textAlign="center" align="center"
@@ -141,7 +162,7 @@ const Home = () => {
                     />
                 </Container>
             </Box>
-            <Box width={`100%`} background={useColorModeValue(`white`, `gray.600`)} >
+            <Box width={`100%`} background={useColorModeValue(`gray.50`, `gray.700`)} >
                 <Container mt="0" pt="20" pb="20">
                     <Flex flexDirection="column" textAlign="center" align="center"
                           justify="space-between">
@@ -164,7 +185,7 @@ const Home = () => {
             </Box>
             <Box
                 width={`100%`}
-                background={useColorModeValue(`gray.50`, `gray.700`)}
+                background={useColorModeValue(`white`, `gray.600`)}
             >
                 <Container mt="0">
                     <Flex flexDirection="column" textAlign="center" align="center"
@@ -180,7 +201,7 @@ const Home = () => {
             </Box>
             <Box
                 width={`100%`}
-                background={useColorModeValue(`white`, `gray.600`)}
+                background={useColorModeValue(`gray.50`, `gray.700`)}
                 borderBottomWidth="1px"
             >
                 <Container mt="0" mb="10" minHeight={0}>
