@@ -34,6 +34,7 @@
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.6.38",
+    "gatsby-plugin-sitemap": "^2.6.0",
     "gatsby-source-filesystem": "^2.3.32",
     "gatsby-source-wordpress-experimental": "^2.2.0",
     "gatsby-transformer-sharp": "2.5.16",
