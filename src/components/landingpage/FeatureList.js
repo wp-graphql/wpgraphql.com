@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, SimpleGrid, useColorModeValue } from "@chakra-ui/core"
+import { Box, SimpleGrid } from "@chakra-ui/core"
 
 const FeatureList = ({ fields, ...props }) => {
 
