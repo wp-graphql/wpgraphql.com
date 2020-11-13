@@ -13,8 +13,8 @@ import {Link} from 'gatsby'
 import {FaArrowRight, FaWordpress} from 'react-icons/fa'
 import Layout from '../components/Layout'
 import Container from "../components/Container";
-import Testimonials from "./HomePage/Testimonials"
-import WhosUsing from "./HomePage/WhosUsing"
+import Testimonials from "../components/HomePage/Testimonials"
+import WhosUsing from "../components/HomePage/WhosUsing"
 import queryPosts from '../img/query-posts.png'
 import multipleRootResources from '../img/query-multiple-root-resources.png'
 import Meta from '../components/Meta'

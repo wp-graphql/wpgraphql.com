@@ -17,8 +17,9 @@ import { GoBook } from "react-icons/go"
 import Layout from '../components/Layout'
 import Container from "../components/Container"
 import PageTransition from "../components/PageTransition"
-import Breadcrumb from "../components/breadcrumb/Breadcrumb";
-import DeveloperReferenceSidebar from "../components/DeveloperReferenceSidebar";
+import Breadcrumb from "../components/breadcrumb/Breadcrumb"
+import DeveloperReferenceSidebar from "../components/DeveloperReferenceSidebar"
+import FeatureGrid from "../components/landingpage/FeatureGrid"
 
 const Feature = ({ title, icon, children, link, ...props }) => {
     return (
@@ -63,6 +64,33 @@ const DeveloperReference = () => {
         },
     ];
 
+    const features = [
+      {
+        icon: GoBook,
+        title: "Recipes",
+        link: "/recipes",
+        content: "Tasty treats that will boost your productivity. WPGraphQL Recipes are snippets that showcase how to customize WPGraphQL in specific ways using the actions, filters and functions available to WPGraphQL.",
+      },
+      {
+        icon: BiCodeCurly,
+        title: "Functions",
+        link: "/functions",
+        content: "Need to add a Field or Type to the GraphQL Schema? There's a function for that. Learn more about the functions available to make your WPGraphQL server work for you.",
+      },
+      {
+        icon: AiFillThunderbolt,
+        title: "Actions",
+        link: "/actions",
+        content: "Actions allow 3rd party code to hook-into WPGraphQL at certain parts of GraphQL execution. Learn about the actions available to hook into.",
+      },
+      {
+        icon: FaFilter,
+        title: "Filters",
+        link: "/filters",
+        content: "Filters allow 3rd party code to modify data at certain parts of GraphQL execution. Learn about the filters available to hook into.",
+      },
+    ]
+
     return (
         <Layout>
             <Container>
@@ -83,28 +111,12 @@ const DeveloperReference = () => {
                                         <Box
                                             as="section"
                                         >
-                                            <Box py="30px" maxW="100%">
-                                                <Grid
-                                                    templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
-                                                    gap={10}
-                                                    px={{ md: 0 }}
-                                                >
-                                                    <Feature icon={GoBook} title="Recipes" link={"/recipes"}>
-                                                        Tasty treats that will boost your productivity. WPGraphQL Recipes are snippets that showcase how to customize WPGraphQL in specific ways using the actions, filters and functions available to WPGraphQL.
-                                                    </Feature>
-                                                    <Feature icon={BiCodeCurly} title="Functions" link={"/functions"}>
-                                                        Need to add a Field or Type to the GraphQL Schema? There's a function for that. Learn more about the functions available to make your WPGraphQL server work for you.
-                                                    </Feature>
-                                                    <Feature icon={AiFillThunderbolt} title="Actions" link={"/actions"}>
-                                                        Actions allow 3rd party code to hook-into WPGraphQL at certain parts of GraphQL execution. Learn about the actions available to hook into.
-                                                    </Feature>
-                                                    <Feature icon={FaFilter} title="Filters" link={"/filters"}>
-                                                        Filters allow 3rd party code to modify data at certain parts of GraphQL execution. Learn about the filters available to hook into.
-                                                    </Feature>
-
-
-                                                </Grid>
-                                            </Box>
+                                          <FeatureGrid
+                                            features={features}
+                                            py="30px"
+                                            maxW="100%"
+                                            align="left"
+                                          />
                                         </Box>
                                     </Box>
                                 </Flex>

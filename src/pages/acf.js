@@ -4,148 +4,286 @@ import {
     Box,
     useColorModeValue,
     Heading,
-    Flex,
     Text,
-    Button,
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel,
-    AccordionIcon,
+    Button
 } from "@chakra-ui/core";
+import { AiFillThunderbolt } from "react-icons/ai"
+import { FaCloudDownloadAlt } from "react-icons/fa"
+import logoReact from '../img/logo-react.png'
+import logoVue from '../img/logo-vue.png'
+import logoGatsby from '../img/logo-gatsby.png'
+import logoEmber from '../img/logo-ember.png'
+import logoAngular from '../img/logo-angular.png'
+import acfFieldsImage from '../img/acf-fields.jpg'
+import queryGraphQLImage from '../img/query-with-graphql.png'
 import Layout from "../components/Layout";
+import FeatureGrid from "../components/landingpage/FeatureGrid"
+import Accordion from "../components/landingpage/Accordion"
+import LogoStack from "../components/landingpage/LogoStack"
+import TwoColumn from "../components/landingpage/TwoColumn"
+import Hero from "../components/landingpage/Hero"
+import FeatureList from "../components/landingpage/FeatureList"
 
-const Hero = () => (
-    <Box
-        width={`100%`}
-        background={useColorModeValue(`#00e4bc`, `#00e4bc`)}
-        borderBottomWidth="1px"
-        color="white"
-        textAlign="center"
-    >
-        <Container
-            backgroundColor={`#00e4bc`}
-            pt={100}
-            pb={150}
-        >
-            <Heading
-                as="h1"
-            >WPGraphQL for Advanced Custom Fields</Heading>
-            <Flex justifyContent="center">
-                <Box
-                    textAlign="right"
-                    p={50}
-                    pr={0}
-                    maxWidth={[ '40%' ]}
-                >
-                    <Text fontSize="3xl">Interact with your Advanced Custom Field data using GraphQL Queries</Text>
-                    <Button colorScheme="blue">Download the Plugin</Button>
-                </Box>
-                <Box
-                    textAlign="right"
-                    p={50}
-                    pr={0}
-                    maxWidth={[ '40%' ]}
-                >
-                    @todo: Put screenshot that plays video here
-                </Box>
-            </Flex>
-    </Container>
-    </Box>
+const AcfHero = () => (
+  <Hero
+    title="WPGraphQL for Advanced Custom Fields"
+    image={acfFieldsImage}
+    video="https://www.youtube.com/embed/rIg4MHc8elg"
+    alt="WPGraphQL for ACF Video"
+  >
+    <Text fontSize="3xl" pb={5}>Interact with your Advanced Custom Field data using GraphQL Queries</Text>
+    <Button colorScheme="blue" size="lg" rightIcon={<FaCloudDownloadAlt />}>Download the Plugin</Button>
+  </Hero>
 );
 
 const HowItWorks = () => (
-    <Box mb={50}>
-        <Heading as="h2">How It Works</Heading>
+    <Box mb={50} p={50} pt={5} >
+      <Heading as="h2" pb={5}>How It Works</Heading>
+      <Text fontSize="3xl">WPGraphQL for Advanced Custom Fields automatically exposes your ACF fields to the WPGraphQL Schema</Text>
+      <TwoColumn image={acfFieldsImage} alt="Creating ACF Fields in WordPress">
+        <Heading as="h3" pb={5}>Create your ACF Fields</Heading>
+        <Text fontSize="lg">
+          Create your ACF Field Groups and Fields, the same way you
+          normally would, using the ACF User Interface, registering your fields with
+          PHP or using ACF local-json. Each field group and the fields within it can
+          be configured to "Show in GraphQL".
+        </Text>
+      </TwoColumn>
+      <TwoColumn imagePosition="right" image={queryGraphQLImage} alt="Query with GraphQL Explorer">
+        <Heading as="h3" pb={5}>Query with GraphQL</Heading>
+        <Text fontSize="lg">
+          Once your field groups and fields have been configured to
+          "Show in GraphQL", they will be available in the GraphQL Schema and ready for querying!
+        </Text>
+      </TwoColumn>
     </Box>
 );
 
-const SupportedFields = () => (
-    <Box mb={50}>
-        <Heading as="h2">Supported ACF Fields</Heading>
-    </Box>
-);
+const SupportedFields = () => {
+  const fields = [
+    "Text",
+    "Text Area",
+    "Number",
+    "Range",
+    "Email",
+    "URL",
+    "Password",
+    "Image",
+    "File",
+    "WYSIWYG",
+    "oEmbed",
+    "Select",
+    "Checkbox",
+    "Radio Button",
+    "Button Group",
+    "True False",
+    "Link",
+    "Post Object",
+    "Page Link",
+    "Relationship",
+    "Taxonomy",
+    "User",
+    "Google Map",
+    "Date Picker",
+    "Date/Time Picker",
+    "Time Picker",
+    "Color Picker",
+    "Group",
+    "Repeater",
+    "Flex Field",
+    "Gallery"
+  ]
 
-const Why = () => (
-    <Box mb={50}>
-     <Heading as="h2">Why WPGraphQL for ACF?</Heading>
+  return (
+    <Box mb={50} pl={20} pr={20} >
+        <Heading as="h2" mb={10}>Supported ACF Fields</Heading>
+        <FeatureList fields={fields} mb={10} />
+        <Text display="flex" ml="auto" mr="auto" fontSize="xs" maxWidth={[ '100%', '90%', '80%', '70%' ]}>
+          WPGraphQL for Advanced Custom Fields supports nearly all of the ACF (free & pro) fields.
+          Some of the fields, such as Accordion and Tab, which are not data fields are not supported.
+          The Clone field needs some more assessment to determine if it can properly be supported.
+          Fields from 3rd party extensions are not supported out of the box, but we are interested
+          in supporting the popular ones.
+        </Text>
     </Box>
-);
+  )
+};
 
-const WorksWithJS = () => (
+
+
+const Why = () => {
+  const features = [
+    {
+      title: "Time",
+      content: "WPGraphQL is highly extendable, but it can be time consuming to expose fields to the Schema. This plugin can save you heaps of time.",
+      icon: AiFillThunderbolt,
+    },
+    {
+      title: "Performance",
+      content: "WPGraphQL is one of the fastest ways to query data in WordPress, and now we bring that performance to ACF data too.",
+      icon: AiFillThunderbolt,
+    },
+    {
+      title: "Support",
+      content: "On top of the great WPGraphQL community support already available, we offer plugin support through email, forums, and code sharing.",
+      icon: AiFillThunderbolt,
+    },
+  ]
+
+  return (
+    <FeatureGrid
+      title="Why WPGraphQL for ACF?"
+      features={features}
+      mb={50}
+      cols={3}
+    />
+  )
+};
+
+const WorksWithJS = () => {
+  const imageprops = {
+    h: "110px",
+  }
+
+  const logos = [
+    {
+      link: "https://reactjs.org/",
+      label: "React",
+      alt: "React Logo",
+      image: logoReact,
+      imageprops: imageprops,
+    },
+    {
+      link: "https://vuejs.org/",
+      label: "Vue",
+      alt: "Vue Logo",
+      image: logoVue,
+      imageprops: imageprops,
+    },
+    {
+      link: "https://gatsbyjs.com/",
+      label: "Gatsby",
+      alt: "Gatsby Logo",
+      image: logoGatsby,
+      imageprops: imageprops,
+    },
+    {
+      link: "https://emberjs.com/",
+      label: "Ember",
+      alt: "Ember Logo",
+      image: logoEmber,
+      imageprops: imageprops,
+    },
+    {
+      link: "https://angular.io/",
+      label: "Angular",
+      alt: "Angular Logo",
+      image: logoAngular,
+      imageprops: imageprops,
+    },
+  ]
+
+  return (
     <Box mb={50}>
-        <Heading as="h2">Works Great with Popular JavaScript Libraries</Heading>
+      <Heading as="h2">Works Great with Popular JavaScript Libraries</Heading>
+      <LogoStack logos={logos} mt={10} />
     </Box>
-);
+  )
+};
 
 const Pricing = () => (
     <Box mb={50}>
-        <Heading as="h2">Pricing & Support</Heading>
+        <Heading as="h2" pb={4}>Pricing & Support</Heading>
+        <Text display="flex" ml="auto" mr="auto" fontSize="xl" maxWidth={[ '100%', '90%', '80%', '70%' ]}>
+          WPGraphQL for Advanced Custom Fields is a FREE open-source WordPress plugin.
+          The code is available on Github. Support and feature requests are handled through
+          Github issues. For general questions about the plugin, visit the WPGraphQL Slack</Text>
     </Box>
 );
 
-const FAQ = () => (
-    <Box mb={50}>
-        <Heading as="h2" mb={30}>FAQ</Heading>
-        <Box mb={50} px={100}>
-            <Accordion allowToggle>
-                <AccordionItem>
-                    <AccordionButton>
-                        <Box flex="1" textAlign="left" fontSize={'2xl'}>
-                            Section 1 title
-                        </Box>
-                        <AccordionIcon />
-                    </AccordionButton>
-                    <AccordionPanel pb={4}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
-                    </AccordionPanel>
-                </AccordionItem>
+const FAQ = () => {
+  const items = [
+    {
+      title: "What is included in Support?",
+      content: <>
+        <Text pb={4}>Support is limited to usage of the WPGraphQL for Advanced Custom Fields.</Text>
 
-                <AccordionItem>
-                    <AccordionButton>
-                        <Box flex="1" textAlign="left" fontSize={'2xl'}>
-                            Section 2 title
-                        </Box>
-                        <AccordionIcon />
-                    </AccordionButton>
-                    <AccordionPanel pb={4}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
-                    </AccordionPanel>
-                </AccordionItem>
-            </Accordion>
-        </Box>
-    </Box>
-);
+        <Text>If you need support for things such as learning best practices of implementing
+        GraphQL at your organization, expert advice/consulting on a specific project(s),
+        learning how to use WPGraphQL with caching clients, such as Apollo, or other
+        needs not directly related to this plugin, contact us and we can pair you with an expert.</Text>
+      </>
+    },
+    {
+      title: "Where can I get Support?",
+      content: <>
+        Support and feature requests are handled through Github issues.
+        For general questions about the plugin, visit the WPGraphQL Slack.
+      </>
+    },
+    {
+      title: "What are the supported ACF Field Locations?",
+      content: <>
+        <Text pb={4}>Some ACF Field locations are very difficult to map to a GraphQL Schema.
+        While we are working on supporting additional location rules, some highly
+        contextual rules (such as assigning a Field Group to a particular page
+        based on it’s parent) are difficult to support. This is because the
+        GraphQL Schema is independant of content in the WordPress site, but is
+        representative of possible Types in the WordPress site.</Text>
+
+        <Text pb={4}>Support is provided for ACF Field Groups assigned to entire Post Types or
+        Taxonomies, Users, Comments and Menu Items.</Text>
+
+        <Text>Additional location support is being added regularly based on demand.</Text>
+      </>
+    },
+    {
+      title: "Can I do GraphQL Mutations?",
+      content: <>
+        WPGraphQL for Advanced Custom Fields does not currently support mutations of ACF Fields.
+        Mutation support will be added to future versions of this product if there is a
+        strong enough community for it.
+      </>
+    },
+    {
+      title: "Are There any Dependencies?",
+      content: <>
+        WPGraphQL for Advanced Custom Fields requires Advanced Custom Fields (free or pro) and WPGraphQL v0.3.2 or newer.
+      </>
+    },
+  ]
+
+  return (
+    <Accordion
+      title="FAQ"
+      items={items}
+    />
+  )
+}
 
 const Acf = () => {
     return (
-        <Layout>
-            <Hero/>
-            <Container mt="0" pt="0">
-            <Box
-                as="div"
-                backgroundColor="white"
-                mt="-100"
-                boxShadow="lg"
-                p={50}
-                textAlign="center"
-            >
+      <Layout>
+        <AcfHero/>
+        <Container mt="0" pt="0">
+          <Box
+              as="div"
+              backgroundColor={useColorModeValue("white", "gray.800")}
+              mt="-100"
+              boxShadow="lg"
+              p={50}
+              textAlign="center"
+          >
 
-                    <HowItWorks/>
-                    <SupportedFields/>
-                    <Why/>
-                    <WorksWithJS/>
-                    <Pricing/>
-                <FAQ/>
-                </Box>
-            </Container>
-        </Layout>
+            <HowItWorks/>
+            <SupportedFields/>
+            <Why/>
+            <WorksWithJS/>
+            <Pricing/>
+            <FAQ/>
+          </Box>
+        </Container>
+      </Layout>
     );
 }
 
