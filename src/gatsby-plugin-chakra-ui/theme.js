@@ -44,7 +44,7 @@ const theme = {
             fontWeight: "semibold",
             fontSize: "1.5rem",
             letterSpacing: "-.025em",
-            wordBreak: "break-all",
+            wordBreak: "break-word",
             "& + h3": {
                 mt: "1.5rem",
             },
@@ -56,14 +56,14 @@ const theme = {
             fontWeight: "semibold",
             fontSize: "1.25rem",
             letterSpacing: "-.025em",
-            wordBreak: "break-all",
+            wordBreak: "break-word",
         },
         h4: {
             mt: "3rem",
             lineHeight: 1.375,
             fontWeight: "semibold",
             fontSize: "1.125rem",
-            wordBreak: "break-all",
+            wordBreak: "break-word",
         },
         a: {
             color: "brandLink",
