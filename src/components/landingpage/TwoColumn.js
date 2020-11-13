@@ -8,48 +8,25 @@ const TwoColumn = ({ image, alt, imagePosition="left", children, ...props }) => 
     width: [ '100%', '100%', '100%', '50%' ],
   }
 
-  if (imagePosition === "left") {
-    return (
-      <Flex justifyContent="center" flexWrap="wrap" {...props}>
-        <Box
-          textAlign="right"
-          {...boxProps}
-        >
-          <Image alt={alt}
-            src={image}
-            loading="lazy"
-          />
-        </Box>
-        <Box
-          textAlign="left"
-          {...boxProps}
-        >
-          {children}
-        </Box>
-      </Flex>
-    )
-  }
-  else {
-    return (
-      <Flex justifyContent="center" flexWrap="wrap" {...props}>
-        <Box
-          textAlign="right"
-          {...boxProps}
-        >
-          {children}
-        </Box>
-        <Box
-          textAlign="left"
-          {...boxProps}
-        >
-          <Image alt={alt}
-            src={image}
-            loading="lazy"
-          />
-        </Box>
-      </Flex>
-    )
-  }
+  return (
+    <Flex justifyContent="center" flexWrap="wrap" flexDirection={ imagePosition === 'right' ? 'row-reverse' : 'row' } {...props}>
+      <Box
+        textAlign={imagePosition === 'right' ? 'left' : 'right'}
+        {...boxProps}
+      >
+        <Image alt={alt}
+          src={image}
+          loading="lazy"
+        />
+      </Box>
+      <Box
+        textAlign={imagePosition}
+        {...boxProps}
+      >
+        {children}
+      </Box>
+    </Flex>
+  )
 }
 
 export default TwoColumn
