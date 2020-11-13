@@ -37,9 +37,9 @@ const AcfHero = () => (
 );
 
 const HowItWorks = () => (
-    <Box mb={50} p={50} pt={5} >
+    <Box mb={0} p={50} pt={5} >
       <Heading as="h2" pb={5}>How It Works</Heading>
-      <Text fontSize="3xl">WPGraphQL for Advanced Custom Fields automatically exposes your ACF fields to the WPGraphQL Schema</Text>
+      <Text pb={5} fontSize="3xl">WPGraphQL for Advanced Custom Fields automatically exposes your ACF fields to the WPGraphQL Schema</Text>
       <TwoColumn image={acfFieldsImage} alt="Creating ACF Fields in WordPress">
         <Heading as="h3" pb={5}>Create your ACF Fields</Heading>
         <Text fontSize="lg">
@@ -95,7 +95,7 @@ const SupportedFields = () => {
   ]
 
   return (
-    <Box mb={50} pl={20} pr={20} >
+    <Box mb={70} pl={20} pr={20} >
         <Heading as="h2" mb={10}>Supported ACF Fields</Heading>
         <FeatureList fields={fields} mb={10} />
         <Text display="flex" ml="auto" mr="auto" fontSize="xs" maxWidth={[ '100%', '90%', '80%', '70%' ]}>
@@ -134,7 +134,7 @@ const Why = () => {
     <FeatureGrid
       title="Why WPGraphQL for ACF?"
       features={features}
-      mb={50}
+      mb={70}
       cols={3}
     />
   )
@@ -184,7 +184,7 @@ const WorksWithJS = () => {
   ]
 
   return (
-    <Box mb={50}>
+    <Box mb={70}>
       <Heading as="h2">Works Great with Popular JavaScript Libraries</Heading>
       <LogoStack logos={logos} mt={10} />
     </Box>
@@ -192,7 +192,7 @@ const WorksWithJS = () => {
 };
 
 const Pricing = () => (
-    <Box mb={50}>
+    <Box mb={70}>
         <Heading as="h2" pb={4}>Pricing & Support</Heading>
         <Text display="flex" ml="auto" mr="auto" fontSize="xl" maxWidth={[ '100%', '90%', '80%', '70%' ]}>
           WPGraphQL for Advanced Custom Fields is a FREE open-source WordPress plugin.

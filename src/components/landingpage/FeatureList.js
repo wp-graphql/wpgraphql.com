@@ -4,7 +4,7 @@ import { Box, SimpleGrid, useColorModeValue } from "@chakra-ui/core"
 const FeatureList = ({ fields, ...props }) => {
 
   return(
-    <SimpleGrid columns={{sm: 2, md: 3, lg: 4}} spacing="40px" {...props} >
+    <SimpleGrid columns={{sm: 2, md: 3, lg: 4}} spacing="20px" {...props} >
       {fields.map(field => (
         <Box>
           {field}
