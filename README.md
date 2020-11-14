@@ -1,4 +1,4 @@
-![alt text](./src/img/icons/256x256.png "WPGraphQL Logo")
+![alt text](./src/img/icons/128x128.png "WPGraphQL Logo")
 
 # WPGraphQL.com
 
