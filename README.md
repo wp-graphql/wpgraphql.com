@@ -1,19 +1,16 @@
-# Reflex
+![alt text](./src/img/icons/256x256.png "WPGraphQL Logo")
 
-## Getting Started
+# WPGraphQL.com
 
-```sh
-gatsby new site reflexjs/gatsby-starter-base
+[WPGraphQL.com](https://wpgraphql.com) is a Gatsby site that uses WordPress as the CMS.
+
+This repository contains the Gatsby code to source data from WordPress and create pages using WordPress data.
+
+## Contributing
+
+To run the site locally, copy `.env.example` to `.env.development` and set the contents to:
+
 ```
-
-## Learn
-
-Visit [https://reflexjs.org/learn](https://reflexjs.org/learn) to get started with Gatsby and Reflex.
-
-## Blocks
-
-Browse the blocks library at [https://reflexjs.org/library/blocks](https://reflexjs.org/library/blocks).
-
-## License
-
-Licensed under the [MIT license](https://github.com/reflexjs/reflex/blob/master/LICENSE).
+SITE_URL=http://localhost:8000
+WPGRAPHQL_URL=https://content.wpgraphql.com/graphql
+```
