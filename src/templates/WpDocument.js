@@ -55,12 +55,16 @@ const WpContentNode = ({data}) => {
 
 export const query = graphql`
 query($id: String) {
-  wpDocument(id: { eq: $id }) {
+  wpContentNode(id: { eq: $id }) {
     __typename
     id
     uri
-    title
-    content
+    ...on WpNodeWithTitle {
+      title
+    }
+    ...on WpNodeWithContentEditor {
+      content
+    }
   }
 }
 `;
