@@ -21,7 +21,7 @@ import {
 import {FaMoon, FaSun, FaGithub, FaWordpress, FaBars, FaTimes} from "react-icons/fa"
 import {Link} from 'gatsby'
 import Logo from "./Logo"
-import "../styles/global.css"
+// import "../styles/global.css"
 
 import Container from "./Container";
 import PrimaryNav from './PrimaryNav'
