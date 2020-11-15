@@ -11,7 +11,7 @@ import {
     DrawerHeader,
     DrawerContent,
     useDisclosure,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import { useLocation } from "@reach/router"
 import * as React from "react"
 import SidebarCategory from "./SidebarCategory"

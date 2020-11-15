@@ -4,7 +4,7 @@ import {
     Flex,
     Heading,
     Text,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import { AiFillThunderbolt } from "react-icons/ai"
 import { FaFilter } from "react-icons/fa"
 import { BiCodeCurly } from "react-icons/bi"

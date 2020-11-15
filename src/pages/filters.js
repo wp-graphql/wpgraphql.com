@@ -5,7 +5,7 @@ import {
     Heading,
     Text,
     Link,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import { graphql, Link as GatsbyLink } from "gatsby";
 import Layout from '../components/Layout'
 import Container from "../components/Container"

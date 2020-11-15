@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Heading, Tag, Stack, Button, useColorModeValue} from '@chakra-ui/core'
+import {Box, Heading, Tag, Stack, Button, useColorModeValue} from '@chakra-ui/react'
 import {FaArrowRight} from 'react-icons/fa'
 import {Link} from "gatsby";
 import {ParseHtml} from "../components/parse-html"

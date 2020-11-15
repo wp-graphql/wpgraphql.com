@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import {Box, Flex, Heading, Stack, Text} from '@chakra-ui/core'
+import {Box, Flex, Heading, Stack, Text} from '@chakra-ui/react'
 import Layout from '../components/Layout'
 import Container from "../components/Container";
 import ExtensionPreview from '../components/ExtensionPreview'

@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import {flatListToHierarchical} from "../utils";
-import {  Button, HStack, Menu, MenuItem, MenuList, MenuButton, useColorModeValue } from "@chakra-ui/core"
+import {  Button, HStack, Menu, MenuItem, MenuList, MenuButton, useColorModeValue } from "@chakra-ui/react"
 import { FaChevronDown } from 'react-icons/fa'
 import { useLocation } from '@reach/router'
 import HeaderNavLink from './HeaderNavLink'

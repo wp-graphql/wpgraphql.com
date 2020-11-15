@@ -4,7 +4,7 @@ import {
     WrapItem,
     Tooltip,
     Image,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const LogoStack = ( { logos, ...props }) => {
   return(

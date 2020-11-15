@@ -5,7 +5,7 @@ import {
     HStack,
     Icon,
     IconButton,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import Container from "./Container";
 
 const GithubIcon = (props) => (

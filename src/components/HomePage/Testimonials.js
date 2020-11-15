@@ -6,7 +6,7 @@ import {
     WrapItem,
     Avatar,
     Box,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const Testimonials = () => {
     const data = useStaticQuery(graphql`

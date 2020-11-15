@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Image, useColorModeValue, Heading } from "@chakra-ui/core"
+import { Box, Flex, Image, useColorModeValue, Heading } from "@chakra-ui/react"
 import Video from "./Video"
 
 const Hero = (

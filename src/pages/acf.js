@@ -6,7 +6,7 @@ import {
     Heading,
     Text,
     Button
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import { AiFillThunderbolt } from "react-icons/ai"
 import { FaCloudDownloadAlt } from "react-icons/fa"
 import acfFieldsImage from '../img/acf-fields.jpg'

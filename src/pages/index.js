@@ -8,7 +8,7 @@ import {
     Button,
     Image,
     useColorModeValue,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import {Link} from 'gatsby'
 import {FaArrowRight, FaWordpress} from 'react-icons/fa'
 import Layout from '../components/Layout'

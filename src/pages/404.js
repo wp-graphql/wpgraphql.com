@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from "../components/Layout";
-import { Box, Flex, Heading, Text, Button } from '@chakra-ui/core'
+import { Box, Flex, Heading, Text, Button } from '@chakra-ui/react'
 import Container from '../components/Container'
 import { Link as GatsbyLink } from 'gatsby'
 import PageTransition from '../components/PageTransition'

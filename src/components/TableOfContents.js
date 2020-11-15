@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import {Box, Heading, Link, useColorModeValue } from '@chakra-ui/core'
+import {Box, Heading, Link, useColorModeValue } from '@chakra-ui/react'
 import ReactHtmlParser from "react-html-parser"
 import slugger from "slugger";
 import { Link as ScrollLink } from "react-scroll";

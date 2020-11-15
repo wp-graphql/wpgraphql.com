@@ -17,7 +17,7 @@ import {
     DrawerCloseButton,
     useDisclosure,
     Link as ChakraLink
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import {FaMoon, FaSun, FaGithub, FaWordpress, FaBars, FaTimes} from "react-icons/fa"
 import {Link} from 'gatsby'
 import Logo from "./Logo"

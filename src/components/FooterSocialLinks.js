@@ -4,7 +4,7 @@ import {
     HStack,
     Button,
     chakra
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import { FaGithub, FaWordpress, FaYoutube, FaSlack } from 'react-icons/fa'
 
 const FooterSocialLinks = () => (

@@ -1,5 +1,5 @@
 import React from "react"
-import { chakra, Box } from "@chakra-ui/core"
+import { chakra, Box } from "@chakra-ui/react"
 
 const Logo = (props) => {
     return(

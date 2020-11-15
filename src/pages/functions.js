@@ -5,7 +5,7 @@ import {
     Heading,
     Link,
     Text,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import Layout from '../components/Layout'
 import Container from "../components/Container"
 import PageTransition from "../components/PageTransition"

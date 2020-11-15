@@ -3,7 +3,7 @@ import {
     Button,
     Tag,
     useClipboard,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import theme from "prism-react-renderer/themes/nightOwl"
 import React, {useState} from "react"
 import {LiveEditor, LiveProvider} from "react-live"

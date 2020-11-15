@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Flex, Text, Icon, Heading, useColorModeValue, } from "@chakra-ui/core"
+import { Box, Button, Flex, Text, Icon, Heading, useColorModeValue, } from "@chakra-ui/react"
 import { Link as GatsbyLink } from 'gatsby'
 
 const Feature = ({ title, icon, children, link = false, ...props }) => {

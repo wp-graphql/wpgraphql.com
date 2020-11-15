@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Flex, Text} from '@chakra-ui/core'
+import {Box, Flex, Text} from '@chakra-ui/react'
 import {FaUser, FaCalendar} from 'react-icons/fa'
 import { Link } from "gatsby";
 

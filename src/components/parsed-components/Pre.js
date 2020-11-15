@@ -1,5 +1,5 @@
 import React from "react"
-import { chakra } from "@chakra-ui/core"
+import { chakra } from "@chakra-ui/react"
 import CodeBlock from '../codeblock/CodeBlock'
 
 export const Pre = props => {

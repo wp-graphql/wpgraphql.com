@@ -7,7 +7,7 @@ import {
     Alert,
     Link,
     useColorModeValue
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import slugger from 'slugger'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 

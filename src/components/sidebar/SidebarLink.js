@@ -1,4 +1,4 @@
-import { chakra, useColorModeValue } from "@chakra-ui/core"
+import { chakra, useColorModeValue } from "@chakra-ui/react"
 import { Link } from "gatsby"
 import { useLocation } from "@reach/router"
 import React, { useRef } from "react"
