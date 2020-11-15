@@ -1,7 +1,7 @@
 /guides/contributing	/docs/contributing/
 /getting-started/install-and-activate/	/docs/quick-start/
 /guides/about-wpgraphql/	/
-/guides/the-graphql-query-language/	/docs/beginner-guides/intro-to-graphql/
+/guides/the-graphql-query-language/	/docs/intro-to-graphql/
 /getting-started/plugins/	/docs/plugins/
 /getting-started/comments/	/docs/comments/
 /getting-started/menus/	/docs/menus/
@@ -14,7 +14,7 @@
 /getting-started/custom-fields-and-meta/	/functions/register_graphql_field/
 /guides/connections/	/docs/connections/
 /extending/hooks-and-filters/	/developer-reference/
-/getting-started/intro-to-graphql/	/docs/beginner-guides/intro-to-graphql/
+/getting-started/intro-to-graphql/	/docs/intro-to-graphql/
 /getting-started/interacting-with-wpgraphql/	/docs/posts-and-pages/
 /getting-started/posts/	/docs/posts-and-pages/
 /guides/deferred-resolvers/	/docs/performance/
@@ -33,7 +33,7 @@
 /guides/relay-spec	/docs/connections/
 /extending/types/	/functions/register_graphql_object_type/
 /docs/getting-started/intro-to-graphql/	/docs/intro-to-graphql/
-/getting-started/intro-to-graphql	/docs/beginner-guides/intro-to-graphql/
+/getting-started/intro-to-graphql	/docs/intro-to-graphql/
 /extensions/wpgraphql-dad-jokes/	/extenstion-plugins/wpgraphql-dad-jokes/
 /extending/resolvers/	/docs/graphql-resolvers/
 /extensions/wpgraphql-extensions/	/extensions/
