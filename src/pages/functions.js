@@ -18,12 +18,12 @@ const Functions = ({ data }) => {
     const crumbs = [
         {
             title: `Developer Reference`,
-            path: `/developer-reference`,
+            path: `/developer-reference/`,
             isCurrentPage: false,
         },
         {
             title: `Functions`,
-            path: `/functions`,
+            path: `/functions/`,
             isCurrentPage: true,
         },
     ];

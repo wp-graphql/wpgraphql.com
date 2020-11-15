@@ -14,7 +14,7 @@ const SnippetTag = ({data}) => {
     const crumbs = [
       {
         title: `Recipes`,
-        path: `/recipes`,
+        path: `/recipes/`,
       },
       {
         title: tag.name,

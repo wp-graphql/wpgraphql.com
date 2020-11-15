@@ -13,29 +13,29 @@ export const routes = [
                         title: 'Actions',
                         routes: [],
                         id: 'actions',
-                        path: '/actions'
+                        path: '/actions/'
                     },
                     {
                         title: 'Filters',
                         routes: [],
                         id: 'filters',
-                        path: '/filters'
+                        path: '/filters/'
                     },
                     {
                         title: 'Functions',
                         routes: [],
                         id: 'functions',
-                        path: '/functions'
+                        path: '/functions/'
                     },
                     {
                         title: 'Recipes',
                         routes: [],
                         id: 'recipes',
-                        path: '/recipes'
+                        path: '/recipes/'
                     },
                 ],
                 id: 'developer-reference',
-                path: '/developer-reference'
+                path: '/developer-reference/'
             },
         ]
     },

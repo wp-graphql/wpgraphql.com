@@ -24,7 +24,7 @@ const RecipeSidebar = () => {
     let taglist = [
         {
             title: `View All (${data.allWpCodeSnippet.totalCount})`,
-            path: `/recipes`,
+            path: `/recipes/`,
         }
     ];
 
@@ -43,7 +43,7 @@ const RecipeSidebar = () => {
                 {
                     title: `Recipe Tags`,
                     open: true,
-                    path: `/recipes`,
+                    path: `/recipes/`,
                     routes: taglist
                 }
             ]

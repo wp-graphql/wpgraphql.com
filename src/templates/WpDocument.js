@@ -17,7 +17,7 @@ const WpContentNode = ({data}) => {
     const crumbs = [
         {
             title: 'Docs',
-            path: '/docs/introduction',
+            path: '/docs/introduction/',
             isCurrentPage: false,
         },
         {

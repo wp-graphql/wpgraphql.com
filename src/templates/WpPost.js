@@ -16,7 +16,7 @@ const WpPost = ({data}) => {
     const crumbs = [
         {
             title: `Blog`,
-            path: `/blog`,
+            path: `/blog/`,
         },
         {
             title: title,

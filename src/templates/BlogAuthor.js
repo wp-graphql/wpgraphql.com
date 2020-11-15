@@ -13,7 +13,7 @@ const BlogAuthor = ({ data }) => {
   const crumbs = [
     {
       title: `Blog`,
-      path: `/blog`,
+      path: `/blog/`,
     },
     {
       title: `Posts by ${author.name}`,

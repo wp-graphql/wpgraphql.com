@@ -13,12 +13,12 @@ const Snippets = ({data}) => {
     const crumbs = [
         {
             title: `Developer Reference`,
-            path: `/developer-reference`,
+            path: `/developer-reference/`,
             isCurrentPage: false,
         },
         {
             title: `Recipes`,
-            path: `/recipes`,
+            path: `/recipes/`,
             isCurrentPage: true,
         }
     ];

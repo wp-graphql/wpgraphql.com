@@ -28,7 +28,7 @@ const WpExtensionPlugin = ({data}) => {
     const crumbs = [
       {
         title: `Extensions`,
-        path: `/extensions`,
+        path: `/extensions/`,
       },
       {
         title: title,

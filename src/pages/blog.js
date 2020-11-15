@@ -12,7 +12,7 @@ const Blog = ({ data }) => {
   const crumbs = [
     {
       title: `Blog`,
-      path: `/blog`,
+      path: `/blog/`,
       isCurrentPage: true,
     }
   ];

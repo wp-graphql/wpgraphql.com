@@ -16,11 +16,11 @@ const WpContentNode = ({data}) => {
     const crumbs = [
         {
             title: `Developer Reference`,
-            path: `/developer-reference`,
+            path: `/developer-reference/`,
         },
         {
             title: `Actions`,
-            path: `/actions`,
+            path: `/actions/`,
         },
         {
             title: title,

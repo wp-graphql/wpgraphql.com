@@ -21,7 +21,7 @@ const DeveloperReference = () => {
     const crumbs = [
         {
             title: `Developer Reference`,
-            path: `/developer-reference`,
+            path: `/developer-reference/`,
             isCurrentPage: true,
         },
     ];
@@ -30,25 +30,25 @@ const DeveloperReference = () => {
       {
         icon: GoBook,
         title: "Recipes",
-        link: "/recipes",
+        link: "/recipes/",
         content: "Tasty treats that will boost your productivity. WPGraphQL Recipes are snippets that showcase how to customize WPGraphQL in specific ways using the actions, filters and functions available to WPGraphQL.",
       },
       {
         icon: BiCodeCurly,
         title: "Functions",
-        link: "/functions",
+        link: "/functions/",
         content: "Need to add a Field or Type to the GraphQL Schema? There's a function for that. Learn more about the functions available to make your WPGraphQL server work for you.",
       },
       {
         icon: AiFillThunderbolt,
         title: "Actions",
-        link: "/actions",
+        link: "/actions/",
         content: "Actions allow 3rd party code to hook-into WPGraphQL at certain parts of GraphQL execution. Learn about the actions available to hook into.",
       },
       {
         icon: FaFilter,
         title: "Filters",
-        link: "/filters",
+        link: "/filters/",
         content: "Filters allow 3rd party code to modify data at certain parts of GraphQL execution. Learn about the filters available to hook into.",
       },
     ]

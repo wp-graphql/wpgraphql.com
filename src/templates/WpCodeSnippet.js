@@ -14,11 +14,11 @@ const WpCodeSnippet = ({data}) => {
     const crumbs = [
       {
         title: `Developer Reference`,
-        path: `/developer-reference`,
+        path: `/developer-reference/`,
       },
       {
         title: `Recipes`,
-        path: `/recipes`,
+        path: `/recipes/`,
       },
       {
         title: title,

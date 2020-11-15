@@ -12,7 +12,7 @@ const ExtensionPlugins = ({ data }) => {
   const crumbs = [
     {
       title: `Extensions`,
-      path: `/extensions`,
+      path: `/extensions/`,
       isCurrentPage: true,
     }
   ];
