@@ -1,18 +1,18 @@
-import { theme as defaultTheme } from "@chakra-ui/react"
+import { theme as defaultTheme, extendTheme } from "@chakra-ui/react"
 
-const theme = {
-    ...defaultTheme,
+const theme = extendTheme({
+
     styles: {
-        ...defaultTheme.styles,
+       
     },
     colors: {
-        ...defaultTheme.colors,
+      
         brandPurple: "#673FB4",
         background: `#0A1D39`,
         brandLink: `#2b6cb0`,
         modes: {
             dark: {
-                ...defaultTheme.colors,
+              
                 text: '#fff',
                 background: '#000',
                 primary: '#0cf',
@@ -114,6 +114,6 @@ const theme = {
             },
         },
     },
-}
+})
 
 export default theme
