@@ -78,6 +78,9 @@ module.exports = {
             options: {
                 url: process.env.WPGRAPHQL_URL,
                 verbose: true,
+                schema: {
+                  perPage: 50,
+                },
                 debug: {
                     graphql: {
                         writeQueriesToDisk: true,
