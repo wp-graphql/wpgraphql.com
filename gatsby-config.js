@@ -79,7 +79,7 @@ module.exports = {
                 url: process.env.WPGRAPHQL_URL,
                 verbose: true,
                 schema: {
-                  perPage: 50,
+                  perPage: 10,
                 },
                 debug: {
                     graphql: {
@@ -90,7 +90,7 @@ module.exports = {
                     },
                 },
                 develop: {
-                    hardCacheMediaFiles: true,
+                    hardCacheMediaFiles: false,
                     hardCacheData: false,
                 }
             },
