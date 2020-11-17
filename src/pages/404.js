@@ -22,7 +22,11 @@ const NotFound = () => {
               <PageTransition>
                 <Heading fontSize="4xl">Page not found</Heading>
                 <Text fontSize="3xl">
-                  Sorry 😔—we couldn’t find what you were looking for.
+                  Sorry{" "}
+                  <span role="img" aria-label="sad emoji">
+                    😔
+                  </span>
+                  —we couldn’t find what you were looking for.
                 </Text>
                 <Button mt={10} as={GatsbyLink} to="/">
                   Take me to the WPGraphQL.com homepage
