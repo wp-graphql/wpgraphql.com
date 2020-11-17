@@ -9,7 +9,6 @@ import {
   Text,
   Stack,
   Button,
-  Image,
   useColorModeValue,
 } from "@chakra-ui/core"
 
