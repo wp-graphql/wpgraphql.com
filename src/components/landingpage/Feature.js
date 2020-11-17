@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Flex, Text, Icon, Heading, useColorModeValue, } from "@chakra-ui/core"
+import { Box, Button, Flex, Text, Icon, Heading, useColorModeValue } from "@chakra-ui/core"
 import { Link as GatsbyLink } from 'gatsby'
 
 const Feature = ({ title, icon, children, link = false, ...props }) => {
@@ -27,8 +27,13 @@ const Feature = ({ title, icon, children, link = false, ...props }) => {
         <Text fontSize="lg" opacity={0.7}>
           {children}
         </Text>
-        {link &&
+        {link && !link.startsWith("http") &&
           <Button mt={5} as={GatsbyLink} to={link} colorScheme="blue">
+            View {title}
+          </Button>
+        }
+        { link && link.startsWith("http") &&
+          <Button mt={5} as="a" href={link} colorScheme="blue">
             View {title}
           </Button>
         }
