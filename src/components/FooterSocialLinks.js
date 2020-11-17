@@ -11,7 +11,7 @@ const FooterSocialLinks = () => (
     <Flex border="0" maxW="720px" align="center" color="gray.400">
 
         <HStack spacing="5">
-            <Button as="a" href="https://github.org/wp-graphql/wp-graphql" aria-label="Link to WPGraphQL on Github">
+            <Button as="a" href="https://github.com/wp-graphql/wp-graphql" aria-label="Link to WPGraphQL on Github">
                 <FaGithub/>
                 <chakra.span sx={{display: 'none'}}>Link to WPGraphQL on Github</chakra.span>
             </Button>
