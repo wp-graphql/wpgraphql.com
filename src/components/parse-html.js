@@ -53,7 +53,7 @@ export const ParseHtmlToReact = (html, components, reduceHeadings = false) => {
       componentName = `H${parseInt(componentName[1]) + 1}`
     }
 
-    if (!components[componentName]) {
+    if (!components[componentName] && typeof window !== `undefined`) {
       console.error(`No component was found for ${node.type}, ${node.name}`)
     }
 
