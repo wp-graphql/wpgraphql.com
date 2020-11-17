@@ -1,4 +1,7 @@
 import React from "react"
+
+import { GatsbyImage } from "@wardpeet/gatsby-image-nextgen/compat"
+
 import {
   Box,
   Flex,
@@ -9,18 +12,18 @@ import {
   Image,
   useColorModeValue,
 } from "@chakra-ui/core"
-import { Link } from "gatsby"
+
+import { graphql, Link } from "gatsby"
 import { FaArrowRight, FaWordpress } from "react-icons/fa"
 import Layout from "../components/Layout"
 import Container from "../components/Container"
 import Testimonials from "../components/HomePage/Testimonials"
 import WhosUsing from "../components/HomePage/WhosUsing"
 import WorksWithJS from "../components/landingpage/WorksWithJS"
-import queryPosts from "../img/query-posts.png"
-import multipleRootResources from "../img/query-multiple-root-resources.png"
 import Meta from "../components/Meta"
 
-const Home = () => {
+const Home = ({ data }) => {
+  console.log(data)
   return (
     <Layout>
       <Meta title="GraphQL API for WordPress" />
@@ -143,8 +146,9 @@ const Home = () => {
               </Text>
             </Box>
           </Flex>
-          <Image
-            src={queryPosts}
+          <Box
+            as={GatsbyImage}
+            fluid={data.queryPosts.childImageSharp.fluid}
             alt="Screenshot showing a GraphQL query for a list of posts"
             h="40|56|80"
             mt="12|14|16"
@@ -180,8 +184,10 @@ const Home = () => {
               </Text>
             </Box>
           </Flex>
-          <Image
-            src={multipleRootResources}
+
+          <Box
+            as={GatsbyImage}
+            fluid={data.multipleRootResources.childImageSharp.fluid}
             alt={"Screenshot showing a GraphQL Query for multiple resources"}
             h="40|56|80"
             mt="12|14|16"
@@ -288,3 +294,25 @@ const Home = () => {
 }
 
 export default Home
+
+export const query = graphql`
+  fragment GraphiQLImgFile on File {
+    childImageSharp {
+      fluid(maxWidth: 422, quality: 90) {
+        ...GatsbyImageSharpFluid_noBase64
+      }
+    }
+  }
+
+  query HomepageQuery {
+    queryPosts: file(relativePath: { eq: "query-posts.png" }) {
+      ...GraphiQLImgFile
+    }
+
+    multipleRootResources: file(
+      relativePath: { eq: "query-multiple-root-resources.png" }
+    ) {
+      ...GraphiQLImgFile
+    }
+  }
+`

@@ -72,7 +72,15 @@ module.exports = {
         isUsingColorMode: true,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/img/`,
+      },
+    },
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
@@ -103,5 +111,6 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-offline`,
   ],
 }
