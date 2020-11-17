@@ -1,10 +1,10 @@
-import React from 'react';
-import Layout from "../components/Layout";
+import React from "react"
+import Layout from "../components/Layout"
 
 const Tutorials = () => (
-    <Layout>
-        <h2>Tutorials!</h2>
-    </Layout>
+  <Layout>
+    <h2>Tutorials!</h2>
+  </Layout>
 )
 
-export default Tutorials;
+export default Tutorials

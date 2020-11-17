@@ -66,14 +66,7 @@
     "prettier": "^2.1.2"
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
-      "eslint",
-      "prettier --write"
-    ],
-    "*.{md,json,yml}": [
-      "prettier --write"
-    ],
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,ts,jsx,tsx,md,json,yml,css}": "prettier --write"
   },
   "husky": {
     "hooks": {

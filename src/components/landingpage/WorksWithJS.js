@@ -1,14 +1,14 @@
-import React from "react";
+import React from "react"
 import { Box } from "@chakra-ui/core"
 import LogoStack from "./LogoStack"
-import logoReact from '../../img/logo-react.png'
-import logoVue from '../../img/logo-vue.png'
-import logoGatsby from '../../img/logo-gatsby.png'
-import logoEmber from '../../img/logo-ember.png'
-import logoAngular from '../../img/logo-angular.png'
-import logoNext from '../../img/logo-nextjs.png'
+import logoReact from "../../img/logo-react.png"
+import logoVue from "../../img/logo-vue.png"
+import logoGatsby from "../../img/logo-gatsby.png"
+import logoEmber from "../../img/logo-ember.png"
+import logoAngular from "../../img/logo-angular.png"
+import logoNext from "../../img/logo-nextjs.png"
 
-const WorksWithJS = ( { children, imageBG = "white" }) => {
+const WorksWithJS = ({ children, imageBG = "white" }) => {
   const imageprops = {
     h: "110px",
   }
@@ -70,6 +70,6 @@ const WorksWithJS = ( { children, imageBG = "white" }) => {
       <LogoStack logos={logos} mt={10} />
     </Box>
   )
-};
+}
 
 export default WorksWithJS

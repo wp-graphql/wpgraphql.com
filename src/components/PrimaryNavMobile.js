@@ -1,13 +1,15 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby'
-import { flatListToHierarchical } from '../utils'
-import { SidebarNav } from "./sidebar/Sidebar";
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { flatListToHierarchical } from "../utils"
+import { SidebarNav } from "./sidebar/Sidebar"
 
 const DocsSidebar = ({ title }) => {
-
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     {
-      allWpMenuItem( sort:{fields:order order:ASC} filter: {menu: {node: {name: {eq: "Primary Nav"}}}}) {
+      allWpMenuItem(
+        sort: { fields: order, order: ASC }
+        filter: { menu: { node: { name: { eq: "Primary Nav" } } } }
+      ) {
         nodes {
           id
           title: label
@@ -17,15 +19,15 @@ const DocsSidebar = ({ title }) => {
         }
       }
     }
-    `);
+  `)
 
-    const routes = flatListToHierarchical(data.allWpMenuItem.nodes, {
-        idKey: 'id',
-        childrenKey: 'routes',
-        parentKey: 'parent'
-    });
+  const routes = flatListToHierarchical(data.allWpMenuItem.nodes, {
+    idKey: "id",
+    childrenKey: "routes",
+    parentKey: "parent",
+  })
 
-    return <SidebarNav routes={routes} dispay={["none", "block"]} />
+  return <SidebarNav routes={routes} dispay={["none", "block"]} />
 }
 
-export default DocsSidebar;
+export default DocsSidebar

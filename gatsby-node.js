@@ -1,10 +1,10 @@
-const fs = require('fs')
-const showdown = require('showdown')
+const fs = require("fs")
+const showdown = require("showdown")
 const axios = require(`axios`)
-const { ensureTrailingSlash } = require('./src/utils')
+const { ensureTrailingSlash } = require("./src/utils")
 
-exports.createPages = async ({actions, graphql, reporter}) => {
-    const result = await graphql(`
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
     {
       allContent: allWpContentNode {
         nodes {
@@ -34,73 +34,67 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     }
   `)
 
-    if (result.errors) {
-        reporter.error("There was an error fetching docs.", result.errors)
-    }
+  if (result.errors) {
+    reporter.error("There was an error fetching docs.", result.errors)
+  }
 
-    const {
-      allContent,
-      snippetTags,
-      blogAuthors,
-    } = result.data;
+  const { allContent, snippetTags, blogAuthors } = result.data
 
-    if (allContent.nodes.length) {
-        allContent.nodes.map(doc => {
+  if (allContent.nodes.length) {
+    allContent.nodes.map((doc) => {
+      // Set the default template to use if a specific one doesn't exist
+      let template = require.resolve(`./src/templates/WpContentNode.js`)
 
-            // Set the default template to use if a specific one doesn't exist
-            let template = require.resolve(`./src/templates/WpContentNode.js`);
+      // Try to find the template path for the specific Post Type
+      let templatePath = `./src/templates/${doc.__typename}.js`
+      try {
+        if (fs.existsSync(templatePath)) {
+          template = require.resolve(templatePath)
+        }
+      } catch (err) {
+        console.error(err)
+      }
 
-            // Try to find the template path for the specific Post Type
-            let templatePath = `./src/templates/${doc.__typename}.js`;
-            try {
-                if (fs.existsSync(templatePath)) {
-                    template = require.resolve(templatePath)
-                }
-            } catch (err) {
-                console.error(err)
-            }
-
-            if (doc.uri.length) {
-                actions.createPage({
-                    path: ensureTrailingSlash(doc.uri),
-                    component: template,
-                    context: {
-                        id: doc.id,
-                        uri: doc.uri,
-                    },
-                })
-            }
-        })
-    }
-
-    if (snippetTags.nodes.length) {
-      snippetTags.nodes.map(snippetTag =>
+      if (doc.uri.length) {
         actions.createPage({
-          path: ensureTrailingSlash(snippetTag.uri),
-          component: require.resolve(`./src/templates/SnippetTag.js`),
+          path: ensureTrailingSlash(doc.uri),
+          component: template,
           context: {
-            id: snippetTag.id,
-            uri: snippetTag.uri,
+            id: doc.id,
+            uri: doc.uri,
           },
         })
-      )
-    }
+      }
+    })
+  }
 
-    if (blogAuthors.nodes.length) {
-      blogAuthors.nodes.map(blogAuthor => {
-        if (blogAuthor.posts.nodes.length) {
-          actions.createPage({
-            path: ensureTrailingSlash(blogAuthor.uri),
-            component: require.resolve(`./src/templates/BlogAuthor.js`),
-            context: {
-              id: blogAuthor.id,
-              uri: blogAuthor.uri,
-            },
-          })
-        }
+  if (snippetTags.nodes.length) {
+    snippetTags.nodes.map((snippetTag) =>
+      actions.createPage({
+        path: ensureTrailingSlash(snippetTag.uri),
+        component: require.resolve(`./src/templates/SnippetTag.js`),
+        context: {
+          id: snippetTag.id,
+          uri: snippetTag.uri,
+        },
       })
-    }
+    )
+  }
 
+  if (blogAuthors.nodes.length) {
+    blogAuthors.nodes.map((blogAuthor) => {
+      if (blogAuthor.posts.nodes.length) {
+        actions.createPage({
+          path: ensureTrailingSlash(blogAuthor.uri),
+          component: require.resolve(`./src/templates/BlogAuthor.js`),
+          context: {
+            id: blogAuthor.id,
+            uri: blogAuthor.uri,
+          },
+        })
+      }
+    })
+  }
 }
 
 exports.onCreateNode = async ({ node, actions }) => {
@@ -117,7 +111,7 @@ exports.onCreateNode = async ({ node, actions }) => {
     // Make an http call to pull in the README contents.
     const data = await axios.get(node.extensionFields.pluginReadmeLink)
 
-    if (data.status == '200' && data.data) {
+    if (data.status == "200" && data.data) {
       converter = new showdown.Converter()
 
       // Save the README contents to the readmeContent field.
@@ -126,7 +120,6 @@ exports.onCreateNode = async ({ node, actions }) => {
   } catch (e) {
     return
   }
-
 }
 
 exports.createSchemaCustomization = ({ actions }) => {

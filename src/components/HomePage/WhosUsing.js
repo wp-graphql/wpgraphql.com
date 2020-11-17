@@ -1,19 +1,19 @@
-import React from "react";
-import logoDfuzr from '../../img/logo-dfuzr.png'
-import logoValu from '../../img/logo-valu-digital.png'
-import logoFunkhaus from '../../img/logo-funkhaus.png'
-import logoHarness from '../../img/logo-harness.png'
-import logoTwinCities from '../../img/logo-twincities.png'
-import logoDenverpost from '../../img/logo-denverpost.svg'
-import logoQuartz from '../../img/logo-quartz.jpg'
-import logoHope from '../../img/logo-hope-lab.png'
-import logoWebDevStudios from '../../img/logo-webdev-studios.png'
-import logoApollo from '../../img/logo-apollo.png'
-import logoCreditKarma from '../../img/logo-credit-karma.png'
-import logoPlayersTribune from '../../img/logo-players-tribune.png'
-import logoZillow from '../../img/logo-zillow.png'
-import logoGatsby from '../../img/logo-gatsby.png'
-import LogoStack from '../../components/landingpage/LogoStack'
+import React from "react"
+import logoDfuzr from "../../img/logo-dfuzr.png"
+import logoValu from "../../img/logo-valu-digital.png"
+import logoFunkhaus from "../../img/logo-funkhaus.png"
+import logoHarness from "../../img/logo-harness.png"
+import logoTwinCities from "../../img/logo-twincities.png"
+import logoDenverpost from "../../img/logo-denverpost.svg"
+import logoQuartz from "../../img/logo-quartz.jpg"
+import logoHope from "../../img/logo-hope-lab.png"
+import logoWebDevStudios from "../../img/logo-webdev-studios.png"
+import logoApollo from "../../img/logo-apollo.png"
+import logoCreditKarma from "../../img/logo-credit-karma.png"
+import logoPlayersTribune from "../../img/logo-players-tribune.png"
+import logoZillow from "../../img/logo-zillow.png"
+import logoGatsby from "../../img/logo-gatsby.png"
+import LogoStack from "../../components/landingpage/LogoStack"
 
 const WhosUsing = () => {
   const logos = [
@@ -106,10 +106,7 @@ const WhosUsing = () => {
     },
   ]
 
-  return(
-    <LogoStack logos={logos} />
-  )
-
+  return <LogoStack logos={logos} />
 }
 
-export default WhosUsing;
+export default WhosUsing
