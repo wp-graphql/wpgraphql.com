@@ -55,6 +55,7 @@ const Testimonials = () => {
               <a href={tweeturl} target="_blank" rel="noreferrer">
                 <Avatar
                   mr="34px"
+                  style={{ width: 34, height: 34 }}
                   size="md"
                   src={avatarurl}
                   name={`Avatar of ${name}`}
