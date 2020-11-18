@@ -5,64 +5,63 @@ import LogoStack from "../../components/landingpage/LogoStack"
 
 const WhosUsing = () => {
   const data = useStaticQuery(graphql`
-    fragment LogoFile on File {
-      publicURL
-      ext
+    fragment WhosUsingLogoFile on File {
       childImageSharp {
         fixed(height: 60, quality: 90) {
           ...GatsbyImageSharpFixed_tracedSVG
         }
       }
     }
-    query LogoStackQuery {
+
+    query WhosUsingLogoStack {
       logoDfuzr: file(relativePath: { eq: "logo-dfuzr.png" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoValu: file(relativePath: { eq: "logo-valu-digital.png" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoFunkhaus: file(relativePath: { eq: "logo-funkhaus.png" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoHarness: file(relativePath: { eq: "logo-harness.png" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoTwinCities: file(relativePath: { eq: "logo-twincities.png" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoDenverpost: file(relativePath: { eq: "logo-denverpost.svg" }) {
-        ...LogoFile
+        publicURL
+        ext
       }
       logoQuartz: file(relativePath: { eq: "logo-quartz.jpg" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoHope: file(relativePath: { eq: "logo-hope-lab.png" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoWebDevStudios: file(relativePath: { eq: "logo-webdev-studios.png" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoApollo: file(relativePath: { eq: "logo-apollo.png" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoCreditKarma: file(relativePath: { eq: "logo-credit-karma.png" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoPlayersTribune: file(
         relativePath: { eq: "logo-players-tribune.png" }
       ) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoZillow: file(relativePath: { eq: "logo-zillow.png" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
       logoGatsby: file(relativePath: { eq: "logo-gatsby.png" }) {
-        ...LogoFile
+        ...WhosUsingLogoFile
       }
     }
   `)
 
-  console.log(data)
   const logos = [
     {
       link: "https://www.dfuzr.com/",
