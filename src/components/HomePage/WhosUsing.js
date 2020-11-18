@@ -1,108 +1,155 @@
 import React from "react"
-import logoDfuzr from "../../img/logo-dfuzr.png"
-import logoValu from "../../img/logo-valu-digital.png"
-import logoFunkhaus from "../../img/logo-funkhaus.png"
-import logoHarness from "../../img/logo-harness.png"
-import logoTwinCities from "../../img/logo-twincities.png"
-import logoDenverpost from "../../img/logo-denverpost.svg"
-import logoQuartz from "../../img/logo-quartz.jpg"
-import logoHope from "../../img/logo-hope-lab.png"
-import logoWebDevStudios from "../../img/logo-webdev-studios.png"
-import logoApollo from "../../img/logo-apollo.png"
-import logoCreditKarma from "../../img/logo-credit-karma.png"
-import logoPlayersTribune from "../../img/logo-players-tribune.png"
-import logoZillow from "../../img/logo-zillow.png"
-import logoGatsby from "../../img/logo-gatsby.png"
+import { graphql, useStaticQuery } from "gatsby"
+
 import LogoStack from "../../components/landingpage/LogoStack"
 
 const WhosUsing = () => {
+  const data = useStaticQuery(graphql`
+    fragment LogoFile on File {
+      publicURL
+      ext
+      childImageSharp {
+        fixed(height: 60, quality: 90) {
+          ...GatsbyImageSharpFixed_tracedSVG
+        }
+      }
+    }
+    query LogoStackQuery {
+      logoDfuzr: file(relativePath: { eq: "logo-dfuzr.png" }) {
+        ...LogoFile
+      }
+      logoValu: file(relativePath: { eq: "logo-valu-digital.png" }) {
+        ...LogoFile
+      }
+      logoFunkhaus: file(relativePath: { eq: "logo-funkhaus.png" }) {
+        ...LogoFile
+      }
+      logoHarness: file(relativePath: { eq: "logo-harness.png" }) {
+        ...LogoFile
+      }
+      logoTwinCities: file(relativePath: { eq: "logo-twincities.png" }) {
+        ...LogoFile
+      }
+      logoDenverpost: file(relativePath: { eq: "logo-denverpost.svg" }) {
+        ...LogoFile
+      }
+      logoQuartz: file(relativePath: { eq: "logo-quartz.jpg" }) {
+        ...LogoFile
+      }
+      logoHope: file(relativePath: { eq: "logo-hope-lab.png" }) {
+        ...LogoFile
+      }
+      logoWebDevStudios: file(relativePath: { eq: "logo-webdev-studios.png" }) {
+        ...LogoFile
+      }
+      logoApollo: file(relativePath: { eq: "logo-apollo.png" }) {
+        ...LogoFile
+      }
+      logoCreditKarma: file(relativePath: { eq: "logo-credit-karma.png" }) {
+        ...LogoFile
+      }
+      logoPlayersTribune: file(
+        relativePath: { eq: "logo-players-tribune.png" }
+      ) {
+        ...LogoFile
+      }
+      logoZillow: file(relativePath: { eq: "logo-zillow.png" }) {
+        ...LogoFile
+      }
+      logoGatsby: file(relativePath: { eq: "logo-gatsby.png" }) {
+        ...LogoFile
+      }
+    }
+  `)
+
+  console.log(data)
   const logos = [
     {
       link: "https://www.dfuzr.com/",
       label: "Dfuzr Industries: Digital Experience Agency",
       alt: "Dfuzr Logo",
-      image: logoDfuzr,
+      image: data.logoDfuzr,
       bg: "#ee0d00",
     },
     {
       link: "https://funkhaus.us/",
       label: "Funkhaus: Digital Creative Agency",
       alt: "Funkhaus Logo",
-      image: logoFunkhaus,
+      image: data.logoFunkhaus,
     },
     {
       link: "https://www.valu.fi/en",
       label: "Valu Digital",
       alt: "Valu Digital Logo",
-      image: logoValu,
+      image: data.logoValu,
       bg: "#df2e30",
     },
     {
       link: "http://www.harnessup.com/",
       label: "Harness Software",
       alt: "Harness Software Logo",
-      image: logoHarness,
+      image: data.logoHarness,
     },
     {
       link: "https://www.denverpost.com/",
       label: "Denver Post",
       alt: "Denver Post Logo",
-      image: logoDenverpost,
+      image: data.logoDenverpost,
     },
     {
       link: "https://www.twincities.com/",
       label: "Twin Cities",
       alt: "Twin Cities Logo",
-      image: logoTwinCities,
+      image: data.logoTwinCities,
     },
     {
       link: "https://qz.com/",
       label: "Quartz",
       alt: "Quartz Logo",
-      image: logoQuartz,
+      image: data.logoQuartz,
       bg: "#111111",
     },
     {
       link: "https://hopelab.org/",
       label: "Hope Lab",
       alt: "Hope Lab Logo",
-      image: logoHope,
+      image: data.logoHope,
     },
     {
       link: "https://webdevstudios.com/",
       label: "WebDev Studios Lab",
       alt: "WebDev Studios Logo",
-      image: logoWebDevStudios,
+      image: data.logoWebDevStudios,
     },
     {
       link: "https://www.apollographql.com/",
       label: "Apollo GraphQL",
       alt: "Apollo GraphQL Logo",
-      image: logoApollo,
+      image: data.logoApollo,
     },
     {
       link: "https://blog.creditkarma.com/",
       label: "Credit Karma",
       alt: "Credit Karma Logo",
-      image: logoCreditKarma,
+      image: data.logoCreditKarma,
     },
     {
       link: "https://gatsbyjs.com/",
       label: "Gatsby",
       alt: "Gatsby Logo",
-      image: logoGatsby,
+      image: data.logoGatsby,
     },
     {
       link: "https://www.theplayerstribune.com/",
       label: "The Players Tribune",
       alt: "The Players Tribune Logo",
-      image: logoPlayersTribune,
+      image: data.logoPlayersTribune,
     },
     {
       link: "https://www.zillow.com/",
       label: "Zillow",
       alt: "Zillow Logo",
-      image: logoZillow,
+      image: data.logoZillow,
     },
   ]
 
