@@ -22,7 +22,6 @@ import WorksWithJS from "../components/landingpage/WorksWithJS"
 import Meta from "../components/Meta"
 
 const Home = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <Meta title="GraphQL API for WordPress" />
