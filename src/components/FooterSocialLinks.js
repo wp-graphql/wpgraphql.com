@@ -7,7 +7,7 @@ const FooterSocialLinks = () => (
     <HStack spacing="5">
       <Button
         as="a"
-        href="https://github.org/wp-graphql/wp-graphql"
+        href="https://github.com/wp-graphql/wp-graphql"
         aria-label="Link to WPGraphQL on Github"
       >
         <FaGithub />
