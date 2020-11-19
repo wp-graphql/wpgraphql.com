@@ -1,16 +1,18 @@
-import React from 'react';
-import {useStaticQuery, graphql} from 'gatsby'
-import Sidebar from "./sidebar/Sidebar";
-import { routes as SidebarRoutes } from './DeveloperReferenceSidebar'
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Sidebar from "./sidebar/Sidebar"
+import { routes as SidebarRoutes } from "./DeveloperReferenceSidebar"
 
 const RecipeSidebar = () => {
-
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     {
       allWpCodeSnippet {
         totalCount
       }
-      allWpCodeSnippetTag(filter: {count: {gt: 0}}, sort: {fields: taxonomy___node___name, order: ASC}) {
+      allWpCodeSnippetTag(
+        filter: { count: { gt: 0 } }
+        sort: { fields: taxonomy___node___name, order: ASC }
+      ) {
         nodes {
           id
           uri
@@ -19,42 +21,38 @@ const RecipeSidebar = () => {
         }
       }
     }
-    `);
+  `)
 
-    let taglist = [
-        {
-            title: `View All (${data.allWpCodeSnippet.totalCount})`,
-            path: `/recipes/`,
-        }
-    ];
+  let taglist = [
+    {
+      title: `View All (${data.allWpCodeSnippet.totalCount})`,
+      path: `/recipes/`,
+    },
+  ]
 
-    data.allWpCodeSnippetTag.nodes.map(tag => {
-        taglist.push({
-            title: `${tag.name} (${tag.count})`,
-            path: tag.uri,
-        })
-        return tag;
+  data.allWpCodeSnippetTag.nodes.map((tag) => {
+    taglist.push({
+      title: `${tag.name} (${tag.count})`,
+      path: tag.uri,
     })
+    return tag
+  })
 
-    const routes = [
+  const routes = [
+    {
+      heading: false,
+      routes: [
         {
-            heading: false,
-            routes: [
-                {
-                    title: `Recipe Tags`,
-                    open: true,
-                    path: `/recipes/`,
-                    routes: taglist
-                }
-            ]
-        }
-    ];
+          title: `Recipe Tags`,
+          open: true,
+          path: `/recipes/`,
+          routes: taglist,
+        },
+      ],
+    },
+  ]
 
+  return <Sidebar routes={SidebarRoutes.concat(routes)} />
+}
 
-
-    return <Sidebar routes={SidebarRoutes.concat(routes)}/>
-
-
-};
-
-export default RecipeSidebar;
+export default RecipeSidebar

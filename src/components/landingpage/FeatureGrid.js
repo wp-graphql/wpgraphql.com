@@ -1,19 +1,27 @@
-import React from "react";
+import React from "react"
 import { Box, Heading, Grid } from "@chakra-ui/core"
 import Feature from "./Feature"
 
-const FeatureGrid = ({ title = false, features, cols = 2, align = "center", ...props }) => {
-
-  return(
+const FeatureGrid = ({
+  title = false,
+  features,
+  cols = 2,
+  align = "center",
+  ...props
+}) => {
+  return (
     <Box {...props}>
-      {title &&
-        <Heading as="h2" pb={8}>{title}</Heading>
-      }
+      {title && (
+        <Heading as="h2" pb={8}>
+          {title}
+        </Heading>
+      )}
       <Grid
         templateColumns={{ base: "repeat(1, 1fr)", md: `repeat(${cols}, 1fr)` }}
         gap={10}
-        px={{ md: 0 }}>
-        {features.map(feature => (
+        px={{ md: 0 }}
+      >
+        {features.map((feature) => (
           <Feature
             title={feature.title}
             icon={feature.icon}
@@ -28,4 +36,4 @@ const FeatureGrid = ({ title = false, features, cols = 2, align = "center", ...p
   )
 }
 
-export default FeatureGrid;
+export default FeatureGrid

@@ -1,28 +1,33 @@
-import React from "react";
+import React from "react"
 import { Box, Flex, Image } from "@chakra-ui/core"
 
-const TwoColumn = ({ image, alt, imagePosition="left", children, ...props }) => {
+const TwoColumn = ({
+  image,
+  alt,
+  imagePosition = "left",
+  children,
+  ...props
+}) => {
   const boxProps = {
     p: 50,
     pr: 0,
-    width: [ '100%', '100%', '100%', '50%' ],
+    width: ["100%", "100%", "100%", "50%"],
   }
 
   return (
-    <Flex justifyContent="center" flexWrap="wrap" flexDirection={ imagePosition === 'right' ? 'row-reverse' : 'row' } {...props}>
+    <Flex
+      justifyContent="center"
+      flexWrap="wrap"
+      flexDirection={imagePosition === "right" ? "row-reverse" : "row"}
+      {...props}
+    >
       <Box
-        textAlign={imagePosition === 'right' ? 'left' : 'right'}
+        textAlign={imagePosition === "right" ? "left" : "right"}
         {...boxProps}
       >
-        <Image alt={alt}
-          src={image}
-          loading="lazy"
-        />
+        <Image alt={alt} src={image} loading="lazy" />
       </Box>
-      <Box
-        textAlign={imagePosition}
-        {...boxProps}
-      >
+      <Box textAlign={imagePosition} {...boxProps}>
         {children}
       </Box>
     </Flex>

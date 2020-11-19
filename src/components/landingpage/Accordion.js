@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import {
   Box,
   Heading,
@@ -7,18 +7,20 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-} from "@chakra-ui/core";
+} from "@chakra-ui/core"
 
 const Accordion = ({ title, items }) => {
-  return(
+  return (
     <Box mb={50}>
-      <Heading as="h2" mb={30}>{title}</Heading>
+      <Heading as="h2" mb={30}>
+        {title}
+      </Heading>
       <Box mb={50} px={100}>
         <ChakraAccordion allowToggle>
-          {items.map(item => (
+          {items.map((item) => (
             <AccordionItem>
               <AccordionButton>
-                <Box flex="1" textAlign="left" fontSize={'2xl'}>
+                <Box flex="1" textAlign="left" fontSize={"2xl"}>
                   {item.title}
                 </Box>
                 <AccordionIcon />
@@ -34,4 +36,4 @@ const Accordion = ({ title, items }) => {
   )
 }
 
-export default Accordion;
+export default Accordion

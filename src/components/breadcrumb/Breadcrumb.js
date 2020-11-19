@@ -1,18 +1,18 @@
-import React from 'react';
-import { Breadcrumb as ChakraBreadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/core"
+import React from "react"
+import {
+  Breadcrumb as ChakraBreadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+} from "@chakra-ui/core"
 
 const Breadcrumb = ({ crumbs }) => {
-    return (
-      <ChakraBreadcrumb
-      spacing="8px"
-      mb={5}
-      fontSize="sm"
-    >
+  return (
+    <ChakraBreadcrumb spacing="8px" mb={5} fontSize="sm">
       <BreadcrumbItem>
         <BreadcrumbLink href="/">Home</BreadcrumbLink>
       </BreadcrumbItem>
 
-      {crumbs.map(crumb => {
+      {crumbs.map((crumb) => {
         return (
           <BreadcrumbItem isCurrentPage={crumb.isCurrentPage || false}>
             <BreadcrumbLink href={crumb.path}>{crumb.title}</BreadcrumbLink>
@@ -20,7 +20,7 @@ const Breadcrumb = ({ crumbs }) => {
         )
       })}
     </ChakraBreadcrumb>
-    )
+  )
 }
 
 export default Breadcrumb

@@ -1,8 +1,15 @@
-import React from "react";
+import React from "react"
 import { Box } from "@chakra-ui/core"
 
 const Video = ({ videoSrcURL, videoTitle, ...props }) => (
-  <Box pb="56.25%" height={0} overflow="hidden" maxW="100%" position="relative" {...props} >
+  <Box
+    pb="56.25%"
+    height={0}
+    overflow="hidden"
+    maxW="100%"
+    position="relative"
+    {...props}
+  >
     <iframe
       src={videoSrcURL}
       title={videoTitle}
@@ -16,7 +23,13 @@ const Video = ({ videoSrcURL, videoTitle, ...props }) => (
       left={0}
       width="100%"
       height="100%"
-      style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+      }}
     />
   </Box>
 )

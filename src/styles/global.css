@@ -1,66 +1,76 @@
 .wp-block-image .gatsby-image-wrapper,
 .gatsby-image-wrapper {
-    max-width: 100%;
-    width: auto!important;
+  max-width: 100%;
+  width: auto !important;
 }
 
 .wp-block-image img {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    max-width: 100%;
-    height: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  height: auto;
 }
 
 .wp-block-image .aligncenter {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wp-block-image .aligncenter figcaption {
-    text-align: center;
+  text-align: center;
 }
 
 .wp-block-image figcaption {
-    font-size: 0.75em;
-    margin-top: 1em;
+  font-size: 0.75em;
+  margin-top: 1em;
 }
 
 figure {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 table {
-    font-size: 18px;
-    padding: 0;
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  font-size: 18px;
+  padding: 0;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 table td {
-    padding: 15px;
-    border-bottom: solid 1px #ccc;
+  padding: 15px;
+  border-bottom: solid 1px #ccc;
 }
 table tr:nth-child(even) {
-    background: #ccc;
+  background: #ccc;
 }
 .chakra-ui-dark table tr:nth-child(even) {
-    background: #1A365D;
+  background: #1a365d;
 }
 
 .chakra-ui-dark table td {
-    padding: 15px;
-    border-bottom: solid 1px #20222c;
+  padding: 15px;
+  border-bottom: solid 1px #20222c;
 }
 iframe {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 .chakra-ui-dark .content p a,
 .chakra-ui-dark .content ul a {
-    color: #0cf;
+  color: #0cf;
 }
 
-.table-of-contents h1, h2, h3, h4, h5, h6,
-.sidebar-content h1, h2, h3, h4, h5, h6{
-    word-break: break-word;
+.table-of-contents h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.sidebar-content h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-break: break-word;
 }
