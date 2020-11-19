@@ -17,6 +17,7 @@ const WpContentNode = ({ data }) => {
         <Flex>
           <div style={{ flex: 1 }}>
             <Box
+              className="content"
               pt={3}
               mt="0"
               mx="auto"

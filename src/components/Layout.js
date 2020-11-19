@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   Flex,
-  HStack,
   useColorMode,
   useColorModeValue,
   Text,
@@ -16,18 +15,20 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
+  Spacer,
   Link as ChakraLink,
 } from "@chakra-ui/core"
 import {
   FaMoon,
   FaSun,
-  FaGithub,
-  FaWordpress,
   FaBars,
   FaTimes,
+  FaGithub,
+  FaWordpress,
 } from "react-icons/fa"
 import { Link } from "gatsby"
 import Logo from "./Logo"
+import Search from "./Search"
 import "../styles/global.css"
 
 import Container from "./Container"
@@ -110,43 +111,48 @@ function Layout(props) {
               </Link>
               <PrimaryNav display={{ base: "none", md: "flex" }} />
             </Flex>
-            <Flex maxW="720px" align="center" color="gray.400">
-              <HStack spacing="5">
-                <Button
-                  as={ChakraLink}
-                  pt={3}
-                  href="https://github.com/wp-graphql/wp-graphql"
-                  display={["none", "none", "block"]}
-                  aria-label="Link to WPGraphQL on Github"
-                >
-                  <FaGithub />
-                  <chakra.span sx={{ display: "none" }}>
-                    Link to WPGraphQL on Github
-                  </chakra.span>
-                </Button>
-                <Button
-                  as={ChakraLink}
-                  pt={3}
-                  href="https://wordpress.org/plugins/wp-graphql"
-                  display={["none", "none", "block"]}
-                  aria-label="Link to WPGraphQL on WordPress.org"
-                >
-                  <FaWordpress />
-                  <chakra.span sx={{ display: "none" }}>
-                    Link to WPGraphQL on WordPress.org
-                  </chakra.span>
-                </Button>
-                <Button
-                  onClick={toggleColorMode}
-                  aria-label="Change color theme of the site"
-                >
-                  <SwitchIcon />
-                  <chakra.span sx={{ display: "none" }}>
-                    Change color theme of the site
-                  </chakra.span>
-                </Button>
-                <DrawerNav btnRef={btnRef} />
-              </HStack>
+
+            <Flex>
+              <Search />
+              <Spacer mx={1} />
+              <Button
+                as={ChakraLink}
+                pt={3}
+                href="https://github.com/wp-graphql/wp-graphql"
+                display={["none", "none", "block"]}
+                aria-label="Link to WPGraphQL on Github"
+              >
+                <FaGithub />
+                <chakra.span sx={{ display: "none" }}>
+                  Link to WPGraphQL on Github
+                </chakra.span>
+              </Button>
+              <Spacer mx={1} />
+              <Button
+                as={ChakraLink}
+                pt={3}
+                href="https://wordpress.org/plugins/wp-graphql"
+                display={["none", "none", "block"]}
+                aria-label="Link to WPGraphQL on WordPress.org"
+              >
+                <FaWordpress />
+                <chakra.span sx={{ display: "none" }}>
+                  Link to WPGraphQL on WordPress.org
+                </chakra.span>
+              </Button>
+
+              <Spacer mx={1} />
+              <Button
+                onClick={toggleColorMode}
+                aria-label="Change color theme of the site"
+              >
+                <SwitchIcon />
+                <chakra.span sx={{ display: "none" }}>
+                  Change color theme of the site
+                </chakra.span>
+              </Button>
+              <Spacer mx={1} />
+              <DrawerNav btnRef={btnRef} />
             </Flex>
           </Flex>
         </Container>

@@ -41,6 +41,7 @@ const WpExtensionPlugin = ({ data }) => {
               <PageTransition>
                 <Flex>
                   <Box
+                    className="content"
                     pt={3}
                     mt="0"
                     mx="auto"

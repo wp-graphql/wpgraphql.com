@@ -42,11 +42,12 @@ const PrimaryNav = () => {
 
   const linkColor = useColorModeValue("gray.600", "whiteAlpha.800")
   const hoverBg = useColorModeValue("gray.100", "whiteAlpha.100")
+  const activeColor = useColorModeValue("blue.600", "#0cf")
 
   return (
     <HStack
       as="nav"
-      spacing="4"
+      spacing="2"
       ml="24px"
       display={["none", "none", "flex"]}
       sx={{
@@ -79,7 +80,7 @@ const PrimaryNav = () => {
                   _hover={{ bg: hoverBg }}
                   _activeLink={{
                     fontWeight: "semibold",
-                    color: "blue.600",
+                    color: activeColor,
                   }}
                   sx={{
                     "& > div": {

@@ -37,6 +37,7 @@ const WpCodeSnippet = ({ data }) => {
             <Box pt={3} px={[0, 0, 10]} pr={0} mt="0" mx="auto" minH="80vh">
               <PageTransition>
                 <Box
+                  className="content"
                   pt={3}
                   mt="0"
                   mx="auto"

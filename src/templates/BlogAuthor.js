@@ -28,6 +28,7 @@ const BlogAuthor = ({ data }) => {
         <Flex>
           <div style={{ flex: 1 }}>
             <Box
+              className="content"
               pt={3}
               px={5}
               mt="0"
