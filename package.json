@@ -37,7 +37,7 @@
     "gatsby-plugin-sharp": "^2.6.38",
     "gatsby-plugin-sitemap": "^2.6.0",
     "gatsby-source-filesystem": "^2.3.32",
-    "gatsby-source-wordpress-experimental": "3.0.2--canary.1",
+    "gatsby-source-wordpress-experimental": "3.0.2",
     "gatsby-transformer-sharp": "2.5.16",
     "is-url-external": "^1.0.3",
     "prism-react-renderer": "^1.1.1",
