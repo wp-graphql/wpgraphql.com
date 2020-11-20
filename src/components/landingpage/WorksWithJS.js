@@ -10,9 +10,12 @@ const WorksWithJS = ({ children, imageBG = "white" }) => {
       publicURL
       ext
       childImageSharp {
-        fixed(height: 110, quality: 90) {
-          ...GatsbyImageSharpFixed_noBase64
-        }
+        gatsbyImageData(
+          layout: FIXED
+          quality: 90
+          height: 110
+          placeholder: NONE
+        )
       }
     }
 

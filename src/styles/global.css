@@ -1,15 +1,14 @@
-.wp-block-image .gatsby-image-wrapper,
-.gatsby-image-wrapper {
+/* .wp-block-image .gatsby-image-wrapper {
   max-width: 100%;
   width: auto !important;
-}
+} */
 
-.wp-block-image img {
+/* .wp-block-image img {
   margin-top: 1rem;
   margin-bottom: 1rem;
   max-width: 100%;
   height: auto;
-}
+} */
 
 .wp-block-image .aligncenter {
   margin-left: auto;
