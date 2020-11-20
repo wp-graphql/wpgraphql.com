@@ -10,9 +10,8 @@ import {
   Stack,
   Button,
   useColorModeValue,
-} from "@chakra-ui/core"
-
-import { graphql, Link } from "gatsby"
+} from "@chakra-ui/react"
+import { Link } from "gatsby"
 import { FaArrowRight, FaWordpress } from "react-icons/fa"
 import Layout from "../components/Layout"
 import Container from "../components/Container"

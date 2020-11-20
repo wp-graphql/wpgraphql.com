@@ -1,4 +1,4 @@
-import { Icon, chakra, useColorModeValue } from "@chakra-ui/core"
+import { Icon, chakra, useColorModeValue } from "@chakra-ui/react"
 import React, { useRef, useState, useEffect } from "react"
 
 const Arrow = (props) => (

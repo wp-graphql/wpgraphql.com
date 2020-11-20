@@ -9,7 +9,7 @@ import {
   MenuList,
   MenuButton,
   useColorModeValue,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import { FaChevronDown } from "react-icons/fa"
 import { useLocation } from "@reach/router"
 import HeaderNavLink from "./HeaderNavLink"

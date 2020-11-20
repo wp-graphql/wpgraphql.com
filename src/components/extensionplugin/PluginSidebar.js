@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Text } from "@chakra-ui/core"
+import { Box, Text } from "@chakra-ui/react"
 import { FaCertificate, FaUsers } from "react-icons/fa"
 import PluginLink from "./PluginLink"
 

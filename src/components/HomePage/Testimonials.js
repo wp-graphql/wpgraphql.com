@@ -1,6 +1,12 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { useColorModeValue, Wrap, WrapItem, Avatar, Box } from "@chakra-ui/core"
+import {
+  useColorModeValue,
+  Wrap,
+  WrapItem,
+  Avatar,
+  Box,
+} from "@chakra-ui/react"
 
 const Testimonials = () => {
   const data = useStaticQuery(graphql`

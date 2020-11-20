@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex, HStack, Button, chakra } from "@chakra-ui/core"
+import { Flex, HStack, Button, chakra } from "@chakra-ui/react"
 import { FaGithub, FaWordpress, FaYoutube, FaSlack } from "react-icons/fa"
 
 const FooterSocialLinks = () => (

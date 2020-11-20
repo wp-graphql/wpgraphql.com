@@ -7,7 +7,7 @@ import {
   Input,
   InputLeftAddon,
   useColorModeValue,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import { FaSearch } from "react-icons/fa"
 
 const Search = () => {
@@ -45,7 +45,7 @@ const Search = () => {
           ".algolia-autocomplete .ds-dropdown-menu": {
             width: [
               `100%!important`,
-              `100%!important`,
+              `400px!important`,
               `400px!important`,
               `500px !important`,
             ],

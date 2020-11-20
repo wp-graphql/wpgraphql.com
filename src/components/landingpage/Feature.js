@@ -7,7 +7,7 @@ import {
   Icon,
   Heading,
   useColorModeValue,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import { Link as GatsbyLink } from "gatsby"
 
 const Feature = ({ title, icon, children, link = false, ...props }) => {

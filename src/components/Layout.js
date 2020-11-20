@@ -14,23 +14,21 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  useDisclosure,
   Spacer,
+  useDisclosure,
   Link as ChakraLink,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import {
   FaMoon,
   FaSun,
-  FaBars,
-  FaTimes,
   FaGithub,
   FaWordpress,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa"
 import { Link } from "gatsby"
 import Logo from "./Logo"
 import Search from "./Search"
-import "../styles/global.css"
-
 import Container from "./Container"
 import PrimaryNav from "./PrimaryNav"
 import PrimaryNavMobile from "./PrimaryNavMobile"

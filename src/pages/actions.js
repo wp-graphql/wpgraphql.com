@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Flex, Heading, Text, Link } from "@chakra-ui/core"
+import { Box, Flex, Heading, Text, Link } from "@chakra-ui/react"
 import { graphql, Link as GatsbyLink } from "gatsby"
 import Layout from "../components/Layout"
 import Container from "../components/Container"

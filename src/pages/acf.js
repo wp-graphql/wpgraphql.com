@@ -1,6 +1,6 @@
 import React from "react"
 import Container from "../components/Container"
-import { Box, useColorModeValue, Heading, Text, Button } from "@chakra-ui/core"
+import { Box, useColorModeValue, Heading, Text, Button } from "@chakra-ui/react"
 import { AiFillThunderbolt } from "react-icons/ai"
 import { FaCloudDownloadAlt } from "react-icons/fa"
 import acfFieldsImage from "../img/acf-fields.jpg"
@@ -23,7 +23,7 @@ const AcfHero = () => (
     <Text fontSize="3xl" pb={5}>
       Interact with your Advanced Custom Field data using GraphQL Queries
     </Text>
-    <Button colorScheme="blue" size="lg" rightIcon={<FaCloudDownloadAlt />}>
+    <Button as="a" href="https://github.com/wp-graphql/wp-graphql-acf" colorScheme="blue" size="lg" rightIcon={<FaCloudDownloadAlt />}>
       Download the Plugin
     </Button>
   </Hero>

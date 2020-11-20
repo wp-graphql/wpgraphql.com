@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Flex, Heading, Text } from "@chakra-ui/core"
+import { Box, Flex, Heading, Text } from "@chakra-ui/react"
 import { AiFillThunderbolt } from "react-icons/ai"
 import { FaFilter } from "react-icons/fa"
 import { BiCodeCurly } from "react-icons/bi"

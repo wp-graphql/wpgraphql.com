@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading, Grid } from "@chakra-ui/core"
+import { Box, Heading, Grid } from "@chakra-ui/react"
 import Feature from "./Feature"
 
 const FeatureGrid = ({

@@ -7,7 +7,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const Accordion = ({ title, items }) => {
   return (

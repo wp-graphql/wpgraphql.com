@@ -3,7 +3,7 @@ import {
   Breadcrumb as ChakraBreadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const Breadcrumb = ({ crumbs }) => {
   return (

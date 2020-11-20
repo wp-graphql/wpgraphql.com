@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Flex, Image } from "@chakra-ui/core"
+import { Box, Flex, Image } from "@chakra-ui/react"
 
 const TwoColumn = ({
   image,

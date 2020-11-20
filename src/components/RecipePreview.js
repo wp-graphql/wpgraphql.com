@@ -6,7 +6,7 @@ import {
   Stack,
   Button,
   useColorModeValue,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import { FaArrowRight } from "react-icons/fa"
 import { Link } from "gatsby"
 import { ParseHtml } from "../components/parse-html"

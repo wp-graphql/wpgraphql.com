@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, Box } from "@chakra-ui/core"
+import { Link, Box } from "@chakra-ui/react"
 import { FaWordpress, FaGithub } from "react-icons/fa"
 
 const PluginLink = ({ pluginHost, pluginLink }) => {

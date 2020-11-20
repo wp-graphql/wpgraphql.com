@@ -1,5 +1,5 @@
 import React from "react"
-import { chakra, Flex, HStack, Icon, IconButton } from "@chakra-ui/core"
+import { chakra, Flex, HStack, Icon, IconButton } from "@chakra-ui/react"
 import Container from "./Container"
 
 const GithubIcon = (props) => (

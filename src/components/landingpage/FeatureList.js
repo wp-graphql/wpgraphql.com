@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, SimpleGrid } from "@chakra-ui/core"
+import { Box, SimpleGrid } from "@chakra-ui/react"
 
 const FeatureList = ({ fields, ...props }) => {
   return (
