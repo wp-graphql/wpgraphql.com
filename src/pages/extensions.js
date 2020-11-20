@@ -67,7 +67,7 @@ const ExtensionPlugins = ({ data }) => {
 
 export const data = graphql`
   {
-    allWpExtensionPlugin(sort: { order: DESC, fields: date }) {
+    allWpExtensionPlugin(sort: {fields: menuOrder }) {
       nodes {
         title
         id

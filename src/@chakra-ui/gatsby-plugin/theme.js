@@ -27,6 +27,7 @@ const theme = {
     heading: 1.125,
   },
   wp: {
+    wordBreak: "break-word",
     h1: {
       mt: "3rem",
       mb: ".25rem",
@@ -70,12 +71,14 @@ const theme = {
       fontWeight: "semibold",
       transition: "color 0.15s",
       transitionTimingFunction: "ease-out",
+      wordBreak: "break-word",
       _hover: {
         color: "teal.600",
       },
     },
     p: {
       mt: "1.5rem",
+      wordBreak: "break-word",
       "blockquote &": {
         mt: 0,
       },

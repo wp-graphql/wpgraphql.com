@@ -8,6 +8,8 @@ import { ParseHtml } from "../components/parse-html"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import PluginSidebar from "../components/extensionplugin/PluginSidebar"
 import TableOfContents from "../components/TableOfContents"
+import {getPagination} from "../utils";
+import Pagination from "../components/Pagination";
 
 const WpExtensionPlugin = ({ data }) => {
   const {
@@ -18,7 +20,11 @@ const WpExtensionPlugin = ({ data }) => {
       readmeContent,
       extensionFields: { pluginHost, pluginLink, pluginType },
     },
+    allWpExtensionPlugin
   } = data
+
+  const pagination = getPagination(uri, allWpExtensionPlugin.nodes);
+  console.log( pagination );
 
   const crumbs = [
     {
@@ -37,7 +43,7 @@ const WpExtensionPlugin = ({ data }) => {
       <Container>
         <Flex>
           <Box style={{ flex: 1 }}>
-            <Box pt={3} px={5} mt="0" mx="auto" minH="80vh">
+            <Box  pt={3} mx={5} px={[5]} mt="0" mx="auto" minH="80vh">
               <PageTransition>
                 <Flex>
                   <Box
@@ -45,7 +51,7 @@ const WpExtensionPlugin = ({ data }) => {
                     pt={3}
                     mt="0"
                     mx="auto"
-                    maxWidth={[`20rem`, "30rem", "100%"]}
+                    maxWidth={[`20rem`, "40rem", "30rem", "50rem"]}
                     minH="80vh"
                   >
                     <Breadcrumb crumbs={crumbs} />
@@ -54,7 +60,14 @@ const WpExtensionPlugin = ({ data }) => {
                     </Heading>
                     <Text mt={4}>{ParseHtml(content)}</Text>
                     <Stack spacing={4} mt={8}>
-                      <Box position="relative" p={5} borderWidth="1px">
+
+                        <PluginSidebar
+                            pluginType={pluginType}
+                            pluginHost={pluginHost}
+                            pluginLink={pluginLink}
+                        />
+
+                      <Box position="relative" p={5} mr={[0, 0, 5]} borderWidth="1px" >
                         <Tag
                           size="sm"
                           position="absolute"
@@ -73,13 +86,13 @@ const WpExtensionPlugin = ({ data }) => {
                         </Text>
                       </Box>
                     </Stack>
+                      <Pagination
+                          sx={{ ".pagination-link": { wordBreak: "break-word" } }}
+                          next={pagination.next}
+                          previous={pagination.previous}
+                      />
                   </Box>
                   <Stack spacing={4} mt={8}>
-                    <PluginSidebar
-                      pluginType={pluginType}
-                      pluginHost={pluginHost}
-                      pluginLink={pluginLink}
-                    />
                     <TableOfContents content={readmeContent} reduceHeadings />
                   </Stack>
                 </Flex>
@@ -106,6 +119,13 @@ export const query = graphql`
         pluginHost
         pluginLink
         pluginType
+      }
+    }
+    allWpExtensionPlugin(sort: { fields: menuOrder }) {
+      nodes {
+        id
+        uri
+        title
       }
     }
   }

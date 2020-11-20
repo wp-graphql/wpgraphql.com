@@ -8,11 +8,16 @@ import { ParseHtml } from "../components/parse-html"
 import TableOfContents from "../components/TableOfContents"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import DeveloperReferenceSidebar from "../components/DeveloperReferenceSidebar"
+import Pagination from "../components/Pagination"
+import { getPagination } from "../utils"
 
 const WpContentNode = ({ data }) => {
   const {
     wpContentNode: { title, content, uri },
+    allWpFilter,
   } = data
+
+  const pagination = getPagination(uri, allWpFilter.nodes)
 
   const crumbs = [
     {
@@ -44,7 +49,7 @@ const WpContentNode = ({ data }) => {
                     pt={3}
                     mt="0"
                     mx="auto"
-                    maxWidth={[`20rem`, "30rem", "100%"]}
+                    maxWidth={[`20rem`, "30rem", "40rem"]}
                     minH="80vh"
                   >
                     <Breadcrumb crumbs={crumbs} />
@@ -52,6 +57,11 @@ const WpContentNode = ({ data }) => {
                       {title}
                     </Heading>
                     {ParseHtml(content)}
+                    <Pagination
+                      sx={{ ".pagination-link": { wordBreak: "break-all" } }}
+                      next={pagination.next}
+                      previous={pagination.previous}
+                    />
                   </Box>
                   <TableOfContents
                     content={content}
@@ -78,6 +88,13 @@ export const query = graphql`
       }
       ... on WpNodeWithContentEditor {
         content
+      }
+    }
+    allWpFilter(sort: { fields: title }) {
+      nodes {
+        id
+        uri
+        title
       }
     }
   }

@@ -74,6 +74,7 @@ iframe {
 .sidebar-content h3,
 .sidebar-content h4,
 .sidebar-content h5,
-.sidebar-content h6 {
+.sidebar-content h6,
+.content p {
   word-break: break-word;
 }

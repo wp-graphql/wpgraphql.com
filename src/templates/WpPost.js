@@ -8,10 +8,13 @@ import { ParseHtml } from "../components/parse-html"
 import TableOfContents from "../components/TableOfContents"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import PostInfo from "../components/PostInfo"
+import {getPagination} from "../utils";
+import Pagination from "../components/Pagination";
 
 const WpPost = ({ data }) => {
   const {
     wpPost: { title, content, uri, author, date },
+      allWpPost
   } = data
 
   const crumbs = [
@@ -25,6 +28,8 @@ const WpPost = ({ data }) => {
       isCurrentPage: true,
     },
   ]
+
+    const pagination = getPagination(uri, allWpPost.nodes)
 
   return (
     <Layout>
@@ -52,6 +57,11 @@ const WpPost = ({ data }) => {
                       date={date}
                     />
                     {ParseHtml(content)}
+                      <Pagination
+                          sx={{ ".pagination-link": { wordBreak: "break-word" } }}
+                          next={pagination.next}
+                          previous={pagination.previous}
+                      />
                   </Box>
                   <TableOfContents
                     content={content}
@@ -82,6 +92,13 @@ export const query = graphql`
           name
           uri
         }
+      }
+    }
+    allWpPost(sort: { order: DESC, fields: date }) {
+      nodes {
+        id
+        uri
+        title
       }
     }
   }
