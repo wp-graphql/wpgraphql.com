@@ -33,6 +33,7 @@ import Container from "./Container"
 import PrimaryNav from "./PrimaryNav"
 import PrimaryNavMobile from "./PrimaryNavMobile"
 import FooterSocialLinks from "./FooterSocialLinks"
+import "../styles/global.css"
 
 const DrawerNav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()

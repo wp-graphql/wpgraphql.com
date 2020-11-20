@@ -1,4 +1,4 @@
-import { theme as defaultTheme } from "@chakra-ui/react"
+import { theme as defaultTheme } from "@chakra-ui/core"
 
 const theme = {
     ...defaultTheme,

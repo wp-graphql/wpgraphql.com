@@ -61,16 +61,16 @@ iframe {
 }
 
 .table-of-contents h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+.table-of-contents h2,
+.table-of-contents h3,
+.table-of-contents h4,
+.table-of-contents h5,
+.table-of-contents h6,
 .sidebar-content h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.sidebar-content h2,
+.sidebar-content h3,
+.sidebar-content h4,
+.sidebar-content h5,
+.sidebar-content h6 {
   word-break: break-word;
 }
