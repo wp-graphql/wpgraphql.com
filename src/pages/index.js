@@ -11,7 +11,7 @@ import {
   Button,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { FaArrowRight, FaWordpress } from "react-icons/fa"
 import Layout from "../components/Layout"
 import Container from "../components/Container"
