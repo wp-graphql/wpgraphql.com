@@ -23,7 +23,13 @@ const AcfHero = () => (
     <Text fontSize="3xl" pb={5}>
       Interact with your Advanced Custom Field data using GraphQL Queries
     </Text>
-    <Button as="a" href="https://github.com/wp-graphql/wp-graphql-acf" colorScheme="blue" size="lg" rightIcon={<FaCloudDownloadAlt />}>
+    <Button
+      as="a"
+      href="https://github.com/wp-graphql/wp-graphql-acf"
+      colorScheme="blue"
+      size="lg"
+      rightIcon={<FaCloudDownloadAlt />}
+    >
       Download the Plugin
     </Button>
   </Hero>

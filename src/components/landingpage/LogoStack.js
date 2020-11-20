@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Wrap, WrapItem, Tooltip, Image } from "@chakra-ui/react"
+import { Wrap, WrapItem, Tooltip, Image } from "@chakra-ui/react"
 
 import { GatsbyImage } from "gatsby-plugin-image"
 

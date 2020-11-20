@@ -2,7 +2,7 @@ import React from "react"
 import { Box } from "@chakra-ui/react"
 import LogoStack from "./LogoStack"
 import { useStaticQuery } from "gatsby"
-import { graphql } from "gatsby";
+import { graphql } from "gatsby"
 
 const WorksWithJS = ({ children, imageBG = "white" }) => {
   const data = useStaticQuery(graphql`

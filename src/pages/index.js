@@ -51,17 +51,19 @@ const Home = ({ data }) => {
               <Stack
                 mt="10"
                 mb="20"
-                spacing="0"
+                spacing="4"
                 justify="center"
                 direction={{ base: "column", sm: "row" }}
               >
                 <Button
                   as="a"
+                  size="lg"
                   href="/docs/introduction"
                   colorScheme="blue"
                   variant="solid"
                   aria-label="Get Started"
-                  maxW={`300px`}
+                  px="40px"
+                  maxW={[`auto`, `300px`]}
                   m={`3`}
                   mb={`0`}
                   mt="0"
@@ -71,14 +73,16 @@ const Home = ({ data }) => {
                 </Button>
                 <Button
                   as="a"
+                  size="lg"
                   href="https://wordpress.org/plugins/wp-graphql"
                   aria-label="Download the Plugin"
+                  px="40px"
                   colorScheme="orange"
                   variant="solid"
-                  maxW={`300px`}
-                  m={`3`}
-                  mb={`0`}
-                  mt="0"
+                  maxW={[`auto`, `300px`]}
+                  m={0}
+                  mt={3}
+                  ml="0!important"
                   rightIcon={<FaWordpress fontSize="0.8em" />}
                 >
                   Download the Plugin
