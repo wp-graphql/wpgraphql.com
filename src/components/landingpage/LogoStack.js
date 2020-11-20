@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Wrap, WrapItem, Tooltip, Image } from "@chakra-ui/react"
 
-import { GatsbyImage } from "@wardpeet/gatsby-image-nextgen/compat"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const LogoStack = ({ logos, ...props }) => {
   return (
@@ -35,12 +35,9 @@ const LogoStack = ({ logos, ...props }) => {
                     {...logo.imageprops}
                   />
                 ) : (
-                  <Box
-                    as={GatsbyImage}
+                  <GatsbyImage
                     alt={logo.alt}
-                    h="60px"
-                    w="auto"
-                    fixed={logo.image?.childImageSharp?.fixed}
+                    image={logo.image?.childImageSharp?.gatsbyImageData}
                     loading="lazy"
                     {...logo.imageprops}
                   />

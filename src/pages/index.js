@@ -1,6 +1,6 @@
 import React from "react"
 
-import { GatsbyImage } from "@wardpeet/gatsby-image-nextgen/compat"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import {
   Box,
@@ -145,7 +145,7 @@ const Home = ({ data }) => {
           </Flex>
           <Box
             as={GatsbyImage}
-            fluid={data.queryPosts.childImageSharp.fluid}
+            image={data.queryPosts.childImageSharp.gatsbyImageData}
             alt="Screenshot showing a GraphQL query for a list of posts"
             h="40|56|80"
             mt="12|14|16"
@@ -184,7 +184,7 @@ const Home = ({ data }) => {
 
           <Box
             as={GatsbyImage}
-            fluid={data.multipleRootResources.childImageSharp.fluid}
+            image={data.multipleRootResources.childImageSharp.gatsbyImageData}
             alt={"Screenshot showing a GraphQL Query for multiple resources"}
             h="40|56|80"
             mt="12|14|16"
@@ -295,9 +295,7 @@ export default Home
 export const query = graphql`
   fragment GraphiQLImgFile on File {
     childImageSharp {
-      fluid(maxWidth: 422, quality: 90) {
-        ...GatsbyImageSharpFluid_noBase64
-      }
+      gatsbyImageData(layout: FLUID, quality: 90, maxWidth: 422)
     }
   }
 

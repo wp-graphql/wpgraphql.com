@@ -33,7 +33,7 @@ const WpContentNode = ({ data }) => {
         <Flex>
           <DocsSidebar title={"Docs"} />
           <Box style={{ flex: 1 }}>
-            <Box pt={3} pl={10} pr={0} mt="0" mx="auto" minH="80vh">
+            <Box pt={3} pl={[ 0, 0, 10 ]} pr={0} mt="0" mx="auto" minH="80vh">
               <PageTransition>
                 <Flex>
                   <Box

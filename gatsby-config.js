@@ -66,7 +66,7 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `@wardpeet/gatsby-image-nextgen`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {

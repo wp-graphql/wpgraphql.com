@@ -7,9 +7,12 @@ const WhosUsing = () => {
   const data = useStaticQuery(graphql`
     fragment WhosUsingLogoFile on File {
       childImageSharp {
-        fixed(height: 60, quality: 90) {
-          ...GatsbyImageSharpFixed_tracedSVG
-        }
+        gatsbyImageData(
+          layout: FIXED
+          quality: 90
+          height: 60
+          placeholder: TRACED_SVG
+        )
       }
     }
 
