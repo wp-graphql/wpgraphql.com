@@ -41,7 +41,7 @@ const WpContentNode = ({ data }) => {
                     pt={3}
                     mt="0"
                     mx="auto"
-                    maxWidth={[`20rem`, "30rem", "100%"]}
+                    maxWidth={[`20rem`, "30rem", "40rem"]}
                     minH="80vh"
                   >
                     <Breadcrumb crumbs={crumbs} />

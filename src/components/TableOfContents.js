@@ -133,7 +133,7 @@ const TableOfContents = ({ content, reduceHeadings = false }) => {
       className="table-of-contents"
       flexShrink={0}
       h="calc(((100vh - 1.5rem) - 64px) - 42px);"
-      display={["none", "none", "none", "block"]}
+      display={["none", "none", "block"]}
     >
       {cleanHeadings}
     </Box>

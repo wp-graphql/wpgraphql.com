@@ -2,6 +2,7 @@
 .gatsby-image-wrapper {
   max-width: 100%;
   width: auto !important;
+  display: block;
 }
 
 .wp-block-image img {
