@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css";
+
 .content .wp-block-image .gatsby-image-wrapper,
 .content .gatsby-image-wrapper {
   max-width: 100%;

@@ -1,6 +1,5 @@
 /* global docsearch */
 import React, { useEffect } from "react"
-import { Helmet } from "react-helmet"
 import {
   Box,
   InputGroup,
@@ -34,12 +33,6 @@ const Search = () => {
 
   return (
     <>
-      <Helmet>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
-        />
-      </Helmet>
       <Box
         sx={{
           ".algolia-autocomplete .ds-dropdown-menu": {
