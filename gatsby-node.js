@@ -62,6 +62,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           context: {
             id: doc.id,
             uri: doc.uri,
+            typename: doc.__typename,
+            databaseId: doc.databaseId,
           },
         })
       }

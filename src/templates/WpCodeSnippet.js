@@ -7,10 +7,13 @@ import PageTransition from "../components/PageTransition"
 import { ParseHtml } from "../components/parse-html"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import RecipeSidebar from "../components/RecipeSidebar"
+import {getPagination} from "../utils";
+import Pagination from "../components/Pagination";
 
 const WpCodeSnippet = ({ data }) => {
   const {
     wpContentNode: { title, content, uri },
+      allWpCodeSnippet
   } = data
   const crumbs = [
     {
@@ -27,6 +30,8 @@ const WpCodeSnippet = ({ data }) => {
       isCurrentPage: true,
     },
   ]
+
+    const pagination = getPagination(uri, allWpCodeSnippet.nodes)
 
   return (
     <Layout>
@@ -49,6 +54,11 @@ const WpCodeSnippet = ({ data }) => {
                     {title}
                   </Heading>
                   {ParseHtml(content)}
+                    <Pagination
+                        sx={{ ".pagination-link": { wordBreak: "break-word" } }}
+                        next={pagination.next}
+                        previous={pagination.previous}
+                    />
                 </Box>
               </PageTransition>
             </Box>
@@ -70,6 +80,13 @@ export const query = graphql`
       }
       ... on WpNodeWithContentEditor {
         content
+      }
+    }
+    allWpCodeSnippet(sort: { order: DESC, fields: date }) {
+      nodes {
+        id
+        uri
+        title
       }
     }
   }
