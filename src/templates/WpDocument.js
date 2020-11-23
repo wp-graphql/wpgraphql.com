@@ -8,16 +8,16 @@ import DocsSidebar from "../components/DocsSidebar"
 import { ParseHtml } from "../components/parse-html"
 import TableOfContents from "../components/TableOfContents"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
-import { getPagination } from "../utils"
-import Pagination from "../components/Pagination"
+import {getPagination} from "../utils";
+import Pagination from "../components/Pagination";
 
 const WpContentNode = ({ data }) => {
   const {
-    wpDocument: { title, content, uri },
-    allWpDocument,
+    wpContentNode: { title, content, uri },
+      allWpDocument
   } = data
 
-  const pagination = getPagination(uri, allWpDocument.nodes)
+    const pagination = getPagination(uri, allWpDocument.nodes)
 
   const crumbs = [
     {
@@ -54,11 +54,11 @@ const WpContentNode = ({ data }) => {
                       {title}
                     </Heading>
                     {ParseHtml(content)}
-                    <Pagination
-                      sx={{ ".pagination-link": { wordBreak: "break-word" } }}
-                      next={pagination.next}
-                      previous={pagination.previous}
-                    />
+                      <Pagination
+                          sx={{ ".pagination-link": { wordBreak: "break-word" } }}
+                          next={pagination.next}
+                          previous={pagination.previous}
+                      />
                   </Box>
                   <TableOfContents
                     content={content}
@@ -76,7 +76,7 @@ const WpContentNode = ({ data }) => {
 
 export const query = graphql`
   query($id: String) {
-    wpDocument(id: { eq: $id }) {
+    wpContentNode(id: { eq: $id }) {
       __typename
       id
       uri
