@@ -11,7 +11,14 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+        options: {
+            resolveSiteUrl: () => {
+                return 'https://www.wpgraphql.com'
+            },
+        },
+    },
     "gatsby-plugin-netlify",
     {
       resolve: "gatsby-plugin-html-attributes",
