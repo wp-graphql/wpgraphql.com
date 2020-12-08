@@ -37,14 +37,14 @@ const Search = () => {
         sx={{
           ".algolia-autocomplete .ds-dropdown-menu": {
             width: [
-              `100%!important`,
-              `400px!important`,
+              `350px!important`,
+              `350px!important`,
               `400px!important`,
               `500px !important`,
             ],
             maxWidth: [
-              `100%!important`,
-              `100%!important`,
+              `350px!important`,
+              `350px!important`,
               `400px!important`,
               `500px !important`,
             ],
@@ -70,7 +70,7 @@ const Search = () => {
             borderColor: searchBg,
           },
           ".algolia-docsearch-suggestion--highlight": {
-            bg: "teal.50",
+            bg: searchOutline,
             color: headerColor,
           },
           ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--category-header": {
