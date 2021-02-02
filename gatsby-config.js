@@ -68,7 +68,7 @@ const plugins = [
   `gatsby-transformer-sharp`,
   `gatsby-plugin-image`,
   {
-    resolve: `gatsby-source-wordpress`,
+    resolve: `gatsby-source-wordpress-experimental`,
     options: {
       url: process.env.WPGRAPHQL_URL,
       verbose: true,
