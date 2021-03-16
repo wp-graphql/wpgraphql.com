@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react"
 import slugger from "slugger"
 import { TwitterTweetEmbed } from "react-twitter-embed"
+import Gist from 'super-react-gist'
 
 export const H1 = (props) => {
   return (
@@ -147,23 +148,29 @@ export const Div = (props) => {
   /**
    * Convert embedded tweets into actual embeds
    */
-  if (props.className && "wp-block-embed__wrapper" === props.className) {
-    // return <TwitterTweetEmbed tweetId={'1161402608688361472'} />
-    if (
-      props.children &&
-      props.children[1] &&
-      props.children[1].props.children &&
-      props.children[1].props.children[2] &&
-      props.children[1].props.children[2].props.href
-    ) {
-      const status = props.children[1].props.children[2].props.href
-      const id = getId(status)
-      return id ? <TwitterTweetEmbed tweetId={id} /> : null
-    }
+  console.log( props.className );
+    if (props.className && "wp-block-embed gist" === props.className) {
+        console.log(props)
+        return props.gist ? <chakra.div mt={5}><Gist url={props.gist} /></chakra.div> : null;
+    } else if (props.className && "wp-block-embed__wrapper" === props.className) {
+        // return <TwitterTweetEmbed tweetId={'1161402608688361472'} />
+        if (
+          props.children &&
+          props.children[1] &&
+          props.children[1].props.children &&
+          props.children[1].props.children[2] &&
+          props.children[1].props.children[2].props.href
+        ) {
+          const status = props.children[1].props.children[2].props.href
+          const id = getId(status)
+          return id ? <TwitterTweetEmbed tweetId={id} /> : null
+        }
 
     // return <chakra.p>{props.children[1].props.children[2].props.href}</chakra.p>
-  }
-  return <chakra.div {...props} />
+  } else {
+        return <chakra.div {...props} />
+    }
+
 }
 
 export * from "./Pre"

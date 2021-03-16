@@ -60,6 +60,7 @@
     "react-use": "^15.3.4",
     "showdown": "^1.9.1",
     "slugger": "^1.0.1",
+    "super-react-gist": "^1.0.4",
     "underscore": "^1.10.2"
   },
   "devDependencies": {
