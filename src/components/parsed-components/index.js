@@ -150,8 +150,7 @@ export const Div = (props) => {
    */
   console.log( props.className );
     if (props.className && "wp-block-embed gist" === props.className) {
-        console.log(props)
-        return props.gist ? <chakra.div mt={5}><Gist url={props.gist} /></chakra.div> : null;
+        return props && props.gist ? <chakra.div mt={5}><Gist url={props.gist} /></chakra.div> : <chakra.div {...props} />;
     } else if (props.className && "wp-block-embed__wrapper" === props.className) {
         // return <TwitterTweetEmbed tweetId={'1161402608688361472'} />
         if (
