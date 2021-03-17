@@ -148,7 +148,6 @@ export const Div = (props) => {
   /**
    * Convert embedded tweets into actual embeds
    */
-  console.log( props.className );
     if (props.className && "wp-block-embed gist" === props.className) {
         return props && props.gist ? <chakra.div mt={5}><Gist url={props.gist} /></chakra.div> : <chakra.div {...props} />;
     } else if (props.className && "wp-block-embed__wrapper" === props.className) {
@@ -169,6 +168,8 @@ export const Div = (props) => {
   } else {
         return <chakra.div {...props} />
     }
+
+    return <chakra.div {...props} />
 
 }
 
