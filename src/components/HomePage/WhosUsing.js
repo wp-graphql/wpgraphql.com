@@ -63,6 +63,11 @@ const WhosUsing = () => {
       logoGatsby: file(relativePath: { eq: "logo-gatsby.png" }) {
         ...WhosUsingLogoFile
       }
+      logoZeek: file(relativePath: { eq: "logo-zeek.svg" }) {
+        ...WhosUsingLogoFile
+        publicURL
+        ext
+      }
     }
   `)
 
@@ -153,6 +158,12 @@ const WhosUsing = () => {
       label: "Zillow",
       alt: "Zillow Logo",
       image: data.logoZillow,
+    },
+    {
+      link: "https://zeek.com/",
+      label: "Zeek Interactive",
+      alt: "Zeek Interactive",
+      image: data.logoZeek,
     },
   ]
 
