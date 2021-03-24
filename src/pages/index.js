@@ -299,7 +299,7 @@ export default Home
 export const query = graphql`
   fragment GraphiQLImgFile on File {
     childImageSharp {
-      gatsbyImageData(layout: FLUID, quality: 90, maxWidth: 422)
+      gatsbyImageData(layout: CONSTRAINED, quality: 90, width: 422)
     }
   }
 
