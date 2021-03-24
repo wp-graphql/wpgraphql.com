@@ -8,6 +8,7 @@ const WhosUsing = () => {
     fragment WhosUsingLogoFile on File {
       childImageSharp {
         gatsbyImageData(
+          formats: [AUTO, AVIF, WEBP]
           layout: FIXED
           quality: 90
           height: 60
