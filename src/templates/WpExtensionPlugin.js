@@ -42,7 +42,7 @@ const WpExtensionPlugin = ({ data }) => {
       <Container>
         <Flex>
           <Box style={{ flex: 1 }}>
-            <Box pt={3} mx={5} px={[5]} mt="0" mx="auto" minH="80vh">
+            <Box pt={3} px={[5]} mt="0" mx="auto" minH="80vh">
               <PageTransition>
                 <Flex>
                   <Box
