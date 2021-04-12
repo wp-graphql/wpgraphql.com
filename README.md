@@ -14,3 +14,7 @@ To run the site locally, copy `.env.example` to `.env.development` and set the c
 SITE_URL=http://localhost:8000
 WPGRAPHQL_URL=https://content.wpgraphql.com/graphql
 ```
+
+Then run `yarn` or `npm install` to install dependencies.
+
+Then run `gatsby develop` to run the site.
