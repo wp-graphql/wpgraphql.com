@@ -15,7 +15,7 @@ const WorksWithJS = ({ children, imageBG = "white" }) => {
           quality: 90
           height: 110
           placeholder: NONE
-          formats: [AUTO, AVIF, WEBP]
+          formats: [AUTO, WEBP]
         )
       }
     }
