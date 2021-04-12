@@ -303,7 +303,7 @@ export const query = graphql`
         layout: CONSTRAINED
         quality: 90
         width: 1300
-        formats: [AUTO, AVIF, WEBP]
+        formats: [AUTO, WEBP]
       )
     }
   }
