@@ -115,9 +115,9 @@ const plugins = [
   {
     resolve: "gatsby-plugin-git-clone",
     options: {
-      repository: "https://github.com/wp-graphql/wp-graphql.git",
+      repository: "https://github.com/markkelnar/wp-graphql.git",
       path: `${__dirname}/documentation/wp-graphql/main`,
-      branch: "master",
+      branch: "docs/add-faqs",
     },
   },
   {
