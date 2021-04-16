@@ -113,19 +113,18 @@ const plugins = [
     },
   },
   {
-    resolve: "gatsby-plugin-git",
+    resolve: "gatsby-plugin-git-clone",
     options: {
-      remote: "origin",
-      revision: "b2471c50f338080ea10c8f2f519cf141b32273b1",
-      url: "https://github.com/wp-graphql/wp-graphql.git",
-      path: `${__dirname}/documentation/wp-graphql/v1.3.5`,
+      repository: "https://github.com/wp-graphql/wp-graphql.git",
+      path: `${__dirname}/documentation/wp-graphql/main`,
+      branch: "master",
     },
   },
   {
     resolve: "gatsby-source-filesystem",
     options: {
-      path: `${__dirname}/documentation/wp-graphql/v1.3.5/docs`,
-      name: "documentation-v1.3.5",
+      path: `${__dirname}/documentation/wp-graphql/main/docs`,
+      name: "documentation-main",
     },
   },
   {
