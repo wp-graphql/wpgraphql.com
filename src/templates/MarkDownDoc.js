@@ -12,12 +12,9 @@ import { getPagination } from "../utils"
 import Pagination from "../components/Pagination"
 
 const MarkDownDoc = ({ data }) => {
-  const { markdownRemark: post, allMarkdownRemark } = data
+  const { markdownRemark: post, docPagination } = data
 
-  const pagination = getPagination(
-    post.frontmatter.uri,
-    allMarkdownRemark.nodes
-  )
+  const pagination = getPagination(post.frontmatter.uri, docPagination.nodes)
 
   const crumbs = [
     {
@@ -84,13 +81,11 @@ export const query = graphql`
         uri
       }
     }
-    allMarkdownRemark(sort: { fields: frontmatter___title }) {
+    docPagination: allWpDocument(sort: { fields: menuOrder }) {
       nodes {
         id
-        frontmatter {
-          title
-          uri
-        }
+        uri
+        title
       }
     }
   }
