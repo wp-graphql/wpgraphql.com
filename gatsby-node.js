@@ -31,6 +31,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+      markdownDocs: allMarkdownRemark {
+        nodes {
+          __typename
+          id
+          frontmatter {
+            uri
+          }
+        }
+      }
     }
   `)
 
@@ -38,7 +47,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.error("There was an error fetching docs.", result.errors)
   }
 
-  const { allContent, snippetTags, blogAuthors } = result.data
+  const { allContent, snippetTags, blogAuthors, markdownDocs } = result.data
 
   if (allContent.nodes.length) {
     allContent.nodes.map((doc) => {
@@ -96,6 +105,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         })
       }
     })
+  }
+
+  if (markdownDocs.nodes.length) {
+    markdownDocs.nodes.map((markDown) =>
+      actions.createPage({
+        path: ensureTrailingSlash(markDown.frontmatter.uri),
+        component: require.resolve(`./src/templates/MarkDownDoc.js`),
+        context: {
+          id: markDown.id,
+          uri: markDown.frontmatter.uri,
+        },
+      })
+    )
   }
 }
 
