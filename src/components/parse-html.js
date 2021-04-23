@@ -27,7 +27,7 @@ export const getStyleObjectFromString = (styles) => {
     if (!property) return
 
     const formattedProperty = formatStringToCamelCase(property.trim())
-    style[formattedProperty] = value.trim()
+    style[formattedProperty] = value ? value.trim() : null
   })
 
   return style
