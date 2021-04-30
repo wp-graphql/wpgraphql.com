@@ -1,27 +1,52 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { flatListToHierarchical } from "../utils"
+import { flatListToHierarchical, navMenuListFromYaml } from "../utils"
 import Sidebar from "./sidebar/Sidebar"
 
 const DocsSidebar = ({ title }) => {
   const data = useStaticQuery(graphql`
     {
-      allWpMenuItem(
-        sort: { fields: order, order: ASC }
-        filter: { menu: { node: { name: { eq: "Docs Nav" } } } }
-      ) {
+      navMenu: allDocsNavMenuYaml {
         nodes {
           id
-          title: label
-          path
-          target
-          parent: parentId
+          section {
+            name
+            items {
+              uri
+              label
+            }
+          }
+        }
+      }
+      markdownDocs: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "//v1/docs//" } }
+      ) {
+        nodes {
+          frontmatter {
+            uri
+            title
+          }
+        }
+      }
+      wpDocs: allWpDocument {
+        nodes {
+          uri
+          title
         }
       }
     }
   `)
 
-  const routes = flatListToHierarchical(data.allWpMenuItem.nodes, {
+  // Make a list of document titles from the document sources if label/title is not found in the yaml.
+  let otherTitles = data.markdownDocs.nodes
+    .map(function (elem) {
+      return elem.frontmatter
+    })
+    .concat(data.wpDocs.nodes)
+
+  const navRoutes = navMenuListFromYaml(data.navMenu.nodes, otherTitles)
+
+  const routes = flatListToHierarchical(navRoutes, {
     idKey: "id",
     childrenKey: "routes",
     parentKey: "parent",
