@@ -13,7 +13,7 @@ const DocsSidebar = ({ title }) => {
             name
             items {
               uri
-              label
+              title: label
             }
           }
         }
@@ -37,14 +37,10 @@ const DocsSidebar = ({ title }) => {
     }
   `)
 
-  // Make a list of document titles from the document sources if label/title is not found in the yaml.
-  let otherTitles = data.markdownDocs.nodes
-    .map(function (elem) {
-      return elem.frontmatter
-    })
-    .concat(data.wpDocs.nodes)
-
-  const navRoutes = navMenuListFromYaml(data.navMenu.nodes, otherTitles)
+  const navRoutes = navMenuListFromYaml(
+    data.navMenu.nodes,
+    data.markdownDocs.nodes.concat(data.wpDocs.nodes)
+  )
 
   const routes = flatListToHierarchical(navRoutes, {
     idKey: "id",
