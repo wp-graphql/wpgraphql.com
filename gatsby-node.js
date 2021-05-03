@@ -31,7 +31,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      markdownDocs: allMarkdownRemark {
+      markdownDocs: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/\/v1\/docs\//" } }
+      ) {
         nodes {
           __typename
           id

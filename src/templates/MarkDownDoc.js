@@ -8,13 +8,25 @@ import DocsSidebar from "../components/DocsSidebar"
 import { ParseHtml } from "../components/parse-html"
 import TableOfContents from "../components/TableOfContents"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
-import { getPagination } from "../utils"
+import { getPagination, navMenuListFromYaml } from "../utils"
 import Pagination from "../components/Pagination"
 
 const MarkDownDoc = ({ data }) => {
-  const { markdownRemark: post, docPagination } = data
+  const { markdownRemark: post, navMenu, markdownDocs, wpDocs } = data
 
-  const pagination = getPagination(post.frontmatter.uri, docPagination.nodes)
+  // Get only the page items from navigation yaml in order
+  let navRoutes = navMenuListFromYaml(
+    navMenu.nodes,
+    markdownDocs.nodes.concat(wpDocs.nodes)
+  )
+  navRoutes = navRoutes
+    .map(function (item) {
+      item.uri = item.path
+      return item
+    })
+    .filter((item) => "#" !== item.path)
+
+  const pagination = getPagination(post.frontmatter.uri, navRoutes)
 
   const crumbs = [
     {
@@ -81,9 +93,30 @@ export const query = graphql`
         uri
       }
     }
-    docPagination: allWpDocument(sort: { fields: menuOrder }) {
+    navMenu: allDocsNavMenuYaml {
       nodes {
         id
+        section {
+          name
+          items {
+            uri
+            title: label
+          }
+        }
+      }
+    }
+    markdownDocs: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "//v1/docs//" } }
+    ) {
+      nodes {
+        frontmatter {
+          uri
+          title
+        }
+      }
+    }
+    wpDocs: allWpDocument {
+      nodes {
         uri
         title
       }

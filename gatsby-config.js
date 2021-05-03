@@ -116,15 +116,16 @@ const plugins = [
     resolve: "gatsby-plugin-git-clone",
     options: {
       repository: "https://github.com/markkelnar/wp-graphql.git",
-      path: `${__dirname}/documentation/wp-graphql/main`,
+      path: `${__dirname}/documentation/wp-graphql/v1`,
       branch: "docs/add-faqs",
     },
   },
+  "gatsby-transformer-yaml",
   {
     resolve: "gatsby-source-filesystem",
     options: {
-      path: `${__dirname}/documentation/wp-graphql/main/docs`,
-      name: "documentation-main",
+      path: `${__dirname}/documentation/wp-graphql/v1/docs`,
+      name: "documentation-v1",
     },
   },
   {
@@ -132,9 +133,9 @@ const plugins = [
     options: {
       plugins: [
         {
-          resolve: `gatsby-remark-images`,
+          resolve: `gatsby-remark-copy-linked-files`,
           options: {
-            maxWidth: 802,
+            ignoreFileExtensions: [],
           },
         },
       ],

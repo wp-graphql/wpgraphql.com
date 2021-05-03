@@ -8,16 +8,30 @@ import DocsSidebar from "../components/DocsSidebar"
 import { ParseHtml } from "../components/parse-html"
 import TableOfContents from "../components/TableOfContents"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
-import {getPagination} from "../utils";
-import Pagination from "../components/Pagination";
+import { getPagination, navMenuListFromYaml } from "../utils"
+import Pagination from "../components/Pagination"
 
 const WpContentNode = ({ data }) => {
   const {
     wpContentNode: { title, content, uri },
-      allWpDocument
+    navMenu,
+    markdownDocs,
+    wpDocs,
   } = data
 
-    const pagination = getPagination(uri, allWpDocument.nodes)
+  // Get only the page items from navigation yaml in order
+  let navRoutes = navMenuListFromYaml(
+    navMenu.nodes,
+    markdownDocs.nodes.concat(wpDocs.nodes)
+  )
+  navRoutes = navRoutes
+    .map(function (item) {
+      item.uri = item.path
+      return item
+    })
+    .filter((item) => "#" !== item.path)
+
+  const pagination = getPagination(uri, navRoutes)
 
   const crumbs = [
     {
@@ -54,11 +68,11 @@ const WpContentNode = ({ data }) => {
                       {title}
                     </Heading>
                     {ParseHtml(content)}
-                      <Pagination
-                          sx={{ ".pagination-link": { wordBreak: "break-word" } }}
-                          next={pagination.next}
-                          previous={pagination.previous}
-                      />
+                    <Pagination
+                      sx={{ ".pagination-link": { wordBreak: "break-word" } }}
+                      next={pagination.next}
+                      previous={pagination.previous}
+                    />
                   </Box>
                   <TableOfContents
                     content={content}
@@ -87,9 +101,30 @@ export const query = graphql`
         content
       }
     }
-    allWpDocument(sort: { fields: menuOrder }) {
+    navMenu: allDocsNavMenuYaml {
       nodes {
         id
+        section {
+          name
+          items {
+            uri
+            title: label
+          }
+        }
+      }
+    }
+    markdownDocs: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "//v1/docs//" } }
+    ) {
+      nodes {
+        frontmatter {
+          uri
+          title
+        }
+      }
+    }
+    wpDocs: allWpDocument {
+      nodes {
         uri
         title
       }
