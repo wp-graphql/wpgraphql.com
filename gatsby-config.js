@@ -133,9 +133,9 @@ const plugins = [
     options: {
       plugins: [
         {
-          resolve: `gatsby-remark-images`,
+          resolve: `gatsby-remark-copy-linked-files`,
           options: {
-            maxWidth: 800,
+            ignoreFileExtensions: [],
           },
         },
       ],
