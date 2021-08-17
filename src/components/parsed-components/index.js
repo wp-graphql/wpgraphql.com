@@ -101,7 +101,7 @@ export const Code = (props) => (
   />
 )
 
-export const Br = (props) => <Box height="24px" {...props} />
+export const Br = (props) => <Box style={{minHeight:"24px" height:"auto"}} />
 
 export const A = (props) => <chakra.a apply="wp.a" {...props} />
 
