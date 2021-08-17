@@ -90,7 +90,7 @@ export const query = graphql`
         content
       }
     }
-    allWpFilter(sort: { fields: title }) {
+    allWpFilter: allWpFilterType(sort: { fields: title }) {
       nodes {
         id
         uri

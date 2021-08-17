@@ -183,7 +183,7 @@ const Pricing = () => (
   </Box>
 )
 
-const FAQ = () => {
+const Faq = () => {
   const items = [
     {
       title: "What is included in Support?",
@@ -285,7 +285,7 @@ const Acf = () => {
             </Heading>
           </WorksWithJS>
           <Pricing />
-          <FAQ />
+          <Faq />
         </Box>
       </Container>
     </Layout>

@@ -68,7 +68,7 @@ const plugins = [
   `gatsby-transformer-sharp`,
   `gatsby-plugin-image`,
   {
-    resolve: `gatsby-source-wordpress-experimental`,
+    resolve: `gatsby-source-wordpress`,
     options: {
       url: process.env.WPGRAPHQL_URL,
       verbose: true,
@@ -143,13 +143,6 @@ const plugins = [
     },
   },
 ]
-
-if (
-  process.env.NODE_ENV === `production` &&
-  !process.env.ENABLE_GATSBY_REFRESH_ENDPOINT
-) {
-  plugins.push(`gatsby-plugin-offline`)
-}
 
 module.exports = {
   siteMetadata: {

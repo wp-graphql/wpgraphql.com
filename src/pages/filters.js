@@ -64,7 +64,7 @@ const Filters = ({ data }) => {
 
 export const data = graphql`
   {
-    allWpFilter(sort: { order: ASC, fields: title }) {
+    allWpFilter: allWpFilterType(sort: { order: ASC, fields: title }) {
       nodes {
         title
         id
