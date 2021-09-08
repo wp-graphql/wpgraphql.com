@@ -182,8 +182,8 @@ function Layout(props) {
             <Text>
               Development sponsored by{" "}
               <a
-                href={`https://gatsbyjs.com/`}
-                target={`_blank`}
+                href="https://wpengine.com/"
+                target="_blank"
                 rel="noreferrer"
               >
                 <Text
@@ -191,7 +191,7 @@ function Layout(props) {
                   border="0"
                   color={useColorModeValue(`blue.600`, `#0cf`)}
                 >
-                  Gatsby
+                  WP Engine
                 </Text>
               </a>
             </Text>
