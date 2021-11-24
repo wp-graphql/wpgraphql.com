@@ -30,7 +30,7 @@ const Home = ({ data }) => {
         borderBottomWidth="1px"
         className="svelte-12nb7vhg"
       >
-        <Container mt="0" className="jk-its-react-and-gatsby">
+        <Container mt="0" className="jk-its-react-and-gatsby-but-svelte-looks-cool-hope-to-check-it-out-soon">
           <Flex
             flexDirection="column"
             textAlign="center"
