@@ -139,7 +139,8 @@ const plugins = [
           },
         },
       ],
-      pedantic: false,
+      gfm: true,
+      footnotes: true,
     },
   },
 ]

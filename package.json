@@ -37,6 +37,7 @@
     "gatsby-plugin-react-svg": "3.1.0",
     "gatsby-plugin-sharp": "4.2.0",
     "gatsby-plugin-sitemap": "5.2.0",
+    "gatsby-react-router-scroll": "5.2.0",
     "gatsby-remark-copy-linked-files": "5.2.0",
     "gatsby-source-filesystem": "4.2.0",
     "gatsby-source-wordpress": "6.2.0",
@@ -55,7 +56,7 @@
     "react-icons": "^3.11.0",
     "react-live": "^2.2.2",
     "react-lorem-component": "^0.13.0",
-    "react-scroll": "^1.8.1",
+    "react-scroll": "^1.8.4",
     "react-spinners": "^0.9.0",
     "react-twitter-embed": "^3.0.3",
     "react-use": "^15.3.4",
@@ -75,5 +76,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "resolutions": {
+    "gatsby-react-router-scroll": "5.2.0"
   }
 }
