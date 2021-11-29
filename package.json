@@ -1,6 +1,5 @@
 {
-  "name": "gatsby-starter-base",
-  "version": "0.3.0",
+  "name": "WPGraphQL",
   "private": true,
   "license": "MIT",
   "scripts": {
