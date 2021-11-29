@@ -28,8 +28,9 @@ const Home = ({ data }) => {
         width={`100%`}
         background={useColorModeValue(`gray.50`, `gray.700`)}
         borderBottomWidth="1px"
+        className="svelte-12nb7vhg"
       >
-        <Container mt="0">
+        <Container mt="0" className="jk-its-react-and-gatsby-but-svelte-looks-cool-hope-to-check-it-out-soon">
           <Flex
             flexDirection="column"
             textAlign="center"
