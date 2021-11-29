@@ -8,13 +8,13 @@ import { ParseHtml } from "../components/parse-html"
 import TableOfContents from "../components/TableOfContents"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import PostInfo from "../components/PostInfo"
-import {getPagination} from "../utils";
-import Pagination from "../components/Pagination";
+import { getPagination } from "../utils"
+import Pagination from "../components/Pagination"
 
 const WpPost = ({ data }) => {
   const {
     wpPost: { title, content, uri, author, date },
-      allWpPost
+    allWpPost,
   } = data
 
   const crumbs = [
@@ -29,7 +29,7 @@ const WpPost = ({ data }) => {
     },
   ]
 
-    const pagination = getPagination(uri, allWpPost.nodes)
+  const pagination = getPagination(uri, allWpPost.nodes)
 
   return (
     <Layout>
@@ -57,11 +57,11 @@ const WpPost = ({ data }) => {
                       date={date}
                     />
                     {ParseHtml(content)}
-                      <Pagination
-                          sx={{ ".pagination-link": { wordBreak: "break-word" } }}
-                          next={pagination.next}
-                          previous={pagination.previous}
-                      />
+                    <Pagination
+                      sx={{ ".pagination-link": { wordBreak: "break-word" } }}
+                      next={pagination.next}
+                      previous={pagination.previous}
+                    />
                   </Box>
                   <TableOfContents
                     content={content}
@@ -78,7 +78,7 @@ const WpPost = ({ data }) => {
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     wpPost(id: { eq: $id }) {
       __typename
       id

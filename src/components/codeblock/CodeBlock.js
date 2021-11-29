@@ -78,7 +78,12 @@ function CodeBlock(props) {
   }
 
   return (
-    <LiveProvider className="code-block" disabled {...liveProviderProps} style={{height:"auto"}}>
+    <LiveProvider
+      className="code-block"
+      disabled
+      {...liveProviderProps}
+      style={{ height: "auto" }}
+    >
       <Box position="relative" zIndex="0">
         {setLanguage && <CodeLanguageTag>{setLanguage}</CodeLanguageTag>}
         <CodeContainer>

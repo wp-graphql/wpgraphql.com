@@ -8,13 +8,13 @@ import { ParseHtml } from "../components/parse-html"
 import TableOfContents from "../components/TableOfContents"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import DeveloperReferenceSidebar from "../components/DeveloperReferenceSidebar"
-import Pagination from "../components/Pagination";
+import Pagination from "../components/Pagination"
 import { getPagination } from "../utils"
 
 const WpContentNode = ({ data }) => {
   const {
     wpContentNode: { title, content, uri },
-    allWpFunction
+    allWpFunction,
   } = data
 
   const pagination = getPagination(uri, allWpFunction.nodes)
@@ -57,11 +57,11 @@ const WpContentNode = ({ data }) => {
                       {title}
                     </Heading>
                     {ParseHtml(content)}
-                      <Pagination
-                          sx={{ ".pagination-link": { wordBreak: "break-word" } }}
-                          next={pagination.next}
-                          previous={pagination.previous}
-                      />
+                    <Pagination
+                      sx={{ ".pagination-link": { wordBreak: "break-word" } }}
+                      next={pagination.next}
+                      previous={pagination.previous}
+                    />
                   </Box>
                   <TableOfContents
                     content={content}
@@ -78,7 +78,7 @@ const WpContentNode = ({ data }) => {
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     wpContentNode(id: { eq: $id }) {
       __typename
       id

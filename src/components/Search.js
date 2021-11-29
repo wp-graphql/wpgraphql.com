@@ -52,12 +52,14 @@ const Search = () => {
             background: "gray.800",
             boxShadow: "md",
           },
-          ".algolia-autocomplete .algolia-docsearch-suggestion--category-header": {
-            color: headerColor,
-          },
-          ".algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column": {
-            color: headerColor,
-          },
+          ".algolia-autocomplete .algolia-docsearch-suggestion--category-header":
+            {
+              color: headerColor,
+            },
+          ".algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column":
+            {
+              color: headerColor,
+            },
           ".algolia-autocomplete .algolia-docsearch-suggestion--title": {
             color: headerColor,
           },
@@ -73,36 +75,43 @@ const Search = () => {
             bg: searchOutline,
             color: headerColor,
           },
-          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--category-header": {
-            bg: searchBg,
-            color: headerColor,
-          },
-          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--subcategory-column": {
-            color: "gray.800",
-          },
-          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--title": {
-            color: "gray.800",
-          },
-          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--text": {
-            color: "gray.800",
-          },
-          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--wrapper": {
-            bg: "gray.100",
-            color: "gray.800",
-          },
-          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--content": {
-            bg: "transparent!important",
-            color: "gray.800",
-          },
+          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--category-header":
+            {
+              bg: searchBg,
+              color: headerColor,
+            },
+          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--subcategory-column":
+            {
+              color: "gray.800",
+            },
+          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--title":
+            {
+              color: "gray.800",
+            },
+          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--text":
+            {
+              color: "gray.800",
+            },
+          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--wrapper":
+            {
+              bg: "gray.100",
+              color: "gray.800",
+            },
+          ".algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--content":
+            {
+              bg: "transparent!important",
+              color: "gray.800",
+            },
           ".ds-dropdown-menu": {
             "&:before": {
               display: "none",
             },
           },
-          ".algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu:before": {
-            bg: searchOutline,
-            borderColor: searchOutline,
-          },
+          ".algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu:before":
+            {
+              bg: searchOutline,
+              borderColor: searchOutline,
+            },
           ".algolia-autocomplete .ds-dropdown-menu [class^=ds-dataset-]": {
             bg: searchOutline,
             borderColor: searchOutline,

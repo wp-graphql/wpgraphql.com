@@ -7,13 +7,13 @@ import PageTransition from "../components/PageTransition"
 import { ParseHtml } from "../components/parse-html"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import RecipeSidebar from "../components/RecipeSidebar"
-import {getPagination} from "../utils";
-import Pagination from "../components/Pagination";
+import { getPagination } from "../utils"
+import Pagination from "../components/Pagination"
 
 const WpCodeSnippet = ({ data }) => {
   const {
     wpContentNode: { title, content, uri },
-      allWpCodeSnippet
+    allWpCodeSnippet,
   } = data
   const crumbs = [
     {
@@ -31,7 +31,7 @@ const WpCodeSnippet = ({ data }) => {
     },
   ]
 
-    const pagination = getPagination(uri, allWpCodeSnippet.nodes)
+  const pagination = getPagination(uri, allWpCodeSnippet.nodes)
 
   return (
     <Layout>
@@ -54,11 +54,11 @@ const WpCodeSnippet = ({ data }) => {
                     {title}
                   </Heading>
                   {ParseHtml(content)}
-                    <Pagination
-                        sx={{ ".pagination-link": { wordBreak: "break-word" } }}
-                        next={pagination.next}
-                        previous={pagination.previous}
-                    />
+                  <Pagination
+                    sx={{ ".pagination-link": { wordBreak: "break-word" } }}
+                    next={pagination.next}
+                    previous={pagination.previous}
+                  />
                 </Box>
               </PageTransition>
             </Box>
@@ -70,7 +70,7 @@ const WpCodeSnippet = ({ data }) => {
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     wpContentNode(id: { eq: $id }) {
       __typename
       id

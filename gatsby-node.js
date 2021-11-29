@@ -32,7 +32,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
       markdownDocs: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/\/v1\/docs\//" } }
+        filter: { fileAbsolutePath: { regex: "//v1/docs//" } }
       ) {
         nodes {
           __typename

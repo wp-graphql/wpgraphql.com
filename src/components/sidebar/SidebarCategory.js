@@ -11,15 +11,8 @@ const Arrow = (props) => (
 )
 
 function SidebarCategory(props) {
-  const {
-    isMobile,
-    title,
-    selected,
-    opened,
-    children,
-    contentRef,
-    ...rest
-  } = props
+  const { isMobile, title, selected, opened, children, contentRef, ...rest } =
+    props
 
   const ref = useRef(null)
 
