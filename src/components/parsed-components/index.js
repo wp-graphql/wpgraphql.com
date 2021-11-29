@@ -132,6 +132,8 @@ export const Noscript = (props) => {
   return <noscript {...props} />
 }
 
+export const Script = (props) => <script {...props} />
+
 const getId = (string) => {
   const regex = /status\/(\d+)/g
   let m
