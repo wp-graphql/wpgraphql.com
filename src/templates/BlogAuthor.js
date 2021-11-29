@@ -64,7 +64,7 @@ const BlogAuthor = ({ data }) => {
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     wpUser(id: { eq: $id }) {
       uri
       name

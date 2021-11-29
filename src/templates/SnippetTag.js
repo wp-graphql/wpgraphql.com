@@ -63,7 +63,7 @@ const SnippetTag = ({ data }) => {
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     wpCodeSnippetTag(id: { eq: $id }) {
       __typename
       id

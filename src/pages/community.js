@@ -27,8 +27,7 @@ const Community = () => {
     {
       icon: FaSlack,
       title: "Slack",
-      link:
-        "https://join.slack.com/t/wp-graphql/shared_invite/zt-3vloo60z-PpJV2PFIwEathWDOxCTTLA",
+      link: "https://join.slack.com/t/wp-graphql/shared_invite/zt-3vloo60z-PpJV2PFIwEathWDOxCTTLA",
       content:
         "The WPGraphQL Slack is a great place to communicate in real-time. Ask questions, discuss features, get to know other folks using WPGraphQL.",
     },

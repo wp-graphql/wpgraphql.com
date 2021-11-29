@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react"
 import slugger from "slugger"
 import { TwitterTweetEmbed } from "react-twitter-embed"
-import Gist from 'super-react-gist'
+import Gist from "super-react-gist"
 
 export const H1 = (props) => {
   return (
@@ -101,7 +101,9 @@ export const Code = (props) => (
   />
 )
 
-export const Br = (props) => <Box style={{minHeight:"24px", height:"auto"}} />
+export const Br = (props) => (
+  <Box style={{ minHeight: "24px", height: "auto" }} />
+)
 
 export const A = (props) => <chakra.a apply="wp.a" {...props} />
 
@@ -148,29 +150,34 @@ export const Div = (props) => {
   /**
    * Convert embedded tweets into actual embeds
    */
-    if (props.className && "wp-block-embed gist" === props.className) {
-        return props && props.gist ? <chakra.div mt={5}><Gist url={props.gist} /></chakra.div> : <chakra.div {...props} />;
-    } else if (props.className && "wp-block-embed__wrapper" === props.className) {
-        // return <TwitterTweetEmbed tweetId={'1161402608688361472'} />
-        if (
-          props.children &&
-          props.children[1] &&
-          props.children[1].props.children &&
-          props.children[1].props.children[2] &&
-          props.children[1].props.children[2].props.href
-        ) {
-          const status = props.children[1].props.children[2].props.href
-          const id = getId(status)
-          return id ? <TwitterTweetEmbed tweetId={id} /> : null
-        }
+  if (props.className && "wp-block-embed gist" === props.className) {
+    return props && props.gist ? (
+      <chakra.div mt={5}>
+        <Gist url={props.gist} />
+      </chakra.div>
+    ) : (
+      <chakra.div {...props} />
+    )
+  } else if (props.className && "wp-block-embed__wrapper" === props.className) {
+    // return <TwitterTweetEmbed tweetId={'1161402608688361472'} />
+    if (
+      props.children &&
+      props.children[1] &&
+      props.children[1].props.children &&
+      props.children[1].props.children[2] &&
+      props.children[1].props.children[2].props.href
+    ) {
+      const status = props.children[1].props.children[2].props.href
+      const id = getId(status)
+      return id ? <TwitterTweetEmbed tweetId={id} /> : null
+    }
 
     // return <chakra.p>{props.children[1].props.children[2].props.href}</chakra.p>
   } else {
-        return <chakra.div {...props} />
-    }
-
     return <chakra.div {...props} />
+  }
 
+  return <chakra.div {...props} />
 }
 
 export * from "./Pre"

@@ -78,7 +78,7 @@ const WpContentNode = ({ data }) => {
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     wpContentNode(id: { eq: $id }) {
       __typename
       id

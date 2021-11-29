@@ -12,7 +12,7 @@ const PluginSidebar = ({ pluginType, pluginHost, pluginLink, ...rest }) => {
   }
 
   return (
-    <Box {...rest} >
+    <Box {...rest}>
       <Text>
         <Box as={icon} mt={-1} size="16px" display="inline-block" /> {text}
       </Text>

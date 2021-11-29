@@ -181,11 +181,7 @@ function Layout(props) {
           >
             <Text>
               Development sponsored by{" "}
-              <a
-                href="https://wpengine.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://wpengine.com/" target="_blank" rel="noreferrer">
                 <Text
                   as={`span`}
                   border="0"

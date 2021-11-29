@@ -109,7 +109,7 @@ const WpExtensionPlugin = ({ data }) => {
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     wpExtensionPlugin(id: { eq: $id }) {
       __typename
       id

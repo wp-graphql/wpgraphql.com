@@ -84,7 +84,7 @@ const MarkDownDoc = ({ data }) => {
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     markdownRemark(id: { eq: $id }) {
       id
       html
