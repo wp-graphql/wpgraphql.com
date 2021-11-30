@@ -64,9 +64,9 @@ const plugins = [
       path: `${__dirname}/src/img/`,
     },
   },
+  `gatsby-plugin-image`,
   `gatsby-plugin-sharp`,
   `gatsby-transformer-sharp`,
-  `gatsby-plugin-image`,
   {
     resolve: `gatsby-source-wordpress`,
     options: {

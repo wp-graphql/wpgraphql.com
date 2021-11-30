@@ -2,6 +2,7 @@ const fs = require("fs")
 const showdown = require("showdown")
 const axios = require(`axios`)
 const { ensureTrailingSlash } = require("./src/utils")
+const { reporter } = require("gatsby-cli/lib/reporter/reporter")
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
@@ -124,27 +125,53 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 }
 
 exports.onCreateNode = async ({ node, actions }) => {
+
+  const { createNodeField } = actions
+
   // If this is an extension node, check if the README field exists.
-  if (node.internal.type != `WpExtensionPlugin`) {
-    return
+  if (node?.internal?.type !== `WpExtensionPlugin`) {
+    return;
   }
 
-  if (!node.extensionFields.pluginReadmeLink) {
-    return
+  if (!node?.extensionFields?.pluginReadmeLink) {
+    return;
   }
+
+  // Make an http call to pull in the README contents.
+  const uri = node?.extensionFields?.pluginReadmeLink ?? null;
+
+  if (!uri) {
+    return;
+  }
+
+  let readmeContent = '';
 
   try {
-    // Make an http call to pull in the README contents.
-    const data = await axios.get(node.extensionFields.pluginReadmeLink)
-
-    if (data.status == "200" && data.data) {
+    
+    const data = await axios.get( uri )
+    
+    if (data.status === 200 && data?.data) {
       converter = new showdown.Converter()
-
+      converter.setFlavor('github')
       // Save the README contents to the readmeContent field.
+      reporter.info(`Fetched README for ${node?.extensionFields?.pluginReadmeLink}`)
       node.readmeContent = converter.makeHtml(data.data)
+      return node;
+    } else {
+      reporter.error(`Something funky while Fetching README for ${node?.extensionFields?.pluginReadmeLink}`)
+      reporter.error({
+        status: data?.status,
+        data: data?.data
+      })
+      node.readmeContent = '';
+      return node;
     }
+
   } catch (e) {
-    return
+    reporter.error(`Failed to fetch README for ${node?.extensionFields?.pluginReadmeLink}`)
+    reporter.error(e)
+    node.readmeContent = '';
+    return node;
   }
 }
 
