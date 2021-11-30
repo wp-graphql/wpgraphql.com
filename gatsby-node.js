@@ -151,6 +151,8 @@ exports.onCreateNode = async ({ node, actions }) => {
       converter.setFlavor("github")
       // Save the README contents to the readmeContent field.
       node.readmeContent = converter.makeHtml(data.data)
+    } else {
+      node.readmeContent = '';
     }
   } catch (e) {
     node.readmeContent = '';
