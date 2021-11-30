@@ -134,9 +134,22 @@ exports.onCreateNode = async ({ node, actions }) => {
     return
   }
 
+  // Make an http call to pull in the README contents.
+  const url = node?.extensionFields?.pluginReadmeLink ?? null;
+  const uri = url ? url + `?` + new Date().getTime() : null
+
+  if (!uri) {
+    return
+  }
+
   try {
-    // Make an http call to pull in the README contents.
-    const data = await axios.get(node.extensionFields.pluginReadmeLink)
+    
+    const data = await axios.get( uri )
+    
+    console.debug(`Fetched README for ${node.extensionFields.pluginName}`, {
+      uri,
+      data: data?.data,
+    })
 
     if (data.status == "200" && data.data) {
       converter = new showdown.Converter()
@@ -145,7 +158,7 @@ exports.onCreateNode = async ({ node, actions }) => {
       node.readmeContent = converter.makeHtml(data.data)
     }
   } catch (e) {
-    node.readmeContent = null;
+    node.readmeContent = '';
     return
   }
 }
