@@ -124,33 +124,53 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 }
 
-exports.onCreateNode = async ({ node, actions }) => {
+// exports.onCreateNode = async ({ node, actions }) => {
 
-  const { createNodeField } = actions
+//   const { createNodeField } = actions
 
-  // If this is an extension node, check if the README field exists.
-  if (node?.internal?.type !== `WpExtensionPlugin`) {
-    return;
-  }
+//   // If this is an extension node, check if the README field exists.
+//   if (node?.internal?.type !== `WpExtensionPlugin`) {
+//     return;
+//   }
 
-  if (! node.readmeContent) {
-    return;
-  }
+//   if (! node.readmeContent) {
+//     return;
+//   }
 
-  converter = new showdown.Converter()
-  converter.setFlavor('github')
-  node.readmeContentParsed = converter.makeHtml( node.readmeContent )
-  reporter.info(`Added readmeContentParsed to node for ${node?.extensionFields?.pluginReadmeLink}`)
-  reporter.info( `content: ${node.readmeContent ? node.readmeContent.substring(0, 25) : null}`)
-  reporter.info( `parsed: ${node.readmeContentParsed ? node.readmeContentParsed.substring(0, 25) : null}`)
-  return;
+//   converter = new showdown.Converter()
+//   converter.setFlavor('github')
+//   node.readmeContentParsed = converter.makeHtml( node.readmeContent )
+//   reporter.info(`Added readmeContentParsed to node for ${node?.extensionFields?.pluginReadmeLink}`)
+//   reporter.info( `content: ${node.readmeContent ? node.readmeContent.substring(0, 25) : null}`)
+//   reporter.info( `parsed: ${node.readmeContentParsed ? node.readmeContentParsed.substring(0, 25) : null}`)
+//   return;
 
-}
+// }
 
 exports.createSchemaCustomization = ({ actions }) => {
-  actions.createTypes(`
+
+  const { createTypes } = actions
+  
+  createTypes(`
     type WpExtensionPlugin {
       readmeContentParsed: String
     }
   `)
+
+}
+
+exports.createResolvers = ({ createResolvers }) => {
+  createResolvers({
+    WpExtensionPlugin: {
+      readmeContentParsed: {
+        type: `String`,
+        resolve: (source, args, context, info) => {
+          converter = new showdown.Converter()
+          converter.setFlavor('github')
+          console.log( { readmeContentParsedResolver: { source } })
+          return converter.makeHtml( source.readmeContent )
+        } 
+      }
+    }
+  })
 }
