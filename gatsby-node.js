@@ -149,10 +149,10 @@ exports.onCreateNode = ({ node, actions }) => {
 
 }
 
-// exports.createSchemaCustomization = ({ actions }) => {
-//   actions.createTypes(`
-//     type WpExtensionPlugin {
-//       readmeContentParsed: String
-//     }
-//   `)
-// }
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type WpExtensionPlugin {
+      readmeContentParsed: String
+    }
+  `)
+}
