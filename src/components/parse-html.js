@@ -39,7 +39,7 @@ export const ParseHtmlToReact = (html, components, reduceHeadings = false) => {
   }
 
   const transform = (node, i = 0) => {
-    if (node.type !== "tag") {
+    if (node.type !== "tag" && node.type !== `script`) {
       return
     }
 
