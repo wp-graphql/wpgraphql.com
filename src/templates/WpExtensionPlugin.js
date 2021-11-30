@@ -38,9 +38,9 @@ const WpExtensionPlugin = ({ data }) => {
     },
   ]
 
-  console.debug({
+  console.log({
     data,
-    readmeContent: readmeContent.substring(0, 25),
+    readmeContent: readmeContent ? readmeContent.substring(0, 25) : null,
     readmeContentParsed: readmeContentParsed ? readmeContentParsed.substring(0, 25) : null,
     parsed: readmeContentParsed ? ParseHtml(readmeContentParsed, null, true)  : null,
   })
