@@ -39,6 +39,7 @@ const WpExtensionPlugin = ({ data }) => {
   ]
 
   console.log({
+    data,
     rawReadmeContent,
     readmeContent,
     parsed: ParseHtml(readmeContent, null, true)
