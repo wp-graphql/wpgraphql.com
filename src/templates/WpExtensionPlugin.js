@@ -40,8 +40,8 @@ const WpExtensionPlugin = ({ data }) => {
 
   console.log({
     data,
-    readmeContent,
-    readmeContentParsed,
+    readmeContent: readmeContent.substring(0, 25),
+    readmeContentParsed: readmeContent.substring(0, 25),
     parsed: ParseHtml(readmeContentParsed, null, true)
   })
 
