@@ -146,7 +146,7 @@ exports.onCreateNode = async ({ node, actions }) => {
     
     const data = await axios.get( uri )
     
-    console.debug(`Fetched README for ${node.extensionFields.pluginName}`, {
+    console.debug(`Fetched README for ${uri}`, {
       uri,
       data: data?.data,
     })
