@@ -40,9 +40,9 @@ const WpExtensionPlugin = ({ data }) => {
 
   console.log({
     data,
-    readmeContent: readmeContent ? readmeContent.substring(0, 25) : null,
-    readmeContentParsed: readmeContentParsed ? readmeContentParsed.substring(0, 25) : null,
-    parsed: readmeContentParsed ? ParseHtml(readmeContentParsed, null, true)  : null,
+    // readmeContent: readmeContent ? readmeContent.substring(0, 25) : null,
+    // readmeContentParsed: readmeContentParsed ? readmeContentParsed.substring(0, 25) : null,
+    // parsed: readmeContentParsed ? ParseHtml(readmeContentParsed, null, true)  : null,
   })
 
   return (
@@ -125,7 +125,7 @@ export const query = graphql`
       title
       content
       readmeContent
-      readmeContentParsed
+      readmeContentParsed # Note, this must be queried after readmeContent
       extensionFields {
         pluginReadmeLink
         pluginHost
