@@ -124,7 +124,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 }
 
-exports.onCreateNode = async ({ node, actions }) => {
+exports.onCreateNode = ({ node, actions }) => {
 
   const { createNodeField } = actions
 
@@ -133,52 +133,24 @@ exports.onCreateNode = async ({ node, actions }) => {
     return;
   }
 
-  if (!node?.extensionFields?.pluginReadmeLink) {
+  if (!node?.readmeContent) {
+    node.readmeContentParsed = '';
     return;
   }
 
-  // Make an http call to pull in the README contents.
-  const uri = node?.extensionFields?.pluginReadmeLink ?? null;
-
-  if (!uri) {
-    return;
-  }
-
-  let readmeContent = '';
-
-  try {
-    
-    const data = await axios.get( uri )
-    
-    if (data.status === 200 && data?.data) {
-      converter = new showdown.Converter()
-      converter.setFlavor('github')
-      // Save the README contents to the readmeContent field.
-      reporter.info(`Fetched README for ${node?.extensionFields?.pluginReadmeLink}`)
-      node.readmeContent = converter.makeHtml(data.data)
-      return node;
-    } else {
-      reporter.error(`Something funky while Fetching README for ${node?.extensionFields?.pluginReadmeLink}`)
-      reporter.error({
-        status: data?.status,
-        data: data?.data
-      })
-      node.readmeContent = '';
-      return node;
-    }
-
-  } catch (e) {
-    reporter.error(`Failed to fetch README for ${node?.extensionFields?.pluginReadmeLink}`)
-    reporter.error(e)
-    node.readmeContent = '';
+    converter = new showdown.Converter()
+    converter.setFlavor('github')
+    // Save the README contents to the readmeContent field.
+    reporter.info(`Added readmeContentParsed to node for ${node?.extensionFields?.pluginReadmeLink}`)
+    node.readmeContentParsed = converter.makeHtml( node.readmeContent ?? '' )
     return node;
-  }
+    
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
     type WpExtensionPlugin {
-      readmeContent: String
+      readmeContentParsed: String
     }
   `)
 }

@@ -116,7 +116,7 @@ export const query = graphql`
       uri
       title
       content
-      readmeContent
+      readmeContent: readmeContentParsed
       extensionFields {
         pluginReadmeLink
         pluginHost
