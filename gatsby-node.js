@@ -146,11 +146,6 @@ exports.onCreateNode = async ({ node, actions }) => {
     
     const data = await axios.get( uri )
     
-    console.debug(`Fetched README for ${uri}`, {
-      uri,
-      data: data?.data,
-    })
-
     if (data.status == "200" && data.data) {
       converter = new showdown.Converter()
       converter.setFlavor("github")
