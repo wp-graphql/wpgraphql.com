@@ -13,12 +13,12 @@ import Pagination from "../components/Pagination"
 
 const WpExtensionPlugin = ({ data }) => {
   const {
-    readmeContent,
-    rawReadmeContent,
     wpExtensionPlugin: {
       title,
       content,
       uri,
+      readmeContent,
+      readmeContentParsed,
       extensionFields: { pluginHost, pluginLink, pluginType },
     },
     allWpExtensionPlugin,
@@ -40,9 +40,9 @@ const WpExtensionPlugin = ({ data }) => {
 
   console.log({
     data,
-    rawReadmeContent,
     readmeContent,
-    parsed: ParseHtml(readmeContent, null, true)
+    readmeContentParsed,
+    parsed: ParseHtml(readmeContentParsed, null, true)
   })
 
   return (
@@ -93,7 +93,7 @@ const WpExtensionPlugin = ({ data }) => {
                           Plugin README
                         </Tag>
                         <Text mt={4}>
-                          {ParseHtml(readmeContent, null, true)}
+                          {ParseHtml(readmeContentParsed, null, true)}
                         </Text>
                       </Box>
                     </Stack>
@@ -104,7 +104,7 @@ const WpExtensionPlugin = ({ data }) => {
                     />
                   </Box>
                   <Stack spacing={4} mt={8}>
-                    <TableOfContents content={readmeContent} reduceHeadings />
+                    <TableOfContents content={readmeContentParsed} reduceHeadings />
                   </Stack>
                 </Flex>
               </PageTransition>
@@ -124,8 +124,8 @@ export const query = graphql`
       uri
       title
       content
-      rawReadmeContent: readmeContent
-      readmeContent: readmeContentParsed
+      readmeContent
+      readmeContentParsed
       extensionFields {
         pluginReadmeLink
         pluginHost
