@@ -140,11 +140,11 @@ exports.onCreateNode = ({ node, actions }) => {
     reporter.info(`Added readmeContentParsed to node for ${node?.extensionFields?.pluginReadmeLink}`)
     reporter.info( `content: ${node.readmeContent.substring(0, 25)}`)
     node.readmeContentParsed = converter.makeHtml( node.readmeContent ?? '' )
-    return;
+    return node;
 
   } else {
     node.readmeContentParsed = '';
-    return;
+    return node;
   }
 
 }
