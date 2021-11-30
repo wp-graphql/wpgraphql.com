@@ -167,7 +167,7 @@ exports.createResolvers = ({ createResolvers }) => {
         resolve: (source, args, context, info) => {
           converter = new showdown.Converter()
           converter.setFlavor('github')
-          console.log( { readmeContentParsedResolver: { source } })
+          // console.log( { readmeContentParsedResolver: { source } })
           return converter.makeHtml( source.readmeContent )
         } 
       }
