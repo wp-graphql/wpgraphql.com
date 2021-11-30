@@ -124,7 +124,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 }
 
-exports.onCreateNode = ({ node, actions }) => {
+exports.onCreateNode = async ({ node, actions }) => {
 
   const { createNodeField } = actions
 
@@ -141,8 +141,8 @@ exports.onCreateNode = ({ node, actions }) => {
   converter.setFlavor('github')
   node.readmeContentParsed = converter.makeHtml( node.readmeContent )
   reporter.info(`Added readmeContentParsed to node for ${node?.extensionFields?.pluginReadmeLink}`)
-  reporter.info( `content: ${node.readmeContent.substring(0, 25)}`)
-  reporter.info( `parsed: ${node.readmeContentParsed.substring(0, 25)}`)
+  reporter.info( `content: ${node.readmeContent ? node.readmeContent.substring(0, 25) : null}`)
+  reporter.info( `parsed: ${node.readmeContentParsed ? node.readmeContentParsed.substring(0, 25) : null}`)
   return;
 
 }

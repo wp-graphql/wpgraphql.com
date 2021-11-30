@@ -41,8 +41,8 @@ const WpExtensionPlugin = ({ data }) => {
   console.log({
     data,
     readmeContent: readmeContent.substring(0, 25),
-    readmeContentParsed: readmeContentParsed.substring(0, 25),
-    parsed: ParseHtml(readmeContentParsed, null, true)
+    readmeContentParsed: readmeContentParsed ? readmeContentParsed.substring(0, 25) : null,
+    parsed: readmeContentParsed ? ParseHtml(readmeContentParsed, null, true)  : null,
   })
 
   return (
@@ -93,7 +93,7 @@ const WpExtensionPlugin = ({ data }) => {
                           Plugin README
                         </Tag>
                         <Text mt={4}>
-                          {ParseHtml(readmeContentParsed, null, true)}
+                          {readmeContentParsed ? ParseHtml(readmeContentParsed, null, true) : null}
                         </Text>
                       </Box>
                     </Stack>
@@ -104,7 +104,7 @@ const WpExtensionPlugin = ({ data }) => {
                     />
                   </Box>
                   <Stack spacing={4} mt={8}>
-                    <TableOfContents content={readmeContentParsed} reduceHeadings />
+                    { readmeContentParsed && <TableOfContents content={readmeContentParsed} reduceHeadings /> }
                   </Stack>
                 </Flex>
               </PageTransition>
