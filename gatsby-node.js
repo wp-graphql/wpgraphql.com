@@ -133,18 +133,20 @@ exports.onCreateNode = ({ node, actions }) => {
     return;
   }
 
-  if (!node?.readmeContent) {
-    node.readmeContentParsed = '';
-    return;
-  }
-
+  if (node?.readmeContent) {
     converter = new showdown.Converter()
     converter.setFlavor('github')
     // Save the README contents to the readmeContent field.
     reporter.info(`Added readmeContentParsed to node for ${node?.extensionFields?.pluginReadmeLink}`)
+    reporter.info( `content: ${node.readmeContent.substring(0, 25)}`)
     node.readmeContentParsed = converter.makeHtml( node.readmeContent ?? '' )
-    return node;
-    
+    return;
+
+  } else {
+    node.readmeContentParsed = '';
+    return;
+  }
+
 }
 
 exports.createSchemaCustomization = ({ actions }) => {

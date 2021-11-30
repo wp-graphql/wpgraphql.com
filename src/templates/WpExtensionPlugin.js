@@ -13,11 +13,12 @@ import Pagination from "../components/Pagination"
 
 const WpExtensionPlugin = ({ data }) => {
   const {
+    readmeContent,
+    rawReadmeContent,
     wpExtensionPlugin: {
       title,
       content,
       uri,
-      readmeContent,
       extensionFields: { pluginHost, pluginLink, pluginType },
     },
     allWpExtensionPlugin,
@@ -38,6 +39,7 @@ const WpExtensionPlugin = ({ data }) => {
   ]
 
   console.log({
+    rawReadmeContent,
     readmeContent,
     parsed: ParseHtml(readmeContent, null, true)
   })
@@ -121,6 +123,7 @@ export const query = graphql`
       uri
       title
       content
+      rawReadmeContent: readmeContent
       readmeContent: readmeContentParsed
       extensionFields {
         pluginReadmeLink
