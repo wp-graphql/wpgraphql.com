@@ -124,6 +124,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 }
 
 exports.onCreateNode = async ({ node, actions }) => {
+
   // If this is an extension node, check if the README field exists.
   if (node.internal.type != `WpExtensionPlugin`) {
     return
@@ -139,11 +140,12 @@ exports.onCreateNode = async ({ node, actions }) => {
 
     if (data.status == "200" && data.data) {
       converter = new showdown.Converter()
-
+      converter.setFlavor("github")
       // Save the README contents to the readmeContent field.
       node.readmeContent = converter.makeHtml(data.data)
     }
   } catch (e) {
+    node.readmeContent = null;
     return
   }
 }

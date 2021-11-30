@@ -62,7 +62,7 @@ const MarkDownDoc = ({ data }) => {
                     <Heading as="h1" fontSize={`4xl`}>
                       {post.frontmatter.title}
                     </Heading>
-                    {ParseHtml(post.html)}
+                    {post?.html ? ParseHtml(post.html) : null }
                     <Pagination
                       sx={{ ".pagination-link": { wordBreak: "break-word" } }}
                       next={pagination.next}
@@ -70,8 +70,8 @@ const MarkDownDoc = ({ data }) => {
                     />
                   </Box>
                   <TableOfContents
-                    content={post.html}
-                    contentRef={ParseHtml(post.html)}
+                    content={post?.html}
+                    contentRef={post?.html ? ParseHtml(post.html) : null }
                   />
                 </Flex>
               </PageTransition>
