@@ -37,6 +37,11 @@ const WpExtensionPlugin = ({ data }) => {
     },
   ]
 
+  console.log({
+    readmeContent,
+    parsed: ParseHtml(readmeContent, null, true)
+  })
+
   return (
     <Layout>
       <Container>
