@@ -124,7 +124,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 }
 
-exports.onCreateNode = ({ node, actions }) => {
+exports.onCreateNode = async ({ node, actions }) => {
 
   const { createNodeField } = actions
 
@@ -133,18 +133,18 @@ exports.onCreateNode = ({ node, actions }) => {
     return;
   }
 
-  if (!node?.readmeContent) {
-    node.readmeContentParsed = '';
+  if (! node.readmeContent) {
     return;
   }
 
-    converter = new showdown.Converter()
-    converter.setFlavor('github')
-    // Save the README contents to the readmeContent field.
-    reporter.info(`Added readmeContentParsed to node for ${node?.extensionFields?.pluginReadmeLink}`)
-    node.readmeContentParsed = converter.makeHtml( node.readmeContent ?? '' )
-    return node;
-    
+  converter = new showdown.Converter()
+  converter.setFlavor('github')
+  node.readmeContentParsed = converter.makeHtml( node.readmeContent )
+  reporter.info(`Added readmeContentParsed to node for ${node?.extensionFields?.pluginReadmeLink}`)
+  reporter.info( `content: ${node.readmeContent ? node.readmeContent.substring(0, 25) : null}`)
+  reporter.info( `parsed: ${node.readmeContentParsed ? node.readmeContentParsed.substring(0, 25) : null}`)
+  return;
+
 }
 
 exports.createSchemaCustomization = ({ actions }) => {

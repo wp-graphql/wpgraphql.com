@@ -18,6 +18,7 @@ const WpExtensionPlugin = ({ data }) => {
       content,
       uri,
       readmeContent,
+      readmeContentParsed,
       extensionFields: { pluginHost, pluginLink, pluginType },
     },
     allWpExtensionPlugin,
@@ -36,6 +37,13 @@ const WpExtensionPlugin = ({ data }) => {
       isCurrentPage: true,
     },
   ]
+
+  console.log({
+    data,
+    readmeContent: readmeContent ? readmeContent.substring(0, 25) : null,
+    readmeContentParsed: readmeContentParsed ? readmeContentParsed.substring(0, 25) : null,
+    parsed: readmeContentParsed ? ParseHtml(readmeContentParsed, null, true)  : null,
+  })
 
   return (
     <Layout>
@@ -85,7 +93,7 @@ const WpExtensionPlugin = ({ data }) => {
                           Plugin README
                         </Tag>
                         <Text mt={4}>
-                          {ParseHtml(readmeContent, null, true)}
+                          {readmeContentParsed ? ParseHtml(readmeContentParsed, null, true) : null}
                         </Text>
                       </Box>
                     </Stack>
@@ -96,7 +104,7 @@ const WpExtensionPlugin = ({ data }) => {
                     />
                   </Box>
                   <Stack spacing={4} mt={8}>
-                    <TableOfContents content={readmeContent} reduceHeadings />
+                    { readmeContentParsed && <TableOfContents content={readmeContentParsed} reduceHeadings /> }
                   </Stack>
                 </Flex>
               </PageTransition>
@@ -116,7 +124,8 @@ export const query = graphql`
       uri
       title
       content
-      readmeContent: readmeContentParsed
+      readmeContent
+      readmeContentParsed
       extensionFields {
         pluginReadmeLink
         pluginHost
