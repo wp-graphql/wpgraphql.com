@@ -16,7 +16,7 @@ const Search = () => {
         appId: "HB50HVJDY8",
         apiKey: "0c11d662dad18e8a18d20c969b25c65f",
         indexName: "wpgraphql",
-        container: "#search",
+        inputSelector: "#search",
         // debug: true, // keeps the results list open
         algoliaOptions: {
           hitsPerPage: 10,
