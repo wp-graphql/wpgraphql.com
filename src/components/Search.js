@@ -13,9 +13,10 @@ const Search = () => {
   useEffect(() => {
     if (typeof docsearch !== "undefined") {
       docsearch({
-        apiKey: "fb8b4503ba2093d228a6c9b72facff9b",
+        appId: "HB50HVJDY8",
+        apiKey: "0c11d662dad18e8a18d20c969b25c65f",
         indexName: "wpgraphql",
-        inputSelector: "#search",
+        container: "#search",
         // debug: true, // keeps the results list open
         algoliaOptions: {
           hitsPerPage: 10,
