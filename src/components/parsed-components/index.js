@@ -132,7 +132,12 @@ export const Noscript = (props) => {
   return <noscript {...props} />
 }
 
-export const Script = (props) => <script {...props} />
+export const Script = ({ children, ...rest }) => (
+  <script
+    dangerouslySetInnerHTML={{ __html: children ? children.join("") : "" }}
+    {...rest}
+  />
+)
 
 const getId = (string) => {
   const regex = /status\/(\d+)/g
