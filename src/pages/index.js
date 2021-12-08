@@ -182,7 +182,7 @@ const Home = ({ data }) => {
               <Text fontSize="2xl" mt="10">
                 GraphQL queries allow access to multiple root resources, and
                 also smoothly follow references between connected resources.
-                While typical a REST API would require round-trip requests to
+                While a typical REST API would require round-trip requests to
                 many endpoints, GraphQL APIs can get all the data your app needs
                 in a single request. Apps using GraphQL can be quick even on
                 slow mobile network connections.
