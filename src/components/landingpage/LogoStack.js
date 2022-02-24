@@ -25,23 +25,25 @@ const LogoStack = ({ logos, ...props }) => {
           {logo.link && (
             <a href={logo.link} target="_blank" rel="noreferrer">
               <Tooltip label={logo.label} aria-label={logo.alt} placement="top">
-                {logo?.image?.ext === `.svg` ? (
-                  <Image
-                    alt={logo.alt}
-                    h="60px"
-                    w="auto"
-                    src={logo.image?.publicURL}
-                    loading="lazy"
-                    {...logo.imageprops}
-                  />
-                ) : (
-                  <GatsbyImage
-                    alt={logo.alt}
-                    image={logo.image?.childImageSharp?.gatsbyImageData}
-                    loading="lazy"
-                    {...logo.imageprops}
-                  />
-                )}
+                <>
+                  {logo?.image?.ext === `.svg` ? (
+                    <Image
+                      alt={logo.alt}
+                      h="60px"
+                      w="auto"
+                      src={logo.image?.publicURL}
+                      loading="lazy"
+                      {...logo.imageprops}
+                    />
+                  ) : (
+                    <GatsbyImage
+                      alt={logo.alt}
+                      image={logo.image?.childImageSharp?.gatsbyImageData}
+                      loading="lazy"
+                      {...logo.imageprops}
+                    />
+                  )}
+                </>
               </Tooltip>
             </a>
           )}
