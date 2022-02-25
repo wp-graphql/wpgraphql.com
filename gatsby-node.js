@@ -69,7 +69,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       if (doc.uri.length) {
         actions.createPage({
-          defer: true,
           path: ensureTrailingSlash(doc.uri),
           component: template,
           context: {
