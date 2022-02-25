@@ -86,7 +86,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (snippetTags.nodes.length) {
     snippetTags.nodes.map((snippetTag) =>
       actions.createPage({
-        defer: true,
         path: ensureTrailingSlash(snippetTag.uri),
         component: require.resolve(`./src/templates/SnippetTag.js`),
         context: {
@@ -101,7 +100,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     blogAuthors.nodes.map((blogAuthor) => {
       if (blogAuthor.posts.nodes.length) {
         actions.createPage({
-          defer: true,
           path: ensureTrailingSlash(blogAuthor.uri),
           component: require.resolve(`./src/templates/BlogAuthor.js`),
           context: {
@@ -116,7 +114,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (markdownDocs.nodes.length) {
     markdownDocs.nodes.map((markDown) =>
       actions.createPage({
-        defer: true,
         path: ensureTrailingSlash(markDown.frontmatter.uri),
         component: require.resolve(`./src/templates/MarkDownDoc.js`),
         context: {
