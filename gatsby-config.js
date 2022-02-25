@@ -87,6 +87,17 @@ const plugins = [
         hardCacheMediaFiles: true,
         hardCacheData: false,
       },
+      type: {
+        MediaItem: {
+          createFileNodes: false,
+        },
+      },
+      searchAndReplace: [
+        {
+          search: `www.wpgraphql.com`,
+          replace: `content.wpgraphql.com`,
+        },
+      ],
     },
   },
   {

@@ -6548,6 +6548,14 @@ gatsby-plugin-utils@3.3.0-alpha-image-service2.14+3e7c95dc99:
     joi "^17.4.2"
     mime "^3.0.0"
 
+gatsby-plugin-utils@3.3.0-next.0:
+  version "3.3.0-next.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.3.0-next.0.tgz#4eb2c4bfe4185883f91c995a9e5e90c0fc689bff"
+  integrity sha512-4eNYtTiYuLvLviIIxljWO2uyvpzbTgBVu0pobNn8QYG+TBdmz+Xu3PWNiELlNAghjkRnogg8ITMDXV/ExfIYug==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    joi "^17.4.2"
+
 gatsby-plugin-utils@^2.2.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-2.5.0.tgz#33c343faa01577df032d4cf53c7c2b04b0b19248"
@@ -6622,10 +6630,10 @@ gatsby-source-filesystem@4.9.0-next.0:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
-gatsby-source-wordpress@6.9.0-alpha-image-cdn.41:
-  version "6.9.0-alpha-image-cdn.41"
-  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-6.9.0-alpha-image-cdn.41.tgz#e8ab9c97406052538544c1a9ccff72b81993c776"
-  integrity sha512-rwVFl+9/Ne2O4YVEFFsECvC554m0C9WmIkZFBHZZrmqCH7jfjMc1VuINLVR+/6xadm4DKH1BjRocNQ5YoTT4zw==
+gatsby-source-wordpress@6.9.0-alpha-image-cdn.51:
+  version "6.9.0-alpha-image-cdn.51"
+  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-6.9.0-alpha-image-cdn.51.tgz#6b4d53070ffe36c0e1b55d48ffa6da0231a091e0"
+  integrity sha512-IHSvfCH0RlPxM25o3jREamjO49vjAWqD12IqnpxVoRGISt/HBr60mHG7gB7e+aNkakeEkxqabppFbIjLQCTxLA==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@rematch/core" "^1.4.0"
@@ -6650,6 +6658,7 @@ gatsby-source-wordpress@6.9.0-alpha-image-cdn.41:
     fs-extra "^10.0.0"
     gatsby-core-utils "3.9.0-next.0"
     gatsby-plugin-catch-links "4.9.0-next.0"
+    gatsby-plugin-utils "3.3.0-next.0"
     gatsby-source-filesystem "4.9.0-next.0"
     glob "^7.2.0"
     got "^11.8.3"

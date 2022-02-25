@@ -40,7 +40,7 @@
     "gatsby-react-router-scroll": "5.2.0",
     "gatsby-remark-copy-linked-files": "5.2.0",
     "gatsby-source-filesystem": "4.2.0",
-    "gatsby-source-wordpress": "6.9.0-alpha-image-cdn.41",
+    "gatsby-source-wordpress": "6.9.0-alpha-image-cdn.51",
     "gatsby-transformer-remark": "5.2.0",
     "gatsby-transformer-sharp": "4.8.0-alpha-image-service.25",
     "gatsby-transformer-yaml": "4.2.0",
