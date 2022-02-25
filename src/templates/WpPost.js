@@ -11,7 +11,7 @@ import PostInfo from "../components/PostInfo"
 import { getPagination } from "../utils"
 import Pagination from "../components/Pagination"
 
-const WpPost = ({ data }) => {
+const WpPost = ({ data, serverData }) => {
   const {
     wpPost: { title, content, uri, author, date },
     allWpPost,
@@ -51,6 +51,7 @@ const WpPost = ({ data }) => {
                     <Heading wordBreak="break-word" as="h1" fontSize={`4xl`}>
                       {title}
                     </Heading>
+                    <pre>{JSON.stringify(serverData, null, 2)}</pre>
                     <PostInfo
                       author={author.node.name}
                       path={author.node.uri}
@@ -105,3 +106,21 @@ export const query = graphql`
 `
 
 export default WpPost
+
+export async function getServerData() {
+  try {
+    const res = await fetch(`https://dog.ceo/api/breeds/image/random`)
+    if (!res.ok) {
+      throw new Error(`Response failed`)
+    }
+    return {
+      props: await res.json(),
+    }
+  } catch (error) {
+    return {
+      status: 500,
+      headers: {},
+      props: {},
+    }
+  }
+}

@@ -5,7 +5,7 @@ const { ensureTrailingSlash } = require("./src/utils")
 const { reporter } = require("gatsby-cli/lib/reporter/reporter")
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const result = await graphql(`
+  const result = await graphql(/* GraphQL */ `
     {
       allContent: allWpContentNode {
         nodes {
