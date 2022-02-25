@@ -69,6 +69,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       if (doc.uri.length) {
         actions.createPage({
+          defer: true,
           path: ensureTrailingSlash(doc.uri),
           component: template,
           context: {
@@ -85,6 +86,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (snippetTags.nodes.length) {
     snippetTags.nodes.map((snippetTag) =>
       actions.createPage({
+        defer: true,
         path: ensureTrailingSlash(snippetTag.uri),
         component: require.resolve(`./src/templates/SnippetTag.js`),
         context: {
@@ -99,6 +101,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     blogAuthors.nodes.map((blogAuthor) => {
       if (blogAuthor.posts.nodes.length) {
         actions.createPage({
+          defer: true,
           path: ensureTrailingSlash(blogAuthor.uri),
           component: require.resolve(`./src/templates/BlogAuthor.js`),
           context: {
@@ -113,6 +116,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (markdownDocs.nodes.length) {
     markdownDocs.nodes.map((markDown) =>
       actions.createPage({
+        defer: true,
         path: ensureTrailingSlash(markDown.frontmatter.uri),
         component: require.resolve(`./src/templates/MarkDownDoc.js`),
         context: {
@@ -148,15 +152,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 // }
 
 exports.createSchemaCustomization = ({ actions }) => {
-
   const { createTypes } = actions
-  
+
   createTypes(`
     type WpExtensionPlugin {
       readmeContentParsed: String
     }
   `)
-
 }
 
 exports.createResolvers = ({ createResolvers }) => {
@@ -166,11 +168,11 @@ exports.createResolvers = ({ createResolvers }) => {
         type: `String`,
         resolve: (source, args, context, info) => {
           converter = new showdown.Converter()
-          converter.setFlavor('github')
+          converter.setFlavor("github")
           // console.log( { readmeContentParsedResolver: { source } })
-          return converter.makeHtml( source.readmeContent )
-        } 
-      }
-    }
+          return converter.makeHtml(source.readmeContent)
+        },
+      },
+    },
   })
 }
