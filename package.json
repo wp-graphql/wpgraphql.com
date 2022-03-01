@@ -78,6 +78,8 @@
     }
   },
   "resolutions": {
-    "gatsby-react-router-scroll": "5.2.0"
+    "gatsby-react-router-scroll": "5.2.0",
+    "sharp": "^0.30.1",
+    "lmdb": "^2.2.2"
   }
 }
