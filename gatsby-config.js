@@ -75,6 +75,7 @@ const plugins = [
       schema: {
         perPage: 100,
       },
+      presets: [],
       debug: {
         graphql: {
           writeQueriesToDisk: true,
