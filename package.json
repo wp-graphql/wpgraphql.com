@@ -25,7 +25,7 @@
     "emotion-theming": "11.0.0",
     "formik": "2.2.9",
     "framer-motion": "4.1.17",
-    "gatsby": "^4.10.0-next.1",
+    "gatsby": "^4.9.0",
     "gatsby-plugin-git-clone": "0.1.0",
     "gatsby-plugin-google-gtag": "4.2.0",
     "gatsby-plugin-html-attributes": "1.0.5",
