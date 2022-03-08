@@ -5,7 +5,7 @@ const { ensureTrailingSlash } = require("./src/utils")
 const { reporter } = require("gatsby-cli/lib/reporter/reporter")
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const result = await graphql(`
+  const result = await graphql(/* GraphQL */ `
     {
       allContent: allWpContentNode {
         nodes {
@@ -148,15 +148,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 // }
 
 exports.createSchemaCustomization = ({ actions }) => {
-
   const { createTypes } = actions
-  
+
   createTypes(`
     type WpExtensionPlugin {
       readmeContentParsed: String
     }
   `)
-
 }
 
 exports.createResolvers = ({ createResolvers }) => {
@@ -166,11 +164,11 @@ exports.createResolvers = ({ createResolvers }) => {
         type: `String`,
         resolve: (source, args, context, info) => {
           converter = new showdown.Converter()
-          converter.setFlavor('github')
+          converter.setFlavor("github")
           // console.log( { readmeContentParsedResolver: { source } })
-          return converter.makeHtml( source.readmeContent )
-        } 
-      }
-    }
+          return converter.makeHtml(source.readmeContent)
+        },
+      },
+    },
   })
 }

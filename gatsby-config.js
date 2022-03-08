@@ -75,6 +75,7 @@ const plugins = [
       schema: {
         perPage: 100,
       },
+      presets: [],
       debug: {
         graphql: {
           writeQueriesToDisk: true,
@@ -87,6 +88,17 @@ const plugins = [
         hardCacheMediaFiles: true,
         hardCacheData: false,
       },
+      type: {
+        MediaItem: {
+          createFileNodes: false,
+        },
+      },
+      searchAndReplace: [
+        {
+          search: `www.wpgraphql.com`,
+          replace: `content.wpgraphql.com`,
+        },
+      ],
     },
   },
   {
