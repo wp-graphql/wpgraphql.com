@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "wpe-build": "gatsby build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
