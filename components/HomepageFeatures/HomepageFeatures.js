@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { InboxIcon, SparklesIcon } from '@heroicons/react/outline'
-import Image from 'next/image'
-import DynamicHeroIcon from '../DynamicHeroIcon/DynamicHeroIcon'
+import { InboxIcon, SparklesIcon } from "@heroicons/react/outline"
+import Image from "next/image"
+import DynamicHeroIcon from "../DynamicHeroIcon/DynamicHeroIcon"
 
 const HomepageFeatures = () => {
   return (
@@ -16,10 +16,11 @@ const HomepageFeatures = () => {
               Query what you need. Get exactly that.
             </p>
             <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500 dark:text-gray-100">
-              With GraphQL, the client makes declarative queries, asking for the exact data needed,
-              and exactly what was asked for is given in response, nothing more. This allows the
-              client have control over their application, and allows the GraphQL server to perform
-              more efficiently by only fetching the resources requested.
+              With GraphQL, the client makes declarative queries, asking for the
+              exact data needed, and exactly what was asked for is given in
+              response, nothing more. This allows the client have control over
+              their application, and allows the GraphQL server to perform more
+              efficiently by only fetching the resources requested.
             </p>
           </div>
           <div className="mt-12 -mb-10 sm:-mb-24 lg:-mb-10">
@@ -43,11 +44,12 @@ const HomepageFeatures = () => {
               Fetch many resources in a single request
             </p>
             <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500 dark:text-gray-100">
-              GraphQL queries allow access to multiple root resources, and also smoothly follow
-              references between connected resources. While a typical REST API would require
-              round-trip requests to many endpoints, GraphQL APIs can get all the data your app
-              needs in a single request. Apps using GraphQL can be quick even on slow mobile network
-              connections.
+              GraphQL queries allow access to multiple root resources, and also
+              smoothly follow references between connected resources. While a
+              typical REST API would require round-trip requests to many
+              endpoints, GraphQL APIs can get all the data your app needs in a
+              single request. Apps using GraphQL can be quick even on slow
+              mobile network connections.
             </p>
           </div>
           <div className="mt-12 -mb-10 sm:-mb-24 lg:-mb-10">

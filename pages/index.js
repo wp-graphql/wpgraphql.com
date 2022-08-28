@@ -1,12 +1,12 @@
-import HomepageCta from '../components/HomepageCta/HomepageCta'
-import HomepageFeatures from '../components/HomepageFeatures/HomepageFeatures'
-import HomepageFrameworks from '../components/HomepageFrameworks/HomepageFrameworks'
-import HomepageHero from '../components/HomepageHero/HomepageHero'
-import HomePageTrust from '../components/HomepageTrust/HomepageTrust'
-import SiteLayout from '../components/SiteLayout/SiteLayout'
-import SiteFooter from '../components/SiteFooter/SiteFooter'
-import { NAV_QUERY } from 'components/SiteHeader/SiteHeader'
-import { initializeApollo, addApolloState } from 'lib/data/apollo'
+import HomepageCta from "../components/HomepageCta/HomepageCta"
+import HomepageFeatures from "../components/HomepageFeatures/HomepageFeatures"
+import HomepageFrameworks from "../components/HomepageFrameworks/HomepageFrameworks"
+import HomepageHero from "../components/HomepageHero/HomepageHero"
+import HomePageTrust from "../components/HomepageTrust/HomepageTrust"
+import SiteLayout from "../components/SiteLayout/SiteLayout"
+import SiteFooter from "../components/SiteFooter/SiteFooter"
+import { NAV_QUERY } from "components/SiteHeader/SiteHeader"
+import { initializeApollo, addApolloState } from "lib/data/apollo"
 
 const Home = () => {
   return (
@@ -25,7 +25,7 @@ export default Home
 
 Home.layoutProps = {
   meta: {
-    title: 'WPGraphQL - The GraphQL API for WordPress',
+    title: "WPGraphQL - The GraphQL API for WordPress",
   },
 }
 
@@ -34,11 +34,11 @@ export async function getStaticProps() {
 
   await apolloClient.query({
     query: NAV_QUERY,
-    variables: { menu_name: 'Primary Nav' },
+    variables: { menu_name: "Primary Nav" },
   })
 
   return addApolloState(apolloClient, {
     props: {},
-    revalidate: 30
+    revalidate: 30,
   })
 }

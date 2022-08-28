@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image"
 
 /* This example requires Tailwind CSS v2.0+ */
 const HomepageFrameworks = () => {
@@ -10,8 +10,9 @@ const HomepageFrameworks = () => {
             Build rich JavaScript applications <br /> with WordPress and GraphQL
           </h2>
           <p className="mt-3 text-xl text-gray-500 dark:text-gray-200 sm:mt-4">
-            WPGraphQL allows you to separate your CMS from your presentation layer. Content creators
-            can use the CMS they know, while developers can use the frameworks and tools they love.
+            WPGraphQL allows you to separate your CMS from your presentation
+            layer. Content creators can use the CMS they know, while developers
+            can use the frameworks and tools they love.
           </p>
         </div>
       </div>

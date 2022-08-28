@@ -1,16 +1,24 @@
-import React from 'react'
-import { renderToString } from 'react-dom/server'
-import DocsLayout from '../../components/DocsLayout/DocsLayout'
+import React from "react"
+import { renderToString } from "react-dom/server"
+import DocsLayout from "../../components/DocsLayout/DocsLayout"
 
-import { MDXRemote } from 'next-mdx-remote'
-import { getDoc, getDocData, getDocSlugs, getTableOfContents } from 'lib/helpers/parse-docs'
-import { components } from 'lib/mdx/components'
-import TableOfContents from 'components/TableOfContents/TableOfContents'
+import { MDXRemote } from "next-mdx-remote"
+import {
+  getDoc,
+  getDocData,
+  getDocSlugs,
+  getTableOfContents,
+} from "lib/helpers/parse-docs"
+import { components } from "lib/mdx/components"
+import TableOfContents from "components/TableOfContents/TableOfContents"
 
 const Doc = ({ source, toc, content }) => {
   return (
     <DocsLayout>
-      <div id="content-wrapper" className="relative z-20 prose mt-8 prose dark:prose-dark">
+      <div
+        id="content-wrapper"
+        className="relative z-20 prose mt-8 prose dark:prose-dark"
+      >
         {source?.frontmatter?.title && (
           <header className="relative z-20 -mt-8">
             <h1>{source.frontmatter.title}</h1>
@@ -39,12 +47,14 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-      toc: getTableOfContents(renderToString(<MDXRemote {...source} components={components} />)),
+      toc: getTableOfContents(
+        renderToString(<MDXRemote {...source} components={components} />)
+      ),
       data: getDocData(params.slug),
       source,
       frontmatter: source.frontmatter,
     },
-    revalidate: 30
+    revalidate: 30,
   }
 }
 

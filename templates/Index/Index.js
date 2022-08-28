@@ -1,7 +1,7 @@
-import { gql } from '@apollo/client'
+import { gql } from "@apollo/client"
 
 const Index = {
-  name: 'Index',
+  name: "Index",
 }
 
 Index.query = gql`

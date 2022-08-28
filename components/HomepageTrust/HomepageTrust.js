@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image"
 
 /* This example requires Tailwind CSS v2.0+ */
 const HomePageTrust = () => {
@@ -9,8 +9,9 @@ const HomePageTrust = () => {
           {`Who's Using WPGraphQL?`}
         </h2>
         <p className="text-center mt-3 max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-50 sm:mt-4">
-          Digital agencies, product teams and freelancers around the world trust WPGraphQL in
-          production to bridge modern front-end stacks with content managed in WordPress.
+          Digital agencies, product teams and freelancers around the world trust
+          WPGraphQL in production to bridge modern front-end stacks with content
+          managed in WordPress.
         </p>
         <div className="max-w-7xl mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
           <div className="col-span-1 flex justify-center py-8 px-8 bg-white">

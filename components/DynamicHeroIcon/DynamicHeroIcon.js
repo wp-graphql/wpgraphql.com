@@ -1,4 +1,4 @@
-import * as HIcons from '@heroicons/react/outline'
+import * as HIcons from "@heroicons/react/outline"
 
 /**
  * This component allows an icon to be rendered based on the name of the icon (i.e., string passed from a WordPress Nav Menu Item)

@@ -1,6 +1,6 @@
-import DocsNav from 'components/DocsNav/DocsNav'
-import SiteLayout from 'components/SiteLayout/SiteLayout'
-import SiteFooter from 'components/SiteFooter/SiteFooter'
+import DocsNav from "components/DocsNav/DocsNav"
+import SiteLayout from "components/SiteLayout/SiteLayout"
+import SiteFooter from "components/SiteFooter/SiteFooter"
 
 const DocsLayout = ({ children }) => {
   return (

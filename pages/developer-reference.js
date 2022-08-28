@@ -1,5 +1,5 @@
-import SiteLayout from 'components/SiteLayout/SiteLayout'
-import SiteFooter from 'components/SiteFooter/SiteFooter'
+import SiteLayout from "components/SiteLayout/SiteLayout"
+import SiteFooter from "components/SiteFooter/SiteFooter"
 
 const DeveloperReference = () => {
   return (

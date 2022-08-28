@@ -1,28 +1,38 @@
-import { ChevronRightIcon } from '@heroicons/react/solid'
-import { ViewListIcon, BookOpenIcon, RssIcon, ViewGridAddIcon } from '@heroicons/react/outline'
-import SiteLogo from 'components/SiteLogo/SiteLogo'
-import Link from 'next/link'
+import { ChevronRightIcon } from "@heroicons/react/solid"
+import {
+  ViewListIcon,
+  BookOpenIcon,
+  RssIcon,
+  ViewGridAddIcon,
+} from "@heroicons/react/outline"
+import SiteLogo from "components/SiteLogo/SiteLogo"
+import Link from "next/link"
 
 const links = [
   {
-    title: 'Documentation',
-    description: 'Learn how to use WPGraphQL to build headless apps',
+    title: "Documentation",
+    description: "Learn how to use WPGraphQL to build headless apps",
     icon: BookOpenIcon,
-    href: '/docs/introduction',
+    href: "/docs/introduction",
   },
   {
-    title: 'Developer Reference',
-    description: 'Learn how to extend WPGraphQL on the server',
+    title: "Developer Reference",
+    description: "Learn how to extend WPGraphQL on the server",
     icon: ViewListIcon,
-    href: '/developer-reference',
+    href: "/developer-reference",
   },
   {
-    title: 'Extensions',
-    description: 'Find extensions that add functionality to WPGrapQL',
+    title: "Extensions",
+    description: "Find extensions that add functionality to WPGrapQL",
     icon: ViewGridAddIcon,
-    href: '/extensions',
+    href: "/extensions",
   },
-  { title: 'Blog', description: 'Read our latest news and articles', icon: RssIcon, href: '/blog' },
+  {
+    title: "Blog",
+    description: "Read our latest news and articles",
+    icon: RssIcon,
+    href: "/blog",
+  },
 ]
 
 export default function Example() {
@@ -53,10 +63,16 @@ export default function Example() {
               className="mt-4 border-t border-b border-gray-200 divide-y divide-gray-200"
             >
               {links.map((link, linkIdx) => (
-                <li key={linkIdx} className="relative py-6 flex items-start space-x-4">
+                <li
+                  key={linkIdx}
+                  className="relative py-6 flex items-start space-x-4"
+                >
                   <div className="flex-shrink-0">
                     <span className="flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-50">
-                      <link.icon className="h-6 w-6 text-indigo-700" aria-hidden="true" />
+                      <link.icon
+                        className="h-6 w-6 text-indigo-700"
+                        aria-hidden="true"
+                      />
                     </span>
                   </div>
                   <div className="min-w-0 flex-1">
@@ -64,16 +80,24 @@ export default function Example() {
                       <span className="rounded-sm focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                         <Link href={link.href}>
                           <a className="focus:outline-none">
-                            <span className="absolute inset-0" aria-hidden="true" />
+                            <span
+                              className="absolute inset-0"
+                              aria-hidden="true"
+                            />
                             {link.title}
                           </a>
                         </Link>
                       </span>
                     </h3>
-                    <p className="text-base text-gray-500">{link.description}</p>
+                    <p className="text-base text-gray-500">
+                      {link.description}
+                    </p>
                   </div>
                   <div className="flex-shrink-0 self-center">
-                    <ChevronRightIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                    <ChevronRightIcon
+                      className="h-5 w-5 text-gray-400"
+                      aria-hidden="true"
+                    />
                   </div>
                 </li>
               ))}

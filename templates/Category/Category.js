@@ -1,10 +1,12 @@
-import { gql } from '@apollo/client'
-import PostPreview, { PostPreviewFragment } from 'components/PostPreview/PostPreview'
-import SiteLayout from 'components/SiteLayout/SiteLayout'
-import SiteFooter from 'components/SiteFooter/SiteFooter'
+import { gql } from "@apollo/client"
+import PostPreview, {
+  PostPreviewFragment,
+} from "components/PostPreview/PostPreview"
+import SiteLayout from "components/SiteLayout/SiteLayout"
+import SiteFooter from "components/SiteFooter/SiteFooter"
 
 const Category = {
-  name: 'Category',
+  name: "Category",
 }
 
 Category.variables = ({ id }) => ({

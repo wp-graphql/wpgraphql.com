@@ -1,11 +1,11 @@
-import SiteLayout from 'components/SiteLayout/SiteLayout'
-import SiteFooter from 'components/SiteFooter/SiteFooter'
-import { gql } from '@apollo/client'
-import Link from 'next/link'
-import Image from 'next/image'
+import SiteLayout from "components/SiteLayout/SiteLayout"
+import SiteFooter from "components/SiteFooter/SiteFooter"
+import { gql } from "@apollo/client"
+import Link from "next/link"
+import Image from "next/image"
 
 const Singular = {
-  name: 'singular',
+  name: "singular",
 }
 
 Singular.variables = ({ uri }) => {
@@ -51,14 +51,13 @@ Singular.component = (props) => {
   }
 
   const date = post?.date
-    ? new Date(post.date).toLocaleDateString('en-us', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
+    ? new Date(post.date).toLocaleDateString("en-us", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
       })
     : null
-
 
   return (
     <SiteLayout>
@@ -113,11 +112,11 @@ Singular.component = (props) => {
                 </div>
               </header>
               <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-12">
-                  <div
-                    id="content"
-                    className="prose dark:prose-dark"
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                  />
+                <div
+                  id="content"
+                  className="prose dark:prose-dark"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
               </div>
             </article>
           </main>

@@ -1,5 +1,5 @@
-import { documentationNav } from '/navs/documentation.js'
-import Link from 'next/link'
+import { documentationNav } from "/navs/documentation.js"
+import Link from "next/link"
 
 const getNav = () => {
   return Object.keys(documentationNav).map((key, i) => {
@@ -8,7 +8,9 @@ const getNav = () => {
     if (children.length > 0) {
       return (
         <div key={key}>
-          <h3 className="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">{key}</h3>
+          <h3 className="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">
+            {key}
+          </h3>
           <ul className="mb-6 space-y-6 lg:space-y-2 border-l border-slate-100 dark:border-slate-800">
             {children.map((child, i) => {
               return (

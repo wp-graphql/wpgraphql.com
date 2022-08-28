@@ -1,9 +1,11 @@
-import { gql, useQuery } from '@apollo/client'
-import SiteLayout from 'components/SiteLayout/SiteLayout'
-import SiteFooter from 'components/SiteFooter/SiteFooter'
-import { NAV_QUERY } from 'components/SiteHeader/SiteHeader'
-import PostPreview, { PostPreviewFragment } from 'components/PostPreview/PostPreview'
-import { initializeApollo, addApolloState } from 'lib/data/apollo'
+import { gql, useQuery } from "@apollo/client"
+import SiteLayout from "components/SiteLayout/SiteLayout"
+import SiteFooter from "components/SiteFooter/SiteFooter"
+import { NAV_QUERY } from "components/SiteHeader/SiteHeader"
+import PostPreview, {
+  PostPreviewFragment,
+} from "components/PostPreview/PostPreview"
+import { initializeApollo, addApolloState } from "lib/data/apollo"
 
 export const BLOG_QUERY = gql`
   query GetPostsForBlog($first: Int) {
@@ -72,11 +74,11 @@ export async function getStaticProps() {
 
   await apolloClient.query({
     query: NAV_QUERY,
-    variables: { menu_name: 'Primary Nav' },
+    variables: { menu_name: "Primary Nav" },
   })
 
   return addApolloState(apolloClient, {
     props: {},
-    revalidate: 30
+    revalidate: 30,
   })
 }

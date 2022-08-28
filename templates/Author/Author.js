@@ -1,11 +1,13 @@
-import { gql } from '@apollo/client'
-import PostPreview, { PostPreviewFragment } from 'components/PostPreview/PostPreview'
-import SiteLayout from 'components/SiteLayout/SiteLayout'
-import SiteFooter from 'components/SiteFooter/SiteFooter'
-import Image from 'next/image'
+import { gql } from "@apollo/client"
+import PostPreview, {
+  PostPreviewFragment,
+} from "components/PostPreview/PostPreview"
+import SiteLayout from "components/SiteLayout/SiteLayout"
+import SiteFooter from "components/SiteFooter/SiteFooter"
+import Image from "next/image"
 
 const Author = {
-  name: 'Author',
+  name: "Author",
 }
 
 Author.query = gql`
@@ -64,7 +66,9 @@ Author.component = (props) => {
 
               <div
                 className="prose dark:prose-dark text-lg text-center leading-7 "
-                dangerouslySetInnerHTML={{ __html: props?.data?.user?.description ?? '' }}
+                dangerouslySetInnerHTML={{
+                  __html: props?.data?.user?.description ?? "",
+                }}
               />
             </div>
             <div className="max-w-3xl mx-auto space-y-6">

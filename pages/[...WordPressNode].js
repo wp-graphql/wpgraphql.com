@@ -1,4 +1,4 @@
-import { wordPressServerSideProps, WordPressNode } from 'wp-next'
+import { wordPressServerSideProps, WordPressNode } from "wp-next"
 // import { gql } from '@apollo/client'
 //
 // Uncomment to override templates
@@ -17,25 +17,25 @@ import { wordPressServerSideProps, WordPressNode } from 'wp-next'
 //     }
 // }
 
-const WordPressNodeTemplate = props => {
-    return <WordPressNode templates={{}} {...props} />
+const WordPressNodeTemplate = (props) => {
+  return <WordPressNode templates={{}} {...props} />
 }
 
 export default WordPressNodeTemplate
 
 // use this for SSR instead of Static
-// 
+//
 // export async function getServerSideProps(context) {
 //  return await wordPressServerSideProps(context)
 // }
 
 export async function getStaticProps(context) {
-    return await wordPressServerSideProps(context)
+  return await wordPressServerSideProps(context)
 }
 
 export async function getStaticPaths() {
-    return {
-        paths: [],
-        fallback: 'blocking'
-    }
+  return {
+    paths: [],
+    fallback: "blocking",
+  }
 }

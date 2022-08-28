@@ -1,6 +1,8 @@
-import { gql } from '@apollo/client'
-import PostPreviewCategoryLink, { PostPreviewCategoryLinkFragment } from 'components/PostPreviewCategoryLink/PostPreviewCategoryLink'
-import Link from 'next/link'
+import { gql } from "@apollo/client"
+import PostPreviewCategoryLink, {
+  PostPreviewCategoryLinkFragment,
+} from "components/PostPreviewCategoryLink/PostPreviewCategoryLink"
+import Link from "next/link"
 
 export const PostPreviewFragment = gql`
   fragment PostPreview on Post {
@@ -33,13 +35,13 @@ const PostPreview = ({ post }) => {
     return null
   }
 
-  const paragraphs = post?.excerpt ? post.excerpt.split('</p>') : null
-  const excerpt = paragraphs ? paragraphs[0] + '</p>' : null
+  const paragraphs = post?.excerpt ? post.excerpt.split("</p>") : null
+  const excerpt = paragraphs ? paragraphs[0] + "</p>" : null
   const date = post?.date
-    ? new Date(post.date).toLocaleDateString('en-us', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
+    ? new Date(post.date).toLocaleDateString("en-us", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
       })
     : null
 

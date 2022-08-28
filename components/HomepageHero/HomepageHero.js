@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image"
 
 const HomepageHero = () => {
   return (
@@ -11,8 +11,8 @@ const HomepageHero = () => {
                 <span className="block">GraphQL API for WordPress</span>
               </h2>
               <p className="mt-4 text-lg leading-6 text-gray-600 dark:text-slate-100">
-                WPGraphQL is a free, open-source WordPress plugin that provides an extendable
-                GraphQL schema and API for any WordPress site.
+                WPGraphQL is a free, open-source WordPress plugin that provides
+                an extendable GraphQL schema and API for any WordPress site.
               </p>
               <a
                 href="#"

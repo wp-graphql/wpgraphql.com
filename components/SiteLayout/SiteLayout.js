@@ -1,4 +1,4 @@
-import SiteHeader, { NAV_QUERY } from '../SiteHeader/SiteHeader'
+import SiteHeader, { NAV_QUERY } from "../SiteHeader/SiteHeader"
 
 const SiteLayout = ({ children }) => {
   return (
