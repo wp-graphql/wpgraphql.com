@@ -36,7 +36,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Format source code
-        run: yarn format
+        run: yarn test:format
   check_lint:
     name: Validate linting with ESLint
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Format source code
-        run: yarn lint
+        run: yarn test:lint
   # test:
   #   name: Run package tests (Node.js v${{ matrix.node }})
   #   runs-on: ubuntu-latest

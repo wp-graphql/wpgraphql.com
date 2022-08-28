@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "yarn test:lint --fix",
+    "test:format": "prettier '{components,hooks,pages,styles,templates,lib}/**/*.{js,jsx,ts,tsx,css,mdx}'",
+    "test:lint": "next lint",
     "prebuild": "node ./scripts/getPossibleTypes.js",
     "predev": "node ./scripts/getPossibleTypes.js",
     "getPossibleTypes": "node ./scripts/getPossibleTypes.js",
-    "format": "prettier '{components,hooks,pages,styles,templates,lib}/**/*.{js,jsx,ts,tsx,css,mdx}' --write"
+    "format": "yarn test:format --write"
   },
   "browserslist": [
     "> 1%"
