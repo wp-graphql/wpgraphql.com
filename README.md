@@ -2,19 +2,12 @@
 
 # WPGraphQL.com
 
-[WPGraphQL.com](https://wpgraphql.com) is a Gatsby site that uses WordPress as the CMS.
+[WPGraphQL.com](https://wpgraphql.com) is a Next.js site that uses WordPress as the CMS.
 
-This repository contains the Gatsby code to source data from WordPress and create pages using WordPress data.
+This repository contains the Next.js code to source data from WordPress and create pages using WordPress data.
 
 ## Contributing
 
-To run the site locally, copy `.env.example` to `.env.development` and set the contents to:
+Then run `yarn` to install dependencies.
 
-```
-SITE_URL=http://localhost:8000
-WPGRAPHQL_URL=https://content.wpgraphql.com/graphql
-```
-
-Then run `yarn` or `npm install` to install dependencies.
-
-Then run `gatsby develop` to run the site.
+Then run `yarn develop` to run the site in development.
