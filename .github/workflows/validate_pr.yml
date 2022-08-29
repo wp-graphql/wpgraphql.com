@@ -10,9 +10,11 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: ./.github/workflows/cache-restore
         id: cache-node-modules
+
       - name: Install dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn install --immutable
