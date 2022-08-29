@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: ./.github/workflows/cache-restore
+        uses: ./.github/actions/cache-restore
         id: cache-node-modules
 
       - name: Install dependencies
