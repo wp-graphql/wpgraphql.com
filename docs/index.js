@@ -1,4 +1,4 @@
-import SiteLayout from 'components/SiteLayout/SiteLayout'
+import SiteLayout from 'components/Site/SiteLayout'
 
 const Docs = () => {
   return (
