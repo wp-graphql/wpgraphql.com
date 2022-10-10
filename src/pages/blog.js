@@ -4,7 +4,7 @@ import SiteFooter from "components/Site/SiteFooter"
 import { NAV_QUERY } from "components/Site/SiteHeader"
 import PostPreview, {
   PostPreviewFragment,
-} from "components/PostPreview/PostPreview"
+} from "components/Preview/PostPreview"
 import { initializeApollo, addApolloState } from "lib/data/apollo"
 
 export const BLOG_QUERY = gql`

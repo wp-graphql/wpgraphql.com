@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client"
 import PostPreview, {
   PostPreviewFragment,
-} from "components/PostPreview/PostPreview"
+} from "components/Preview/PostPreview"
 import SiteLayout from "components/Site/SiteLayout"
 import SiteFooter from "components/Site/SiteFooter"
 

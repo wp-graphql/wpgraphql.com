@@ -29,3 +29,4 @@ yarn-error.log*
 !.env.example
 ## code editors
 .idea
+.vscode

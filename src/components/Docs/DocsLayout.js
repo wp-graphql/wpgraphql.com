@@ -1,4 +1,4 @@
-import DocsNav from "components/DocsNav/DocsNav"
+import DocsNav from "components/Docs/DocsNav"
 import SiteLayout from "components/Site/SiteLayout"
 import SiteFooter from "components/Site/SiteFooter"
 

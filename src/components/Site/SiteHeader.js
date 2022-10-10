@@ -11,9 +11,9 @@ import {
 } from "@heroicons/react/24/outline"
 import { ChevronDownIcon } from "@heroicons/react/20/solid"
 
-import DynamicHeroIcon from "../DynamicHeroIcon/DynamicHeroIcon"
+import DynamicHeroIcon from "../DynamicHeroIcon"
 import SiteLogo from "./SiteLogo"
-import { ThemeSelect, ThemeToggle } from "components/ThemeToggle/ThemeToggle"
+import { ThemeToggle } from "components/Site/ThemeToggle"
 import { flatListToHierarchical } from "lib/helpers/flatListToHierarchical"
 
 const docs = [
@@ -196,9 +196,7 @@ const SiteHeader = () => {
                                     >
                                       {icon && (
                                         <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
-                                          <DynamicHeroIcon
-                                            icon={icon}
-                                          />
+                                          <DynamicHeroIcon icon={icon} />
                                         </div>
                                       )}
                                       <div className="ml-4">

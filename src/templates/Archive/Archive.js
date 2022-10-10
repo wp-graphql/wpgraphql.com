@@ -3,19 +3,19 @@ import SiteLayout from "components/Site/SiteLayout"
 import SiteFooter from "components/Site/SiteFooter"
 import ExtensionPreview, {
   ExtensionFragment,
-} from "components/ExtensionPreview/ExtensionPreview"
+} from "components/Preview/ExtensionPreview"
 import RecipePreview, {
   RecipePreviewFragment,
-} from "components/RecipePreview/RecipePreview"
+} from "components/Preview/RecipePreview"
 import FilterPreview, {
   FilterPreviewFragment,
-} from "components/FilterPreview/FilterPreview"
+} from "components/Preview/FilterPreview"
 import FunctionPreview, {
   FunctionPreviewFragment,
-} from "components/FunctionPreview/FunctionPreview"
+} from "components/Preview/FunctionPreview"
 import ActionPreview, {
   ActionPreviewFragment,
-} from "components/ActionPreview/ActionPreview"
+} from "components/Preview/ActionPreview"
 
 const Archive = {
   name: "Archive",

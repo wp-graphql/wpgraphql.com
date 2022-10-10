@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic"
 
 /**
  * This component allows an icon to be rendered based on the name of the icon (i.e., string passed from a WordPress Nav Menu Item)
@@ -6,12 +6,10 @@ import dynamic from 'next/dynamic'
  */
 const DynamicHeroIcon = (props) => {
   const Icon = dynamic(() =>
-    import('@heroicons/react/24/outline').then((mod) => mod[props.icon])
+    import("@heroicons/react/24/outline").then((mod) => mod[props.icon])
   )
 
-  return (
-    <Icon className="h-6 w-6 text-white" aria-hidden="true" />
-  )
+  return <Icon className="h-6 w-6 text-white" aria-hidden="true" />
 }
 
 export default DynamicHeroIcon

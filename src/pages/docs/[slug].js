@@ -10,7 +10,7 @@ import {
   getTableOfContents,
 } from "lib/helpers/parse-docs"
 import { components } from "lib/mdx/components"
-import TableOfContents from "components/TableOfContents/TableOfContents"
+import TableOfContents from "components/Docs/TableOfContents"
 
 const Doc = ({ source, toc, content }) => {
   return (

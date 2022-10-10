@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client"
-import { ExternalLinkIcon } from "@heroicons/react/24/outline"
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 
 export const ExtensionFragment = gql`
   fragment ExtensionPreview on ExtensionPlugin {
@@ -35,7 +35,7 @@ const ExtensionPreview = ({ extension }) => {
           className="group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-5 py-2 focus:outline-none focus:ring-2 bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900 focus:ring-slate-500 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500"
         >
           <span className="pr-2">View Extension</span>
-          <ExternalLinkIcon className="h-4 w-4" />
+          <ArrowTopRightOnSquareIcon className="h-4 w-4" />
         </a>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client"
 import PostPreviewCategoryLink, {
   PostPreviewCategoryLinkFragment,
-} from "components/PostPreviewCategoryLink/PostPreviewCategoryLink"
+} from "components/Preview/PostPreviewCategoryLink"
 import Link from "next/link"
 
 export const PostPreviewFragment = gql`

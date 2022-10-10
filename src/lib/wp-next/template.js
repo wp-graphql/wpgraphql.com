@@ -433,11 +433,6 @@ export const WordPressNode = (props) => {
   let template = getTemplateForSeedNode(rootNode)
   console.log({ template, props, templates })
 
-  const { data, error, loading, called, client } = useQuery(query, {
-    variables,
-    ssr: true,
-  })
-
   if (!template || !template.query || !template.variables) {
     return <h2>Error...</h2>
   }
@@ -449,6 +444,11 @@ export const WordPressNode = (props) => {
 
   const { query, variables } = template
   let Component = template.component ?? <h2>Fallback Template...</h2>
+
+  const { data, error, loading, called, client } = useQuery(query, {
+    variables,
+    ssr: true,
+  })
 
   return (
     <>

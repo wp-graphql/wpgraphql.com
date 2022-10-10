@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { InboxIcon, SparklesIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
-import DynamicHeroIcon from "../DynamicHeroIcon/DynamicHeroIcon"
+import DynamicHeroIcon from "../DynamicHeroIcon"
 
 const HomepageFeatures = () => {
   return (
