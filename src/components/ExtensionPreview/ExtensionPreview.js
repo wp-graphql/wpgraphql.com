@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client"
-import { ExternalLinkIcon } from "@heroicons/react/outline"
+import { ExternalLinkIcon } from "@heroicons/react/24/outline"
 
 export const ExtensionFragment = gql`
   fragment ExtensionPreview on ExtensionPlugin {

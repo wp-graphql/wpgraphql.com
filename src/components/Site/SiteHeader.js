@@ -5,14 +5,16 @@ import { useQuery, gql } from "@apollo/client"
 import classNames from "clsx"
 
 import { Popover, Transition } from "@headlessui/react"
-import { MenuIcon, XIcon } from "@heroicons/react/outline"
-import { ChevronDownIcon } from "@heroicons/react/solid"
+import {
+  Bars3Icon as MenuIcon,
+  XMarkIcon as XIcon,
+} from "@heroicons/react/24/outline"
+import { ChevronDownIcon } from "@heroicons/react/20/solid"
 
 import DynamicHeroIcon from "../DynamicHeroIcon/DynamicHeroIcon"
 import SiteLogo from "./SiteLogo"
 import { ThemeSelect, ThemeToggle } from "components/ThemeToggle/ThemeToggle"
 import { flatListToHierarchical } from "lib/helpers/flatListToHierarchical"
-
 
 const docs = [
   {
@@ -196,8 +198,6 @@ const SiteHeader = () => {
                                         <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
                                           <DynamicHeroIcon
                                             icon={icon}
-                                            className="h-6 w-6"
-                                            aria-hidden="true"
                                           />
                                         </div>
                                       )}

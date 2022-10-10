@@ -1,10 +1,10 @@
-import { ChevronRightIcon } from "@heroicons/react/solid"
+import { ChevronRightIcon } from "@heroicons/react/20/solid"
 import {
-  ViewListIcon,
   BookOpenIcon,
   RssIcon,
-  ViewGridAddIcon,
-} from "@heroicons/react/outline"
+  Bars4Icon,
+  PuzzlePieceIcon,
+} from "@heroicons/react/24/outline"
 import SiteLogo from "components/Site/SiteLogo"
 import Link from "next/link"
 
@@ -18,13 +18,13 @@ const links = [
   {
     title: "Developer Reference",
     description: "Learn how to extend WPGraphQL on the server",
-    icon: ViewListIcon,
+    icon: Bars4Icon,
     href: "/developer-reference",
   },
   {
     title: "Extensions",
     description: "Find extensions that add functionality to WPGrapQL",
-    icon: ViewGridAddIcon,
+    icon: PuzzlePieceIcon,
     href: "/extensions",
   },
   {

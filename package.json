@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "yarn test:lint --fix",
-    "test:format": "prettier '{components,hooks,pages,styles,templates,lib}/**/*.{js,jsx,ts,tsx,css,mdx}'",
+    "test:format": "prettier 'src/**/*.{js,jsx,ts,tsx,css,mdx}'",
     "test:lint": "next lint",
     "prebuild": "node ./scripts/getPossibleTypes.js",
     "predev": "node ./scripts/getPossibleTypes.js",

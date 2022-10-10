@@ -1,15 +1,15 @@
-import { gql, useQuery } from '@apollo/client';
-import { addApolloState, initializeApollo } from 'lib/data/apollo'
-import Singular from 'templates/Singular/Singular';
-import Author from 'templates/Author/Author';
-import Category from 'templates/Category/Category';
-import Archive from 'templates/Archive/Archive';
-import Index from 'templates/Index/Index';
-import SingleRecipe from 'templates/SingleRecipe/SingleRecipe';
-import { NAV_QUERY } from 'components/Site/SiteHeader';
+import { gql, useQuery } from "@apollo/client"
+import { addApolloState, initializeApollo } from "lib/data/apollo"
+import Singular from "templates/Singular/Singular"
+import Author from "templates/Author/Author"
+import Category from "templates/Category/Category"
+import Archive from "templates/Archive/Archive"
+import Index from "templates/Index/Index"
+import SingleRecipe from "templates/SingleRecipe/SingleRecipe"
+import { NAV_QUERY } from "components/Site/SiteHeader"
 
 export const SEED_QUERY = gql`
-query GetNodeByUri($uri: String!) {
+  query GetNodeByUri($uri: String!) {
     node: nodeByUri(uri: $uri) {
       ...NodeByUri
     }
@@ -25,7 +25,6 @@ query GetNodeByUri($uri: String!) {
     ...TermNode
     ...ContentNode
     ...MediaItem
-
   }
 
   fragment DatabaseIdentifier on DatabaseIdentifier {
@@ -70,7 +69,7 @@ query GetNodeByUri($uri: String!) {
 
 const TEMPLATES = {
   single: {
-    name: 'single',
+    name: "single",
     query: gql`
       {
         single: __typename
@@ -78,15 +77,15 @@ const TEMPLATES = {
     `,
     component: () => <h1>SINGLE...</h1>,
   },
-  'singular-832361': {
-    name: 'singular-832361',
+  "singular-832361": {
+    name: "singular-832361",
     query: Singular.query,
     variables: Singular.variables,
     component: Singular.component,
   },
   singular: Singular,
   page: {
-    name: 'page',
+    name: "page",
     query: gql`
       {
         page: __typename
@@ -95,7 +94,7 @@ const TEMPLATES = {
     component: () => <h1>PAGE...</h1>,
   },
   home: {
-    name: 'home',
+    name: "home",
     query: gql`
       {
         home: __typename
@@ -104,7 +103,7 @@ const TEMPLATES = {
     component: () => <h1>HOME...</h1>,
   },
   search: {
-    name: 'search',
+    name: "search",
     query: gql`
       {
         search: __typename
@@ -114,13 +113,13 @@ const TEMPLATES = {
   },
   archive: Archive,
   author: Author,
-//   'author-7': {
-//     name: 'author-7',
-//     query: Author7.query,
-//     component: Author7,
-//   },
+  //   'author-7': {
+  //     name: 'author-7',
+  //     query: Author7.query,
+  //     component: Author7,
+  //   },
   frontPage: {
-    name: 'frontPage',
+    name: "frontPage",
     query: gql`
       {
         frontPage: __typename
@@ -130,7 +129,7 @@ const TEMPLATES = {
   },
   category: Category,
   tag: {
-    name: 'tag',
+    name: "tag",
     query: gql`
       {
         tag: __typename
@@ -145,12 +144,12 @@ const TEMPLATES = {
       )
     },
   },
-  'single-code-snippets': SingleRecipe,
-  'single-actions': SingleRecipe,
-  'single-filters': SingleRecipe,
-  'single-functions': SingleRecipe,
-  'tag-43': {
-    name: 'tag43',
+  "single-code-snippets": SingleRecipe,
+  "single-actions": SingleRecipe,
+  "single-filters": SingleRecipe,
+  "single-functions": SingleRecipe,
+  "tag-43": {
+    name: "tag43",
     query: gql`
       {
         tag43: __typename
@@ -166,7 +165,7 @@ const TEMPLATES = {
     },
   },
   term: {
-    name: 'term',
+    name: "term",
     query: gql`
       {
         term: __typename
@@ -182,37 +181,40 @@ const TEMPLATES = {
     },
   },
   index: {
-    name: 'index',
+    name: "index",
     query: Index.query,
     component: Index.component,
   },
 }
 
 export const getTemplate = (templateName) => {
-  const foundTemplate = Object.keys(TEMPLATES).filter((key) => key === templateName)[0]
+  const foundTemplate = Object.keys(TEMPLATES).filter(
+    (key) => key === templateName
+  )[0]
   const template = TEMPLATES[foundTemplate] ?? null
 
-    const defaultTemplate = {
-        name: 'default',
-        query: gql`
-            query NodeByUri($uri:String){
-                default: __typename
-                nodeByUri(uri:$uri) {
-                    __typename
-                    uri
-                }
-            }`,
-        component: props => (
-            <>
-                <pre>{JSON.stringify(props, null, 2)}</pre>
-            </>
-            ),
-        variables: rootNode => {
-            return {
-                uri: rootNode.uri,
-            }
+  const defaultTemplate = {
+    name: "default",
+    query: gql`
+      query NodeByUri($uri: String) {
+        default: __typename
+        nodeByUri(uri: $uri) {
+          __typename
+          uri
         }
-    }
+      }
+    `,
+    component: (props) => (
+      <>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
+      </>
+    ),
+    variables: (rootNode) => {
+      return {
+        uri: rootNode.uri,
+      }
+    },
+  }
 
   return template
 }
@@ -227,8 +229,8 @@ export const getPageTemplate = (seedNode) => {
   //
   // essentially similar to the `template_redirect` hook in WordPress core
 
-  let template = getTemplate('page')
-  const typeName = seedNode?.contentTypeName ?? 'page'
+  let template = getTemplate("page")
+  const typeName = seedNode?.contentTypeName ?? "page"
 
   if (seedNode?.databaseId) {
     template = getTemplate(`${typeName}-${seedNode.databaseId}`)
@@ -253,56 +255,55 @@ export const getTemplateForSeedNode = (seedNode) => {
   }
 
   // if user defined a callback to determine the template, use that first, if not, fallback
-//   if ((template = whateverConfig.templateResolver(seedNode))) {
-//     return template
-//   }
+  //   if ((template = whateverConfig.templateResolver(seedNode))) {
+  //     return template
+  //   }
 
-  template = getTemplate('index')
+  template = getTemplate("index")
 
   const { uri } = seedNode
 
-  if ('/' === uri || '' === uri) {
-    if ('Page' !== seedNode.__typename) {
+  if ("/" === uri || "" === uri) {
+    if ("Page" !== seedNode.__typename) {
       if (seedNode.isPostsPage) {
-        template = getTemplate('home') ?? template
+        template = getTemplate("home") ?? template
       }
-      template = getTemplate('frontPage') ?? template
+      template = getTemplate("frontPage") ?? template
     } else {
-      template = getTemplate('frontPage') ?? template
+      template = getTemplate("frontPage") ?? template
     }
   }
 
-
   if (true === seedNode?.isContentNode) {
-    const typeName = seedNode.contentType?.node?.name ?? 'page'
-    template = getTemplate('singular') ?? template
+    const typeName = seedNode.contentType?.node?.name ?? "page"
+    template = getTemplate("singular") ?? template
     // console.log( { typeName })
     switch (typeName) {
       //@todo: fix this
-      case 'code-snippets':
-      case 'single-actions':
-      case 'single-functions':
-      case 'single-filters':
+      case "code-snippets":
+      case "single-actions":
+      case "single-functions":
+      case "single-filters":
         // console.log( { TEMPLATES })
-        template = getTemplate('single-code-snippets') ?? 'goo'
+        template = getTemplate("single-code-snippets") ?? "goo"
         // console.log( { template })
-        break;
-      case 'page':
+        break
+      case "page":
         template = getPageTemplate(seedNode) ?? template
         break
-      case 'post':
+      case "post":
         break
     }
     template = getTemplate(`${typeName}-${seedNode.databaseId}`) ?? template
   }
 
   if (true === seedNode?.isTermNode) {
-    const typeName = seedNode?.taxonomyName ?? 'category'
-    template = getTemplate('archive') ?? template
+    const typeName = seedNode?.taxonomyName ?? "category"
+    template = getTemplate("archive") ?? template
 
     switch (seedNode?.__typename) {
-      case 'Category':
-        template = getTemplate('category') ?? template
+      case "Category":
+        template = getTemplate("category") ?? template
         if (seedNode?.databaseId) {
           template = getTemplate(`category-${seedNode.databaseId}`) ?? template
         }
@@ -310,8 +311,8 @@ export const getTemplateForSeedNode = (seedNode) => {
           template = getTemplate(`category-${seedNode.slug}`) ?? template
         }
         break
-      case 'Tag':
-        template = getTemplate('tag') ?? template
+      case "Tag":
+        template = getTemplate("tag") ?? template
         if (seedNode?.databaseId) {
           template = getTemplate(`tag-${seedNode.databaseId}`) ?? template
         }
@@ -323,15 +324,15 @@ export const getTemplateForSeedNode = (seedNode) => {
   }
 
   switch (seedNode.__typename) {
-    case 'ContentType':
-      template = getTemplate('archive') ?? template
+    case "ContentType":
+      template = getTemplate("archive") ?? template
       break
-    case 'User':
+    case "User":
       // fallback for authors
-      template = getTemplate('archive') ?? template
+      template = getTemplate("archive") ?? template
 
       // default for authors
-      template = getTemplate('author') ?? template
+      template = getTemplate("author") ?? template
 
       // specific for authors, by id
       if (seedNode?.databaseId) {
@@ -350,43 +351,46 @@ export const getTemplateForSeedNode = (seedNode) => {
     ...template,
     variables: template?.variables ? template.variables(seedNode) : null,
     error: template?.error ?? <h2>Error...</h2>,
-    loading: template?.loading ?? <h2>Loading...</h2>
+    loading: template?.loading ?? <h2>Loading...</h2>,
   }
 }
 
 export const wordPressServerSideProps = async (context) => {
-
-  let resolvedUrl = null;
-  let params = null;
-  let isStatic = false;
+  let resolvedUrl = null
+  let params = null
+  let isStatic = false
 
   // if there's no resolvedUrl in the context,
   // then we're using SSG instead of SSR
-  if ( context.resolvedUrl ) {
-    params = context?.params ?? null;
-    resolvedUrl = context?.resolvedUrl ?? null;
-
-  } else if ( context?.params?.WordPressNode ) {
-    params = context?.params ?? null;
-    isStatic = true;
-    resolvedUrl = context?.params?.WordPressNode ? context?.params?.WordPressNode.join('/') : null;
+  if (context.resolvedUrl) {
+    params = context?.params ?? null
+    resolvedUrl = context?.resolvedUrl ?? null
+  } else if (context?.params?.WordPressNode) {
+    params = context?.params ?? null
+    isStatic = true
+    resolvedUrl = context?.params?.WordPressNode
+      ? context?.params?.WordPressNode.join("/")
+      : null
   }
 
-  if ( !resolvedUrl ) {
+  if (!resolvedUrl) {
     return {
       notFound: true,
     }
   }
 
   const apolloClient = initializeApollo()
-  const root = await apolloClient.query({ query: SEED_QUERY, variables: { uri: resolvedUrl } })
+  const root = await apolloClient.query({
+    query: SEED_QUERY,
+    variables: { uri: resolvedUrl },
+  })
 
   const rootNode = root.data.node ?? null
 
   if (!rootNode) {
-      return {
-          notFound: true,
-      }
+    return {
+      notFound: true,
+    }
   }
 
   const template = getTemplateForSeedNode(rootNode)
@@ -399,57 +403,61 @@ export const wordPressServerSideProps = async (context) => {
 
   await apolloClient.query({
     query: NAV_QUERY,
-    variables: { menu_name: 'Primary Nav' },
+    variables: { menu_name: "Primary Nav" },
   })
 
   let props = {
     uri: resolvedUrl,
     rootNode,
-    params
+    params,
   }
 
   let response = {
-    props
+    props,
   }
 
   // if we're using SSG, we need to determine the revalidate timer
-  if ( isStatic ) {
+  if (isStatic) {
     response = {
       props,
-      revalidate: 5
+      revalidate: 5,
     }
   }
 
   return addApolloState(apolloClient, response)
 }
 
-export const WordPressNode = props => {
+export const WordPressNode = (props) => {
   const { rootNode, pageData, templates = {} } = props
-  console.log( { props } )
+  console.log({ props })
   let template = getTemplateForSeedNode(rootNode)
-  console.log( { template, props, templates } )
+  console.log({ template, props, templates })
 
   const { data, error, loading, called, client } = useQuery(query, {
     variables,
-    ssr: true
+    ssr: true,
   })
 
-  if ( ! template || ! template.query || ! template.variables ) {
+  if (!template || !template.query || !template.variables) {
     return <h2>Error...</h2>
   }
 
-  if ( templates[template.name] ) {
+  if (templates[template.name]) {
     template = { ...template, ...templates[template.name] }
   }
-  console.log( { template })
+  console.log({ template })
 
   const { query, variables } = template
   let Component = template.component ?? <h2>Fallback Template...</h2>
 
-
   return (
     <>
-      <Component error={error} loading={loading} data={data ?? pageData } {...props} />
+      <Component
+        error={error}
+        loading={loading}
+        data={data ?? pageData}
+        {...props}
+      />
     </>
   )
 }
