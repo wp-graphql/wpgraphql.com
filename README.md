@@ -11,3 +11,13 @@ This repository contains the Next.js code to source data from WordPress and crea
 Then run `yarn` to install dependencies.
 
 Then run `yarn develop` to run the site in development.
+
+## Required Environment Variables
+
+```bash
+SITE_URL=https://www.wpgraphql.com
+WPGRAPHQL_URL=https://content.wpgraphql.com/graphql
+NEXT_PUBLIC_WORDPRESS_URL=https://content.wpgraphql.com
+FAUSTWP_SECRET_KEY=key_for_previews
+GITHUB_TOKEN=personal_access_token
+```

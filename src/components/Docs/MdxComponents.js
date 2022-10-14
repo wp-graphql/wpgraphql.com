@@ -1,5 +1,7 @@
 import Link from "next/link"
 import clsx from "clsx"
+import Img from "next/future/image"
+import { getRemoteImgUrl } from "lib/mdx/parse-docs.mjs"
 
 export const Heading = ({ as, id, children, ...rest }) => {
   const Tag = as ?? "h2"
@@ -26,6 +28,7 @@ export const LinkedHeading = ({ id, as, children, className }) => {
           <a
             className="flex items-center ml-4 hover:bg-slate-500 "
             aria-label="Anchor"
+            href={`#${id}`}
           >
             &#8203;
             <div className="w-6 h-6 text-slate-500 border-1 ring-slate-900/10 rounded-md shadow-lg flex items-center justify-center hover:ring-slate-900/10 hover:shadow hover:bg-slate-400 hover:text-color-700 dark:bg-slate-700 dark:text-slate-300 dark:shadow-none dark:ring-0">
@@ -43,7 +46,17 @@ export const LinkedHeading = ({ id, as, children, className }) => {
       </Heading>
     )
   }
-  return <h1 {...rest} />
+  return <h1 />
+}
+
+function CustomLink(props) {
+  const isAbsolute = /^(?:[a-z]+:)?\/\//i
+
+  if (isAbsolute.test(props.href)) {
+    return <a {...props} />
+  }
+
+  return <Link {...props} />
 }
 
 export const components = {
@@ -52,5 +65,6 @@ export const components = {
   h4: (props) => <LinkedHeading as="h4" {...props} />,
   h5: (props) => <LinkedHeading as="h5" {...props} />,
   h6: (props) => <LinkedHeading as="h6" {...props} />,
+  a: CustomLink,
   _Heading: (props) => <Heading {...props} />,
 }

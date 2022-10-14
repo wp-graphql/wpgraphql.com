@@ -1,18 +1,15 @@
-import React from "react"
-import { renderToString } from "react-dom/server"
-import DocsLayout from "../../components/Docs/DocsLayout"
-
 import { MDXRemote } from "next-mdx-remote"
-import {
-  getDoc,
-  getDocData,
-  getDocSlugs,
-  getTableOfContents,
-} from "lib/helpers/parse-docs"
-import { components } from "lib/mdx/components"
+
+import DocsLayout from "components/Docs/DocsLayout"
 import TableOfContents from "components/Docs/TableOfContents"
 
-const Doc = ({ source, toc, content }) => {
+import {
+  getAllDocSlugs,
+  getParsedDoc,
+} from "lib/mdx/parse-docs.mjs"
+import { components } from "components/Docs/MdxComponents"
+
+export default function Doc({ source, toc }) {
   return (
     <DocsLayout>
       <div
@@ -39,30 +36,23 @@ const Doc = ({ source, toc, content }) => {
   )
 }
 
-export default Doc
-
 export const getStaticProps = async ({ params }) => {
-  const doc = await getDoc(params.slug)
-  const source = doc
+  const {source, toc } = await getParsedDoc(params.slug)
 
   return {
     props: {
-      toc: getTableOfContents(
-        renderToString(<MDXRemote {...source} components={components} />)
-      ),
-      data: getDocData(params.slug),
+      toc,
       source,
-      frontmatter: source.frontmatter,
     },
-    revalidate: 30,
+    revalidate: 1800,
+    fallback: blocking,
   }
 }
 
-export const getStaticPaths = async () => {
-  const paths = getDocSlugs().map((slug) => ({ params: { slug } }))
+// export const getStaticPaths = async () => {
+//   const paths = await getAllDocSlugs()
 
-  return {
-    paths,
-    fallback: false,
-  }
-}
+//   return {
+//     paths: paths.map((slug) => ({ params: { slug } })),
+//   }
+// }

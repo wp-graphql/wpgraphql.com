@@ -11,9 +11,9 @@ const nextConfig = withFaust(
     experimental: {
       runtime: "nodejs",
     },
-    pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+    pageExtensions: ["ts", "tsx", "js", "jsx"],
     images: {
-      domains: ["secure.gravatar.com", getWpHostname()],
+      domains: ["secure.gravatar.com", "raw.githubusercontent.com", getWpHostname()],
       disableStaticImages: true,
     },
     async redirects() {

@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 const TableOfContents = ({ toc }) => {
-  if (!toc || !toc.length) {
+  if (!toc || !Array.isArray(toc)) {
     return null
   }
 
