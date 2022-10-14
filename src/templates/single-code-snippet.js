@@ -3,41 +3,7 @@ import SiteLayout from "components/Site/SiteLayout"
 import SiteFooter from "components/Site/SiteFooter"
 import Link from "next/link"
 
-const SingleRecipe = {
-  name: "SingleRecipe",
-}
-
-SingleRecipe.query = gql`
-  query GetRecipe($uri: ID!) {
-    node: contentNode(id: $uri, idType: URI) {
-      id
-      ... on NodeWithTitle {
-        title
-      }
-      uri
-      ... on NodeWithContentEditor {
-        content
-      }
-      ... on CodeSnippet {
-        recipeTags: codeSnippetTags {
-          nodes {
-            id
-            name
-            uri
-          }
-        }
-      }
-    }
-  }
-`
-
-SingleRecipe.variables = ({ uri }) => {
-  return {
-    uri,
-  }
-}
-
-SingleRecipe.component = (props) => {
+export default function SingleRecipe(props) {
   const { data } = props
   const { node } = data
 
@@ -87,4 +53,32 @@ SingleRecipe.component = (props) => {
   )
 }
 
-export default SingleRecipe
+SingleRecipe.query = gql`
+  query GetRecipe($uri: ID!) {
+    node: contentNode(id: $uri, idType: URI) {
+      id
+      ... on NodeWithTitle {
+        title
+      }
+      uri
+      ... on NodeWithContentEditor {
+        content
+      }
+      ... on CodeSnippet {
+        recipeTags: codeSnippetTags {
+          nodes {
+            id
+            name
+            uri
+          }
+        }
+      }
+    }
+  }
+`
+
+SingleRecipe.variables = ({ uri }) => {
+  return {
+    uri,
+  }
+}

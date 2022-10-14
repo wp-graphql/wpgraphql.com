@@ -5,37 +5,7 @@ import PostPreview, {
 import SiteLayout from "components/Site/SiteLayout"
 import SiteFooter from "components/Site/SiteFooter"
 
-const Category = {
-  name: "Category",
-}
-
-Category.variables = ({ id }) => ({
-  id,
-})
-
-Category.query = gql`
-  query GetCategory($id: ID!) {
-    category(id: $id) {
-      name
-      description
-      posts {
-        nodes {
-          ...PostPreview
-        }
-      }
-    }
-  }
-  ${PostPreviewFragment}
-`
-
-Category.loading = () => {
-  ;<h2>Loading...</h2>
-}
-Category.error = () => {
-  ;<h2>Error...</h2>
-}
-
-Category.component = (props) => {
+export default function Category(props) {
   const { data } = props
 
   if (!data) {
@@ -74,4 +44,21 @@ Category.component = (props) => {
   )
 }
 
-export default Category
+Category.variables = ({ id }) => ({
+  id,
+})
+
+Category.query = gql`
+  query GetCategory($id: ID!) {
+    category(id: $id) {
+      name
+      description
+      posts {
+        nodes {
+          ...PostPreview
+        }
+      }
+    }
+  }
+  ${PostPreviewFragment}
+`

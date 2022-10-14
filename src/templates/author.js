@@ -6,36 +6,7 @@ import SiteLayout from "components/Site/SiteLayout"
 import SiteFooter from "components/Site/SiteFooter"
 import Image from "next/image"
 
-const Author = {
-  name: "Author",
-}
-
-Author.query = gql`
-  query GetAuthor($id: ID!) {
-    user(id: $id) {
-      id
-      name
-      description
-      avatar {
-        url
-      }
-      posts {
-        nodes {
-          ...PostPreview
-        }
-      }
-    }
-  }
-  ${PostPreviewFragment}
-`
-
-Author.variables = ({ id }) => {
-  return {
-    id,
-  }
-}
-
-Author.component = (props) => {
+export default function Author(props) {
   return (
     <SiteLayout>
       <div className="overflow-hidden">
@@ -89,4 +60,27 @@ Author.component = (props) => {
   )
 }
 
-export default Author
+Author.query = gql`
+  query GetAuthor($id: ID!) {
+    user(id: $id) {
+      id
+      name
+      description
+      avatar {
+        url
+      }
+      posts {
+        nodes {
+          ...PostPreview
+        }
+      }
+    }
+  }
+  ${PostPreviewFragment}
+`
+
+Author.variables = ({ id }) => {
+  return {
+    id,
+  }
+}

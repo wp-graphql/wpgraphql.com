@@ -14,7 +14,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import DynamicHeroIcon from "../DynamicHeroIcon"
 import SiteLogo from "./SiteLogo"
 import { ThemeToggle } from "components/Site/ThemeToggle"
-import { flatListToHierarchical } from "lib/helpers/flatListToHierarchical"
+import flatListToHierarchical from "lib/helpers/flatListToHierarchical"
 
 const docs = [
   {
@@ -91,10 +91,11 @@ export const NAV_QUERY = gql`
 
 const SiteHeader = () => {
   const [scrolled, setScrolled] = useState(false)
-  const { data, error, loading } = useQuery(NAV_QUERY, {
+  const { data } = useQuery(NAV_QUERY, {
     variables: { menu_name: "Primary Nav" },
     ssr: true,
   })
+
   const menuItems = flatListToHierarchical(data?.menu?.menuItems?.nodes, {
     idKey: "id",
     parentKey: "parentId",

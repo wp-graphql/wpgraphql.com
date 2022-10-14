@@ -1,15 +1,15 @@
-import { ApolloProvider } from "@apollo/client"
-import { useApollo } from "lib/data/apollo"
+import "../../faust.config"
+import { useRouter } from "next/router"
+import { FaustProvider } from "@faustwp/core"
 
 import "../styles/globals.css"
 
-function MyApp({ Component, pageProps }) {
-  const client = useApollo(pageProps)
+export default function MyApp({ Component, pageProps }) {
+  const router = useRouter()
+
   return (
-    <ApolloProvider client={client}>
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <FaustProvider pageProps={pageProps}>
+      <Component {...pageProps} key={router.asPath} />
+    </FaustProvider>
   )
 }
-
-export default MyApp

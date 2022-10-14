@@ -1,21 +1,25 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+const { withFaust, getWpHostname } = require("@faustwp/core")
+
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
 })
 
 /** @type {import('next').NextConfig} */
-const nextConfig = withBundleAnalyzer({
-  swcMinify: true,
-  experimental: {
-    runtime: "nodejs"
-  },
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  images: {
-    domains: [ 'secure.gravatar.com' ],
-    disableStaticImages: true,
-  },
-  async redirects() {
-    return require('./redirects.json')
-  },
-})
+const nextConfig = withFaust(
+  withBundleAnalyzer({
+    swcMinify: true,
+    experimental: {
+      runtime: "nodejs",
+    },
+    pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+    images: {
+      domains: ["secure.gravatar.com", getWpHostname()],
+      disableStaticImages: true,
+    },
+    async redirects() {
+      return require("./redirects.json")
+    },
+  })
+)
 
 module.exports = nextConfig

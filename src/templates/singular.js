@@ -1,48 +1,12 @@
-import SiteLayout from "components/Site/SiteLayout"
-import SiteFooter from "components/Site/SiteFooter"
-import { gql } from "@apollo/client"
 import Link from "next/link"
 import Image from "next/image"
 
-const Singular = {
-  name: "singular",
-}
+import { gql } from "@apollo/client"
 
-Singular.variables = ({ uri }) => {
-  return {
-    uri,
-  }
-}
+import SiteLayout from "components/Site/SiteLayout"
+import SiteFooter from "components/Site/SiteFooter"
 
-Singular.query = gql`
-  query GetSingularNode($uri: ID!) {
-    post(id: $uri, idType: URI) {
-      id
-      title
-      uri
-      date
-      content
-      author {
-        node {
-          name
-          uri
-          avatar {
-            url
-          }
-        }
-      }
-      categories {
-        nodes {
-          id
-          name
-          uri
-        }
-      }
-    }
-  }
-`
-
-Singular.component = (props) => {
+export default function Singlar(props) {
   const { data } = props
   const { post } = data
 
@@ -127,36 +91,36 @@ Singular.component = (props) => {
   )
 }
 
-Singular.error = (props) => (
-  <SiteLayout>
-    <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-      <div className="max-w-3xl mx-autho pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16 ">
-        <div className="">
-          <div className="border-b-slate-500 mb-6">
-            <h2 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-100">
-              Error
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </SiteLayout>
-)
+Singlar.variables = ({ uri }) => {
+  return {
+    uri,
+  }
+}
 
-Singular.loading = (props) => (
-  <SiteLayout>
-    <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-      <div className="max-w-3xl mx-autho pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16 ">
-        <div className="">
-          <div className="border-b-slate-500 mb-6">
-            <h2 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-100">
-              Loading...
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </SiteLayout>
-)
-
-export default Singular
+Singlar.query = gql`
+  query GetSingularNode($uri: ID!) {
+    post(id: $uri, idType: URI) {
+      id
+      title
+      uri
+      date
+      content
+      author {
+        node {
+          name
+          uri
+          avatar {
+            url
+          }
+        }
+      }
+      categories {
+        nodes {
+          id
+          name
+          uri
+        }
+      }
+    }
+  }
+`

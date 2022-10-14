@@ -1,7 +1,12 @@
 import { gql } from "@apollo/client"
 
-const Index = {
-  name: "Index",
+export default function Index(props) {
+  return (
+    <>
+      <h1>INDEX...</h1>
+      <pre>{JSON.stringify(props, null, 2)}</pre>
+    </>
+  )
 }
 
 Index.query = gql`
@@ -21,12 +26,3 @@ Index.query = gql`
     }
   }
 `
-
-Index.component = (props) => (
-  <>
-    <h1>INDEX...</h1>
-    <pre>{JSON.stringify(props, null, 2)}</pre>
-  </>
-)
-
-export default Index

@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { flatListToHierarchical } from "../utils"
+import flatListToHierarchical from "../utils"
 import { SidebarNav } from "./sidebar/Sidebar"
 
 const DocsSidebar = ({ title }) => {

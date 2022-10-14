@@ -1,0 +1,23 @@
+diff --git a/node_modules/@faustwp/cli/dist/index.js b/node_modules/@faustwp/cli/dist/index.js
+index 1a2c969..54194d0 100755
+--- a/node_modules/@faustwp/cli/dist/index.js
++++ b/node_modules/@faustwp/cli/dist/index.js
+@@ -4,9 +4,17 @@ import dotenv from 'dotenv-flow';
+ import { getCliArgs, validateFaustEnvVars, generatePossibleTypes, } from './utils/index.js';
+ // eslint-disable-next-line func-names
+ await (async function () {
++    const arg1 = getCliArgs()[0];
++    switch(arg1) {
++      case 'start':
++      case 'build':
++        process.env.NODE_ENV = "production";
++      case 'dev':
++      default:
++        process.env.NODE_ENV = "development";
++    }
+     dotenv.config();
+     validateFaustEnvVars();
+-    const arg1 = getCliArgs()[0];
+     // Handle custom CLI arguments.
+     if (arg1 === 'generatePossibleTypes') {
+         await generatePossibleTypes();

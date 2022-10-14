@@ -5,7 +5,7 @@ import { NAV_QUERY } from "components/Site/SiteHeader"
 import PostPreview, {
   PostPreviewFragment,
 } from "components/Preview/PostPreview"
-import { initializeApollo, addApolloState } from "lib/data/apollo"
+import { getApolloClient, addApolloState } from "@faustwp/core/dist/mjs/client"
 
 export const BLOG_QUERY = gql`
   query GetPostsForBlog($first: Int) {
@@ -63,7 +63,7 @@ const Blog = () => {
 export default Blog
 
 export async function getStaticProps() {
-  const apolloClient = initializeApollo()
+  const apolloClient = getApolloClient()
 
   await apolloClient.query({
     query: BLOG_QUERY,
