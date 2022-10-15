@@ -36,7 +36,7 @@ export default function Doc({ source, toc }) {
   )
 }
 
-export const getStaticProps = async ({ params }) => {
+export async function getStaticProps({ params }) {
   const {source, toc } = await getParsedDoc(params.slug)
 
   return {
@@ -44,15 +44,13 @@ export const getStaticProps = async ({ params }) => {
       toc,
       source,
     },
-    revalidate: 1800,
-    fallback: blocking,
+    revalidate: 60,
   }
 }
 
-// export const getStaticPaths = async () => {
-//   const paths = await getAllDocSlugs()
-
-//   return {
-//     paths: paths.map((slug) => ({ params: { slug } })),
-//   }
-// }
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  }
+}

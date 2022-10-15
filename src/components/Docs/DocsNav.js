@@ -1,4 +1,4 @@
-import { documentationNav } from "/navs/documentation.js"
+import { documentationNav } from "data/navs/documentation.js"
 import Link from "next/link"
 
 const getNav = () => {
