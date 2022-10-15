@@ -1,20 +1,33 @@
 import DocsNav from "./DocsNav"
 import SiteLayout from "components/Site/SiteLayout"
+import TableOfContents from "components/Docs/TableOfContents"
 
-const DocsLayout = ({ children, data }) => {
+const DocsLayout = ({ children, data, toc }) => {
   return (
     <SiteLayout data={data}>
-      <div>
-        <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-          <div className="hidden lg:block fixed z-20 inset-0 top-[3.8125rem] left-[max(0px,calc(50%-45rem))] right-auto w-[19.5rem] py-10 px-8 overflow-y-auto">
-            <DocsNav />
+      <div
+        className="grid gap-6 max-w-8xl grid-rows-1 items-start p-6 border border-solid"
+        style={{ gridTemplateColumns: "max-content auto max-content" }}
+      >
+
+        <aside
+          id="docs-nav"
+          className="sticky overflow-y-scroll top-[7rem] h-[80vh] z-20 "
+        >
+          <DocsNav />
+        </aside>
+
+        <article
+          id="doc-content"
+          className="max-w-3xl xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16 "
+        >
+          {children}
+        </article>
+        <aside id="doc-table-of-contents" className="sticky top-[7rem]">
+          <div className="text-slate-900 font-semibold mb-4 text-sm leading-6 dark:text-slate-100 ">
+            {toc && <TableOfContents toc={toc} />}
           </div>
-          <div className="lg:pl-[19.5rem]">
-            <div className="max-w-3xl mx-autho pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16 ">
-              {children}
-            </div>
-          </div>
-        </div>
+        </aside>
       </div>
     </SiteLayout>
   )

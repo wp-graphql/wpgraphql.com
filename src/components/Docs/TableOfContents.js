@@ -6,7 +6,7 @@ const TableOfContents = ({ toc }) => {
   }
 
   return (
-    <div className="">
+    <nav className="">
       <h2 className="text-slate-900 font-semibold mb-4 text-sm leading-6 dark:text-slate-100">
         On this page
       </h2>
@@ -21,7 +21,7 @@ const TableOfContents = ({ toc }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   )
 }
 

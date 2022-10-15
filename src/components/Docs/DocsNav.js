@@ -7,7 +7,7 @@ const getNav = () => {
 
     if (children.length > 0) {
       return (
-        <div key={key}>
+        <nav key={key}>
           <h3 className="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">
             {key}
           </h3>
@@ -24,7 +24,7 @@ const getNav = () => {
               )
             })}
           </ul>
-        </div>
+        </nav>
       )
     }
 
