@@ -27,6 +27,7 @@ yarn-error.log*
 .env
 .env*
 !.env.example
+!.env.local.example
 ## code editors
 .idea
 .vscode
