@@ -3,13 +3,10 @@ import Image from "next/image"
 
 import { gql } from "@apollo/client"
 
-import SiteLayout from "components/Site/SiteLayout"
-import SiteFooter from "components/Site/SiteFooter"
+import SiteLayout, { NavMenuFragment } from "components/Site/SiteLayout"
 
-export default function Singlar(props) {
-  const { data } = props
+export default function Singlar({ data }) {
   const { post } = data
-
   if (!post) {
     return null
   }
@@ -24,7 +21,7 @@ export default function Singlar(props) {
     : null
 
   return (
-    <SiteLayout>
+    <SiteLayout data={data}>
       <div className="overflow-hidden">
         <div className="mx-auto mt-10 px-4 pb-6 sm:mt-16 sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl">
           <main>
@@ -86,7 +83,6 @@ export default function Singlar(props) {
           </main>
         </div>
       </div>
-      <SiteFooter />
     </SiteLayout>
   )
 }
@@ -122,5 +118,7 @@ Singlar.query = gql`
         }
       }
     }
+    ...NavMenu
   }
+  ${NavMenuFragment}
 `

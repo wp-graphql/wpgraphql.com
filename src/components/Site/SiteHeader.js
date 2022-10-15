@@ -14,7 +14,6 @@ import DynamicHeroIcon from "../DynamicHeroIcon"
 import SiteLogo from "./SiteLogo"
 import { ThemeToggle } from "components/Site/ThemeToggle"
 import flatListToHierarchical from "lib/helpers/flatListToHierarchical"
-import { useTemplateData } from "hooks/useTemplateData"
 
 const docs = [
   {
@@ -64,12 +63,10 @@ export const NavMenuFragment = gql`
   }
 `
 
-const SiteHeader = () => {
+const SiteHeader = ({ data }) => {
   const [scrolled, setScrolled] = useState(false)
 
-  const { templateData } = useTemplateData()
-
-  const menuItems = flatListToHierarchical(templateData?.menu?.menuItems?.nodes, {
+  const menuItems = flatListToHierarchical(data?.menu?.menuItems?.nodes, {
     idKey: "id",
     parentKey: "parentId",
     childrenKey: "children",

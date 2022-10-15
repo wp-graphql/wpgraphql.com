@@ -2,8 +2,8 @@ import socialLinks from "data/social"
 
 export default function Footer() {
   return (
-    <footer className="">
-      <div className="max-w-7xl mx-auto pt-10 pb-28 border-t border-slate-200 sm:flex justify-between text-slate-500 dark:border-slate-200/5">
+    <footer className="border-t border-slate-200 dark:border-slate-200/5 pt-10 pb-28">
+      <div className="max-w-7xl mx-auto sm:flex justify-between text-slate-500">
         <div className="flex justify-center space-x-6 md:order-2">
           {socialLinks.map((item) => (
             <a

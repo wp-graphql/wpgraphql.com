@@ -1,5 +1,5 @@
 import { setConfig } from '@faustwp/core';
-import templates from './src/templates';
+import templates from './src/wp-templates';
 import possibleTypes from './possibleTypes.json'
 
 /**

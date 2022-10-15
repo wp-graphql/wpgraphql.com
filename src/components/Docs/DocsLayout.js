@@ -1,10 +1,9 @@
 import DocsNav from "./DocsNav"
 import SiteLayout from "components/Site/SiteLayout"
-import SiteFooter from "components/Site/SiteFooter"
 
-const DocsLayout = ({ children }) => {
+const DocsLayout = ({ children, data }) => {
   return (
-    <SiteLayout>
+    <SiteLayout data={data}>
       <div>
         <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
           <div className="hidden lg:block fixed z-20 inset-0 top-[3.8125rem] left-[max(0px,calc(50%-45rem))] right-auto w-[19.5rem] py-10 px-8 overflow-y-auto">
@@ -13,7 +12,6 @@ const DocsLayout = ({ children }) => {
           <div className="lg:pl-[19.5rem]">
             <div className="max-w-3xl mx-autho pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16 ">
               {children}
-              <SiteFooter />
             </div>
           </div>
         </div>

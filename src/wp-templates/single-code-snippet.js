@@ -1,18 +1,15 @@
 import { gql } from "@apollo/client"
-import SiteLayout from "components/Site/SiteLayout"
-import SiteFooter from "components/Site/SiteFooter"
+import SiteLayout, { NavMenuFragment } from "components/Site/SiteLayout"
 import Link from "next/link"
 
-export default function SingleRecipe(props) {
-  const { data } = props
+export default function SingleRecipe({ data }) {
   const { node } = data
-
   if (!node) {
     return null
   }
 
   return (
-    <SiteLayout>
+    <SiteLayout data={data}>
       <div className="overflow-hidden">
         <div className="mx-auto mt-10 px-4 pb-6 sm:mt-16 sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl">
           <main>
@@ -48,7 +45,6 @@ export default function SingleRecipe(props) {
           </main>
         </div>
       </div>
-      <SiteFooter />
     </SiteLayout>
   )
 }
@@ -74,7 +70,10 @@ SingleRecipe.query = gql`
         }
       }
     }
+    ...NavMenu
+
   }
+  ${NavMenuFragment}
 `
 
 SingleRecipe.variables = ({ uri }) => {

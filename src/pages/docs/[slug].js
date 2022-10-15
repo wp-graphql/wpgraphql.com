@@ -1,17 +1,19 @@
+import { gql } from "@apollo/client"
 import { MDXRemote } from "next-mdx-remote"
 
 import DocsLayout from "components/Docs/DocsLayout"
+import { NavMenuFragment } from "components/Site/SiteHeader"
 import TableOfContents from "components/Docs/TableOfContents"
 
-import {
-  getAllDocSlugs,
-  getParsedDoc,
-} from "lib/mdx/parse-docs.mjs"
+import { getParsedDoc } from "lib/mdx/parse-docs.mjs"
+
 import { components } from "components/Docs/MdxComponents"
 
-export default function Doc({ source, toc }) {
+import { getApolloClient, addApolloState } from "@faustwp/core/dist/mjs/client"
+
+export default function Doc({ source, toc, data }) {
   return (
-    <DocsLayout>
+    <DocsLayout data={data}>
       <div
         id="content-wrapper"
         className="relative z-20 prose mt-8 prose dark:prose-dark"
@@ -37,20 +39,40 @@ export default function Doc({ source, toc }) {
 }
 
 export async function getStaticProps({ params }) {
-  const {source, toc } = await getParsedDoc(params.slug)
+  try {
+    const { source, toc } = await getParsedDoc(params.slug)
+    const apolloClient = getApolloClient()
 
-  return {
-    props: {
-      toc,
-      source,
-    },
-    revalidate: 60,
+    const { data } = await apolloClient.query({
+      query: gql`
+        query NavQuery {
+          ...NavMenu
+        }
+        ${NavMenuFragment}
+      `,
+    })
+
+    addApolloState(apolloClient)
+    return {
+      props: {
+        toc,
+        source,
+        data,
+      },
+      revalidate: 60,
+    }
+  } catch (e) {
+    if (e.notFound) {
+      return e
+    }
+
+    throw e
   }
 }
 
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: 'blocking',
+    fallback: "blocking",
   }
 }

@@ -1,4 +1,10 @@
-import { SiSlack, SiWordpress, SiYoutube, SiGithub, SiTwitter } from "react-icons/si"
+import {
+  SiSlack,
+  SiWordpress,
+  SiYoutube,
+  SiGithub,
+  SiTwitter,
+} from "react-icons/si"
 
 const socialLinks = [
   {

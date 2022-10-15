@@ -6,7 +6,12 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    // ...defaultTheme,
+    screens: {
+      sm: '600px',
+      md: '900px',
+      lg: '1200px',
+      xl: '1800px',
+    },
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],

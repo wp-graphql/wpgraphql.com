@@ -1,21 +1,15 @@
 import { gql } from "@apollo/client"
 
-import SiteLayout from "components/Site/SiteLayout"
-import SiteFooter from "components/Site/SiteFooter"
-import { NavMenuFragment } from "components/Site/SiteLayout"
+import SiteLayout, { NavMenuFragment } from "components/Site/SiteLayout"
 import PostPreview, {
   PostPreviewFragment,
 } from "components/Preview/PostPreview"
-import { useTemplateData } from "hooks/useTemplateData"
 
 export default function ArchivePost({ data }) {
-  const { setTemplateData } = useTemplateData();
-  setTemplateData(data);
-
   const posts = data?.posts?.nodes
 
   return (
-    <SiteLayout>
+    <SiteLayout data={data}>
       <div className="px-6 divide-y divide-gray-200 dark:divide-gray-700 max-w-lg mx-auto lg:max-w-8xl">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5 ">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -33,7 +27,6 @@ export default function ArchivePost({ data }) {
           ))}
         </ul>
       </div>
-      <SiteFooter />
     </SiteLayout>
   )
 }

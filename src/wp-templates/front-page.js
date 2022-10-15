@@ -7,9 +7,9 @@ import HomepageHero from "components/HomePage/HomepageHero"
 import HomePageTrust from "components/HomePage/HomepageTrust"
 import SiteLayout, { NavMenuFragment } from "components/Site/SiteLayout"
 
-export default function FrontPage() {
+export default function FrontPage({ data }) {
   return (
-    <SiteLayout>
+    <SiteLayout data={data}>
       <HomepageHero />
       <HomepageFrameworks />
       <HomepageFeatures />
@@ -28,6 +28,6 @@ FrontPage.layoutProps = {
 FrontPage.query = gql`
   query frontPageQuery {
     ...NavMenu
-    ${NavMenuFragment}
   }
+  ${NavMenuFragment}
 `

@@ -80,7 +80,11 @@ export async function getDocContent(slug) {
   const resp = await fetch(docUrlFromSlug(slug))
 
   if (!resp.ok) {
-    throw new Error(resp.statusText)
+    if(resp.status >= 400 && resp.status < 500) {
+      throw { notFound: true }
+    }
+
+    throw new Errpr(resp.statusText)
   }
 
   return resp.text()
