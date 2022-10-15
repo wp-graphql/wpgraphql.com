@@ -1,8 +1,9 @@
 import { gql } from "@apollo/client"
+import Link from "next/link"
+
 import PostPreviewCategoryLink, {
   PostPreviewCategoryLinkFragment,
 } from "components/Preview/PostPreviewCategoryLink"
-import Link from "next/link"
 
 export const PostPreviewFragment = gql`
   fragment PostPreview on Post {
@@ -81,60 +82,6 @@ const PostPreview = ({ post }) => {
         </div>
       </div>
     </article>
-
-    // <article>
-    //   <div className="block mt-4">
-    //     <Link href={post.uri}>
-    //         <a className="inline-block">
-    //             <h3 className="text-xl font-semibold text-gray-900 dark:text-slate-100">{post.title}</h3>
-    //         </a>
-    //     </Link>
-    //     <div
-    //       className="mt-3 text-base text-gray-500 dark:text-gray-50 prose dark:prose-invert"
-    //       dangerouslySetInnerHTML={{ __html: excerpt }}
-    //     />
-    //     <Link href={post.uri}>
-    //         <a className='bg-indigo-700 text-white rounded-md shadow-md p-2 mt-4 mb-8 inline-block'>Read More</a>
-    //     </Link>
-    //   </div>
-    //   <div className='border-t-1 border-t-slate-100'>
-    //       {post?.categories?.nodes?.map((category, i) => (
-    //         <Link href={category.uri} key={i}>
-    //             <a className="inline-block">
-    //             <span
-    //                 className={clsx(
-    //                 'bg-indigo-100 mr-1 text-indigo-800 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium'
-    //                 )}
-    //             >
-    //                 {category.name}
-    //             </span>
-    //             </a>
-    //         </Link>
-    //       ))}
-    //   </div>
-    //   <div className="-mx-6 px-6 mt-6 -mb-6 p-6 rounded-b-md bg-slate-50 dark:bg-slate-800 flex items-center">
-    //     <div className="flex-shrink-0">
-    //       <a href={post.author.href}>
-    //         <span className="sr-only dark:text-slate-100">{post.author.node.name}</span>
-    //         <Image
-    //           className="h-10 w-10 rounded-full"
-    //           src={post?.author?.node?.avatar?.url}
-    //           alt=""
-    //           width={54}
-    //           height={54}
-    //         />
-    //       </a>
-    //     </div>
-    //     <div className="ml-3">
-    //       <p className="text-sm font-medium text-gray-900 dark:text-slate-100">
-    //         <a href={post.author.href}>{post.author.node.name}</a>
-    //       </p>
-    //       <div className="flex space-x-1 text-sm text-gray-500 dark:text-sky-200">
-    //         <time dateTime={post.date}>{post.date}</time>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </article>
   )
 }
 

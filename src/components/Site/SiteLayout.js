@@ -1,14 +1,17 @@
-import SiteHeader, { NAV_QUERY } from "./SiteHeader"
+import { gql } from "@apollo/client"
+
+import SiteHeader, { NavMenuFragment } from "./SiteHeader"
 
 const SiteLayout = ({ children }) => {
   return (
     <>
       <SiteHeader />
       {children}
+      {/* <SiteFooter /> */}
     </>
   )
 }
 
-export { NAV_QUERY }
+export { NavMenuFragment }
 
 export default SiteLayout

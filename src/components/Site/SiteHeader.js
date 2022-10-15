@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useState, useEffect } from "react"
 import Link from "next/link"
 import { useQuery, gql } from "@apollo/client"
@@ -15,6 +14,7 @@ import DynamicHeroIcon from "../DynamicHeroIcon"
 import SiteLogo from "./SiteLogo"
 import { ThemeToggle } from "components/Site/ThemeToggle"
 import flatListToHierarchical from "lib/helpers/flatListToHierarchical"
+import { useTemplateData } from "hooks/useTemplateData"
 
 const docs = [
   {
@@ -42,35 +42,10 @@ const docs = [
     icon: "ShieldCheckIcon",
   },
 ]
-const resources = [
-  {
-    name: "Help Center",
-    description:
-      "Get all of your questions answered in our forums or contact support.",
-    href: "#",
-  },
-  {
-    name: "Guides",
-    description:
-      "Learn how to maximize our platform to get the most out of it.",
-    href: "#",
-  },
-  {
-    name: "Events",
-    description:
-      "See what meet-ups and other events we might be planning near you.",
-    href: "#",
-  },
-  {
-    name: "Security",
-    description: "Understand how we take your privacy seriously.",
-    href: "#",
-  },
-]
 
-export const NAV_QUERY = gql`
-  query GetNavMenu($menu_name: ID!) {
-    menu(id: $menu_name, idType: NAME) {
+export const NavMenuFragment = gql`
+  fragment NavMenu on RootQuery {
+    menu(id: "Primary Nav", idType: NAME) {
       id
       name
       menuItems(first: 100) {
@@ -91,12 +66,10 @@ export const NAV_QUERY = gql`
 
 const SiteHeader = () => {
   const [scrolled, setScrolled] = useState(false)
-  const { data } = useQuery(NAV_QUERY, {
-    variables: { menu_name: "Primary Nav" },
-    ssr: true,
-  })
 
-  const menuItems = flatListToHierarchical(data?.menu?.menuItems?.nodes, {
+  const { templateData } = useTemplateData()
+
+  const menuItems = flatListToHierarchical(templateData?.menu?.menuItems?.nodes, {
     idKey: "id",
     parentKey: "parentId",
     childrenKey: "children",
