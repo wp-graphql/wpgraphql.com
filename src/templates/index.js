@@ -5,6 +5,7 @@ import index from "./main"
 import singleCodeSnippet from "./single-code-snippet"
 import singular from "./singular"
 import ArchivePost from "./archive-post"
+import FrontPage from "./front-page"
 
 const templates = {
   category,
@@ -13,6 +14,7 @@ const templates = {
   "archive-post": ArchivePost,
   "single-code-snippets": singleCodeSnippet,
   singular,
+  "front-page": FrontPage,
   index,
 }
 
