@@ -13,7 +13,7 @@ export const FEED_QUERY = gql`
       description
       timezone
     }
-    posts(where: { orderby: { field: DATE, order: DESC } }) {
+    posts(where: { orderby: { field: DATE, order: DESC } }, first: 10) {
       nodes {
         title
         uri
