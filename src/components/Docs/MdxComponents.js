@@ -1,7 +1,7 @@
 import Link from "next/link"
 import clsx from "clsx"
 import Img from "next/future/image"
-import { getRemoteImgUrl } from "lib/mdx/parse-docs.mjs"
+import { getRemoteImgUrl } from "lib/mdx/parse-docs"
 
 export const Heading = ({ as, id, children, ...rest }) => {
   const Tag = as ?? "h2"

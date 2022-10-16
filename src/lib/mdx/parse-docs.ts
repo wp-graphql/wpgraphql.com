@@ -24,17 +24,22 @@ const octokit = new Octokit({
 
 const DOCS_REPO = "wp-graphql"
 const DOCS_OWNER = "wp-graphql"
-const DOCS_BRANCH = "master"
+// @TODO: Change to `master` for production
+const DOCS_BRANCH = "docs/new-site"
 const DOCS_FOLDER = "docs"
 const DOCS_EXT_REG = new RegExp(`${DOCS_FOLDER}\/(?<slug>.*)\.md(x?)$`, "i")
 const IMG_PATH_REG = /^(\.\/)?(?<slug>.+)$/i
 
+const DOCS_PATH = `https://raw.githubusercontent.com/${DOCS_OWNER}/${DOCS_REPO}/${DOCS_BRANCH}/${DOCS_FOLDER}`
+
+const DOCS_NAV_CONFIG_URL = `${DOCS_PATH}/docs_nav.json`
+
 function docUrlFromSlug(slug) {
-  return `https://raw.githubusercontent.com/${DOCS_OWNER}/${DOCS_REPO}/${DOCS_BRANCH}/${DOCS_FOLDER}/${slug}.md`
+  return `${DOCS_PATH}/${slug}.md`
 }
 
 function imgUrlFromPath(path) {
-  return `https://raw.githubusercontent.com/${DOCS_OWNER}/${DOCS_REPO}/${DOCS_BRANCH}/${DOCS_FOLDER}/${path}`
+  return `${DOCS_PATH}/${path}`
 }
 
 export function getRemoteImgUrl(localPath) {
@@ -59,7 +64,17 @@ export async function getAllDocMeta() {
   return data
 }
 
-export async function getAllDocSlugs() {
+export async function getDocsNav(){
+  const resp = await fetch(DOCS_NAV_CONFIG_URL);
+
+  if(!resp.ok) {
+    throw Error(resp.statusText)
+  }
+
+  return resp.json()
+}
+
+export async function getAllDocSlugs(): Promise<string[]> {
   const data = await getAllDocMeta()
 
   if (!Array.isArray(data)) {
@@ -69,7 +84,7 @@ export async function getAllDocSlugs() {
 
   return data.reduce((acc, file) => {
     if (DOCS_EXT_REG.test(file.path)) {
-      acc.push(file.path.match(DOCS_EXT_REG, "").groups.slug)
+      acc.push(file.path.match(DOCS_EXT_REG).groups.slug)
     }
 
     return acc
@@ -80,11 +95,11 @@ export async function getDocContent(slug) {
   const resp = await fetch(docUrlFromSlug(slug))
 
   if (!resp.ok) {
-    if(resp.status >= 400 && resp.status < 500) {
+    if (resp.status >= 400 && resp.status < 500) {
       throw { notFound: true }
     }
 
-    throw new Errpr(resp.statusText)
+    throw new Error(resp.statusText)
   }
 
   return resp.text()
@@ -111,7 +126,7 @@ async function getSourceFromMd(mdContent) {
           rehypeUrlInspector,
           {
             selectors: ["img[src]"],
-            inspectEach: ({ url, node }) =>{
+            inspectEach: ({ url, node }) => {
               node.properties.src = getRemoteImgUrl(url)
             },
           },

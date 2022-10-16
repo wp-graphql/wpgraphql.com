@@ -4,15 +4,19 @@ import { MDXRemote } from "next-mdx-remote"
 import DocsLayout from "components/Docs/DocsLayout"
 import { NavMenuFragment } from "components/Site/SiteHeader"
 
-import { getParsedDoc } from "lib/mdx/parse-docs.mjs"
+import { getParsedDoc, getDocsNav } from "lib/mdx/parse-docs"
 
 import { components } from "components/Docs/MdxComponents"
 
 import { getApolloClient, addApolloState } from "@faustwp/core/dist/mjs/client"
 
-export default function Doc({ source, toc, data }) {
+export default function Doc({ source, toc, siteLayoutData, docsNavData }) {
   return (
-    <DocsLayout data={data} toc={toc}>
+    <DocsLayout
+      siteLayoutData={siteLayoutData}
+      toc={toc}
+      docsNavData={docsNavData}
+    >
       <div
         id="content-wrapper"
         className="relative z-20 prose mt-8 prose dark:prose-dark"
@@ -31,9 +35,10 @@ export default function Doc({ source, toc, data }) {
 export async function getStaticProps({ params }) {
   try {
     const { source, toc } = await getParsedDoc(params.slug)
+    const docsNavData = await getDocsNav()
     const apolloClient = getApolloClient()
 
-    const { data } = await apolloClient.query({
+    const { data: siteLayoutData } = await apolloClient.query({
       query: gql`
         query NavQuery {
           ...NavMenu
@@ -47,7 +52,8 @@ export async function getStaticProps({ params }) {
       props: {
         toc,
         source,
-        data,
+        siteLayoutData,
+        docsNavData,
       },
       revalidate: 60,
     }

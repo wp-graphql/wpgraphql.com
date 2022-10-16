@@ -2,9 +2,9 @@ import DocsNav from "./DocsNav"
 import SiteLayout from "components/Site/SiteLayout"
 import TableOfContents from "components/Docs/TableOfContents"
 
-const DocsLayout = ({ children, data, toc }) => {
+const DocsLayout = ({ children, siteLayoutData, toc, docsNavData }) => {
   return (
-    <SiteLayout data={data}>
+    <SiteLayout data={siteLayoutData}>
       <div className="flex justify-center">
         <div
           className="grid gap-6 grid-rows-1 items-start p-6"
@@ -17,7 +17,7 @@ const DocsLayout = ({ children, data, toc }) => {
             id="docs-nav"
             className="sticky overflow-y-scroll top-[7rem] h-[80vh] z-20 "
           >
-            <DocsNav />
+            <DocsNav docsNavData={docsNavData} />
           </aside>
 
           <article id="doc-content" className="max-w-[80ch]">
