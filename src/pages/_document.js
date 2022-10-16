@@ -2,6 +2,7 @@ import clsx from "clsx"
 import NextDocument, { Html, Head, Main, NextScript } from "next/document"
 
 const FAVICON_VERSION = 3
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL
 
 function v(href) {
   return `${href}?v=${FAVICON_VERSION}`
@@ -20,6 +21,24 @@ export default class Document extends NextDocument {
         className="dark [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]"
       >
         <Head>
+          <link
+            href={`${SITE_URL}/api/feeds/feed.json`}
+            rel="alternate"
+            type="application/feed+json"
+            title="WPGraphQL Blog JSON Feed"
+          />
+          <link
+            href={`${SITE_URL}/api/feeds/rss.xml`}
+            rel="alternate"
+            type="application/rss+xml"
+            title="WPGraphQL Blog XML Feed"
+          />
+          <link
+            href={`${SITE_URL}/api/feeds/feed.atom`}
+            rel="alternate"
+            type="application/atom+xml"
+            title="WPGraphQL Blog Atom Feed"
+          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"

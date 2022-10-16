@@ -15,7 +15,7 @@ Then run `yarn develop` to run the site in development.
 ## Required Environment Variables
 
 ```bash
-SITE_URL=https://www.wpgraphql.com
+NEXT_PUBLIC_SITE_URL=https://www.wpgraphql.com
 WPGRAPHQL_URL=https://content.wpgraphql.com/graphql
 NEXT_PUBLIC_WORDPRESS_URL=https://content.wpgraphql.com
 FAUSTWP_SECRET_KEY=key_for_previews
