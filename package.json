@@ -61,6 +61,7 @@
     "autoprefixer": "^10.4.12",
     "eslint": "^8.25.0",
     "eslint-config-next": "^12.3.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "postcss": "^8.4.17",
     "postcss-focus-visible": "^7.1.0",
     "postcss-import": "^15.0.0",
