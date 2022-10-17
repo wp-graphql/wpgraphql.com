@@ -127,11 +127,6 @@
     jsbi "^4.1.0"
     tslib "^2.3.1"
 
-"@jsdevtools/rehype-toc@3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@jsdevtools/rehype-toc/-/rehype-toc-3.0.2.tgz#29c32e6b40cd4b5dafd96cb90d5057ac5dab4a51"
-  integrity sha512-n5JEf16Wr4mdkRMZ8wMP/wN9/sHmTjRPbouXjJH371mZ2LEGDl72t8tEsMRNFerQN/QJtivOxqK1frdGa4QK5Q==
-
 "@jsdevtools/rehype-url-inspector@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@jsdevtools/rehype-url-inspector/-/rehype-url-inspector-2.0.2.tgz#c3c08f5adf6865c802615f5412cb40ab5680fe29"
@@ -2527,11 +2522,6 @@ lodash.once@^4.0.0:
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
   integrity sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==
 
-lodash.throttle@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
-  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
-
 lodash@^4.17.20, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
@@ -3670,14 +3660,6 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-scroll@^1.8.7:
-  version "1.8.7"
-  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.8.7.tgz#8020035329efad00f03964e18aff6822137de3aa"
-  integrity sha512-fBOIwweAlhicx8RqP9tQXn/Uhd+DTtVRjw+0VBsIn1Z+MjRYLhTZ0tMoTAU1vOD3dce8mI6copexI4yWII+Luw==
-  dependencies:
-    lodash.throttle "^4.1.1"
-    prop-types "^15.7.2"
-
 react@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
@@ -3790,13 +3772,6 @@ rehype-stringify@^9.0.3:
     "@types/hast" "^2.0.0"
     hast-util-to-html "^8.0.0"
     unified "^10.0.0"
-
-rehype-toc@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/rehype-toc/-/rehype-toc-3.0.2.tgz#0373e2abafddeb0606ee38229ff6714da6d86d68"
-  integrity sha512-DMt376+4i1KJGgHJL7Ezd65qKkJ7Eqp6JSB47BJ90ReBrohI9ufrornArM6f4oJjP2E2DVZZHufWucv/9t7GUQ==
-  dependencies:
-    "@jsdevtools/rehype-toc" "3.0.2"
 
 remark-frontmatter@^4.0.1:
   version "4.0.1"
