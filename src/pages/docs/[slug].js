@@ -55,10 +55,11 @@ export async function getStaticProps({ params }) {
         siteLayoutData,
         docsNavData,
       },
-      revalidate: 60,
+      revalidate: 30,
     }
   } catch (e) {
     if (e.notFound) {
+      console.error(params, e)
       return e
     }
 
@@ -67,8 +68,40 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
+  const apolloClient = getApolloClient()
+
+  const { data } = await apolloClient.query({
+    query: gql`
+      query PrebuildDocsQuery {
+        menu(id: "Primary Nav", idType: NAME) {
+          menuItems {
+            nodes {
+              parentDatabaseId
+              uri
+            }
+          }
+        }
+      }
+    `,
+  })
+
+  // Adds prerendering for Docs linked from main nav menu
+  const docs_menu_paths = data?.menu?.menuItems?.nodes?.reduce(
+    (acc, menu_item) => {
+      if (
+        menu_item.parentDatabaseId != 0 &&
+        menu_item.uri.startsWith("/docs")
+      ) {
+        acc.push(menu_item.uri)
+      }
+
+      return acc
+    },
+    []
+  )
+
   return {
-    paths: [],
+    paths: docs_menu_paths ?? [],
     fallback: "blocking",
   }
 }

@@ -149,7 +149,7 @@ async function getTOCFromMd(mdContent) {
     .use(remarkRehype)
     .use(() => {
       return (tree) => {
-        visit(tree, "element", (node) => {
+        visit(tree, "element", (node: any) => {
           if (node.tagName === "h2" || node.tagName === "h3") {
             if (node.children[0].value) {
               let title = node.children[0]?.value
