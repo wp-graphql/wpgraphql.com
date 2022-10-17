@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import NextDocument, { Html, Head, Main, NextScript } from "next/document"
 
-const FAVICON_VERSION = 3
+const FAVICON_VERSION = 4
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL
 
 function v(href) {
@@ -62,15 +62,10 @@ export default class Document extends NextDocument {
             href={v("/favicons/safari-pinned-tab.svg")}
             color="#38bdf8"
           />
-          <link rel="shortcut icon" href={v("/favicons/favicon.ico")} />
+          <link rel="shortcut icon" href={v("/favicon.ico")} />
           <meta name="apple-mobile-web-app-title" content="WPGraphQL" />
           <meta name="application-name" content="WPGraphQL" />
-          <meta name="msapplication-TileColor" content="#38bdf8" />
-          <meta
-            name="msapplication-config"
-            content={v("/favicons/browserconfig.xml")}
-          />
-          <meta name="theme-color" content="#ffffff" />
+          <meta name="theme-color" content="#172A53" />
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -93,7 +88,6 @@ export default class Document extends NextDocument {
         >
           <Main />
           <NextScript />
-          <script> </script>
         </body>
       </Html>
     )
