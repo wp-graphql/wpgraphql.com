@@ -1,7 +1,7 @@
 import Link from "next/link"
 import clsx from "clsx"
 
-export const Heading = ({ as, id, children, ...rest }) => {
+function Heading({ as, id, children, ...rest }) {
   const Tag = as ?? "h2"
   return (
     <Tag {...rest} id={id}>
@@ -10,7 +10,7 @@ export const Heading = ({ as, id, children, ...rest }) => {
   )
 }
 
-export const LinkedHeading = ({ id, as, children, className }) => {
+function LinkedHeading({ id, as, children, className }) {
   if (id) {
     return (
       <Heading
@@ -57,7 +57,7 @@ function CustomLink(props) {
   return <Link {...props} />
 }
 
-export const components = {
+const components = {
   h2: (props) => <LinkedHeading as="h2" {...props} />,
   h3: (props) => <LinkedHeading as="h3" {...props} />,
   h4: (props) => <LinkedHeading as="h4" {...props} />,
@@ -66,3 +66,5 @@ export const components = {
   a: CustomLink,
   _Heading: (props) => <Heading {...props} />,
 }
+
+export default components

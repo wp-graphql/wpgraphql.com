@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 /* This example requires Tailwind CSS v2.0+ */
-const HomePageTrust = () => {
+export default function HomePageTrust() {
   return (
     <div className="bg-slate-100 dark:bg-slate-800">
       <div className="max-w-8xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
@@ -100,5 +100,3 @@ const HomePageTrust = () => {
     </div>
   )
 }
-
-export default HomePageTrust

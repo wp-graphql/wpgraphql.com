@@ -10,7 +10,7 @@ export const RecipePreviewFragment = gql`
   }
 `
 
-const RecipePreview = ({ recipe }) => {
+export default function RecipePreview({ recipe }) {
   const paragraphs = recipe?.content ? recipe.content.split("</p>") : null
   const excerpt = paragraphs ? paragraphs[0] + "</p>" : null
 
@@ -36,5 +36,3 @@ const RecipePreview = ({ recipe }) => {
     </div>
   )
 }
-
-export default RecipePreview

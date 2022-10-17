@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import Image from "next/image"
 
-const HomepageFeatures = () => {
+export default function HomepageFeatures() {
   return (
     <>
       <div className="relative bg-white dark:bg-slate-800 pt-16 overflow-hidden sm:pt-24 lg:pt-32">
@@ -64,5 +64,3 @@ const HomepageFeatures = () => {
     </>
   )
 }
-
-export default HomepageFeatures

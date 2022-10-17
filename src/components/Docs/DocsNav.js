@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export const DocsNav = ({ docsNavData }) => {
+export default function DocsNav({ docsNavData }) {
   if (!docsNavData) {
     return null
   }
@@ -38,5 +38,3 @@ export const DocsNav = ({ docsNavData }) => {
     </nav>
   )
 }
-
-export default DocsNav

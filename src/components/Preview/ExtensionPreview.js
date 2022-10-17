@@ -15,7 +15,7 @@ export const ExtensionFragment = gql`
   }
 `
 
-const ExtensionPreview = ({ extension }) => {
+export default function ExtensionPreview({ extension }) {
   return (
     <div className="mb-10 pt-10">
       <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
@@ -41,5 +41,3 @@ const ExtensionPreview = ({ extension }) => {
     </div>
   )
 }
-
-export default ExtensionPreview

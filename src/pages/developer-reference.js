@@ -1,7 +1,7 @@
 import SiteLayout from "components/Site/SiteLayout"
 import SiteFooter from "components/Site/SiteFooter"
 
-const DeveloperReference = () => {
+export default function DeveloperReference() {
   return (
     <SiteLayout>
       <div className="max-w-8xl mx-auto my-10 px-4 sm:px-6 lg:px-8 prose dark:prose-dark">
@@ -11,5 +11,3 @@ const DeveloperReference = () => {
     </SiteLayout>
   )
 }
-
-export default DeveloperReference

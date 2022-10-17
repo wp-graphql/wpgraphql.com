@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-const TableOfContents = ({ toc }) => {
+export default function TableOfContents({ toc }) {
   if (!toc || !Array.isArray(toc)) {
     return null
   }
@@ -24,5 +24,3 @@ const TableOfContents = ({ toc }) => {
     </nav>
   )
 }
-
-export default TableOfContents

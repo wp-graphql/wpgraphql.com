@@ -6,7 +6,7 @@ import { NavMenuFragment } from "components/Site/SiteHeader"
 
 import { getParsedDoc, getDocsNav } from "lib/mdx/parse-docs"
 
-import { components } from "components/Docs/MdxComponents"
+import components from "components/Docs/MdxComponents"
 
 import { getApolloClient, addApolloState } from "@faustwp/core/dist/mjs/client"
 

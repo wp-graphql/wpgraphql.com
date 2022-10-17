@@ -10,7 +10,7 @@ export const FunctionPreviewFragment = gql`
   }
 `
 
-const FunctionPreview = ({ node }) => {
+export default function FunctionPreview({ node }) {
   const paragraphs = node?.content ? node.content.split("</p>") : null
   const excerpt = paragraphs ? paragraphs[0] + "</p>" : null
 
@@ -36,5 +36,3 @@ const FunctionPreview = ({ node }) => {
     </div>
   )
 }
-
-export default FunctionPreview

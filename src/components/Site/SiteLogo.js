@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const SiteLogo = (props) => {
+export default function SiteLogo(props) {
   return (
     <Image
       width={props?.width ?? 41}
@@ -10,5 +10,3 @@ const SiteLogo = (props) => {
     />
   )
 }
-
-export default SiteLogo

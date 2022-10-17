@@ -12,7 +12,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid"
 
 import DynamicHeroIcon from "../DynamicHeroIcon"
 import SiteLogo from "./SiteLogo"
-import { ThemeToggle } from "components/Site/ThemeToggle"
+import ThemeToggle from "components/Site/ThemeToggle"
 import flatListToHierarchical from "lib/helpers/flatListToHierarchical"
 
 const docs = [
@@ -63,7 +63,7 @@ export const NavMenuFragment = gql`
   }
 `
 
-const SiteHeader = ({ data }) => {
+export default function SiteHeader({ data }) {
   const [scrolled, setScrolled] = useState(false)
 
   const menuItems = flatListToHierarchical(data?.menu?.menuItems?.nodes, {
@@ -272,5 +272,3 @@ const SiteHeader = ({ data }) => {
     </Popover>
   )
 }
-
-export default SiteHeader

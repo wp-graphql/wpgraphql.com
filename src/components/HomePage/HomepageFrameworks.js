@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 /* This example requires Tailwind CSS v2.0+ */
-const HomepageFrameworks = () => {
+export default function HomepageFrameworks() {
   return (
     <div className="bg-slate-200 dark:bg-slate-600 pt-12 sm:pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,4 +87,3 @@ const HomepageFrameworks = () => {
   )
 }
 
-export default HomepageFrameworks

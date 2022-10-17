@@ -2,7 +2,7 @@ import DocsNav from "./DocsNav"
 import SiteLayout from "components/Site/SiteLayout"
 import TableOfContents from "components/Docs/TableOfContents"
 
-const DocsLayout = ({ children, siteLayoutData, toc, docsNavData }) => {
+export default function DocsLayout({ children, siteLayoutData, toc, docsNavData }) {
   return (
     <SiteLayout data={siteLayoutData}>
       <div className="flex justify-center">
@@ -34,4 +34,3 @@ const DocsLayout = ({ children, siteLayoutData, toc, docsNavData }) => {
   )
 }
 
-export default DocsLayout

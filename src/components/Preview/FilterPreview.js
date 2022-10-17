@@ -10,7 +10,7 @@ export const FilterPreviewFragment = gql`
   }
 `
 
-const FilterPreview = ({ filter }) => {
+export default function FilterPreview({ filter }) {
   const paragraphs = filter?.content ? filter.content.split("</p>") : null
   const excerpt = paragraphs ? paragraphs[0] + "</p>" : null
 
@@ -36,5 +36,3 @@ const FilterPreview = ({ filter }) => {
     </div>
   )
 }
-
-export default FilterPreview

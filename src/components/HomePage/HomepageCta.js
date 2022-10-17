@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-const HomepageCta = () => {
+export default function HomepageCta() {
   return (
     <div className="bg-slate-200 dark:bg-slate-900">
       <div className="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
@@ -25,5 +25,3 @@ const HomepageCta = () => {
     </div>
   )
 }
-
-export default HomepageCta

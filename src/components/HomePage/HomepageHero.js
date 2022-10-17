@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const HomepageHero = () => {
+export default function HomepageHero() {
   return (
     <div className="bg-white dark:bg-slate-800">
       <div className="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -43,5 +43,3 @@ const HomepageHero = () => {
     </div>
   )
 }
-
-export default HomepageHero

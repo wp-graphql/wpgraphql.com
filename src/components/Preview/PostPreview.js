@@ -31,7 +31,7 @@ export const PostPreviewFragment = gql`
   ${PostPreviewCategoryLinkFragment}
 `
 
-const PostPreview = ({ post }) => {
+export default function PostPreview({ post }) {
   if (!post) {
     return null
   }
@@ -84,5 +84,3 @@ const PostPreview = ({ post }) => {
     </article>
   )
 }
-
-export default PostPreview
