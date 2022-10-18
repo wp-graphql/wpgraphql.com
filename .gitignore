@@ -21,6 +21,10 @@ yarn-error.log*
 .next
 next-env.d.ts
 
+## Build artifacts for sitemaps
+/public/sitemap*.xml
+/public/robots.txt
+
 # app
 
 
@@ -32,3 +36,4 @@ next-env.d.ts
 ## code editors
 .idea
 .vscode
+

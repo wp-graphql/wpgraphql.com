@@ -10,6 +10,7 @@
     "test:format": "prettier 'src/**/*.{js,jsx,ts,tsx,css,mdx}'",
     "test:lint": "faust lint",
     "prebuild": "yarn generate",
+    "postbuild": "next-sitemap",
     "predev": "yarn generate",
     "format": "yarn test:format --write",
     "generate": "faust generatePossibleTypes",
