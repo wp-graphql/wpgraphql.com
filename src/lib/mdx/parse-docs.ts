@@ -74,7 +74,7 @@ export async function getDocsNav(){
   return resp.json()
 }
 
-export async function getAllDocSlugs(): Promise<string[]> {
+export async function getAllDocUri(): Promise<string[]> {
   const data = await getAllDocMeta()
 
   if (!Array.isArray(data)) {
@@ -84,7 +84,7 @@ export async function getAllDocSlugs(): Promise<string[]> {
 
   return data.reduce((acc, file) => {
     if (DOCS_EXT_REG.test(file.path)) {
-      acc.push(file.path.match(DOCS_EXT_REG).groups.slug)
+      acc.push(`/docs/${file.path.match(DOCS_EXT_REG).groups.slug}`)
     }
 
     return acc
