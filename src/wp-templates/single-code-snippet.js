@@ -71,7 +71,6 @@ SingleRecipe.query = gql`
       }
     }
     ...NavMenu
-
   }
   ${NavMenuFragment}
 `

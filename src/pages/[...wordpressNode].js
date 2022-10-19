@@ -46,7 +46,6 @@ export async function getStaticPaths() {
     return acc
   }, [])
 
-
   // prerenders first page of blog posts
   const post_paths = data.posts.nodes.map((node) => node.uri)
   return {

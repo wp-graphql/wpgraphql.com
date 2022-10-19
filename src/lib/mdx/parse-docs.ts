@@ -64,10 +64,10 @@ export async function getAllDocMeta() {
   return data
 }
 
-export async function getDocsNav(){
-  const resp = await fetch(DOCS_NAV_CONFIG_URL);
+export async function getDocsNav() {
+  const resp = await fetch(DOCS_NAV_CONFIG_URL)
 
-  if(!resp.ok) {
+  if (!resp.ok) {
     throw Error(resp.statusText)
   }
 
