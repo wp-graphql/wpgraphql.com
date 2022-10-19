@@ -16,33 +16,6 @@ import ThemeToggle from "components/Site/ThemeToggle"
 import flatListToHierarchical from "lib/helpers/flatListToHierarchical"
 import { socialHeaderLinks } from "../../data/social"
 
-const docs = [
-  {
-    name: "Getting Started",
-    description: "Get up and running with WPGraphQL",
-    href: "/docs/introduction/",
-    icon: "CursorClickIcon",
-  },
-  {
-    name: "Beginner Guides",
-    description: "Learn the basics of GraphQL and using it with WordPress",
-    href: "/docs/intro-to-graphql/",
-    icon: "BookOpenIcon",
-  },
-  {
-    name: "Using WPGraphQL",
-    description: "Learn the details of using WPGraphQL",
-    href: "/docs/posts-and-pages/",
-    icon: "ChartBarIcon",
-  },
-  {
-    name: "Advanced Concepts",
-    description: "Dig deeper into WPGraphQL's features",
-    href: "/docs/concepts/",
-    icon: "ShieldCheckIcon",
-  },
-]
-
 export const NavMenuFragment = gql`
   fragment NavMenu on RootQuery {
     menu(id: "Primary Nav", idType: NAME) {
@@ -183,22 +156,6 @@ export default function SiteHeader({ data }) {
                                   )
                                 })}
                               </div>
-                              {/* <div className="p-5 bg-gray-100 sm:p-8 dark:bg-slate-800">
-                          <Link href="/docs/contributing">
-                            <a
-                              className="-m-3 p-3 flow-root rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"
-                            >
-                              <div className="flex items-center">
-                                <div className="text-base font-medium text-gray-900 dark:text-gray-100">
-                                  Contribute
-                                </div>
-                              </div>
-                              <p className="mt-1 text-sm text-gray-500 dark:text-gray-200">
-                                Help make WPGraphQL better for everyone.
-                              </p>
-                            </a>
-                          </Link>
-                        </div> */}
                             </div>
                           </Popover.Panel>
                         </Transition>
@@ -241,8 +198,8 @@ export default function SiteHeader({ data }) {
         >
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50 dark:bg-slate-800">
             <div className="pt-5 pb-6 px-5">
-              <div className="flex items-center justify-between">
-                <div className="h-8 w-auto">
+              <div className="flex items-center align-center justify-between">
+                <div className="h-full w-auto">
                   <Link href="/">
                     <a>
                       <SiteLogo />
@@ -258,20 +215,21 @@ export default function SiteHeader({ data }) {
               </div>
               <div className="mt-6">
                 <nav className="grid grid-cols-1 gap-7">
-                  {docs.map((solution) => (
-                    <a
-                      key={solution.name}
-                      href={solution.href}
-                      className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50 dark:hover:bg-slate-900"
-                    >
-                      <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-600 text-white">
-                        <DynamicHeroIcon icon={solution.icon} />
-                      </div>
-                      <div className="ml-4 text-base font-medium text-gray-900 dark:text-white">
-                        {solution.name}
-                      </div>
-                    </a>
-                  ))}
+                  {menuItems.map((menuItem) => {
+                    return (
+                      <Link
+                        key={menuItem.path}
+                        href={menuItem.path}
+                        className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50 dark:hover:bg-slate-900"
+                      >
+                        <a>
+                          <div className="ml-4 text-base font-medium text-gray-900 dark:text-white">
+                            {menuItem.label}
+                          </div>
+                        </a>
+                      </Link>
+                    )
+                  })}
                 </nav>
               </div>
             </div>
