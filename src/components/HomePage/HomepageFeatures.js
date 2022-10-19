@@ -1,5 +1,6 @@
-/* This example requires Tailwind CSS v2.0+ */
 import Image from "next/image"
+import graphiql_query_posts from "images/graphiql-query-posts.png"
+import query_multiple_root_resources from "image/query-multiple-root-resources.png"
 
 export default function HomepageFeatures() {
   return (
@@ -24,7 +25,7 @@ export default function HomepageFeatures() {
           <div className="mt-12 -mb-10 sm:-mb-24 lg:-mb-10">
             <Image
               className="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5"
-              src="/graphiql-query-posts.png"
+              src={graphiql_query_posts}
               alt=""
               width={1024}
               height={402}
@@ -53,7 +54,7 @@ export default function HomepageFeatures() {
           <div className="mt-12 -mb-10 sm:-mb-24 lg:-mb-10">
             <Image
               className="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5"
-              src="/query-multiple-root-resources.png"
+              src={query_multiple_root_resources}
               alt=""
               width={1017}
               height={438}

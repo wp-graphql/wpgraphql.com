@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import query_posts from "image/query-posts.png"
+
 export default function HomepageHero() {
   return (
     <div className="bg-white dark:bg-slate-800">
@@ -33,7 +35,7 @@ export default function HomepageHero() {
           <div className="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
             <Image
               className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
-              src="/query-posts.png"
+              src={query_posts}
               alt="App screenshot"
               layout="fill"
             />
