@@ -1,4 +1,4 @@
-import socialLinks from "data/social"
+import { socialFooterLinks } from "data/social"
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="border-t border-slate-200 dark:border-slate-200/5 pt-10 pb-28">
       <div className="max-w-7xl mx-auto px-10 flex flex-col gap-6 justify-between md:flex-row text-slate-500">
         <div className="flex justify-center space-x-6 md:order-2">
-          {socialLinks.map((item) => (
+          {socialFooterLinks.map((item) => (
             <a
               key={item.name}
               href={item.href}
@@ -14,15 +14,17 @@ export default function Footer() {
               target={"_blank"}
               rel="noreferrer"
             >
-              <span className="sr-only">{item.name}</span>
-              <item.icon className="h-6 w-6" aria-hidden="true" />
+              <div>
+                <span className="sr-only">{item.name}</span>
+                <item.icon className="h-6 w-6" aria-hidden="true" />
+              </div>
             </a>
           ))}
         </div>
         <div className="mt-8 md:mt-0 md:order-1 prose dark:prose-invert">
           <p className="text-center text-base text-gray-600 dark:text-gray-300">
-            &copy; {year} WPGraphQL. All rights reserved. | Development sponsored
-            by{" "}
+            &copy; {year} WPGraphQL. All rights reserved. | Development
+            sponsored by{" "}
             <a
               href="https://www.wpengine.com/atlas"
               target="_blank"

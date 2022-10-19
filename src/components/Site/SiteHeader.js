@@ -14,6 +14,7 @@ import DynamicHeroIcon from "../DynamicHeroIcon"
 import SiteLogo from "./SiteLogo"
 import ThemeToggle from "components/Site/ThemeToggle"
 import flatListToHierarchical from "lib/helpers/flatListToHierarchical"
+import { socialHeaderLinks } from "../../data/social"
 
 const docs = [
   {
@@ -95,7 +96,7 @@ export default function SiteHeader({ data }) {
           <Link href="/">
             <a>
               <span className="sr-only">WPGraphQL</span>
-              <div className="h-8 w-auto sm:h-10">
+              <div className="relative h-full w-auto sm:h-10">
                 <SiteLogo />
               </div>
             </a>
@@ -208,7 +209,19 @@ export default function SiteHeader({ data }) {
               }
             })}
         </Popover.Group>
-        <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+        <div className="hidden md:flex items-center gap-4 justify-end md:flex-1 lg:w-0">
+          {socialHeaderLinks.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-100"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              <span className="sr-only">{item.name}</span>
+              <item.icon className="h-6 w-6" aria-hidden="true" />
+            </a>
+          ))}
           <ThemeToggle />
         </div>
       </div>
@@ -252,9 +265,7 @@ export default function SiteHeader({ data }) {
                       className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50 dark:hover:bg-slate-900"
                     >
                       <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-600 text-white">
-                        <DynamicHeroIcon
-                          icon={solution.icon}
-                        />
+                        <DynamicHeroIcon icon={solution.icon} />
                       </div>
                       <div className="ml-4 text-base font-medium text-gray-900 dark:text-white">
                         {solution.name}
