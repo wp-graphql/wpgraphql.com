@@ -4,10 +4,10 @@ import Footer from "./SiteFooter"
 export default function SiteLayout({ children, data }) {
   return (
     <div>
-      <div>
+      <header>
         <Header data={data} />
-        {children}
-      </div>
+      </header>
+      <main>{children}</main>
       <Footer />
     </div>
   )
