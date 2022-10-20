@@ -4,12 +4,11 @@ import TableOfContents from "components/Docs/TableOfContents"
 
 export default function DocsLayout({
   children,
-  siteLayoutData,
   toc,
   docsNavData,
 }) {
   return (
-    <SiteLayout data={siteLayoutData}>
+    <SiteLayout>
       <div className="flex justify-center">
         <div
           className="grid gap-6 grid-rows-1 items-start p-6"

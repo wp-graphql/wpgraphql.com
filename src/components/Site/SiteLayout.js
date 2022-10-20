@@ -1,11 +1,11 @@
 import Header, { NavMenuFragment } from "./SiteHeader"
 import Footer from "./SiteFooter"
 
-export default function SiteLayout({ children, data }) {
+export default function SiteLayout({ children }) {
   return (
     <div>
       <header>
-        <Header data={data} />
+        <Header/>
       </header>
       <main>{children}</main>
       <Footer />

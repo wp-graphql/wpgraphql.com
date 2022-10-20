@@ -10,10 +10,9 @@ import components from "components/Docs/MdxComponents"
 
 import { getApolloClient, addApolloState } from "@faustwp/core/dist/mjs/client"
 
-export default function Doc({ source, toc, siteLayoutData, docsNavData }) {
+export default function Doc({ source, toc, docsNavData }) {
   return (
     <DocsLayout
-      siteLayoutData={siteLayoutData}
       toc={toc}
       docsNavData={docsNavData}
     >
@@ -38,7 +37,7 @@ export async function getStaticProps({ params }) {
     const docsNavData = await getDocsNav()
     const apolloClient = getApolloClient()
 
-    const { data: siteLayoutData } = await apolloClient.query({
+    await apolloClient.query({
       query: gql`
         query NavQuery {
           ...NavMenu
@@ -47,16 +46,14 @@ export async function getStaticProps({ params }) {
       `,
     })
 
-    addApolloState(apolloClient)
-    return {
+    return addApolloState(apolloClient, {
       props: {
         toc,
         source,
-        siteLayoutData,
         docsNavData,
       },
       revalidate: 30,
-    }
+    })
   } catch (e) {
     if (e.notFound) {
       console.error(params, e)

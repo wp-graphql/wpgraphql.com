@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export default function Author({ data }) {
   return (
-    <SiteLayout data={data}>
+    <SiteLayout>
       <div className="overflow-hidden">
         <div className="mx-auto px-4 pb-28  sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl">
           <main className=" space-y-6 divide-y divide-gray-200 dark:divide-gray-700">
