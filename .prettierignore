@@ -4,3 +4,4 @@ node_modules
 WordPress
 .yarn
 .next
+possibleTypes.json
