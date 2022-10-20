@@ -16,6 +16,12 @@ import ThemeToggle from "components/Site/ThemeToggle"
 import flatListToHierarchical from "lib/helpers/flatListToHierarchical"
 import { socialHeaderLinks } from "../../data/social"
 
+export function getIconNameFromMenuItem(menuItem) {
+  return menuItem?.cssClasses
+    ?.find((className) => className.startsWith("icon-"))
+    ?.replace("icon-", "")
+}
+
 export const NavMenuFragment = gql`
   fragment NavMenu on RootQuery {
     menu(id: "Primary Nav", idType: NAME) {
@@ -128,10 +134,7 @@ export default function SiteHeader({ data }) {
                             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                               <div className="relative grid gap-6 bg-white dark:bg-slate-700 px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
                                 {item.children?.map((menuItem) => {
-                                  let icon = menuItem?.cssClasses?.find(
-                                    (className) => className.startsWith("icon-")
-                                  )
-                                  icon = icon ? icon.replace("icon-", "") : null
+                                  let icon = getIconNameFromMenuItem(menuItem)
 
                                   return (
                                     <a
@@ -216,13 +219,18 @@ export default function SiteHeader({ data }) {
               <div className="mt-6">
                 <nav className="grid grid-cols-1 gap-7">
                   {menuItems.map((menuItem) => {
+                    const icon = getIconNameFromMenuItem(menuItem)
+
                     return (
                       <Link
                         key={menuItem.path}
                         href={menuItem.path}
                         className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50 dark:hover:bg-slate-900"
                       >
-                        <a>
+                        <a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600">
+                          <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-600 text-white">
+                            <DynamicHeroIcon icon={icon} />
+                          </div>
                           <div className="ml-4 text-base font-medium text-gray-900 dark:text-white">
                             {menuItem.label}
                           </div>

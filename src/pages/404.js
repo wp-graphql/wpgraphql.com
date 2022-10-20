@@ -1,41 +1,36 @@
+import { gql, useQuery } from "@apollo/client"
+import { getApolloClient, addApolloState } from "@faustwp/core/dist/mjs/client"
+
 import { ChevronRightIcon } from "@heroicons/react/20/solid"
+import DynamicHeroIcon from "../components/DynamicHeroIcon"
 import {
-  BookOpenIcon,
-  RssIcon,
-  Bars4Icon,
-  PuzzlePieceIcon,
-} from "@heroicons/react/24/outline"
+  getIconNameFromMenuItem,
+} from "../components/Site/SiteHeader"
 import SiteLogo from "components/Site/SiteLogo"
 import Link from "next/link"
 
-const links = [
-  {
-    title: "Documentation",
-    description: "Learn how to use WPGraphQL to build headless apps",
-    icon: BookOpenIcon,
-    href: "/docs/introduction",
-  },
-  {
-    title: "Developer Reference",
-    description: "Learn how to extend WPGraphQL on the server",
-    icon: Bars4Icon,
-    href: "/developer-reference",
-  },
-  {
-    title: "Extensions",
-    description: "Find extensions that add functionality to WPGrapQL",
-    icon: PuzzlePieceIcon,
-    href: "/extensions",
-  },
-  {
-    title: "Blog",
-    description: "Read our latest news and articles",
-    icon: RssIcon,
-    href: "/blog",
-  },
-]
+const NOT_FOUND_QUERY = gql`
+  query NotFoundQuery {
+    menu(id: "Primary Nav", idType: NAME) {
+      id
+      name
+      menuItems(where: { parentId: 0 }) {
+        nodes {
+          label
+          description
+          url
+          path
+          cssClasses
+        }
+      }
+    }
+  }
+`
 
 export default function NotFound() {
+  const { data } = useQuery(NOT_FOUND_QUERY)
+  const links = data.menu.menuItems.nodes
+
   return (
     <div className="bg-white">
       <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,14 +57,15 @@ export default function NotFound() {
               role="list"
               className="mt-4 border-t border-b border-gray-200 divide-y divide-gray-200"
             >
-              {links.map((link, linkIdx) => (
+              {links.map((link) => (
                 <li
-                  key={linkIdx}
+                  key={link.path}
                   className="relative py-6 flex items-start space-x-4"
                 >
                   <div className="flex-shrink-0">
                     <span className="flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-50">
-                      <link.icon
+                      <DynamicHeroIcon
+                        icon={getIconNameFromMenuItem(link)}
                         className="h-6 w-6 text-indigo-700"
                         aria-hidden="true"
                       />
@@ -78,13 +74,13 @@ export default function NotFound() {
                   <div className="min-w-0 flex-1">
                     <h3 className="text-base font-medium text-gray-900">
                       <span className="rounded-sm focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-                        <Link href={link.href}>
+                        <Link href={link.path}>
                           <a className="focus:outline-none">
                             <span
                               className="absolute inset-0"
                               aria-hidden="true"
                             />
-                            {link.title}
+                            {link.label}
                           </a>
                         </Link>
                       </span>
@@ -114,4 +110,15 @@ export default function NotFound() {
       </main>
     </div>
   )
+}
+
+export async function getStaticProps(ctx) {
+  const client = getApolloClient()
+
+  const { data } = await client.query({ query: NOT_FOUND_QUERY })
+
+  return addApolloState(client, {
+    props: {},
+    revalidate: 30,
+  })
 }
