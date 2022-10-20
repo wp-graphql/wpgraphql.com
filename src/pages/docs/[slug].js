@@ -12,10 +12,7 @@ import { getApolloClient, addApolloState } from "@faustwp/core/dist/mjs/client"
 
 export default function Doc({ source, toc, docsNavData }) {
   return (
-    <DocsLayout
-      toc={toc}
-      docsNavData={docsNavData}
-    >
+    <DocsLayout toc={toc} docsNavData={docsNavData}>
       <div
         id="content-wrapper"
         className="relative z-20 prose mt-8 prose dark:prose-dark"

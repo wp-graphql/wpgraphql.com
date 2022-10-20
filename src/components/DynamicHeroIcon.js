@@ -9,5 +9,5 @@ export default function DynamicHeroIcon(props) {
     import("@heroicons/react/24/outline").then((mod) => mod[props.icon])
   )
 
-  return <Icon className="h-6 w-6 text-white" aria-hidden="true" {...props}/>
+  return <Icon className="h-6 w-6 text-white" aria-hidden="true" {...props} />
 }

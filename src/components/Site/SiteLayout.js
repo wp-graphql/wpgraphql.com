@@ -5,7 +5,7 @@ export default function SiteLayout({ children }) {
   return (
     <div>
       <header>
-        <Header/>
+        <Header />
       </header>
       <main>{children}</main>
       <Footer />

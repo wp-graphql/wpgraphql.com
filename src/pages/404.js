@@ -3,9 +3,7 @@ import { getApolloClient, addApolloState } from "@faustwp/core/dist/mjs/client"
 
 import { ChevronRightIcon } from "@heroicons/react/20/solid"
 import DynamicHeroIcon from "components/DynamicHeroIcon"
-import {
-  getIconNameFromMenuItem,
-} from "lib/menu-helpers"
+import { getIconNameFromMenuItem } from "lib/menu-helpers"
 import SiteLogo from "components/Site/SiteLogo"
 import Link from "next/link"
 
