@@ -14,7 +14,6 @@ module.exports = {
   },
   transform: (config, path) => {
     if (path.match(/\/\d{4}\/\d{2}\/\d{2}\/.*/gim)) {
-      console.log(path)
       return null
     }
 

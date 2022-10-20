@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next"
 import { getServerSideSitemap } from "next-sitemap"
-import { getAllDocUri } from "lib/mdx/parse-docs"
+import { getAllDocUri } from "lib/parse-mdx-docs"
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL
 

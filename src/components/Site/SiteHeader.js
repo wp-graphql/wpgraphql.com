@@ -13,14 +13,11 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import DynamicHeroIcon from "../DynamicHeroIcon"
 import SiteLogo from "./SiteLogo"
 import ThemeToggle from "components/Site/ThemeToggle"
-import flatListToHierarchical from "lib/helpers/flatListToHierarchical"
+import {
+  flatListToHierarchical,
+  getIconNameFromMenuItem,
+} from "lib/menu-helpers"
 import { socialHeaderLinks } from "../../data/social"
-
-export function getIconNameFromMenuItem(menuItem) {
-  return menuItem?.cssClasses
-    ?.find((className) => className.startsWith("icon-"))
-    ?.replace("icon-", "")
-}
 
 export const NavMenuFragment = gql`
   fragment NavMenu on RootQuery {
@@ -46,8 +43,25 @@ export const NavMenuFragment = gql`
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
 
-  const { data } = useQuery(gql`{...NavMenu}${NavMenuFragment}`)
+  const { data } = useQuery(
+    gql`
+      {
+        ...NavMenu
+      }
+      ${NavMenuFragment}
+    `
+  )
 
+  // const test = useFragment_experimental({
+  //   fragment: NavMenuFragment,
+  //   fragmentName: "NavMenu",
+  //   from: {
+  //     __typename: "RootQuery",
+  //     id: "",
+  //   }
+  // })
+
+  // console.log(test)
 
   const menuItems = flatListToHierarchical(data?.menu?.menuItems?.nodes, {
     idKey: "id",

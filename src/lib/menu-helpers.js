@@ -1,4 +1,4 @@
-export default function flatListToHierarchical(
+export function flatListToHierarchical(
   data = [],
   { idKey = "id", parentKey = "parentId", childrenKey = "children" } = {}
 ) {
@@ -18,4 +18,10 @@ export default function flatListToHierarchical(
   })
 
   return tree
+}
+
+export function getIconNameFromMenuItem(menuItem) {
+  return menuItem?.cssClasses
+    ?.find((className) => className.startsWith("icon-"))
+    ?.replace("icon-", "")
 }

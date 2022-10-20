@@ -4,7 +4,7 @@ import { MDXRemote } from "next-mdx-remote"
 import DocsLayout from "components/Docs/DocsLayout"
 import { NavMenuFragment } from "components/Site/SiteHeader"
 
-import { getParsedDoc, getDocsNav } from "lib/mdx/parse-docs"
+import { getParsedDoc, getDocsNav } from "lib/parse-mdx-docs"
 
 import components from "components/Docs/MdxComponents"
 
