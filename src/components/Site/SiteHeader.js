@@ -86,6 +86,7 @@ export default function SiteHeader() {
           ? `relative bg-white sticky top-0 z-50 shadow-xl dark:bg-slate-800`
           : `relative bg-white sticky top-0 z-50 dark:bg-slate-800 border-b-2 border-b-gray-100 dark:border-b-slate-800`
       }
+      as={'header'}
     >
       <div className="max-w-8xl mx-auto flex justify-between items-center px-4 py-4 sm:px-6 md:justify-start md:space-x-10">
         <div className="flex justify-start lg:w-0 lg:flex-1">

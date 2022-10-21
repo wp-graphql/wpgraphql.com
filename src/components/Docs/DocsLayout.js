@@ -5,7 +5,7 @@ import TableOfContents from "components/Docs/TableOfContents"
 export default function DocsLayout({ children, toc, docsNavData }) {
   return (
     <SiteLayout>
-      <div className="flex justify-center">
+      <main className="flex justify-center">
         <div
           className="grid gap-6 grid-rows-1 items-start p-6"
           style={{
@@ -29,7 +29,7 @@ export default function DocsLayout({ children, toc, docsNavData }) {
             </div>
           </aside>
         </div>
-      </div>
+      </main>
     </SiteLayout>
   )
 }

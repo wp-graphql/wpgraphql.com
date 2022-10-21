@@ -14,9 +14,9 @@ const DEVELOPER_REFERENCE_QUERY = gql`
 export default function DeveloperReference() {
   return (
     <SiteLayout>
-      <div className="max-w-8xl mx-auto my-10 px-4 sm:px-6 lg:px-8 prose dark:prose-dark">
+      <main className="max-w-8xl mx-auto my-10 px-4 sm:px-6 lg:px-8 prose dark:prose-dark">
         <h1>Developer Reference</h1>
-      </div>
+      </main>
     </SiteLayout>
   )
 }
