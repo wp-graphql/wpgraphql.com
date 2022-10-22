@@ -1,6 +1,7 @@
 dist
 node_modules
-public
 .cache
 WordPress
 .yarn
+.next
+possibleTypes.json
