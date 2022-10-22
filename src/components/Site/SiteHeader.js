@@ -52,17 +52,6 @@ export default function SiteHeader() {
     `
   )
 
-  // const test = useFragment_experimental({
-  //   fragment: NavMenuFragment,
-  //   fragmentName: "NavMenu",
-  //   from: {
-  //     __typename: "RootQuery",
-  //     id: "",
-  //   }
-  // })
-
-  // console.log(test)
-
   const menuItems = flatListToHierarchical(data?.menu?.menuItems?.nodes, {
     idKey: "id",
     parentKey: "parentId",
@@ -86,7 +75,7 @@ export default function SiteHeader() {
           ? `relative bg-white sticky top-0 z-50 shadow-xl dark:bg-slate-800`
           : `relative bg-white sticky top-0 z-50 dark:bg-slate-800 border-b-2 border-b-gray-100 dark:border-b-slate-800`
       }
-      as={'header'}
+      as={"header"}
     >
       <div className="max-w-8xl mx-auto flex justify-between items-center px-4 py-4 sm:px-6 md:justify-start md:space-x-10">
         <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -98,6 +87,9 @@ export default function SiteHeader() {
               </div>
             </a>
           </Link>
+        </div>
+        <div>
+          <ThemeToggle />
         </div>
         <div className="-mr-2 -my-2 md:hidden">
           <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500 dark:bg-slate-900">
