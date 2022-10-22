@@ -25,7 +25,7 @@ const octokit = new Octokit({
 const DOCS_REPO = "wp-graphql"
 const DOCS_OWNER = "wp-graphql"
 // @TODO: Change to `master` for production
-const DOCS_BRANCH = "docs/new-site"
+const DOCS_BRANCH = "develop"
 const DOCS_FOLDER = "docs"
 const DOCS_EXT_REG = new RegExp(`${DOCS_FOLDER}\/(?<slug>.*)\.md(x?)$`, "i")
 const IMG_PATH_REG = /^(\.\/)?(?<slug>.+)$/i
