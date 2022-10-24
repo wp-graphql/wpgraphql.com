@@ -27,9 +27,7 @@ const DOCS_OWNER = "wp-graphql"
 // @TODO: Change to `master` for production
 const DOCS_BRANCH = "develop"
 const DOCS_FOLDER = "docs"
-const DOCS_EXT_REG = new RegExp(`${DOCS_FOLDER}\/(?<
-
-slug>.*)\.md(x?)$`, "i")
+const DOCS_EXT_REG = new RegExp(`${DOCS_FOLDER}\/(?<slug>.*)\.md(x?)$`, "i")
 const IMG_PATH_REG = /^(\.\/)?(?<slug>.+)$/i
 
 const DOCS_PATH = `https://raw.githubusercontent.com/${DOCS_OWNER}/${DOCS_REPO}/${DOCS_BRANCH}/${DOCS_FOLDER}`
