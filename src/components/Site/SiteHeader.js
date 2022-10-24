@@ -88,7 +88,7 @@ export default function SiteHeader() {
             </a>
           </Link>
         </div>
-        <div>
+        <div className="md:hidden">
           <ThemeToggle />
         </div>
         <div className="-mr-2 -my-2 md:hidden">
