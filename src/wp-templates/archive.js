@@ -28,7 +28,7 @@ export default function Archive({ data }) {
             <h1 className="mb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
               {archive?.label ? archive.label : archive?.name ?? "Archive"}
             </h1>
-            <p className="text-lg leading-7 prose dark:prose-dark">
+            <p className="text-lg leading-7 prose dark:prose-dark max-w-3xl mx-auto">
               <span
                 dangerouslySetInnerHTML={{ __html: archive?.description }}
               />

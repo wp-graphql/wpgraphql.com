@@ -35,7 +35,7 @@ export default function Author({ data }) {
               </div>
 
               <div
-                className="prose dark:prose-dark text-lg text-center leading-7 "
+                className="prose dark:prose-dark text-lg text-center leading-7 max-w-3xl mx-auto"
                 dangerouslySetInnerHTML={{
                   __html: data?.user?.description ?? "",
                 }}
