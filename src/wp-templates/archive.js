@@ -72,29 +72,14 @@ Archive.variables = ({ uri }) => {
 
 Archive.query = gql`
   query GetContentType($uri: String!) {
-    archive: nodeByUri(uri: $uri) {
-      __typename
-      id
-      uri
-      ... on ContentType {
-        name
-        description
-        label
-        contentNodes(first: 100) {
-          nodes {
-            __typename
-            ...ExtensionPreview
-            ...RecipePreview
-            ...FilterPreview
-            ...FunctionPreview
-            ...ActionPreview
-          }
-        }
-      }
-      ... on TermNode {
-        name
-        description
-        ... on CodeSnippetTag {
+      archive: nodeByUri(uri: $uri) {
+        __typename
+        id
+        uri
+        ... on ContentType {
+          name
+          description
+          label
           contentNodes(first: 100) {
             nodes {
               __typename
@@ -106,9 +91,24 @@ Archive.query = gql`
             }
           }
         }
+        ... on TermNode {
+          name
+          description
+          ... on CodeSnippetTag {
+            contentNodes(first: 100) {
+              nodes {
+                __typename
+                ...ExtensionPreview
+                ...RecipePreview
+                ...FilterPreview
+                ...FunctionPreview
+                ...ActionPreview
+              }
+            }
+          }
+        }
       }
-    }
-    ...NavMenu
+      ...NavMenu
   }
   ${NavMenuFragment}
   ${ExtensionFragment}
