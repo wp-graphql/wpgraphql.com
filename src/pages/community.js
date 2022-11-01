@@ -2,7 +2,7 @@ import {gql} from "@apollo/client";
 import {NavMenuFragment} from "../components/Site/SiteHeader";
 import SiteLayout from "../components/Site/SiteLayout";
 import {getApolloClient} from "@faustwp/core/dist/mjs/client";
-import {FaSlack, FaGithub, FaTwitter, FaYoutube} from "react-icons/all";
+import {FaSlack, FaGithub, FaTwitter, FaYoutube} from "react-icons/fa";
 
 const client = getApolloClient()
 
