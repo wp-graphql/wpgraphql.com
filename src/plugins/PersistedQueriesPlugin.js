@@ -1,19 +1,18 @@
 import {createPersistedQueryLink} from '@apollo/client/link/persisted-queries';
 import {HttpLink} from "@apollo/client";
 import {sha256} from 'crypto-hash';
+import {getGraphqlEndpoint} from "@faustwp/core/dist/mjs/lib/getGraphqlEndpoint";
 
-const linkChain = createPersistedQueryLink({ sha256 }).concat(
-  new HttpLink({ uri: process.env.WPGRAPHQL_URL }),
-);
+const httpLink = new HttpLink({ uri: getGraphqlEndpoint(), useGETForQueries:true });
+const persistedQueriesLink = createPersistedQueryLink({ sha256 });
 
 class PersistedQueriesPlugin {
   apply({ addFilter }) {
     addFilter('apolloClientOptions', 'faust', (apolloClientOptions) => {
       const existingLink = apolloClientOptions?.link;
-
       return {
         ...apolloClientOptions,
-        link: existingLink ? linkChain.concat(existingLink) : linkChain
+        link: existingLink instanceof HttpLink ? persistedQueriesLink.concat( existingLink ) : persistedQueriesLink.concat(httpLink)
       }
     });
   }
