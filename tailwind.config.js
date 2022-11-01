@@ -69,7 +69,7 @@ module.exports = {
               "scroll-margin-top": "var(--scroll-mt)",
             },
             iframe: {
-              maxWidth: '100%',
+              maxWidth: "100%",
             },
             ul: {
               listStyleType: "none",

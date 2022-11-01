@@ -15,7 +15,7 @@ query GetNavMenu {
 ${NavMenuFragment}
 `
 
-const AcfHero = () => {
+function AcfHero() {
   return (
     <div className="w-full bg-[#00e4bc] flex justify-center pb-[100px]">
       <div className=" w-3/4 pt-5 pb-5 pt-10 md:pt-20 md:pb-20 prose">
@@ -57,47 +57,49 @@ const AcfHero = () => {
   )
 }
 
-const HowItWorks = () => (
-  <div className="text-center lg:max-w-[80%] mx-auto">
-    <h2 className="text-3xl pb-5 uppercase">How it Works</h2>
-    <p className="text-3xl font-light">WPGraphQL for Advanced Custom Fields automatically exposes
-      your ACF fields to the WPGraphQL Schema</p>
-    <div className="flex flex-wrap w-full">
-      <div className="lg:w-1/2 p-5">
-        <Image
-          src='/images/acf-fields.jpeg'
-          alt="Screenshot of Advanced Custom Fields field group user interface"
-          width="710"
-          height="628"
-        />
+function HowItWorks() {
+  return (
+    <div className="text-center lg:max-w-[80%] mx-auto">
+      <h2 className="text-3xl pb-5 uppercase">How it Works</h2>
+      <p className="text-3xl font-light">WPGraphQL for Advanced Custom Fields automatically exposes
+        your ACF fields to the WPGraphQL Schema</p>
+      <div className="flex flex-wrap w-full">
+        <div className="lg:w-1/2 p-5">
+          <Image
+            src='/images/acf-fields.jpeg'
+            alt="Screenshot of Advanced Custom Fields field group user interface"
+            width="710"
+            height="628"
+          />
+        </div>
+        <div className="lg:w-1/2 lg:text-left">
+          <h3 className="text-2xl mt-0 lg:mt-[2.4em]">Create your ACF Fields</h3>
+          <p className="text-xl">Create your ACF Field Groups and Fields, the same way you normally
+            would, using the ACF User Interface, registering your fields with PHP or using ACF
+            local-json. Each field group and the fields within it can be configured to &quot;Show in
+            GraphQL&quot;.</p>
+        </div>
       </div>
-      <div className="lg:w-1/2 lg:text-left">
-        <h3 className="text-2xl mt-0 lg:mt-[2.4em]">Create your ACF Fields</h3>
-        <p className="text-xl">Create your ACF Field Groups and Fields, the same way you normally
-          would, using the ACF User Interface, registering your fields with PHP or using ACF
-          local-json. Each field group and the fields within it can be configured to "Show in
-          GraphQL".</p>
+      <div className="flex flex-wrap border-t-1 lg:border-t-0 w-full pt-10 lg:pt-0 border-t">
+        <div className="lg:w-1/2 lg:text-right">
+          <h3 className="text-2xl mt-0 lg:mt-[2.4em]">Query with GraphQL</h3>
+          <p className="text-xl">Once your field groups and fields have been configured to &quot;Show in
+            GraphQL&quot;, they will be available in the GraphQL Schema and ready for querying!</p>
+        </div>
+        <div className="lg:w-1/2 p-5 lg:pt-[50px] pt-0">
+          <Image
+            src='/images/acf-query-fields.png'
+            alt="Screenshot of Advanced Custom Fields field group user interface"
+            width="1738"
+            height="832"
+          />
+        </div>
       </div>
     </div>
-    <div className="flex flex-wrap border-t-1 lg:border-t-0 w-full pt-10 lg:pt-0 border-t">
-      <div className="lg:w-1/2 lg:text-right">
-        <h3 className="text-2xl mt-0 lg:mt-[2.4em]">Query with GraphQL</h3>
-        <p className="text-xl">Once your field groups and fields have been configured to "Show in
-          GraphQL", they will be available in the GraphQL Schema and ready for querying!</p>
-      </div>
-      <div className="lg:w-1/2 p-5 lg:pt-[50px] pt-0">
-        <Image
-          src='/images/acf-query-fields.png'
-          alt="Screenshot of Advanced Custom Fields field group user interface"
-          width="1738"
-          height="832"
-        />
-      </div>
-    </div>
-  </div>
-)
+  )
+}
 
-const SupportedFields = () => {
+function SupportedFields() {
   const fields = [
     "Text",
     "Text Area",
@@ -149,7 +151,7 @@ const SupportedFields = () => {
   )
 
 }
-const Why = () => {
+function Why() {
   const features = [
     {
       title: "Time",
@@ -181,7 +183,8 @@ const Why = () => {
     </div>
   )
 }
-const WorksWithJS = () => {
+
+function WorksWithJS() {
 
   const frameworks = [
     {
@@ -226,26 +229,28 @@ const WorksWithJS = () => {
     </div>
   )
 }
-const Pricing = () => (
-  <div className="mb-70 lg:px-20 text-center">
-    <h2 className="text-3xl pb-5 uppercase">
-      Pricing & Support
-    </h2>
-    <p className="text-xl">
-      WPGraphQL for Advanced Custom Fields is a <strong>FREE</strong> open-source WordPress
-      plugin. The code is available on <a href="https://github.com/wp-graphql/wp-graphql-acf"
-                                          rel="noreferrer" target="_blank">Github</a>. Support and
-      feature requests are
-      handled through <a href="https://github.com/wp-graphql/wp-graphql-acf/issues" rel="noreferrer"
-                         target="_blank">issues</a>. For general questions about the plugin,
-      visit the <a
-      href="https://join.slack.com/t/wp-graphql/shared_invite/zt-3vloo60z-PpJV2PFIwEathWDOxCTTLA">WPGraphQL
-      Slack</a>.
-    </p>
-  </div>
-)
+function Pricing() {
+  return (
+    <div className="mb-70 lg:px-20 text-center">
+      <h2 className="text-3xl pb-5 uppercase">
+        Pricing & Support
+      </h2>
+      <p className="text-xl">
+        WPGraphQL for Advanced Custom Fields is a <strong>FREE</strong> open-source WordPress
+        plugin. The code is available on <a href="https://github.com/wp-graphql/wp-graphql-acf"
+                                            rel="noreferrer" target="_blank">Github</a>. Support and
+        feature requests are
+        handled through <a href="https://github.com/wp-graphql/wp-graphql-acf/issues" rel="noreferrer"
+                           target="_blank">issues</a>. For general questions about the plugin,
+        visit the <a
+        href="https://join.slack.com/t/wp-graphql/shared_invite/zt-3vloo60z-PpJV2PFIwEathWDOxCTTLA">WPGraphQL
+        Slack</a>.
+      </p>
+    </div>
+  )
+}
 
-const Faq = () => {
+function Faq() {
   const questions = [
     {
       question: "What is included in support?",
@@ -314,7 +319,7 @@ const Faq = () => {
   )
 }
 
-const PageContainer = ({children}) => {
+function PageContainer({children}) {
   return (
     <div
       className="bg-white dark:bg-slate-700 min-h-[50px] p-10 md:p-20 w-[80%] drop-shadow mx-auto -mt-[100px] mb-[50px] prose dark:prose-dark">
@@ -323,7 +328,7 @@ const PageContainer = ({children}) => {
   )
 }
 
-const Acf = props => {
+function Acf() {
   return (
     <SiteLayout>
       <AcfHero/>
