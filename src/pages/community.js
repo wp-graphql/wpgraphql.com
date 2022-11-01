@@ -67,7 +67,6 @@ function Community() {
             </div>
           ))}
         </div>
-
       </div>
     </SiteLayout>
   )
