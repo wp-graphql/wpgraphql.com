@@ -331,15 +331,17 @@ function PageContainer({children}) {
 function Acf() {
   return (
     <SiteLayout>
-      <AcfHero/>
-      <PageContainer>
-        <HowItWorks/>
-        <SupportedFields/>
-        <Why/>
-        <WorksWithJS/>
-        <Pricing/>
-        <Faq/>
-      </PageContainer>
+      <main className="content">
+        <AcfHero/>
+        <PageContainer>
+          <HowItWorks/>
+          <SupportedFields/>
+          <Why/>
+          <WorksWithJS/>
+          <Pricing/>
+          <Faq/>
+        </PageContainer>
+      </main>
     </SiteLayout>
   )
 }

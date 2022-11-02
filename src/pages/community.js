@@ -45,13 +45,13 @@ function Community() {
 
   return (
     <SiteLayout>
-      <div className="w-full flex justify-center">
+      <header className="w-full flex justify-center">
         <div className=" w-3/4 pt-5 pt-10 md:pt-20 prose dark:prose-dark">
           <h1 className="text-5xl">Community</h1>
           <p className="text-3xl">On this page, we’ve listed some WPGraphQL-related communities that you can be a part of, and tools and resources in the community that may benefit you as you use WPGraphQL.</p>
         </div>
-      </div>
-      <div className="mx-auto w-3/4 pt-5 pb-5 pt-10 md:pb-20 prose dark:prose-dark">
+      </header>
+      <main className="content mx-auto w-3/4 pt-5 pb-5 pt-10 md:pb-20 prose dark:prose-dark">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {communities.map((community, i) => (
             <div key={i} className="box-shadow bg-slate-200 dark:bg-slate-800 rounded-lg drop-shadow-lg p-5 pb-7">
@@ -67,7 +67,7 @@ function Community() {
             </div>
           ))}
         </div>
-      </div>
+      </main>
     </SiteLayout>
   )
 }
