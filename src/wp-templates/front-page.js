@@ -10,7 +10,7 @@ import SiteLayout, { NavMenuFragment } from "components/Site/SiteLayout"
 export default function FrontPage({ data }) {
   return (
     <SiteLayout>
-      <main>
+      <main className="content">
         <HomepageHero />
         <HomepageFrameworks />
         <HomepageFeatures />

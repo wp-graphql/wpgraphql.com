@@ -5,7 +5,7 @@ import SiteLayout, { NavMenuFragment } from "components/Site/SiteLayout"
 export default function Index({ data }) {
   return (
     <SiteLayout>
-      <main>
+      <main className="content">
         <h2>INDEX...</h2>
         <pre>{JSON.stringify(data, null, 2)}</pre>
       </main>

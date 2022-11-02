@@ -18,6 +18,7 @@ import {
   getIconNameFromMenuItem,
 } from "lib/menu-helpers"
 import { socialHeaderLinks } from "../../data/social"
+// import { SearchButton } from "./SearchButton";
 
 export const NavMenuFragment = gql`
   fragment NavMenu on RootQuery {
@@ -88,14 +89,29 @@ export default function SiteHeader() {
             </a>
           </Link>
         </div>
-        <div className="md:hidden">
+        <div className="-mr-2 -my-2 md:hidden flex justify-items-end items-center">
+          {/*<SearchButton className="ml-auto text-slate-500 w-8 h-8 -my-1 flex items-center justify-center hover:text-slate-600 lg:hidden dark:text-slate-400 dark:hover:text-slate-300">*/}
+          {/*  <span className="sr-only">Search</span>*/}
+          {/*  <svg*/}
+          {/*    width="24"*/}
+          {/*    height="24"*/}
+          {/*    fill="none"*/}
+          {/*    stroke="currentColor"*/}
+          {/*    strokeWidth="2"*/}
+          {/*    strokeLinecap="round"*/}
+          {/*    strokeLinejoin="round"*/}
+          {/*    aria-hidden="true"*/}
+          {/*  >*/}
+          {/*    <path d="m19 19-3.5-3.5" />*/}
+          {/*    <circle cx="11" cy="11" r="6" />*/}
+          {/*  </svg>*/}
+          {/*</SearchButton>*/}
           <ThemeToggle />
-        </div>
-        <div className="-mr-2 -my-2 md:hidden">
-          <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500 dark:bg-slate-900">
+          <Popover.Button className="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500 dark:bg-slate-900">
             <span className="sr-only">Open menu</span>
             <MenuIcon className="h-6 w-6" aria-hidden="true" />
           </Popover.Button>
+
         </div>
         <Popover.Group as="nav" className="hidden md:flex space-x-10">
           {menuItems &&
@@ -179,7 +195,24 @@ export default function SiteHeader() {
               }
             })}
         </Popover.Group>
+
         <div className="hidden md:flex items-center gap-4 justify-end md:flex-1 lg:w-0">
+          {/*<SearchButton className="ml-auto text-slate-500 w-8 h-8 -my-1 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">*/}
+          {/*  <span className="sr-only">Search</span>*/}
+          {/*  <svg*/}
+          {/*    width="24"*/}
+          {/*    height="24"*/}
+          {/*    fill="none"*/}
+          {/*    stroke="currentColor"*/}
+          {/*    strokeWidth="2"*/}
+          {/*    strokeLinecap="round"*/}
+          {/*    strokeLinejoin="round"*/}
+          {/*    aria-hidden="true"*/}
+          {/*  >*/}
+          {/*    <path d="m19 19-3.5-3.5" />*/}
+          {/*    <circle cx="11" cy="11" r="6" />*/}
+          {/*  </svg>*/}
+          {/*</SearchButton>*/}
           {socialHeaderLinks.map((item) => (
             <a
               key={item.name}

@@ -24,7 +24,7 @@ export default function Singlar({ data }) {
     <SiteLayout>
       <div className="overflow-hidden">
         <div className="mx-auto mt-10 px-4 pb-6 sm:mt-16 sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl">
-          <main>
+          <main className="content">
             <article className="relative pt-10 max-w-3xl mx-auto">
               <header>
                 <dl>

@@ -192,7 +192,7 @@ export default function ThemeToggle({ panelClassName = "mt-4" }) {
       </Listbox.Button>
       <Listbox.Options
         className={clsx(
-          "absolute z-50 top-full bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-900 dark:ring-0 dark:highlight-white/5 dark:text-slate-300 -mt-5 dark:shadow-lg",
+          "absolute z-50 top-full right-[40px] bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-900 dark:ring-0 dark:highlight-white/5 dark:text-slate-300 -mt-5 dark:shadow-lg",
           panelClassName
         )}
       >

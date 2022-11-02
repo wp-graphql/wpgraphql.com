@@ -34,7 +34,7 @@ export default function Archive({ data }) {
               />
             </p>
           </header>
-          <main className="relative pt-10 max-w-3xl mx-auto">
+          <main className="content relative pt-10 max-w-3xl mx-auto">
             <ul className="divide-y divide-gray-200 dark:divide-gray-700">
               {archive?.contentNodes?.nodes?.map((node) => {
                 switch (node.__typename) {

@@ -10,7 +10,7 @@ export default function Author({ data }) {
     <SiteLayout>
       <div className="overflow-hidden">
         <div className="mx-auto px-4 pb-28  sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl">
-          <main className=" space-y-6 divide-y divide-gray-200 dark:divide-gray-700">
+          <main className="content space-y-6 divide-y divide-gray-200 dark:divide-gray-700">
             <div className="pt-10 max-w-3xl mx-auto space-y-6 pb-16 ">
               <div className="flex justify-center mb-8">
                 <dl>
