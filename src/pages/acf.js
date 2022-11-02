@@ -1,12 +1,10 @@
-import {getApolloClient} from "@faustwp/core/dist/mjs/client"
+import {addApolloState, getApolloClient} from "@faustwp/core/dist/mjs/client"
 import {NavMenuFragment} from "../components/Site/SiteHeader";
 import {gql} from "@apollo/client";
 import SiteLayout from "../components/Site/SiteLayout";
 import Image from 'next/image'
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/20/solid";
-
-const client = getApolloClient()
 
 const GET_NAV_MENU = gql`
 query GetNavMenu {
@@ -349,11 +347,11 @@ function Acf() {
 export default Acf;
 
 export async function getStaticProps() {
-  const {data} = await client.query({query: GET_NAV_MENU})
-  return {
+  const client = getApolloClient()
+  await client.query({query: GET_NAV_MENU})
+  return addApolloState(client, {
     props: {
-      data: data ?? null,
-      revalidate: 300
+      revalidate: 30
     }
-  }
+  })
 }

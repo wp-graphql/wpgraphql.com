@@ -71,9 +71,7 @@ export default function DeveloperReference() {
 
 export async function getStaticProps(ctx) {
   const client = getApolloClient()
-
-  const { data } = await client.query({ query: DEVELOPER_REFERENCE_QUERY })
-
+  await client.query({ query: DEVELOPER_REFERENCE_QUERY })
   return addApolloState(client, {
     props: {},
     revalidate: 30,

@@ -13,7 +13,7 @@ export default function DocsLayout({ children, toc, docsNavData }) {
           </DocsSidebar>
         </aside>
         <div
-          className="grid gap-6 grid-rows-1 items-start p-6 overflow-y-scroll"
+          className="max-w-8xl grid gap-6 grid-rows-1 items-start p-6 overflow-y-scroll"
           style={{
             gridTemplateColumns:
               "max-content minmax(auto, max-content) max-content",

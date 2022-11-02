@@ -1,10 +1,8 @@
 import {gql} from "@apollo/client";
 import {NavMenuFragment} from "../components/Site/SiteHeader";
 import SiteLayout from "../components/Site/SiteLayout";
-import {getApolloClient} from "@faustwp/core/dist/mjs/client";
+import {addApolloState, getApolloClient} from "@faustwp/core/dist/mjs/client";
 import {FaSlack, FaGithub, FaTwitter, FaYoutube} from "react-icons/fa";
-
-const client = getApolloClient()
 
 const GET_NAV_MENU = gql`
 query GetNavMenu {
@@ -75,11 +73,11 @@ function Community() {
 export default Community;
 
 export async function getStaticProps() {
-  const {data} = await client.query({query: GET_NAV_MENU})
-  return {
+  const client = getApolloClient()
+  await client.query({query: GET_NAV_MENU})
+  return addApolloState( client, {
     props: {
-      data: data ?? null,
-      revalidate: 300
+      revalidate: 30
     }
-  }
+  })
 }
