@@ -36,7 +36,3 @@ next-env.d.ts
 ## code editors
 .idea
 .vscode
-
-# Faust
-possibleTypes.json
-
