@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { DocSearchModal } from "@docsearch/react";
 import clsx from 'clsx'
 import Link from 'next/link'
-import {useActionKey} from "../../hooks/useActionKey";
+import useActionKey from "../../hooks/useActionKey";
 
 const INDEX_NAME = 'wpgraphql';
 const API_KEY = '0c11d662dad18e8a18d20c969b25c65f';

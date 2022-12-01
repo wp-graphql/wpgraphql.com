@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 const ACTION_KEY_DEFAULT = ['Ctrl ', 'Control']
 const ACTION_KEY_APPLE = ['⌘', 'Command']
 
-export function useActionKey() {
+export default function useActionKey() {
   let [actionKey, setActionKey] = useState()
 
   useEffect(() => {
