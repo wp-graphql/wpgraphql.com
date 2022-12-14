@@ -8,9 +8,9 @@ This repository contains the Next.js code to source data from WordPress and crea
 
 ## Contributing
 
-Then run `yarn` to install dependencies.
+Then run `npm install` to install dependencies.
 
-Then run `yarn develop` to run the site in development.
+Then run `npm run start` to run the site in development.
 
 ## Required Environment Variables
 
