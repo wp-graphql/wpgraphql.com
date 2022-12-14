@@ -3,8 +3,11 @@ import {HttpLink} from "@apollo/client";
 import {sha256} from 'crypto-hash';
 import {getGraphqlEndpoint} from "@faustwp/core/dist/mjs/lib/getGraphqlEndpoint";
 
-const httpLink = new HttpLink({ uri: getGraphqlEndpoint(), useGETForQueries:true });
-const persistedQueriesLink = createPersistedQueryLink({ sha256 });
+const httpLink = new HttpLink({ uri: getGraphqlEndpoint() });
+const persistedQueriesLink = createPersistedQueryLink({ 
+  sha256,
+  useGETForHashedQueries: true 
+});
 
 class PersistedQueriesPlugin {
   apply({ addFilter }) {
