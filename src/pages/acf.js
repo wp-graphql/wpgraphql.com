@@ -71,7 +71,7 @@ function HowItWorks() {
           />
         </div>
         <div className="lg:w-1/2 lg:text-left">
-          <h3 className="text-2xl mt-0 lg:mt-[2.4em]">Create your ACF Fields</h3>
+          <h3 id="create-your-acf-fields" className="text-2xl mt-0 lg:mt-[2.4em]">Create your ACF Fields</h3>
           <p className="text-xl">Create your ACF Field Groups and Fields, the same way you normally
             would, using the ACF User Interface, registering your fields with PHP or using ACF
             local-json. Each field group and the fields within it can be configured to &quot;Show in
@@ -80,7 +80,7 @@ function HowItWorks() {
       </div>
       <div className="flex flex-wrap border-t-1 lg:border-t-0 w-full pt-10 lg:pt-0 border-t">
         <div className="lg:w-1/2 lg:text-right">
-          <h3 className="text-2xl mt-0 lg:mt-[2.4em]">Query with GraphQL</h3>
+          <h3 id="query-with-graphql" className="text-2xl mt-0 lg:mt-[2.4em]">Query with GraphQL</h3>
           <p className="text-xl">Once your field groups and fields have been configured to &quot;Show in
             GraphQL&quot;, they will be available in the GraphQL Schema and ready for querying!</p>
         </div>
@@ -134,7 +134,7 @@ function SupportedFields() {
 
   return (
     <div className="mb-70 lg:px-20 text-center">
-      <h2 className="text-3xl pb-5 uppercase">Supported Fields</h2>
+      <h2 id="supported-fields" className="text-3xl pb-5 uppercase">Supported Fields</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {fields.map((field, i) => (
           <div key={i}>{field}</div>
@@ -167,7 +167,7 @@ function Why() {
 
   return (
     <div className="mb-70 px-0 lg:px-20 text-center">
-      <h2 className="text-3xl pb-5 uppercase">Why WPGraphQL for ACF?</h2>
+      <h2 id="why-wpgraphql-for-acf" className="text-3xl pb-5 uppercase">Why WPGraphQL for ACF?</h2>
       <div className="grid grid-cols-1 md:grid-cols-3">
         {features.map((feature, i) => (
           <div key={i}
@@ -213,7 +213,7 @@ function WorksWithJS() {
 
   return (
     <div className="mb-70 lg:px-20 text-center">
-      <h2 className="text-3xl pb-5 uppercase">
+      <h2 id="frameworks" className="text-3xl pb-5 uppercase">
         Works with Popular JavaScript Frameworks
       </h2>
       <div className="grid grid-cols-3 md:grid-cols-3">
@@ -230,7 +230,7 @@ function WorksWithJS() {
 function Pricing() {
   return (
     <div className="mb-70 lg:px-20 text-center">
-      <h2 className="text-3xl pb-5 uppercase">
+      <h2 id="pricing-support" className="text-3xl pb-5 uppercase">
         Pricing & Support
       </h2>
       <p className="text-xl">
@@ -286,7 +286,7 @@ function Faq() {
 
   return (
     <div className="mb-70 lg:px-10 text-center">
-      <h2 className="text-3xl pb-5 uppercase">
+      <h2 id="faq" className="text-3xl pb-5 uppercase">
         FAQ
       </h2>
       <div className="mx-auto w-full md:max-w-[70%] rounded-2xl ">
