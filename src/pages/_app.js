@@ -15,7 +15,7 @@ export default function MyApp({ Component, pageProps }) {
       <FaustProvider pageProps={pageProps}>
         <Script
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=UA-111783024-1"
+          src="https://www.googletagmanager.com/gtag/js?id=G-K34TZSKN01"
         />
         <Script
           id="google-analytics"
@@ -25,7 +25,7 @@ export default function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'UA-111783024-1', {
+            gtag('config', 'G-K34TZSKN01', {
               page_path: window.location.pathname,
             });
           `,
