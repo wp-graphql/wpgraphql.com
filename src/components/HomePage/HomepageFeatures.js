@@ -15,7 +15,7 @@ export default function HomepageFeatures() {
             <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500 dark:text-gray-100">
               With GraphQL, the client makes declarative queries, asking for the
               exact data needed, and exactly what was asked for is given in
-              response, nothing more. This allows the client have control over
+              response, nothing more. This allows the client to have control over
               their application, and allows the GraphQL server to perform more
               efficiently by only fetching the resources requested.
             </p>
