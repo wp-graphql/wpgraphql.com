@@ -4,6 +4,20 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 })
 
+const getHeaders = async () => {
+    return [
+        {
+            source: "/:path*",
+            headers: [
+                {
+                    key: "Content-Security-Policy",
+                    value: "frame-ancestors 'self' *.wpgraphql.com",
+                },
+            ],
+        },
+    ];
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = withFaust(
   withBundleAnalyzer({
@@ -20,6 +34,7 @@ const nextConfig = withFaust(
       ],
       disableStaticImages: true,
     },
+    headers: await getHeaders(),
     async redirects() {
       return require("./redirects.json")
     },
