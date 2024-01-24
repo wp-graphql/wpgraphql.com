@@ -34,7 +34,7 @@ const nextConfig = withFaust(
       ],
       disableStaticImages: true,
     },
-    headers: await getHeaders(),
+    headers: async () => await getHeaders(),
     async redirects() {
       return require("./redirects.json")
     },
