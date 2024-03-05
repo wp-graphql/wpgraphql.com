@@ -19,7 +19,7 @@ const templates = {
   "single-filters": SingleDeveloperReference,
   singular,
   "front-page": FrontPage,
-  "home": FrontPage,
+  "home": ArchivePost,
   index,
 }
 
