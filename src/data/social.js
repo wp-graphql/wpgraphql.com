@@ -1,5 +1,5 @@
 import {
-  SiSlack,
+  SiDiscord,
   SiWordpress,
   SiYoutube,
   SiGithub,
@@ -34,8 +34,8 @@ export const socialFooterLinks = [
     icon: SiYoutube,
   },
   {
-    name: "Slack",
-    href: "https://join.slack.com/t/wp-graphql/shared_invite/zt-3vloo60z-PpJV2PFIwEathWDOxCTTLA",
-    icon: SiSlack,
+    name: "Discord",
+    href: "https://discord.gg/AGVBqqyaUY",
+    icon: SiDiscord,
   },
 ]
