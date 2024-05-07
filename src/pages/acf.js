@@ -161,7 +161,7 @@ function Why() {
     },
     {
       title: "Support",
-      content: "Receive the same great community support as the core WPGraphQL plugin through channels such as Github and Slack.",
+      content: "Receive the same great community support as the core WPGraphQL plugin through channels such as Github and Discord.",
     }
   ]
 
@@ -241,8 +241,8 @@ function Pricing() {
         handled through <a href="https://github.com/wp-graphql/wp-graphql-acf/issues" rel="noreferrer"
                            target="_blank">issues</a>. For general questions about the plugin,
         visit the <a
-        href="https://join.slack.com/t/wp-graphql/shared_invite/zt-3vloo60z-PpJV2PFIwEathWDOxCTTLA">WPGraphQL
-        Slack</a>.
+        href="https://discord.gg/AGVBqqyaUY">WPGraphQL
+        Discord</a>.
       </p>
     </div>
   )
@@ -263,7 +263,7 @@ function Faq() {
       question: "Where can I get support?",
       answer: `
       Support and feature requests are handled through Github issues. For
-          general questions about the plugin, visit the WPGraphQL Slack.
+          general questions about the plugin, visit the WPGraphQL Discord.
       `
     },
     {
