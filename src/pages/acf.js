@@ -241,7 +241,7 @@ function Pricing() {
         handled through <a href="https://github.com/wp-graphql/wp-graphql-acf/issues" rel="noreferrer"
                            target="_blank">issues</a>. For general questions about the plugin,
         visit the <a
-        href="https://discord.gg/AGVBqqyaUY">WPGraphQL
+        href="/discord">WPGraphQL
         Discord</a>.
       </p>
     </div>

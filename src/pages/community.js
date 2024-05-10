@@ -23,7 +23,7 @@ function Community() {
     {
       name: "Discord",
       description: "The WPGraphQL Discord is a great place to communicate in real-time. Ask questions, discuss features, get to know other folks using WPGraphQL.",
-      link: "https://discord.gg/AGVBqqyaUY",
+      link: "/discord",
       icon: FaDiscord,
     },
     {

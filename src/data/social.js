@@ -35,7 +35,7 @@ export const socialFooterLinks = [
   },
   {
     name: "Discord",
-    href: "https://discord.gg/AGVBqqyaUY",
+    href: "/discord",
     icon: SiDiscord,
   },
 ]

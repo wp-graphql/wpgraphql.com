@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "source": "/discord",
+    "destination": "https://discord.gg/AGVBqqyaUY",
+    "permanent": true
+  }
+]
