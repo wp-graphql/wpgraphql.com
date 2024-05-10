@@ -5,6 +5,7 @@ import SiteLayout from "../components/Site/SiteLayout";
 import Image from 'next/image'
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 const GET_NAV_MENU = gql`
 query GetNavMenu {
@@ -240,9 +241,9 @@ function Pricing() {
         feature requests are
         handled through <a href="https://github.com/wp-graphql/wp-graphql-acf/issues" rel="noreferrer"
                            target="_blank">issues</a>. For general questions about the plugin,
-        visit the <a
-        href="https://discord.gg/AGVBqqyaUY">WPGraphQL
-        Discord</a>.
+        visit the <Link
+        href="/discord">WPGraphQL
+        Discord</Link>.
       </p>
     </div>
   )
