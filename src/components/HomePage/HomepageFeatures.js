@@ -6,13 +6,13 @@ export default function HomepageFeatures() {
       <div className="relative bg-white dark:bg-slate-800 pt-16 overflow-hidden sm:pt-24 lg:pt-32">
         <div className="mx-auto max-w-md px-4 text-center sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
           <div>
-            <h2 className="text-base font-semibold tracking-wider text-indigo-600 dark:text-indigo-200 uppercase">
+            <h2 className="subtitle">
               Efficient Data Fetching
             </h2>
-            <p className="mt-2 text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl">
+            <p className="mt-2 text-3xl font-extrabold text-navy dark:text-white tracking-tight sm:text-4xl">
               Query what you need. Get exactly that.
             </p>
-            <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500 dark:text-gray-100">
+            <p className="mt-5 max-w-prose mx-auto text-xl text-navy dark:text-gray-100">
               With GraphQL, the client makes declarative queries, asking for the
               exact data needed, and exactly what was asked for is given in
               response, nothing more. This allows the client to have control over
@@ -34,13 +34,13 @@ export default function HomepageFeatures() {
       <div className="relative bg-slate-200 dark:bg-slate-900 pt-16 overflow-hidden sm:pt-24 lg:pt-32">
         <div className="mx-auto max-w-md px-4 text-center sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
           <div>
-            <h2 className="text-base font-semibold tracking-wider text-indigo-600 dark:text-indigo-200 uppercase">
+            <h2 className="subtitle">
               Nested Resources
             </h2>
-            <p className="mt-2 text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl">
+            <p className="mt-2 text-3xl font-extrabold text-navy dark:text-white tracking-tight sm:text-4xl">
               Fetch many resources in a single request
             </p>
-            <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500 dark:text-gray-100">
+            <p className="mt-5 max-w-prose mx-auto text-xl text-navy dark:text-gray-100">
               GraphQL queries allow access to multiple root resources, and also
               smoothly follow references between connected resources. While a
               typical REST API would require round-trip requests to many

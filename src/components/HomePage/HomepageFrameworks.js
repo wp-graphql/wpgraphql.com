@@ -6,10 +6,10 @@ export default function HomepageFrameworks() {
     <div className="bg-slate-200 dark:bg-slate-600 pt-12 sm:pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+          <h2 className="text-3xl font-extrabold text-navy dark:text-white sm:text-4xl">
             Build rich JavaScript applications <br /> with WordPress and GraphQL
           </h2>
-          <p className="mt-3 text-xl text-gray-500 dark:text-gray-200 sm:mt-4">
+          <p className="mt-3 text-xl text-navy dark:text-gray-200 sm:mt-4">
             WPGraphQL allows you to separate your CMS from your presentation
             layer. Content creators can use the CMS they know, while developers
             can use the frameworks and tools they love.

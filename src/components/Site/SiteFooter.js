@@ -22,7 +22,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-8 md:mt-0 md:order-1 prose dark:prose-invert">
-          <p className="text-center text-base text-gray-600 dark:text-gray-300">
+          <p className="text-center text-base text-navy dark:text-gray-300">
             &copy; {year} WPGraphQL. All rights reserved. | Development
             sponsored by{" "}
             <a
