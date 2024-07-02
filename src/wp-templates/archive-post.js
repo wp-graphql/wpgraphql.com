@@ -7,7 +7,7 @@ export default function ArchivePost({ data }) {
 
   return (
     <SiteLayout>
-      <main className="content px-6 max-w-lg mx-auto lg:max-w-5xl">
+      <main className="content px-6 max-w-lg mx-auto md:max-w-5xl">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-navy dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Blog

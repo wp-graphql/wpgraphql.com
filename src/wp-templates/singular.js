@@ -29,20 +29,23 @@ export default function Singlar({ data }) {
               <header>
                 <dl>
                   <dt className="sr-only">Date</dt>
-                  <dd className="absolute top-0 inset-x-0 text-slate-700 text-center dark:text-slate-400">
+                  <dd className="absolute top-0 inset-x-0 text-navy text-center dark:text-slate-400">
                     <time dateTime={post?.date}>{date}</time>
                   </dd>
                 </dl>
                 <div className="space-y-6">
-                  <h1 className="col-span-full break-words text-3xl sm:text-4xl text-center xl:mb-5 font-extrabold tracking-tight text-slate-900 dark:text-slate-200">
+                  <h1 className="col-span-full break-words text-3xl sm:text-4xl text-center xl:mb-5 font-extrabold tracking-tight text-navy dark:text-slate-200">
                     {post.title}
                   </h1>
                   <div className="flex flex-wrap justify-center">
                     {post?.categories?.nodes?.map((category, i) => (
                       <Link key={i} href={category.uri}>
-                        <a className="mr-3 text-sm font-medium uppercase text-sky-500 dark:text-sky-300 hover:text-primary-600 dark:hover:text-sky-400">
+                        <a className="subtitle">
                           {category.name}
                         </a>
+                        {/* <a className="mr-3 text-sm font-medium uppercase text-sky-500 dark:text-sky-300 hover:text-primary-600 dark:hover:text-sky-400">
+                          {category.name}
+                        </a> */}
                       </Link>
                     ))}
                   </div>
@@ -50,9 +53,9 @@ export default function Singlar({ data }) {
 
                 <div className="flex justify-center my-8">
                   <dl>
-                    <div className="sm:flex sm:flex-wrap justify-center xl:block">
+                    <div className="justify-center">
                       <dt className="sr-only">Author</dt>
-                      <dd className="flex justify-center font-medium mt-6 sm:mx-3 xl:mx-0">
+                      <dd className="flex justify-center font-medium mt-6 mx-3">
                         <Image
                           src={post?.author?.node?.avatar?.url}
                           alt={post?.author?.node?.name}

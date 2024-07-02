@@ -28,7 +28,7 @@ html {
 }
 
 .subtitle {
-  @apply text-base font-semibold tracking-wider text-navy dark:text-purple-400 uppercase;
+  @apply text-base font-semibold tracking-wider text-purple-600 dark:text-purple-400 uppercase;
 }
 
 /* Apply margin left to all adjacent "buttons", excluding the first button */
