@@ -3,7 +3,7 @@ import Image from "next/image"
 /* This example requires Tailwind CSS v2.0+ */
 export default function HomepageFrameworks() {
   return (
-    <div className="bg-slate-200 dark:bg-slate-600 pt-12 sm:pt-16">
+    <div className="bg-blue-100 dark:bg-blue pt-12 sm:pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-navy dark:text-white sm:text-4xl">
@@ -16,9 +16,9 @@ export default function HomepageFrameworks() {
           </p>
         </div>
       </div>
-      <div className="mt-10 pb-12 bg-white dark:bg-slate-800 sm:pb-16">
+      <div className="mt-10 pb-12 bg-white dark:bg-navy sm:pb-16">
         <div className="relative">
-          <div className="absolute inset-0 h-1/2 bg-slate-200 dark:bg-slate-600" />
+          <div className="absolute inset-0 h-1/2 bg-blue-100 dark:bg-blue" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <dl className="rounded-lg bg-white dark:bg-slate-900 shadow-lg sm:grid sm:grid-cols-4">

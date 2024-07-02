@@ -51,16 +51,18 @@ export default function DeveloperReference() {
         </header>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {references.map((reference, i) => (
-            <div key={i} className="box-shadow bg-slate-200 dark:bg-slate-800 rounded-lg drop-shadow-lg p-5 pb-7">
-              { reference?.icon && <div className="flex h-12 w-12 items-center justify-center rounded-md bg-purple text-white"><reference.icon className="h-6 w-6" aria-hidden="true" /></div> }
+            <div key={i} className="box-shadow bg-slate-200 dark:bg-slate-900 rounded-lg drop-shadow-lg p-5 pb-7">
+              { reference?.icon && <div className="flex h-12 w-12 items-center justify-center rounded-md bg-gradient-build text-white"><reference.icon className="h-6 w-6" aria-hidden="true" /></div> }
               <h3 className="">{reference.name}</h3>
               <p>{reference.description}</p>
-              <a
-                className="bg-slate-500 hover:bg-slate-400 text-white dark:text-white font-bold py-2 px-4 rounded inline-flex items-center border-b-0"
-                href={reference.link}
-                target="_blank"
-                rel="noreferrer"
-              >Visit {reference.name}</a>
+              <div className="not-prose">
+                <a
+                  className="btn-primary-sm"
+                  href={reference.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >Visit {reference.name}</a>
+              </div>
             </div>
           ))}
         </div>
