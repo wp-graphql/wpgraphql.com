@@ -40,7 +40,7 @@ export default function Singlar({ data }) {
                   <div className="flex flex-wrap justify-center">
                     {post?.categories?.nodes?.map((category, i) => (
                       <Link key={i} href={category.uri}>
-                        <a className="subtitle">
+                        <a className="text-base font-semibold tracking-wider text-purple-600 dark:text-purple-400 px-3">
                           {category.name}
                         </a>
                         {/* <a className="mr-3 text-sm font-medium uppercase text-sky-500 dark:text-sky-300 hover:text-primary-600 dark:hover:text-sky-400">

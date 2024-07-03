@@ -203,7 +203,7 @@ export default function ThemeToggle({ panelClassName = "mt-4" }) {
                 className={clsx(
                   "py-1 px-2 flex items-center cursor-pointer",
                   selected && "text-sky-500",
-                  active && "bg-slate-50 dark:bg-slate-600/30"
+                  active && "bg-slate-50 dark:bg-slate-900"
                 )}
               >
                 <Icon selected={selected} className="w-6 h-6 mr-2" />
