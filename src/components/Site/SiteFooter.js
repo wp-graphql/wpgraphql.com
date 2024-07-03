@@ -3,7 +3,7 @@ import { socialFooterLinks } from "data/social"
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-200/5 pt-10 pb-28">
+    <footer className="border-t border-slate-200 dark:border-slate-200/5 py-10">
       <div className="max-w-7xl mx-auto px-10 flex flex-col gap-6 justify-between md:flex-row text-slate-500">
         <div className="flex justify-center space-x-6 md:order-2">
           {socialFooterLinks.map((item) => (

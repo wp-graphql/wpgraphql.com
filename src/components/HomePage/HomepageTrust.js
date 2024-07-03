@@ -3,7 +3,7 @@ import Image from "next/image"
 /* This example requires Tailwind CSS v2.0+ */
 export default function HomePageTrust() {
   return (
-    <div className="bg-slate-100 dark:bg-slate-800">
+    <div className="bg-purple-200 dark:bg-purple-800">
       <div className="max-w-8xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <h2 className="text-center text-3xl tracking-tight font-extrabold text-navy dark:text-white sm:text-4xl">
           {`Who's Using WPGraphQL?`}

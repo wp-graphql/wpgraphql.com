@@ -3,13 +3,13 @@ import Image from "next/image"
 export default function HomepageFeatures() {
   return (
     <>
-      <div className="relative bg-white dark:bg-slate-800 pt-16 overflow-hidden sm:pt-24 lg:pt-32">
+      <div className="relative bg-white dark:bg-navy pt-16 overflow-hidden sm:pt-24 lg:pt-32">
         <div className="mx-auto max-w-md px-4 text-center sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
           <div>
-            <h2 className="subtitle">
+            <h2 className="subtitle font-sans">
               Efficient Data Fetching
             </h2>
-            <p className="mt-2 text-3xl font-extrabold text-navy dark:text-white tracking-tight sm:text-4xl">
+            <p className="mt-2 text-3xl font-extrabold text-navy dark:text-white tracking-tight sm:text-4xl font-lora">
               Query what you need. Get exactly that.
             </p>
             <p className="mt-5 max-w-prose mx-auto text-xl text-navy dark:text-gray-100">
@@ -31,13 +31,13 @@ export default function HomepageFeatures() {
           </div>
         </div>
       </div>
-      <div className="relative bg-slate-200 dark:bg-slate-900 pt-16 overflow-hidden sm:pt-24 lg:pt-32">
+      <div className="relative bg-blue-100 dark:bg-slate-900 pt-16 overflow-hidden sm:pt-24 lg:pt-32">
         <div className="mx-auto max-w-md px-4 text-center sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
           <div>
-            <h2 className="subtitle">
+            <h2 className="subtitle font-sans">
               Nested Resources
             </h2>
-            <p className="mt-2 text-3xl font-extrabold text-navy dark:text-white tracking-tight sm:text-4xl">
+            <p className="mt-2 text-3xl font-extrabold text-navy dark:text-white tracking-tight sm:text-4xl font-lora">
               Fetch many resources in a single request
             </p>
             <p className="mt-5 max-w-prose mx-auto text-xl text-navy dark:text-gray-100">

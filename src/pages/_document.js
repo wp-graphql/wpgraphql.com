@@ -81,8 +81,8 @@ export default class Document extends NextDocument {
           />
         </Head>
         <body
-          className={clsx("antialiased text-slate-500 dark:text-slate-400", {
-            "bg-white dark:bg-slate-900":
+          className={clsx("antialiased text-slate-500 dark:text-slate-400 font-inter", {
+            "bg-white dark:bg-navy":
               !this.props.dangerousAsPath.startsWith("/examples/"),
           })}
         >

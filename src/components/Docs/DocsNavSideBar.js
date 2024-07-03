@@ -9,7 +9,7 @@ export default function DocsSidebar({ children, className }) {
     <Popover>
       {({ open }) => (
         <>
-          <Popover.Button className="z-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500 bg-slate-300 dark:bg-slate-800 fixed right-[4rem] bottom-[4rem]">
+          <Popover.Button className="z-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500 bg-navy dark:bg-slate-200 fixed right-[4rem] bottom-[4rem]">
             {!open ? (
               <>
                 <span className="sr-only">Open Docs Nav menu</span>

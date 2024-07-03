@@ -3,9 +3,9 @@ import Link from "next/link"
 
 export default function HomepageHero() {
   return (
-    <div className="bg-white dark:bg-slate-800">
+    <div className="bg-white dark:bg-navy">
       <div className="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-200 dark:bg-slate-700 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+        <div className="dark:bg-slate-900 bg-slate-100 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
           <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
             <div className="lg:self-center">
               <h2 className="text-3xl font-extrabold text-navy dark:text-white sm:text-4xl">
