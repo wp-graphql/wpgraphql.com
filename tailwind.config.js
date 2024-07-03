@@ -84,10 +84,11 @@ module.exports = {
         'gradient-spark-light': `radial-gradient(circle at -100% -200%, ${theme('colors.gradients.sparkLight[0]')}, ${theme('colors.gradients.sparkLight[1]')})`,
       }),
       fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        lora: ["Lora", ...defaultTheme.fontFamily.serif],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
         mono: ["Fira Code VF", ...defaultTheme.fontFamily.mono],
         source: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
-        "ubuntu-mono": ["Ubuntu Mono", ...defaultTheme.fontFamily.mono],
+        "ubuntu-mono": ["Ubuntu Mono", ...defaultTheme.fontFamily.mono]
       },
       spacing: {
         18: "4.5rem",
@@ -106,8 +107,11 @@ module.exports = {
               marginTop: "3em",
               marginBottom: "3em",
             },
+            "h1, h2, h3, h4, h5": {
+              fontFamily: theme('fontFamily.lora').join(', '),
+            },
             "h1, h2, h3": {
-              letterSpacing: "-0.025em",
+              letterSpacing: "-0.025em"
             },
             h2: {
               marginBottom: `${16 / 24}em`,

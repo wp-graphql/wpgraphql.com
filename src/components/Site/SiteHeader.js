@@ -174,7 +174,7 @@ export default function SiteHeader() {
                                         </div>
                                       )}
                                       <div className="ml-4">
-                                        <p className="text-base font-medium text-gray-900 dark:text-gray-200">
+                                        <p className="text-base font-medium text-gray-900 dark:text-gray-200 font-lora">
                                           {menuItem.label}
                                         </p>
                                         <p className="mt-1 text-sm text-gray-700 dark:text-slate-100">

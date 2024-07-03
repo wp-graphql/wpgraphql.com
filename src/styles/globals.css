@@ -9,6 +9,25 @@ html {
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/lora/Lora-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/InterVariable.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2 {
+  font-family: 'Lora', serif;
+}
+
+
 /* Regular buttons */
 .btn-primary {
   @apply mt-8 bg-blue text-white border border-transparent rounded-full shadow px-5 py-3 inline-flex items-center text-base font-medium hover:bg-blue-500 hover:shadow-lg transition-all duration-300;
