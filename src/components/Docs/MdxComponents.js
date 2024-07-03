@@ -17,7 +17,7 @@ function LinkedHeading({ id, as, children, className }) {
         as={as}
         id={id}
         className={clsx("group flex whitespace-pre-wrap pr-4", className, {
-          "mb-2 text-xxl leading-6 text-slate-600 font-semibold tracking-normal dark:text-slate-200":
+          "mb-2 text-xxl leading-6 text-navy font-semibold tracking-normal dark:text-slate-200":
             as === "h2",
         })}
       >

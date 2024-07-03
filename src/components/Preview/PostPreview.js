@@ -1,21 +1,11 @@
 import { gql } from "@apollo/client"
 import Link from "next/link"
 
-import PostPreviewCategoryLink, {
-  PostPreviewCategoryLinkFragment,
-} from "components/Preview/PostPreviewCategoryLink"
-
 export const PostPreviewFragment = gql`
   fragment PostPreview on Post {
     id
     title
     uri
-    categories {
-      nodes {
-        ...PostPreviewCategoryLink
-      }
-    }
-    excerpt: content
     date
     author {
       node {
@@ -28,59 +18,47 @@ export const PostPreviewFragment = gql`
       }
     }
   }
-  ${PostPreviewCategoryLinkFragment}
 `
 
-export default function PostPreview({ post }) {
+export default function PostPreview({ post, isLatest }) {
   if (!post) {
-    return null
+    return null;
   }
 
-  const paragraphs = post?.excerpt ? post.excerpt.split("</p>") : null
-  const excerpt = paragraphs ? paragraphs[0] + "</p>" : null
   const date = post?.date
     ? new Date(post.date).toLocaleDateString("en-us", {
         year: "numeric",
         month: "long",
         day: "numeric",
       })
-    : null
+    : null;
 
   return (
-    <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-      <dl>
-        <dt className="sr-only">Published on</dt>
-        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-          <time dateTime={post.date}>{date}</time>
-        </dd>
-      </dl>
-      <div className="space-y-5 xl:col-span-3">
-        <div className="space-y-6">
-          <div>
-            <h2 className="text-2xl font-bold leading-8 tracking-tight">
-              <Link href={post.uri}>
-                <a className="text-gray-900 dark:text-gray-100">{post.title}</a>
-              </Link>
-            </h2>
-            <div className="flex flex-wrap">
-              {post?.categories?.nodes?.map((category, i) => (
-                <PostPreviewCategoryLink key={i} category={category} />
-              ))}
-            </div>
-          </div>
-          <div
-            className="prose dark:prose-dark max-w-none "
-            dangerouslySetInnerHTML={{ __html: excerpt }}
-          />
-        </div>
-        <div className="text-base font-medium leading-6">
-          <Link href={post.uri}>
-            <a className="group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-5 py-2 focus:outline-none focus:ring-2 bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900 focus:ring-slate-500 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500">
-              Read more →
-            </a>
-          </Link>
+    <article
+      className={`bg-gradient-elevate-light dark:bg-gradient-elevate p-6 rounded-lg flex flex-col justify-between w-full ${
+        isLatest ? "xl:col-span-2 xl:row-span-2" : ""
+      }`}
+    >
+      <div className="flex items-center mb-4">
+        <img
+          className="w-10 h-10 rounded-full mr-4"
+          src={post.author.node.avatar.url}
+          alt={post.author.node.name}
+        />
+        <div className="text-sm">
+          <p className="text-navy dark:text-gray-100 leading-none">{post.author.node.name}</p>
+          <time className="text-gray-500 dark:text-gray-300" dateTime={post.date}>
+            {date}
+          </time>
         </div>
       </div>
+      <div>
+        <h2 className="text-2xl font-bold leading-8 tracking-tight mb-2">
+          <Link href={post.uri}>
+            <a className="text-navy dark:text-gray-100">{post.title}</a>
+          </Link>
+        </h2>
+      </div>
     </article>
-  )
+  );
 }

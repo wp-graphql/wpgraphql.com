@@ -52,7 +52,7 @@ export default function DeveloperReference() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {references.map((reference, i) => (
             <div key={i} className="box-shadow bg-slate-200 dark:bg-slate-800 rounded-lg drop-shadow-lg p-5 pb-7">
-              { reference?.icon && <div className="flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white"><reference.icon className="h-6 w-6" aria-hidden="true" /></div> }
+              { reference?.icon && <div className="flex h-12 w-12 items-center justify-center rounded-md bg-purple text-white"><reference.icon className="h-6 w-6" aria-hidden="true" /></div> }
               <h3 className="">{reference.name}</h3>
               <p>{reference.description}</p>
               <a

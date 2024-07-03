@@ -8,15 +8,15 @@ export default function HomepageHero() {
         <div className="bg-slate-200 dark:bg-slate-700 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
           <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
             <div className="lg:self-center">
-              <h2 className="text-3xl font-extrabold text-gray-700 dark:text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-navy dark:text-white sm:text-4xl">
                 <span className="block">GraphQL API for WordPress</span>
               </h2>
-              <p className="mt-4 text-lg leading-6 text-gray-600 dark:text-slate-100">
+              <p className="mt-4 text-lg leading-6 text-navy dark:text-slate-100">
                 WPGraphQL is a free, open-source WordPress plugin that provides
                 an extendable GraphQL schema and API for any WordPress site.
               </p>
               <Link href="/docs/introduction">
-                <a className="mt-8 bg-white dark:bg-slate-800 border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-sky-800 dark:text-sky-50 hover:bg-gray-100 dark:hover:bg-slate-900 hover:shadow-lg">
+                <a className="btn-secondary">
                   Get Started
                 </a>
               </Link>
@@ -24,7 +24,7 @@ export default function HomepageHero() {
                 href="https://wordpress.org/plugins/wp-graphql"
                 rel="noreferrer"
                 target="_blank"
-                className="mt-8 ml-8 bg-orange-500  border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-white hover:bg-orange-600 hover:shadow-lg"
+                className="btn-primary"
               >
                 Download the Plugin
               </a>
