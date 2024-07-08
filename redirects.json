@@ -3,5 +3,10 @@
     "source": "/discord",
     "destination": "https://discord.gg/AGVBqqyaUY",
     "permanent": true
+  },
+  {
+    "source": "/acf",
+    "destination": "https://acf.wpgraphql.com",
+    "permanent": true
   }
 ]
