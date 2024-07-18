@@ -168,10 +168,13 @@ module.exports = {
             a: {
               fontWeight: theme("fontWeight.semibold"),
               textDecoration: "none",
-              borderBottom: `1px solid ${theme("colors.sky.300")}`,
+              color: theme("colors.blue.dark"),
+              borderBottom: `2px solid ${theme("colors.blue.dark")}`,
+              transition: "color .22s cubic-bezier(0.65,0.05,0.36,1), border-color .22s cubic-bezier(0.65,0.05,0.36,1)"
             },
             "a:hover": {
-              borderBottomWidth: "2px",
+              color: theme("colors.blue.DEFAULT"),
+              borderColor: theme("colors.blue.DEFAULT"),
             },
             "a code": {
               color: "inherit",
