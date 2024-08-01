@@ -22,8 +22,8 @@
   "dependencies": {
     "@apollo/client": "^3.7.0",
     "@docsearch/react": "^3.3.0",
-    "@faustwp/cli": "0.1.6",
-    "@faustwp/core": "0.1.5",
+    "@faustwp/cli": "3.0.2",
+    "@faustwp/core": "3.0.3",
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
     "@js-temporal/polyfill": "^0.4.2",
