@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 /* This example requires Tailwind CSS v2.0+ */
 export default function HomepageFrameworks() {

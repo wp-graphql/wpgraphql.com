@@ -2,7 +2,7 @@ import { Popover } from "@headlessui/react"
 import {
   Bars3BottomRightIcon,
   XMarkIcon,
-} from "@heroicons/react/24/outline/esm"
+} from "@heroicons/react/24/outline"
 
 export default function DocsSidebar({ children, className }) {
   return (

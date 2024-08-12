@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client"
 import Link from "next/link"
+import Image from "next/legacy/image";
 
 export const PostPreviewFragment = gql`
   fragment PostPreview on Post {
@@ -40,7 +41,7 @@ export default function PostPreview({ post, isLatest }) {
       }`}
     >
       <div className="flex items-center mb-4">
-        <img
+        <Image
           className="w-10 h-10 rounded-full mr-4"
           src={post.author.node.avatar.url}
           alt={post.author.node.name}
@@ -54,8 +55,8 @@ export default function PostPreview({ post, isLatest }) {
       </div>
       <div>
         <h2 className="text-2xl font-bold leading-8 tracking-tight mb-2">
-          <Link href={post.uri}>
-            <a className="text-navy dark:text-gray-100">{post.title}</a>
+          <Link href={post.uri} className="text-navy dark:text-gray-100">
+            {post.title}
           </Link>
         </h2>
       </div>

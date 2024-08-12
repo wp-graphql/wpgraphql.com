@@ -22,12 +22,9 @@ function LinkedHeading({ id, as, children, className }) {
         })}
       >
         <span>{children}</span>
-        <Link href={`#${id}`}>
-          <a
-            className="flex items-center ml-4 hover:bg-slate-500 "
+        <Link href={`#${id}`} className="flex items-center ml-4 hover:bg-slate-500 "
             aria-label="Anchor"
-            href={`#${id}`}
-          >
+            >
             &#8203;
             <div className="w-6 h-6 text-slate-500 border-1 ring-slate-900/10 rounded-md shadow-lg flex items-center justify-center hover:ring-slate-900/10 hover:shadow hover:bg-slate-400 hover:text-color-700 dark:bg-slate-700 dark:text-slate-300 dark:shadow-none dark:ring-0">
               <svg width="12" height="12" fill="none" aria-hidden="true">
@@ -39,7 +36,6 @@ function LinkedHeading({ id, as, children, className }) {
                 />
               </svg>
             </div>
-          </a>
         </Link>
       </Heading>
     )

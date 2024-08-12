@@ -2,7 +2,7 @@ import {addApolloState, getApolloClient} from "@faustwp/core/dist/mjs/client"
 import {NavMenuFragment} from "../components/Site/SiteHeader";
 import {gql} from "@apollo/client";
 import SiteLayout from "../components/Site/SiteLayout";
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/20/solid";
 import Link from "next/link";

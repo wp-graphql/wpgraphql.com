@@ -3,7 +3,7 @@ import PostPreview, {
   PostPreviewFragment,
 } from "components/Preview/PostPreview"
 import SiteLayout, { NavMenuFragment } from "components/Site/SiteLayout"
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 export default function Author({ data }) {
   return (

@@ -22,9 +22,6 @@ const getHeaders = async () => {
 const nextConfig = withFaust(
   withBundleAnalyzer({
     swcMinify: true,
-    experimental: {
-      runtime: "nodejs",
-    },
     pageExtensions: ["ts", "tsx", "js", "jsx"],
     images: {
       domains: [
@@ -34,6 +31,7 @@ const nextConfig = withFaust(
       ],
       disableStaticImages: true,
     },
+    reactStrictMode: false,
     headers: async () => await getHeaders(),
     async redirects() {
       return require("./redirects.json")
