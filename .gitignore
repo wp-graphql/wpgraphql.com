@@ -36,3 +36,7 @@ next-env.d.ts
 ## code editors
 .idea
 .vscode
+
+
+.possibleTypes.json
+globalStylesheet.css
