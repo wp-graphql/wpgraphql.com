@@ -1,42 +1,41 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Node
-node_modules
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# Yarn
-yarn-error.log
-.pnp/
-.pnp.js
+# testing
+/coverage
 
-# Yarn Integrity file
-.yarn-integrity
+# next.js
+/.next/
+/out/
 
-# Logs
-logs
-*.log
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# next js
-.next
-next-env.d.ts
-
-## Build artifacts for sitemaps
-/public/sitemap*.xml
-/public/robots.txt
-
-# app
-
-
-# dotenv environment variables file
-.env
+# env files (can opt-in for committing if needed)
 .env*
-!.env.example
-!.env.local.example
-## code editors
-.idea
-.vscode
 
+# vercel
+.vercel
 
-.possibleTypes.json
-globalStylesheet.css
+# typescript
+*.tsbuildinfo
+next-env.d.ts

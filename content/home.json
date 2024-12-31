@@ -1,0 +1,58 @@
+{
+  "panels": [
+    {
+      "title": "Latest Blog Posts",
+      "type": "blog",
+      "items": [
+        {
+          "title": "Getting Started with WPGraphQL",
+          "date": "2024-03-20"
+        },
+        {
+          "title": "What's New in v1.0",
+          "date": "2024-03-15"
+        },
+        {
+          "title": "Best Practices for WPGraphQL",
+          "date": "2024-03-10"
+        }
+      ]
+    },
+    {
+      "title": "Recent Tweets",
+      "type": "twitter",
+      "items": [
+        {
+          "title": "Exciting new features coming in the next release!",
+          "date": "2024-03-19"
+        },
+        {
+          "title": "Join us for our monthly community call",
+          "date": "2024-03-18"
+        },
+        {
+          "title": "Check out this amazing WPGraphQL implementation",
+          "date": "2024-03-17"
+        }
+      ]
+    },
+    {
+      "title": "Latest Videos",
+      "type": "youtube",
+      "items": [
+        {
+          "title": "WPGraphQL Tutorial: Getting Started",
+          "date": "2024-03-16"
+        },
+        {
+          "title": "Advanced Query Optimization",
+          "date": "2024-03-14"
+        },
+        {
+          "title": "Building a Headless WordPress Site",
+          "date": "2024-03-12"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "sections": [
+    {
+      "title": "Getting Started",
+      "description": "Start your journey with WPGraphQL",
+      "pages": [
+        { "title": "Introduction", "slug": "introduction" },
+        { "title": "Install WPGraphQL", "slug": "install-wpgraphql" },
+        { "title": "Quick Start Guide", "slug": "quick-start-guide" }
+      ]
+    },
+    {
+      "title": "Core Concepts",
+      "description": "Learn the fundamentals of WPGraphQL",
+      "pages": [
+        { "title": "GraphQL Overview", "slug": "graphql-overview" },
+        { "title": "Queries", "slug": "queries" },
+        { "title": "Mutations", "slug": "mutations" },
+        { "title": "Types", "slug": "types" },
+        { "title": "Fields", "slug": "fields" },
+        { "title": "Connections", "slug": "connections" },
+        { "title": "Interfaces", "slug": "interfaces" }
+      ]
+    },
+    {
+      "title": "Using WPGraphQL",
+      "description": "Learn how to use WPGraphQL effectively",
+      "pages": [
+        { "title": "Posts and Pages", "slug": "posts-and-pages" },
+        { "title": "Custom Post Types", "slug": "custom-post-types" },
+        { "title": "Menus", "slug": "menus" },
+        { "title": "Settings", "slug": "settings" },
+        { "title": "Custom Fields", "slug": "custom-fields" },
+        { "title": "Authentication", "slug": "authentication-and-authorization" },
+        { "title": "Debugging", "slug": "debugging" }
+      ]
+    },
+    {
+      "title": "Advanced Topics",
+      "description": "Deep dive into advanced WPGraphQL concepts",
+      "pages": [
+        { "title": "Request Lifecycle", "slug": "request-lifecycle" },
+        { "title": "Security", "slug": "security" },
+        { "title": "Performance", "slug": "performance" },
+        { "title": "Custom Database Tables", "slug": "custom-database-tables" }
+      ]
+    }
+  ]
+}

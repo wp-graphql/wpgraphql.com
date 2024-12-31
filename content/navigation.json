@@ -1,0 +1,28 @@
+{
+  "mainNav": [
+    {
+      "href": "/",
+      "label": "Home"
+    },
+    {
+      "href": "/docs",
+      "label": "Docs"
+    },
+    {
+      "href": "/reference",
+      "label": "Reference"
+    },
+    {
+      "href": "/resources",
+      "label": "Resources"
+    },
+    {
+      "href": "/community",
+      "label": "Community"
+    },
+    {
+      "href": "/blog",
+      "label": "Blog"
+    }
+  ]
+}
