@@ -43,6 +43,11 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --highlighted-line-bg: #f6f8fa;
+    --highlighted-line-border: #0969da;
+    --line-number-color: #6e7681;
+    --code-block-bg: #ffffff;
+    --code-block-color: #24292e;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -69,6 +74,11 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --highlighted-line-bg: #2d2d2d;
+    --highlighted-line-border: #7ee787;
+    --line-number-color: #6e7681;
+    --code-block-bg: #24292e;
+    --code-block-color: #e1e4e8;
   }
 }
 
@@ -211,4 +221,34 @@
   .dark .prose img {
     @apply opacity-90;
   }
+}
+
+/* Update code block styles */
+[data-rehype-pretty-code-figure] pre {
+  background-color: var(--code-block-bg) !important;
+  color: var(--code-block-color) !important;
+  border: 1px solid hsl(var(--border));
+}
+
+.line {
+  display: inline-block;
+  width: 100%;
+}
+
+.line--highlighted {
+  background-color: var(--highlighted-line-bg);
+  border-left: 2px solid var(--highlighted-line-border);
+}
+
+.line--numbered {
+  counter-increment: line;
+}
+
+.line--numbered::before {
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: var(--line-number-color);
 }

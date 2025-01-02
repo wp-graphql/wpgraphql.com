@@ -5,44 +5,151 @@
       "description": "Start your journey with WPGraphQL",
       "pages": [
         { "title": "Introduction", "slug": "introduction" },
-        { "title": "Install WPGraphQL", "slug": "install-wpgraphql" },
-        { "title": "Quick Start Guide", "slug": "quick-start-guide" }
+        { "title": "Getting Started", "slug": "quick-start" },
+        { "title": "Installation Guide *", "slug": "installation" },
+        { "title": "System Requirements *", "slug": "requirements" },
+        { "title": "Configuration Basics *", "slug": "configuration" }
       ]
     },
     {
-      "title": "Core Concepts",
-      "description": "Learn the fundamentals of WPGraphQL",
+      "title": "GraphQL Fundamentals", 
+      "description": "Learn the core concepts of GraphQL",
       "pages": [
-        { "title": "GraphQL Overview", "slug": "graphql-overview" },
-        { "title": "Queries", "slug": "queries" },
-        { "title": "Mutations", "slug": "mutations" },
-        { "title": "Types", "slug": "types" },
-        { "title": "Fields", "slug": "fields" },
-        { "title": "Connections", "slug": "connections" },
-        { "title": "Interfaces", "slug": "interfaces" }
+        { "title": "Intro to GraphQL", "slug": "intro-to-graphql" },
+        { "title": "WPGraphiQL IDE", "slug": "wp-graphiql" },
+        { "title": "GraphQL Query Basics *", "slug": "graphql-queries" },
+        { "title": "GraphQL Schema Basics *", "slug": "graphql-schema" },
+        { "title": "GraphQL vs REST *", "slug": "graphql-vs-rest" }
       ]
     },
     {
-      "title": "Using WPGraphQL",
-      "description": "Learn how to use WPGraphQL effectively",
+      "title": "WordPress Basics",
+      "description": "Essential WordPress concepts",
+      "pages": [
+        { "title": "Intro to WordPress", "slug": "intro-to-wordpress" },
+        { "title": "WPGraphQL vs WP REST API", "slug": "wpgraphql-vs-wp-rest-api" },
+        { "title": "WordPress Data Model *", "slug": "wp-data-model" },
+        { "title": "WordPress Hook System *", "slug": "wp-hooks" }
+      ]
+    },
+    {
+      "title": "Core Features",
+      "description": "Working with WordPress core features",
       "pages": [
         { "title": "Posts and Pages", "slug": "posts-and-pages" },
         { "title": "Custom Post Types", "slug": "custom-post-types" },
+        { "title": "Media", "slug": "media" },
+        { "title": "Categories and Tags", "slug": "categories-and-tags" },
+        { "title": "Custom Taxonomies", "slug": "custom-taxonomies" },
         { "title": "Menus", "slug": "menus" },
+        { "title": "Users", "slug": "users" },
+        { "title": "Comments", "slug": "comments" },
         { "title": "Settings", "slug": "settings" },
-        { "title": "Custom Fields", "slug": "custom-fields" },
-        { "title": "Authentication", "slug": "authentication-and-authorization" },
-        { "title": "Debugging", "slug": "debugging" }
+        { "title": "Plugins", "slug": "plugins" },
+        { "title": "Themes", "slug": "themes" },
+        { "title": "Widgets", "slug": "widgets" }
+      ]
+    },
+    {
+      "title": "Development Guide",
+      "description": "Build with WPGraphQL",
+      "pages": [
+        { "title": "Building your first WPGraphQL Extension", "slug": "build-your-first-wpgraphql-extension" },
+        { "title": "Interacting with WPGraphQL", "slug": "interacting-with-wpgraphql" },
+        { "title": "Best Practices *", "slug": "best-practices" },
+        { "title": "Common Patterns *", "slug": "common-patterns" },
+        { "title": "Error Handling *", "slug": "error-handling" },
+        { "title": "Validation *", "slug": "validation" }
       ]
     },
     {
       "title": "Advanced Topics",
       "description": "Deep dive into advanced WPGraphQL concepts",
       "pages": [
-        { "title": "Request Lifecycle", "slug": "request-lifecycle" },
-        { "title": "Security", "slug": "security" },
+        { "title": "WPGraphQL Concepts", "slug": "wpgraphql-concepts" },
+        { "title": "WordPress as an Application Data Graph", "slug": "wordpress-as-an-application-data-graph" },
+        { "title": "WPGraphQL Request Lifecycle", "slug": "wpgraphql-request-lifecycle" },
+        { "title": "Default Types and Fields", "slug": "default-types-and-fields" },
+        { "title": "Connections", "slug": "connections" },
+        { "title": "Interfaces", "slug": "interfaces" },
+        { "title": "Mutations", "slug": "mutations" },
         { "title": "Performance", "slug": "performance" },
-        { "title": "Custom Database Tables", "slug": "custom-database-tables" }
+        { "title": "Security", "slug": "security" },
+        { "title": "Authentication and Authorization", "slug": "authentication-and-authorization" },
+        { "title": "Hierarchical Data", "slug": "hierarchical-data" },
+        { "title": "Debugging", "slug": "debugging" },
+        { "title": "Using data from Custom Database Tables", "slug": "using-data-from-custom-database-tables" },
+        { "title": "Use WPGraphQL with PHP", "slug": "use-with-php" },
+        { "title": "Customizing WP GraphiQL IDE", "slug": "customizing-wpgraphiql" },
+        { "title": "Caching Strategies *", "slug": "caching" },
+        { "title": "Rate Limiting *", "slug": "rate-limiting" },
+        { "title": "Custom Resolvers *", "slug": "custom-resolvers" },
+        { "title": "Schema Extension Patterns *", "slug": "schema-extensions" }
+      ]
+    },
+    {
+      "title": "Deployment & Production *",
+      "description": "Running WPGraphQL in production",
+      "pages": [
+        { "title": "Production Best Practices *", "slug": "production-best-practices" },
+        { "title": "Monitoring *", "slug": "monitoring" },
+        { "title": "Scaling WPGraphQL *", "slug": "scaling" },
+        { "title": "Security Hardening *", "slug": "security-hardening" }
+      ]
+    },
+    {
+      "title": "Integration Guides *",
+      "description": "Using WPGraphQL with popular frameworks",
+      "pages": [
+        { "title": "Using WPGraphQL with React *", "slug": "react-integration" },
+        { "title": "Using WPGraphQL with Vue *", "slug": "vue-integration" },
+        { "title": "Using WPGraphQL with Next.js *", "slug": "nextjs-integration" },
+        { "title": "Using WPGraphQL with Gatsby *", "slug": "gatsby-integration" },
+        { "title": "Headless WordPress Setup *", "slug": "headless-setup" }
+      ]
+    },
+    {
+      "title": "Security & Performance *",
+      "description": "Optimize and secure your WPGraphQL implementation",
+      "pages": [
+        { "title": "Query Complexity and Depth *", "slug": "query-complexity" },
+        { "title": "Field-level Permissions *", "slug": "field-permissions" },
+        { "title": "Data Loader Pattern *", "slug": "data-loader" },
+        { "title": "Query Batching *", "slug": "query-batching" }
+      ]
+    },
+    {
+      "title": "Troubleshooting *",
+      "description": "Solve common issues and challenges",
+      "pages": [
+        { "title": "Common Issues *", "slug": "common-issues" },
+        { "title": "Known Limitations *", "slug": "limitations" },
+        { "title": "Compatibility Guide *", "slug": "compatibility" },
+        { "title": "Migration Guides *", "slug": "migrations" }
+      ]
+    },
+    {
+      "title": "Tools & Ecosystem *",
+      "description": "Discover tools and resources",
+      "pages": [
+        { "title": "Developer Tools *", "slug": "developer-tools" },
+        { "title": "Testing Tools *", "slug": "testing-tools" },
+        { "title": "Recommended Plugins *", "slug": "recommended-plugins" },
+        { "title": "Code Generation *", "slug": "code-generation" }
+      ]
+    },
+    {
+      "title": "Community",
+      "description": "Join the WPGraphQL community",
+      "pages": [
+        { "title": "Contributing to WPGraphQL", "slug": "contributing" },
+        { "title": "Testing", "slug": "testing" },
+        { "title": "Upgrading", "slug": "upgrading" },
+        { "title": "FAQ", "slug": "faq" },
+        { "title": "Support", "slug": "contributing" },
+        { "title": "Community Showcase *", "slug": "showcase" },
+        { "title": "Plugin Directory *", "slug": "plugins-directory" },
+        { "title": "Contributor Guidelines *", "slug": "contributor-guidelines" }
       ]
     }
   ]

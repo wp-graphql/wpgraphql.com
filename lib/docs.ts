@@ -1,12 +1,14 @@
-import { marked } from 'marked';
-import { gfmHeadingId } from 'marked-gfm-heading-id';
-import { markedHighlight } from 'marked-highlight';
-import matter from 'gray-matter';
-import { getHighlighter } from 'shiki';
 import { estimateReadingTime } from '@/lib/reading-time';
 import docsContent from '@/content/docs.json';
-import { fetchDocsIndex } from './github';
-import { getGitHubHeaders } from './github';
+import fs from 'fs/promises';
+import path from 'path';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeStringify from 'rehype-stringify';
+import { getHighlighter } from 'shiki';
+import matter from 'gray-matter';
 
 export interface DocNavigation {
   prev: { title: string; slug: string } | null;
@@ -35,9 +37,20 @@ let highlighter: any = null;
 async function initHighlighter() {
   if (!highlighter) {
     highlighter = await getHighlighter({
-      themes: ['github-dark'],
-      theme: 'github-dark', 
-      langs: ['typescript', 'javascript', 'jsx', 'tsx', 'json', 'bash', 'php', 'graphql']
+      themes: ['github-light', 'github-dark'],
+      langs: [
+        'typescript', 
+        'javascript', 
+        'jsx', 
+        'tsx', 
+        'json', 
+        'bash', 
+        'php', 
+        'graphql',
+        // Add these additional languages for GraphQL support
+        'prisma',
+        'sql'
+      ]
     });
   }
   return highlighter;
@@ -62,26 +75,6 @@ This section would list key features.
 This section would guide you to the next steps.
 `;
 
-// Configure marked with plugins
-marked.use(gfmHeadingId());
-marked.use(markedHighlight({
-  highlight: async (code, lang) => {
-    const hl = await initHighlighter();
-    try {
-      return hl.codeToHtml(code, { lang: lang || 'text' });
-    } catch (error) {
-      console.warn('Failed to highlight code:', error);
-      return code;
-    }
-  }
-}));
-
-// Configure marked options
-marked.setOptions({
-  headerIds: true,
-  mangle: false,
-  gfm: true
-});
 
 export interface DocPage {
   title: string;
@@ -92,56 +85,61 @@ export interface DocPage {
   frontmatter?: Record<string, any>;
 }
 
+const prettyCodeOptions = {
+  // Configure both light and dark themes
+  theme: { light: 'github-light', dark: 'github-dark' },
+  keepBackground: true,
+  grid: true,
+  onVisitHighlightedLine(node: any) {
+    const existingClasses = Array.isArray(node.properties.className) 
+      ? node.properties.className 
+      : [];
+    node.properties.className = [
+      ...existingClasses,
+      'line',
+      'line--numbered',
+      'line--highlighted'
+    ];
+  },
+  onVisitLine(node: any) {
+    if (!Array.isArray(node.properties.className)) {
+      node.properties.className = [];
+    }
+    node.properties.className.push('line', 'line--numbered');
+  }
+};
+
 export async function getDocContent(slug: string): Promise<DocPage | null> {
   try {
-    const docFiles = await fetchDocsIndex();
-    const doc = docFiles.find(d => d.slug === slug);
+    // Find the doc first
+    const allPages = docsContent.sections.flatMap(section => section.pages);
+    const doc = allPages.find(d => d.slug === slug);
     
     if (!doc) {
       return null;
     }
 
-    let content: string;
+    const filePath = path.join(process.cwd(), 'content/docs', `${slug}.md`);
+    const markdown = await fs.readFile(filePath, 'utf-8');
+    const parsed = matter(markdown);
 
-    try {
-      // Fetch the markdown content from GitHub
-      const response = await fetch(doc.download_url, {
-        headers: getGitHubHeaders(),
-        next: { revalidate: 3600 } // Cache for 1 hour
-      });
-      
-      if (!response.ok) {
-        const error = await response.json().catch(() => ({ message: response.statusText }));
-        throw new Error(`Failed to fetch: ${error.message}`);
-      }
+    const result = await unified()
+      .use(remarkParse)
+      .use(remarkRehype, { allowDangerousHtml: true })
+      .use(rehypePrettyCode, prettyCodeOptions)
+      .use(rehypeStringify, { allowDangerousHtml: true })
+      .process(parsed.content);
 
-      const markdown = await response.text();
-      const parsed = matter(markdown);
-      content = marked.parse(parsed.content);
-      
-      return {
-        title: doc.title,
-        slug: doc.slug,
-        content,
-        frontmatter: doc.frontmatter,
-        readingTime: estimateReadingTime(parsed.content),
-        githubUrl: doc.editUrl
-      };
-    } catch (fetchError) {
-      console.warn(`Using fallback content for ${slug}:`, fetchError);
-      // Use sample content as fallback
-      const content = marked.parse(SAMPLE_CONTENT);
-      return {
-        title: doc.title,
-        slug: doc.slug,
-        content,
-        frontmatter: doc.frontmatter,
-        readingTime: estimateReadingTime(SAMPLE_CONTENT),
-        githubUrl: doc.editUrl
-      };
-    }
+    return {
+      title: doc.title,
+      slug: doc.slug,
+      content: result.toString(),
+      frontmatter: parsed.data,
+      readingTime: estimateReadingTime(parsed.content),
+      githubUrl: ''
+    };
   } catch (error) {
-    console.error(`Critical error in getDocContent for ${slug}:`, error);
+    console.error(`Error in getDocContent:`, error);
     return null;
   }
 }
