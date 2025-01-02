@@ -9,6 +9,9 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeStringify from 'rehype-stringify';
 import { getHighlighter } from 'shiki';
 import matter from 'gray-matter';
+import rehypeSlug from 'rehype-slug';
+import { extractHeadings, type Heading } from './get-headings';
+
 
 export interface DocNavigation {
   prev: { title: string; slug: string } | null;
@@ -83,6 +86,7 @@ export interface DocPage {
   readingTime: number;
   githubUrl: string;
   frontmatter?: Record<string, any>;
+  headings: Heading[];
 }
 
 const prettyCodeOptions = {
@@ -126,17 +130,22 @@ export async function getDocContent(slug: string): Promise<DocPage | null> {
     const result = await unified()
       .use(remarkParse)
       .use(remarkRehype, { allowDangerousHtml: true })
+      .use(rehypeSlug)
       .use(rehypePrettyCode, prettyCodeOptions)
       .use(rehypeStringify, { allowDangerousHtml: true })
       .process(parsed.content);
 
+    const htmlContent = result.toString();
+    const headings = extractHeadings(htmlContent);
+
     return {
       title: doc.title,
       slug: doc.slug,
-      content: result.toString(),
+      content: htmlContent,
       frontmatter: parsed.data,
       readingTime: estimateReadingTime(parsed.content),
-      githubUrl: ''
+      githubUrl: '',
+      headings
     };
   } catch (error) {
     console.error(`Error in getDocContent:`, error);

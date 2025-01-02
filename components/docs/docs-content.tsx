@@ -32,7 +32,7 @@ export function DocsContent({ doc }: { doc: DocContent }) {
         <DocsNav isExpanded={isNavExpanded} onToggleExpand={() => setIsNavExpanded(!isNavExpanded)} />
       </SecondaryNav>
       <div className="flex-1 flex">
-        <ScrollArea className="flex-1">
+        <ScrollArea className="scroll-area flex-1">
           <div className="max-w-4xl mx-auto px-8 py-6">
             <div className="flex items-center justify-between mb-6">
               <h1 className="text-3xl font-bold">
@@ -89,7 +89,7 @@ export function DocsContent({ doc }: { doc: DocContent }) {
             isTocExpanded ? "block" : "hidden"
           )}
         >
-          <TableOfContents contentRef={contentRef} />
+          <TableOfContents contentRef={contentRef} headings={doc.headings} />
         </div>
       </div>
     </div>
