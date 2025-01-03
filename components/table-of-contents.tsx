@@ -16,11 +16,7 @@ export function TableOfContents({ contentRef, headings }: TableOfContentsProps) 
   });
 
   return (
-    <div className="flex h-full bg-muted/50 px-4">
-      <div className="flex flex-col h-full transition-all duration-300 w-64">
-        <div className="flex items-center min-h-[72px] px-4 border-b">
-          <h2 className="semibold">On this page</h2>
-        </div>
+    <div className="flex h-full">
         <div className="space-y-1 py-4">
           {headings.map((heading, index) => {
             const uniqueKey = `${heading.id}-${index}`;
@@ -45,7 +41,6 @@ export function TableOfContents({ contentRef, headings }: TableOfContentsProps) 
             );
           })}
         </div>
-      </div>
     </div>
   );
 }

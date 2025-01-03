@@ -5,6 +5,7 @@ import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { BlogPost } from "@/lib/blog";
+import { useEffect, useRef } from "react";
 
 interface BlogListProps {
   posts: BlogPost[];
@@ -12,6 +13,22 @@ interface BlogListProps {
 }
 
 export function BlogList({ posts, currentSlug }: BlogListProps) {
+  const activePostRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    if (activePostRef.current) {
+      // Scroll the active post into view with some offset from the top
+      activePostRef.current.scrollIntoView({ block: 'start' });
+      
+      // If using a ScrollArea parent, we need to scroll its viewport
+      const scrollViewport = activePostRef.current.closest('[data-radix-scroll-area-viewport]');
+      if (scrollViewport) {
+        const offset = activePostRef.current.offsetTop - 24; // 24px offset from top
+        scrollViewport.scrollTop = offset;
+      }
+    }
+  }, [currentSlug]);
+
   return (
     <ScrollArea className="h-full">
       <div className="flex flex-col divide-y">
@@ -19,6 +36,7 @@ export function BlogList({ posts, currentSlug }: BlogListProps) {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
+            ref={currentSlug === post.slug ? activePostRef : undefined}
             className={cn(
               "flex items-start gap-4 p-4 hover:bg-muted/50 transition-colors relative",
               currentSlug === post.slug && "bg-secondary"
@@ -42,9 +60,7 @@ export function BlogList({ posts, currentSlug }: BlogListProps) {
               <p className={cn(
                 "text-sm line-clamp-2",
                 currentSlug === post.slug ? "text-secondary-foreground/90" : "text-muted-foreground"
-              )}>
-                {post.excerpt}
-              </p>
+              )} dangerouslySetInnerHTML={{__html: post.excerpt}} />
             </div>
           </Link>
         ))}

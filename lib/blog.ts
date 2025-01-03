@@ -41,6 +41,14 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
                     }
                   }
                 }
+                categories {
+                  nodes {
+                    id
+                    databaseId
+                    name
+                    slug
+                  }
+                }
               }
             }
           }
@@ -67,6 +75,9 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       author: {
         name: post.author.node.name,
         avatar: post.author.node.avatar.url
+      },
+      categories: {
+        nodes: post.categories.nodes
       },
       readingTime: estimateReadingTime(post.content.replace(/<[^>]*>/g, '')) // Strip HTML for reading time calculation
     }));

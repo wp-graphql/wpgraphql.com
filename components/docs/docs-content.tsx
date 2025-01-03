@@ -4,12 +4,13 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { SecondaryNav } from "@/components/layout/secondary-nav";
 import { DocsNav } from "@/components/docs/docs-nav";
 import { Clock, Github, ChevronLeft, ChevronRight } from "lucide-react";
-import { TableOfContents } from "@/components/docs/table-of-contents";
+import { TableOfContents } from "@/components/table-of-contents";
 import { Button } from "@/components/ui/button";
 import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { getDocNavigation } from "@/lib/docs";
+import { Footer } from "../footer";
 
 interface DocContent {
   content: string;
@@ -81,15 +82,36 @@ export function DocsContent({ doc }: { doc: DocContent }) {
                 </div>
               </div>
             </div>
+            <Footer />
           </div>
         </ScrollArea>
-        <div
-          className={cn(
-            "border-l w-[300px] overflow-y-auto sticky top-0 h-[calc(100vh-3.5rem)] hidden lg:block",
-            isTocExpanded ? "block" : "hidden"
-          )}
-        >
+        <div className={cn(
+        "fixed inset-y-0 right-0 lg:static border-l bg-muted/50 transition-all duration-300",
+        isTocExpanded ? "w-64 translate-x-0" : "w-14 translate-x-full lg:translate-x-0",
+        "z-20"
+      )}>
+        <div className="sticky top-0 flex items-center min-h-[72px] px-6 border-b">
+          <h4 className={cn("font-semibold mb-0", !isTocExpanded && "hidden")}>
+            On this page
+          </h4>
+          <Button
+            variant="ghost"
+            size="icon"
+            className={cn(
+              "h-9 w-9",
+              isTocExpanded ? "absolute right-2" : "mx-auto"
+            )}
+            onClick={() => setIsTocExpanded(!isTocExpanded)}
+          >
+            {isTocExpanded ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+          </Button>
+        </div>
+        <div className={cn(
+          "transition-all duration-300",
+          isTocExpanded ? "opacity-100 p-4" : "hidden"
+        )}>
           <TableOfContents contentRef={contentRef} headings={doc.headings} />
+        </div>
         </div>
       </div>
     </div>
