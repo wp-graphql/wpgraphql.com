@@ -10,7 +10,6 @@ import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { getDocNavigation } from "@/lib/docs";
-import { Footer } from "../footer";
 
 interface DocContent {
   content: string;
@@ -82,36 +81,12 @@ export function DocsContent({ doc }: { doc: DocContent }) {
                 </div>
               </div>
             </div>
-            <Footer />
+            
           </div>
         </ScrollArea>
-        <div className={cn(
-        "fixed inset-y-0 right-0 lg:static border-l bg-muted/50 transition-all duration-300",
-        isTocExpanded ? "w-64 translate-x-0" : "w-14 translate-x-full lg:translate-x-0",
-        "z-20"
-      )}>
-        <div className="sticky top-0 flex items-center min-h-[72px] px-6 border-b">
-          <h4 className={cn("font-semibold mb-0", !isTocExpanded && "hidden")}>
-            On this page
-          </h4>
-          <Button
-            variant="ghost"
-            size="icon"
-            className={cn(
-              "h-9 w-9",
-              isTocExpanded ? "absolute right-2" : "mx-auto"
-            )}
-            onClick={() => setIsTocExpanded(!isTocExpanded)}
-          >
-            {isTocExpanded ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
-          </Button>
-        </div>
-        <div className={cn(
-          "transition-all duration-300",
-          isTocExpanded ? "opacity-100 p-4" : "hidden"
-        )}>
+        <div className="border-l bg-muted/50">
           <TableOfContents contentRef={contentRef} headings={doc.headings} />
-        </div>
+
         </div>
       </div>
     </div>
