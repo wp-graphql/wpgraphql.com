@@ -253,3 +253,21 @@
   text-align: right;
   color: var(--line-number-color);
 }
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/lora/Lora-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/InterVariable.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'Lora', serif;
+}

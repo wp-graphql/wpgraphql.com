@@ -7,17 +7,19 @@ import { Clock, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import { TableOfContents } from "@/components/table-of-contents";
 import { Button } from "@/components/ui/button";
 import { useState, useRef } from "react";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { getDocNavigation } from "@/lib/docs";
+import { MDXContent } from "../mdx-content";
+import { MDXRemoteSerializeResult } from "next-mdx-remote/rsc";
 
 interface DocContent {
-  content: string;
+  content: MDXRemoteSerializeResult;
   readingTime: number;
   githubUrl: string;
   frontmatter?: Record<string, any>;
   title: string;
   slug: string;
+  headings: any[];
 }
 
 export function DocsContent({ doc }: { doc: DocContent }) {
@@ -25,7 +27,7 @@ export function DocsContent({ doc }: { doc: DocContent }) {
   const [isTocExpanded, setIsTocExpanded] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
   const navigation = getDocNavigation(doc.slug);
-
+  console.log({ doc })
   return (
     <div className="flex h-full">
       <SecondaryNav>
@@ -57,7 +59,7 @@ export function DocsContent({ doc }: { doc: DocContent }) {
               </div>
             </div>
             <div ref={contentRef} className="prose dark:prose-invert max-w-none">
-              <div dangerouslySetInnerHTML={{ __html: doc.content }} />
+              <MDXContent content={doc.content} />
               <div className="mt-16 flex items-center justify-between pt-4 border-t">
                 <div>
                   {navigation.prev && (

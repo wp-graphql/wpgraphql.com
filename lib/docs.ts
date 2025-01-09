@@ -11,7 +11,11 @@ import { getHighlighter } from 'shiki';
 import matter from 'gray-matter';
 import rehypeSlug from 'rehype-slug';
 import { extractHeadings, type Heading } from './get-headings';
-
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm'
+import { visit } from 'unist-util-visit';
+import { Root } from 'mdast';
 
 export interface DocNavigation {
   prev: { title: string; slug: string } | null;
@@ -82,7 +86,7 @@ This section would guide you to the next steps.
 export interface DocPage {
   title: string;
   slug: string;
-  content: string;
+  content: MDXRemoteSerializeResult;
   readingTime: number;
   githubUrl: string;
   frontmatter?: Record<string, any>;
@@ -113,9 +117,9 @@ const prettyCodeOptions = {
   }
 };
 
+
 export async function getDocContent(slug: string): Promise<DocPage | null> {
   try {
-    // Find the doc first
     const allPages = docsContent.sections.flatMap(section => section.pages);
     const doc = allPages.find(d => d.slug === slug);
     
@@ -126,22 +130,47 @@ export async function getDocContent(slug: string): Promise<DocPage | null> {
     const filePath = path.join(process.cwd(), 'content/docs', `${slug}.md`);
     const markdown = await fs.readFile(filePath, 'utf-8');
     const parsed = matter(markdown);
+    console.log({ parsed })
 
-    const result = await unified()
-      .use(remarkParse)
-      .use(remarkRehype, { allowDangerousHtml: true })
-      .use(rehypeSlug)
-      .use(rehypePrettyCode, prettyCodeOptions)
-      .use(rehypeStringify, { allowDangerousHtml: true })
-      .process(parsed.content);
+    const processor = unified().use(remarkParse);
+    const tree = processor.parse(parsed.content);
+    const headings: Heading[] = [];
+    
+    visit(tree, 'heading', (node: any) => {
+      const text = node.children
+        .filter((child: any) => child.type === 'text')
+        .map((child: any) => child.value)
+        .join('');
+      
+      headings.push({
+        text,
+        level: node.depth,
+        // Use GitHub-style slug generation to match rehype-slug
+        id: text
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\- ]/g, '') // Remove special characters
+          .replace(/\s+/g, '-')     // Replace spaces with hyphens
+          .replace(/-+/g, '-')      // Replace multiple hyphens with single hyphen
+      });
+    });
 
-    const htmlContent = result.toString();
-    const headings = extractHeadings(htmlContent);
+    const mdxSource = await serialize(parsed.content, {
+      parseFrontmatter: true,
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+        rehypePlugins: [
+          rehypeSlug,
+          [rehypePrettyCode, prettyCodeOptions],
+        ],
+        development: process.env.NODE_ENV === 'development',
+      },
+    });
 
     return {
       title: doc.title,
       slug: doc.slug,
-      content: htmlContent,
+      content: mdxSource,
       frontmatter: parsed.data,
       readingTime: estimateReadingTime(parsed.content),
       githubUrl: '',

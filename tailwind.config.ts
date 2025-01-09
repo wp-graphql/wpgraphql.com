@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-center': 'radial-gradient(circle at -100% -200%, var(--tw-teal-DEFAULT), var(--tw-teal-dark))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
@@ -60,6 +61,43 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+        teal: {
+          DEFAULT: '#0ECAD4',
+          light: '#5EDCE2',
+          lightest: '#E7FAFB',
+          dark: '#0CA8B1',
+        },
+        blue: {
+          DEFAULT: '#006BD6',
+          dark: '#00366B',
+          light: '#D5E6F8',
+        },
+        navy: {
+          DEFAULT: '#002447',
+        },
+        purple: {
+          DEFAULT: '#7A45E5',
+          light: '#E9E0FB',
+        },
+        green: {
+          DEFAULT: '#039B5C',
+          light: '#D3F3E2',
+        },
+        yellow: {
+          DEFAULT: '#FFC34E',
+          light: '#FFF9ED',
+        },
+        orange: {
+          DEFAULT: '#FF6119',
+          light: '#FFE5D9',
+        },
+      },
+      fontFamily: {
+        lora: ["Lora", "serif"],
+        sans: ["Inter", "sans-serif"],
+        mono: ["Fira Code VF", "monospace"],
+        source: ["Source Sans Pro", "sans-serif"],
+        "ubuntu-mono": ["Ubuntu Mono", "monospace"],
       },
       keyframes: {
         'accordion-down': {

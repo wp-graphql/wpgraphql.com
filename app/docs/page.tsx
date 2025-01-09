@@ -51,7 +51,7 @@ export default function DocsPage() {
                       {section.description}
                     </p>
                     <div className="space-y-2">
-                      {section.pages.slice(0, 3).map((page) => (
+                      {section.pages.map((page) => (
                         <Link
                           key={page.slug}
                           href={`/docs/${page.slug}`}
@@ -60,11 +60,6 @@ export default function DocsPage() {
                           {page.title}
                         </Link>
                       ))}
-                      {section.pages.length > 3 && (
-                        <span className="block text-xs text-muted-foreground">
-                          +{section.pages.length - 3} more pages
-                        </span>
-                      )}
                     </div>
                   </div>
                 </Card>
