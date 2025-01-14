@@ -52,6 +52,7 @@
     "embla-carousel-react": "^8.3.0",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.1",
+    "graphql-tag": "^2.12.6",
     "gray-matter": "^4.0.3",
     "html-entities": "^2.5.2",
     "input-otp": "^1.2.4",
