@@ -4,16 +4,15 @@ import { Check, Copy, FileCode } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
-interface CodeBlockProps {
+interface CodeBlockProps extends React.HTMLAttributes<HTMLPreElement> {
   children?: React.ReactNode;
   className?: string;
+  'data-language'?: string;
 }
 
 export function CodeBlock({ children, className, ...props }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
-  console.log( {
-    codeBlockProps: props
-  })
+
   // Extract language from className (format: "language-xxx")
   const language = props['data-language'] ?? '';
 

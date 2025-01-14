@@ -129,7 +129,6 @@ export async function getDocContent(slug: string): Promise<DocPage | null> {
     const filePath = path.join(process.cwd(), 'content/docs', `${slug}.md`);
     const markdown = await fs.readFile(filePath, 'utf-8');
     const parsed = matter(markdown);
-    console.log({ parsed })
 
     const processor = unified().use(remarkParse);
     const tree = processor.parse(parsed.content);

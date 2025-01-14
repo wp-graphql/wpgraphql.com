@@ -27,14 +27,14 @@ const getIconForPath = (path: string) => {
   }
 };
 
-const sectionColors = {
+const sectionColors: Record<string, string> = {
   "/": "text-foreground",
   "/docs": "text-blue-500",
   "/reference": "text-purple-500",
   "/resources": "text-green-500",
   "/community": "text-orange-500",
   "/blog": "text-rose-500"
-};
+} as const;
 
 interface BreadcrumbSegmentProps {
   segment: string;

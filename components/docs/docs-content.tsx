@@ -27,7 +27,7 @@ export function DocsContent({ doc }: { doc: DocContent }) {
   const [isTocExpanded, setIsTocExpanded] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
   const navigation = getDocNavigation(doc.slug);
-  console.log({ doc })
+
   return (
     <div className="flex h-full">
       <SecondaryNav>

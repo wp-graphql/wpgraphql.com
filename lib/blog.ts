@@ -14,6 +14,11 @@ export interface BlogPost {
     avatar: string;
   };
   readingTime: number;
+  categories?: {
+    nodes?: {
+      name: string;
+    }[];
+  };
 }
 
 export async function getBlogPosts(): Promise<BlogPost[]> {

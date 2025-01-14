@@ -55,9 +55,9 @@ const getIconForPath = (path: string) => {
 };
 
 const getActiveColor = (currentPath: string, itemPath: string) => {
-  // Check if we're in a section (e.g., /docs/[slug] should match /docs)
   const isActive = currentPath.startsWith(itemPath);
-  const colors = sectionColors[itemPath];
+  const colors = sectionColors[itemPath as keyof typeof sectionColors];
+  if (typeof colors === 'string') return colors;
   return isActive ? colors.base : cn("text-muted-foreground", colors?.hover);
 };
 

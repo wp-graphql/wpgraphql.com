@@ -55,7 +55,6 @@ export function Header({ isExpanded, onToggleExpand }: {
       <CommandDialog 
         open={open} 
         onOpenChange={setOpen}
-        shouldFilter={true}
       >
         <DialogTitle className="sr-only">Search documentation</DialogTitle>
         <CommandInput placeholder="Type to search..." />
