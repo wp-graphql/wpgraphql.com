@@ -1,4 +1,4 @@
-import { resolveTemplate, TemplateConfig } from '@/lib/wordpress/helpers'
+import { resolveTemplate, TemplateConfig } from '@/lib/wpgraphql-toolkit/helpers'
 
 type PageProps = {
   params: {

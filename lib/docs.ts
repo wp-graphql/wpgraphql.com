@@ -7,7 +7,7 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeStringify from 'rehype-stringify';
-import { getHighlighter } from 'shiki';
+import { getHighlighter } from 'shiki/bundle/web';
 import matter from 'gray-matter';
 import rehypeSlug from 'rehype-slug';
 import { extractHeadings, type Heading } from './get-headings';
@@ -54,7 +54,6 @@ async function initHighlighter() {
         'bash', 
         'php', 
         'graphql',
-        // Add these additional languages for GraphQL support
         'prisma',
         'sql'
       ]
