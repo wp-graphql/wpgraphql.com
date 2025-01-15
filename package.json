@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-actions": "ts-node scripts/generate-actions.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -65,6 +66,7 @@
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.3.0",
     "node-fetch": "^3.3.2",
+    "php-parser": "^3.2.2",
     "postcss": "8.4.30",
     "react": "18.2.0",
     "react-day-picker": "^8.10.1",
@@ -88,5 +90,11 @@
     "unified": "^11.0.5",
     "vaul": "^0.9.9",
     "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.26.5",
+    "@babel/traverse": "^7.26.5",
+    "@types/babel__traverse": "^7.20.6",
+    "ts-node": "^10.9.2"
   }
 }

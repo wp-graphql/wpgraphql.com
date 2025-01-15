@@ -1,0 +1,30 @@
+---
+    title: "graphql_wp_object_type"
+    since: "Unknown"
+    sourceFile: "src/Type/WPObjectType.php"
+    sourceLine: 99
+    ---
+    
+    Run an action when the WPObjectType is instantiating
+    
+    ## Parameters
+    
+    
+    | Name | Type | Description |
+    |------|------|-------------|
+    | config | `array<string,mixed>` | Array of configuration options passed to the WPObjectType when instantiating a new type |
+| wp_object_type | `\WPGraphQL\Type\WPObjectType` | The instance of the WPObjectType class |
+    
+    
+    ## Source
+
+    This action is defined in [src/Type/WPObjectType.php:99](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Type/WPObjectType.php#L99)
+
+    ## Examples
+
+    ```php
+    add_action('graphql_wp_object_type', function($config, $wp_object_type) {
+        // Add your code here
+    });
+    ```
+    

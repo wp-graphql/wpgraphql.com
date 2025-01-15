@@ -1,0 +1,29 @@
+---
+    title: "graphql_admin_notices_render_notices"
+    since: "v1.23.0"
+    sourceFile: "src/Admin/AdminNotices.php"
+    sourceLine: 295
+    ---
+    
+    Fires before the admin notices are rendered.
+    
+    ## Parameters
+    
+    
+    | Name | Type | Description |
+    |------|------|-------------|
+    | notices | `array<string,mixed>` | The notices to be rendered |
+    
+    
+    ## Source
+
+    This action is defined in [src/Admin/AdminNotices.php:295](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Admin/AdminNotices.php#L295)
+
+    ## Examples
+
+    ```php
+    add_action('graphql_admin_notices_render_notices', function($notices) {
+        // Add your code here
+    });
+    ```
+    

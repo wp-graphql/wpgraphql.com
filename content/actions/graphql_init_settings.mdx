@@ -1,0 +1,28 @@
+---
+    title: "graphql_init_settings"
+    since: "Unknown"
+    sourceFile: "src/Admin/Settings/SettingsRegistry.php"
+    sourceLine: 160
+    ---
+    
+    Initialize and registers the settings sections and fields to WordPress
+Usually this should be called at `admin_init` hook.
+This function gets the initiated settings sections and fields. Then
+registers them to WordPress and ready for use.
+    
+    ## Parameters
+    
+    This action has no parameters.
+    
+    ## Source
+
+    This action is defined in [src/Admin/Settings/SettingsRegistry.php:160](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Admin/Settings/SettingsRegistry.php#L160)
+
+    ## Examples
+
+    ```php
+    add_action('graphql_init_settings', function() {
+        // Add your code here
+    });
+    ```
+    
