@@ -5,6 +5,7 @@ import glob from 'fast-glob'
 import { readFile } from 'fs/promises'
 import { serialize } from 'next-mdx-remote/serialize'
 import remarkGfm from 'remark-gfm'
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 export interface Action {
   slug: string
@@ -73,7 +74,7 @@ export async function getActionsSidebar() {
   const items = await Promise.all(
     files.map(async (file) => {
       const content = await readFile(file, 'utf8')
-      const { data } = matter(content) as { data: ActionFrontmatter }
+      const { data } = matter(content)
       const slug = file.replace('content/actions/', '').replace('.mdx', '')
       
       return {

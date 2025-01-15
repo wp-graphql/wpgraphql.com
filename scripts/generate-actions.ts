@@ -87,7 +87,7 @@ async function parseActions(basePath: string): Promise<ActionDoc[]> {
     
     // First find all docblocks in the file
     const docblocks: { [line: number]: string } = {}
-    const docblockRegex = /\/\*\*\s*(.*?)\s*\*\//gs
+    const docblockRegex = /\/\*\*[\s\S]*?\*\//g
     let match
     while ((match = docblockRegex.exec(code)) !== null) {
       const docblock = match[1]
