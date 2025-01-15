@@ -1,0 +1,30 @@
+---
+title: "graphql_wp_connection_type"
+since: "1.13.0"
+sourceFile: "src/Type/WPConnectionType.php"
+sourceLine: 196
+---
+
+
+Run an action when the WPConnectionType is instantiating.
+
+## Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| config | `array<string,mixed>` | Array of configuration options passed to the WPObjectType when instantiating a new type |
+| wp_connection_type | `\WPGraphQL\Type\WPConnectionType` | The instance of the WPConnectionType class |
+
+
+## Source
+
+This action is defined in [src/Type/WPConnectionType.php:196](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Type/WPConnectionType.php#L196)
+
+
+## Examples
+
+```php
+add_action('graphql_wp_connection_type', function($config, $wp_connection_type) {
+    // Add your code here
+});
+```

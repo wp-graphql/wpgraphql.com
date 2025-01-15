@@ -1,0 +1,29 @@
+---
+title: "graphql_response_set_headers"
+since: "Unknown"
+sourceFile: "src/Router.php"
+sourceLine: 389
+---
+
+
+Fire an action when the headers are set
+
+## Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| headers | `array<string,mixed>` | The headers sent in the response |
+
+
+## Source
+
+This action is defined in [src/Router.php:389](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Router.php#L389)
+
+
+## Examples
+
+```php
+add_action('graphql_response_set_headers', function($headers) {
+    // Add your code here
+});
+```

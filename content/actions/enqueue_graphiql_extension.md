@@ -1,0 +1,27 @@
+---
+title: "enqueue_graphiql_extension"
+since: "Unknown"
+sourceFile: "src/Admin/GraphiQL/GraphiQL.php"
+sourceLine: 191
+---
+
+
+Enqueues the stylesheet and js for the WPGraphiQL app
+
+## Parameters
+
+This action has no parameters.
+
+
+## Source
+
+This action is defined in [src/Admin/GraphiQL/GraphiQL.php:191](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Admin/GraphiQL/GraphiQL.php#L191)
+
+
+## Examples
+
+```php
+add_action('enqueue_graphiql_extension', function() {
+    // Add your code here
+});
+```

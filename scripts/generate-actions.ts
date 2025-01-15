@@ -303,43 +303,66 @@ async function generateMDXFiles(actions: ActionDoc[]) {
   
   // Generate new/updated files
   for (const action of actions) {
-    const mdxContent = `---
-    title: "${action.name}"
-    since: "${action.since || 'Unknown'}"
-    sourceFile: "${action.sourceFile}"
-    sourceLine: ${action.sourceLine}
-    ---
-    
-    ${action.description || 'No description available.'}
-    
-    ## Parameters
-    
-    ${action.parameters.length ? `
-    | Name | Type | Description |
-    |------|------|-------------|
-    ${action.parameters.map((param: { name: string; type: string; description: string }) => 
-      `| ${param.name} | \`${param.type.replace(/\|/g, '\\|')}\` | ${param.description} |`
-    ).join('\n')}
-    ` : 'This action has no parameters.'}
-    
-    ## Source
+    const frontmatter = `---
+title: "${action.name}"
+since: "${action.since || 'Unknown'}"
+sourceFile: "${action.sourceFile}"
+sourceLine: ${action.sourceLine}
+---`
 
-    This action is defined in [${action.sourceFile}:${action.sourceLine}](https://github.com/wp-graphql/wp-graphql/blob/develop/${action.sourceFile}#L${action.sourceLine})
+    const description = `
+${action.description || 'No description available.'}
 
-    ## Examples
+## Parameters
 
-    \`\`\`php
-    add_action('${action.name}', function(${action.parameters.map(p => '$' + p.name).join(', ')}) {
-        // Add your code here
-    });
-    \`\`\`
-    `
+${action.parameters.length ? `| Name | Type | Description |
+|------|------|-------------|
+${action.parameters.map((param: { name: string; type: string; description: string }) => 
+  `| ${param.name} | \`${param.type.replace(/\|/g, '\\|')}\` | ${param.description} |`
+).join('\n')}` : 'This action has no parameters.'}`
+
+    const source = `
+## Source
+
+This action is defined in [${action.sourceFile}:${action.sourceLine}](https://github.com/wp-graphql/wp-graphql/blob/develop/${action.sourceFile}#L${action.sourceLine})`
+
+    const example = `
+## Examples
+
+\`\`\`php
+add_action('${action.name}', function(${action.parameters.map(p => '$' + p.name).join(', ')}) {
+    // Add your code here
+});
+\`\`\``
+
+    const mdxContent = [frontmatter, description, source, example].join('\n\n')
     
     writeFileSync(
-      join(outputDir, `${action.name}.mdx`),
+      join(outputDir, `${action.name}.md`),
       mdxContent
     )
   }
+
+  // After generating the MD files
+  const actionsJson = {
+    sections: [
+      {
+        title: "Actions",
+        pages: actions
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(action => ({
+            title: action.name,
+            href: `/actions/${action.name}`,
+            slug: action.name
+          }))
+      }
+    ]
+  }
+
+  writeFileSync(
+    join(process.cwd(), 'content/actions.json'),
+    JSON.stringify(actionsJson, null, 2)
+  )
 }
 
 async function main() {

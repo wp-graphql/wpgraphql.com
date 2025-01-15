@@ -1,0 +1,27 @@
+---
+title: "graphql_admin_notices_init"
+since: "Unknown"
+sourceFile: "src/Admin/AdminNotices.php"
+sourceLine: 92
+---
+
+
+Initialize the Admin Notices class
+
+## Parameters
+
+This action has no parameters.
+
+
+## Source
+
+This action is defined in [src/Admin/AdminNotices.php:92](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Admin/AdminNotices.php#L92)
+
+
+## Examples
+
+```php
+add_action('graphql_admin_notices_init', function() {
+    // Add your code here
+});
+```

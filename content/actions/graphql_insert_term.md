@@ -1,0 +1,34 @@
+---
+title: "graphql_insert_term"
+since: "Unknown"
+sourceFile: "src/Mutation/TermObjectCreate.php"
+sourceLine: 177
+---
+
+
+Fires after a single term is created or updated via a GraphQL mutation
+
+## Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| term_id | `int` | Inserted term object |
+| taxonomy | `\WP_Taxonomy` | The taxonomy of the term being updated |
+| args | `array<string,mixed>` | The args used to insert the term |
+| mutation_name | `string` | The name of the mutation being performed |
+| context | `\WPGraphQL\AppContext` | The AppContext passed down the resolve tree |
+| info | `\GraphQL\Type\Definition\ResolveInfo` | The ResolveInfo passed down the resolve tree |
+
+
+## Source
+
+This action is defined in [src/Mutation/TermObjectCreate.php:177](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Mutation/TermObjectCreate.php#L177)
+
+
+## Examples
+
+```php
+add_action('graphql_insert_term', function($term_id, $taxonomy, $args, $mutation_name, $context, $info) {
+    // Add your code here
+});
+```

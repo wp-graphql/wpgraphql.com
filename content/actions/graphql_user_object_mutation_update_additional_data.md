@@ -1,0 +1,35 @@
+---
+title: "graphql_user_object_mutation_update_additional_data"
+since: "Unknown"
+sourceFile: "src/Data/UserMutation.php"
+sourceLine: 233
+---
+
+
+Run an action after the additional data has been updated. This is a great spot to hook into to
+update additional data related to users, such as setting relationships, updating additional usermeta,
+or sending emails to Kevin... whatever you need to do with the userObject.
+
+## Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| user_id | `int` | The ID of the user being mutated |
+| input | `array<string,mixed>` | The input for the mutation |
+| mutation_name | `string` | The name of the mutation (ex: create, update, delete) |
+| context | `\WPGraphQL\AppContext` | The AppContext passed down the resolve tree |
+| info | `\GraphQL\Type\Definition\ResolveInfo` | The ResolveInfo passed down the Resolve Tree |
+
+
+## Source
+
+This action is defined in [src/Data/UserMutation.php:233](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Data/UserMutation.php#L233)
+
+
+## Examples
+
+```php
+add_action('graphql_user_object_mutation_update_additional_data', function($user_id, $input, $mutation_name, $context, $info) {
+    // Add your code here
+});
+```

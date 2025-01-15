@@ -1,0 +1,27 @@
+---
+title: "wp_enqueue_scripts"
+since: "Unknown"
+sourceFile: "src/Type/ObjectType/RootQuery.php"
+sourceLine: 115
+---
+
+
+Register the RootQuery type
+
+## Parameters
+
+This action has no parameters.
+
+
+## Source
+
+This action is defined in [src/Type/ObjectType/RootQuery.php:115](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Type/ObjectType/RootQuery.php#L115)
+
+
+## Examples
+
+```php
+add_action('wp_enqueue_scripts', function() {
+    // Add your code here
+});
+```
