@@ -6,6 +6,21 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --code-text-color: hsl(230 8% 24%);
+  --code-comment-color: hsl(230 4% 64%);
+  --code-string-color: hsl(119 34% 47%);
+  --code-number-color: hsl(35 99% 36%);
+  --code-function-color: hsl(221 87% 60%);
+  --code-keyword-color: hsl(301 63% 40%);
+  --code-operator-color: hsl(230 8% 24%);
+  --code-punctuation-color: hsl(230 8% 24%);
+  --code-property-color: hsl(5 74% 59%);
+  --code-tag-color: hsl(5 74% 59%);
+  --code-parameter-color: hsl(35 99% 36%);
+  --code-object-color: hsl(230 70% 70%);
+  --code-field-color: hsl(230 60% 80%);
+  --code-keyword-color: hsl(301 63% 60%);
+  --code-punctuation-color: hsl(230 30% 70%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,11 +59,13 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --highlighted-line-bg: #f6f8fa;
-    --highlighted-line-border: #0969da;
-    --line-number-color: #6e7681;
-    --code-block-bg: #ffffff;
-    --code-block-color: #24292e;
+    --highlighted-line-bg: hsl(var(--muted));
+    --highlighted-line-border: hsl(var(--primary));
+    --line-number-color: hsl(var(--muted-foreground));
+    --code-block-bg: hsl(var(--background));
+    --code-string-color: hsl(212 100% 82%);
+    --code-attr-color: hsl(271 81% 83%);
+    --code-punctuation-color: hsl(215 13% 53%);
   }
   .dark {
     --background: 222.2 84% 4.9%;
@@ -75,11 +92,28 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --highlighted-line-bg: #2d2d2d;
-    --highlighted-line-border: #7ee787;
-    --line-number-color: #6e7681;
-    --code-block-bg: #24292e;
-    --code-block-color: #e1e4e8;
+    --highlighted-line-bg: hsl(var(--muted));
+    --highlighted-line-border: hsl(var(--primary));
+    --line-number-color: hsl(var(--muted-foreground));
+    --code-block-bg: hsl(var(--background));
+    --code-string-color: hsl(212 100% 82%);
+    --code-attr-color: hsl(271 81% 83%);
+    --code-punctuation-color: hsl(215 13% 53%);
+    --code-text-color: hsl(230 8% 90%);
+    --code-comment-color: hsl(230 4% 64%);
+    --code-string-color: hsl(119 34% 67%);
+    --code-number-color: hsl(35 99% 56%);
+    --code-function-color: hsl(221 87% 70%);
+    --code-keyword-color: hsl(301 63% 70%);
+    --code-operator-color: hsl(230 8% 90%);
+    --code-punctuation-color: hsl(230 8% 90%);
+    --code-property-color: hsl(5 74% 69%);
+    --code-tag-color: hsl(5 74% 69%);
+    --code-parameter-color: hsl(35 99% 56%);
+    --code-object-color: hsl(230 70% 80%);
+    --code-field-color: hsl(230 60% 90%);
+    --code-keyword-color: hsl(301 63% 70%);
+    --code-punctuation-color: hsl(230 30% 80%);
   }
 }
 
@@ -224,36 +258,6 @@
   }
 }
 
-/* Update code block styles */
-[data-rehype-pretty-code-figure] pre {
-  background-color: var(--code-block-bg) !important;
-  color: var(--code-block-color) !important;
-  border: 1px solid hsl(var(--border));
-}
-
-.line {
-  display: inline-block;
-  width: 100%;
-}
-
-.line--highlighted {
-  background-color: var(--highlighted-line-bg);
-  border-left: 2px solid var(--highlighted-line-border);
-}
-
-.line--numbered {
-  counter-increment: line;
-}
-
-.line--numbered::before {
-  content: counter(line);
-  display: inline-block;
-  width: 1rem;
-  margin-right: 1rem;
-  text-align: right;
-  color: var(--line-number-color);
-}
-
 @font-face {
   font-family: 'Lora';
   src: url('/fonts/lora/Lora-VariableFont_wght.ttf') format('truetype');
@@ -270,4 +274,10 @@
 
 h1 {
   font-family: 'Lora', serif;
+}
+
+/* Disable Tailwind Typography's backticks for code blocks */
+.prose :where(pre code):not(:where([class~="not-prose"],[class~="not-prose"] *))::before,
+.prose :where(pre code):not(:where([class~="not-prose"],[class~="not-prose"] *))::after {
+  content: none;
 }

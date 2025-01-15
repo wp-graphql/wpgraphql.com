@@ -4,18 +4,13 @@ import fs from 'fs/promises';
 import path from 'path';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import rehypePrettyCode from 'rehype-pretty-code';
-import rehypeStringify from 'rehype-stringify';
-import { getHighlighter } from 'shiki/bundle/web';
-import matter from 'gray-matter';
+import remarkGfm from 'remark-gfm'
 import rehypeSlug from 'rehype-slug';
-import { extractHeadings, type Heading } from './get-headings';
+import { type Heading } from './get-headings';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote/rsc';
-import remarkGfm from 'remark-gfm'
 import { visit } from 'unist-util-visit';
-import { Root } from 'mdast';
+import matter from 'gray-matter';
 
 export interface DocNavigation {
   prev: { title: string; slug: string } | null;
@@ -37,29 +32,6 @@ export function getDocNavigation(currentSlug: string): DocNavigation {
     prev: currentIndex > 0 ? allPages[currentIndex - 1] : null,
     next: currentIndex < allPages.length - 1 ? allPages[currentIndex + 1] : null
   };
-}
-// Initialize the highlighter
-let highlighter: any = null;
-
-async function initHighlighter() {
-  if (!highlighter) {
-    highlighter = await getHighlighter({
-      themes: ['github-light', 'github-dark'],
-      langs: [
-        'typescript', 
-        'javascript', 
-        'jsx', 
-        'tsx', 
-        'json', 
-        'bash', 
-        'php', 
-        'graphql',
-        'prisma',
-        'sql'
-      ]
-    });
-  }
-  return highlighter;
 }
 
 // Sample content for development/fallback
@@ -91,30 +63,6 @@ export interface DocPage {
   frontmatter?: Record<string, any>;
   headings: Heading[];
 }
-
-const prettyCodeOptions = {
-  // Configure both light and dark themes
-  theme: { light: 'github-light', dark: 'github-dark' },
-  keepBackground: true,
-  grid: true,
-  onVisitHighlightedLine(node: any) {
-    const existingClasses = Array.isArray(node.properties.className) 
-      ? node.properties.className 
-      : [];
-    node.properties.className = [
-      ...existingClasses,
-      'line',
-      'line--numbered',
-      'line--highlighted'
-    ];
-  },
-  onVisitLine(node: any) {
-    if (!Array.isArray(node.properties.className)) {
-      node.properties.className = [];
-    }
-    node.properties.className.push('line', 'line--numbered');
-  }
-};
 
 
 export async function getDocContent(slug: string): Promise<DocPage | null> {
@@ -156,10 +104,25 @@ export async function getDocContent(slug: string): Promise<DocPage | null> {
     const mdxSource = await serialize(parsed.content, {
       parseFrontmatter: true,
       mdxOptions: {
-        remarkPlugins: [remarkGfm],
+        remarkPlugins: [
+          remarkGfm,
+          // Add custom plugin to preserve code block metadata
+          () => (tree) => {
+            visit(tree, 'code', (node: any) => {
+              // Convert the node to a JSX-compatible format
+              const { lang, value, meta } = node;
+              node.type = 'mdxJsxFlowElement';
+              node.name = 'pre';
+              node.attributes = [
+                { type: 'mdxJsxAttribute', name: 'className', value: `language-${lang || ''}` },
+                { type: 'mdxJsxAttribute', name: 'code', value: value },
+                meta && { type: 'mdxJsxAttribute', name: 'meta', value: meta }
+              ].filter(Boolean);
+            });
+          }
+        ],
         rehypePlugins: [
           rehypeSlug,
-          [rehypePrettyCode, prettyCodeOptions],
         ],
         development: process.env.NODE_ENV === 'development',
       },
