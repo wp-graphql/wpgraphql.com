@@ -33,8 +33,8 @@
       ]
     },
     {
-      "title": "Core Features",
-      "description": "Working with WordPress core features",
+      "title": "WordPress Data Models",
+      "description": "Working with WordPress's core data models and content structures",
       "pages": [
         { "title": "Posts and Pages", "slug": "posts-and-pages" },
         { "title": "Custom Post Types", "slug": "custom-post-types" },
