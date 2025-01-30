@@ -54,10 +54,11 @@ const components = {
         
         // Add remaining elements with proper spacing
         remainingElements.forEach((element) => {
+          const lastItem = contentArray[contentArray.length - 1];
           // Add a space before if the previous element was text and didn't end with a space
           if (contentArray.length > 0 && 
-              typeof contentArray[contentArray.length - 1] === 'string' && 
-              !contentArray[contentArray.length - 1].endsWith(' ')) {
+              typeof lastItem === 'string' && 
+              !lastItem.endsWith(' ')) {
             contentArray.push(' ');
           }
           contentArray.push(element as React.ReactElement);
@@ -66,8 +67,8 @@ const components = {
         });
         
         // Remove trailing space if it exists
-        if (typeof contentArray[contentArray.length - 1] === 'string' && 
-            contentArray[contentArray.length - 1] === ' ') {
+        const lastItem = contentArray[contentArray.length - 1];
+        if (typeof lastItem === 'string' && lastItem === ' ') {
           contentArray.pop();
         }
         
