@@ -326,23 +326,6 @@ This demonstrates how the same fragment can be reused to:
 2. Get other recent posts by each post's author
 All while maintaining consistent field selection.
 
-### Conditional Fields
-
-Using directives to include/skip fields:
-```graphql
-query GetPost($id: ID!, $includeAuthor: Boolean!) {
-  post(id: $id) {
-    ...PostFields
-    author @include(if: $includeAuthor) {
-      node {
-        name
-        email
-      }
-    }
-  }
-}
-```
-
 ### Fragments and Components
 
 Fragments are particularly valuable when working with components in your frontend application. A common pattern is to couple a fragment with a specific component:
@@ -394,6 +377,118 @@ This pattern provides several benefits:
 
 > [!TIP]
 > Consider co-locating your fragments with your components. This makes it clear what data each component needs and makes maintenance easier.
+
+## Directives
+
+Directives provide a way to modify how fields are executed and returned. In GraphQL, directives are preceded by the `@` symbol and can affect the behavior of fields, fragments, or operations.
+
+### Core Directives
+
+WPGraphQL supports two core GraphQL directives:
+
+#### @include
+
+The `@include` directive includes a field only if the provided condition is true:
+
+```graphql
+query GetPost($includeComments: Boolean!) {
+  post(id: "1", idType: DATABASE_ID) {
+    id
+    title
+    comments @include(if: $includeComments) {
+      nodes {
+        content
+        author {
+          node {
+            name
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Variables:
+```json
+{
+  "includeComments": true
+}
+```
+
+#### @skip
+
+The `@skip` directive excludes a field if the provided condition is true:
+
+```graphql
+query GetPost($skipAuthor: Boolean!) {
+  posts {
+    nodes {
+      id
+      title
+      author {
+        node @skip(if: $skipAuthor) {
+          name
+          email
+        }
+      }
+    }
+  }
+}
+```
+
+Variables:
+```json
+{
+  "skipAuthor": false
+}
+```
+
+### Using Directives with Fragments
+
+Directives can also be applied to entire fragments:
+
+```graphql
+query GetPost($includeAuthor: Boolean!) {
+  post(id: "1", idType: DATABASE_ID) {
+    id
+    title
+    ...AuthorFragment @include(if: $includeAuthor)
+  }
+}
+
+fragment AuthorFragment on Post {
+  author {
+    node {
+      name
+      email
+      description
+    }
+  }
+}
+```
+
+### Common Use Cases
+
+Directives are particularly useful for:
+
+- Conditionally including data based on user permissions (or other criteria)
+- Optimizing query performance by excluding unnecessary fields
+- Implementing feature flags in your GraphQL queries
+- Managing different view states in your application
+
+> [!TIP]
+> Use directives to make your queries more flexible and efficient. Instead of maintaining multiple similar queries, you can use directives to conditionally include or exclude fields based on your needs.
+
+### Best Practices
+
+> [!IMPORTANT]
+> - Use meaningful variable names that indicate the purpose of the condition
+> - Consider the performance impact of fields behind directives
+> - Handle both true and false conditions in your client code
+> - Document the expected behavior of directive conditions
+
+For more information about GraphQL directives, see the [GraphQL Specification](https://spec.graphql.org/October2021/#sec-Language.Directives).
 
 ## Introspection Queries
 
