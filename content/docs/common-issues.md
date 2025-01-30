@@ -3,8 +3,6 @@ uri: "/docs/common-issues/"
 title: "Common Issues"
 ---
 
-# Common Issues
-
 This guide covers frequently encountered issues when working with WPGraphQL and their solutions.
 
 ## Authentication Issues
@@ -412,7 +410,7 @@ For examples of implementing these patterns with custom data sources, see:
    {
      posts(first: 1000) {
        nodes {
-         # ... fields
+         # ...fields
        }
      }
    }
@@ -425,7 +423,7 @@ For examples of implementing these patterns with custom data sources, see:
          endCursor
        }
        nodes {
-         # ... fields
+         # ...fields
        }
      }
    }
@@ -586,7 +584,7 @@ This error indicates a permissions issue:
    - Check if user role has necessary permissions
    - Verify operation requires authentication
 
-### "Field {fieldName} is not defined"
+### "Field `fieldName` is not defined"
 
 This error occurs when requesting non-existent fields:
 
