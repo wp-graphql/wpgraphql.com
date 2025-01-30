@@ -894,5 +894,4 @@ it('creates post with valid input', async () => {
 });
 ```
 
-> [!TIP]
-> Consider using a testing environment with predictable data and disabled webhooks/side effects for reliable tests. 
+> [!TIP] Consider using a testing environment with predictable data and disabled webhooks/side effects for reliable tests. 

@@ -113,7 +113,7 @@ query GetMultiplePosts($firstId: ID!, $secondId: ID!) {
 > [!TIP]
 > Aliases become even more powerful when combined with [fragments](#using-fragments) to reduce repetition in your queries.
 
-> [!TIP]
+> [!NOTE]
 > Aliases only affect the response structure. They don't change how the field is queried or what data is returned.
 
 ## Working with Connections
@@ -485,10 +485,3 @@ query GetPostStatusEnum {
    - Reduces duplication
    - Easier maintenance
    - Better organization
-
-For detailed examples of querying specific WordPress data types, see our [WordPress Data Models](/docs/wordpress-data-models/) section.
-
-## Common Gotchas
-
-### Case Sensitivity
-```

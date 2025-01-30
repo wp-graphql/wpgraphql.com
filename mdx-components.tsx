@@ -1,5 +1,7 @@
 import { CodeBlock } from '@/components/code-block';
 import { Table, Thead, Tbody, Th, Td } from '@/components/mdx/Table';
+import { Alert } from '@/components/mdx/Alert';
+import React from 'react';
 
 const components = {
   h1: (props: any) => (
@@ -13,6 +15,75 @@ const components = {
   tbody: Tbody,
   th: Th,
   td: Td,
+  // Custom blockquote handling for alerts
+  blockquote: ({ children }: { children: React.ReactNode }) => {
+    const childrenArray = React.Children.toArray(children);
+    
+    // Find the paragraph element (skip newlines)
+    const paragraphElement = childrenArray.find(
+      child => React.isValidElement(child) && child.type === 'p'
+    );
+    
+    if (paragraphElement && React.isValidElement(paragraphElement)) {
+      const paragraphContent = paragraphElement.props.children;
+      
+      // Convert content to string for checking
+      let textContent = '';
+      let remainingElements = [];
+      
+      if (Array.isArray(paragraphContent)) {
+        textContent = paragraphContent[0];
+        remainingElements = paragraphContent.slice(1);
+      } else if (typeof paragraphContent === 'string') {
+        textContent = paragraphContent;
+      }
+      
+      // Match alert pattern: [!TYPE] followed by content
+      const alertMatch = textContent.match(/^\[!(\w+)\][\s\n]+([\s\S]*)/);
+      
+      if (alertMatch) {
+        const [_, type, alertContent] = alertMatch;
+        
+        // Create content array with proper spacing
+        const contentArray = [];
+        
+        // Add initial text content
+        if (alertContent.trim()) {
+          contentArray.push(alertContent.trim());
+        }
+        
+        // Add remaining elements with proper spacing
+        remainingElements.forEach((element) => {
+          // Add a space before if the previous element was text and didn't end with a space
+          if (contentArray.length > 0 && 
+              typeof contentArray[contentArray.length - 1] === 'string' && 
+              !contentArray[contentArray.length - 1].endsWith(' ')) {
+            contentArray.push(' ');
+          }
+          contentArray.push(element);
+          // Add a space after each element
+          contentArray.push(' ');
+        });
+        
+        // Remove trailing space if it exists
+        if (typeof contentArray[contentArray.length - 1] === 'string' && 
+            contentArray[contentArray.length - 1] === ' ') {
+          contentArray.pop();
+        }
+        
+        return (
+          <Alert type={type.toLowerCase() as "note" | "tip" | "important" | "warning" | "caution"}>
+            <div className="[&>p]:m-0">
+              <p>{contentArray}</p>
+            </div>
+          </Alert>
+        );
+      }
+    }
+    
+    // Regular blockquote if not an alert
+    return <blockquote className="border-l-4 border-slate-200 pl-4 dark:border-slate-700">{children}</blockquote>;
+  },
 };
 
 export default components;
