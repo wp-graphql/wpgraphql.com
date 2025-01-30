@@ -54,6 +54,21 @@ const theme = {
   'script': { color: 'var(--code-text-color)' },
 };
 
+// Convert function properties to their return values
+const processTheme = (theme: any) => {
+  const processed: { [key: string]: any } = {};
+  
+  Object.entries(theme).forEach(([key, value]) => {
+    if (typeof value === 'function') {
+      processed[key] = value({});
+    } else {
+      processed[key] = value;
+    }
+  });
+  
+  return processed;
+};
+
 export function CodeBlock({ children, className, code, meta, ...props }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
   const { resolvedTheme } = useTheme();
@@ -103,7 +118,7 @@ export function CodeBlock({ children, className, code, meta, ...props }: CodeBlo
       <div className="relative overflow-x-auto">
         <SyntaxHighlighter
           language={language}
-          style={theme}
+          style={processTheme(theme)}
           customStyle={{
             margin: 0,
             padding: '1rem',
