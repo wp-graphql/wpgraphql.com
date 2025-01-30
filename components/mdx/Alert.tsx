@@ -24,14 +24,18 @@ const styles = {
 
 export function Alert({ type = "note", children }: AlertProps) {
   const Icon = icons[type];
+  const title = type.charAt(0).toUpperCase() + type.slice(1);
 
   return (
     <div className={cn(
-      "my-6 rounded-lg border p-4 [&>p]:m-0 flex gap-3",
+      "my-6 rounded-lg border p-4 flex gap-3",
       styles[type]
     )}>
-      <Icon className="h-5 w-5 flex-shrink-0" />
-      <div>{children}</div>
+      <Icon className="h-5 w-5 flex-shrink-0 mt-1" />
+      <div className="w-full [&>:first-child]:mt-0 [&>:last-child]:mb-0">
+        <div className="font-medium mb-2">{title}</div>
+        {children}
+      </div>
     </div>
   );
 } 
