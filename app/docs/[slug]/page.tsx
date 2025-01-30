@@ -14,20 +14,30 @@ interface PageProps {
 // Generate static params for all possible doc pages
 export async function generateStaticParams() {
   const paths = docsContent.sections.flatMap(section => 
-    section.pages.map(page => ({
-      slug: page.slug
-    }))
+    section.pages.map(page => {
+      console.log(`Generating path for slug: ${page.slug}`);
+      return {
+        slug: page.slug
+      };
+    })
   );
   
+  console.log('All paths:', paths);
   return paths;
 }
 
 export default async function DocsPage({ params }: PageProps) {
-  const doc = await getDocContent(params.slug);
-  
-  if (!doc) {
-    notFound();
-  }
+  try {
+    const doc = await getDocContent(params.slug);
+    
+    if (!doc) {
+      console.error(`No doc found for slug: ${params.slug}`);
+      notFound();
+    }
 
-  return <DocsContent doc={doc} />;
+    return <DocsContent doc={doc} />;
+  } catch (error) {
+    console.error(`Error loading doc for slug ${params.slug}:`, error);
+    throw error; // Re-throw to show error boundary
+  }
 }
