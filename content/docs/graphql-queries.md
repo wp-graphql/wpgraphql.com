@@ -3,8 +3,6 @@ uri: "/docs/graphql-queries/"
 title: "Querying with GraphQL"
 ---
 
-# Querying with GraphQL
-
 Building on the concepts from our [Intro to GraphQL](/docs/intro-to-graphql/), this guide provides practical examples of querying data with WPGraphQL.
 
 ## Basic Query Structure

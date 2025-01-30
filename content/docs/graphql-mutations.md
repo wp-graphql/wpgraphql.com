@@ -3,8 +3,6 @@ uri: "/docs/graphql-mutations/"
 title: "Mutations with GraphQL"
 ---
 
-# Mutations with GraphQL
-
 Building on the concepts from our [Querying with GraphQL](/docs/graphql-queries/) guide, this guide covers how to modify data using GraphQL mutations.
 
 ## Basic Mutation Structure
