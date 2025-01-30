@@ -17,15 +17,41 @@ const theme = {
   'comment': { color: 'var(--code-comment-color)' },
   'string': { color: 'var(--code-string-color)' },
   'number': { color: 'var(--code-number-color)' },
-  'function': { color: 'var(--code-function-color)' },
+  'function': (props: { className?: string }) => {
+    if (props.className?.includes('bash') || props.className?.includes('sh')) {
+      return { color: 'var(--code-text-color)' };
+    }
+    return { color: 'var(--code-function-color)' };
+  },
   'keyword': { color: 'var(--code-keyword-color)' },
-  'operator': { color: 'var(--code-operator-color)' },
+  'operator': (props: { className?: string }) => {
+    if (props.className?.includes('bash') || props.className?.includes('sh')) {
+      return { color: 'var(--code-punctuation-color)' };
+    }
+    return { color: 'var(--code-operator-color)' };
+  },
   'punctuation': { color: 'var(--code-punctuation-color)' },
   'property': { color: 'var(--code-property-color)' },
   'tag': { color: 'var(--code-tag-color)' },
   'parameter': { color: 'var(--code-parameter-color)' },
   'object': { color: 'var(--code-object-color)' },
   'field': { color: 'var(--code-field-color)' },
+  'attr-name': { color: 'var(--code-attr-color)' },
+  'builtin': { color: 'var(--code-function-color)' },
+  'class-name': { color: 'var(--code-type-color)' },
+  'constant': { color: 'var(--code-property-color)' },
+  'directive': { color: 'var(--code-keyword-color)' },
+  'variable': { color: 'var(--code-parameter-color)' },
+  'attr-value': { color: 'var(--code-string-color)' },
+  'maybe-class-name': { color: 'var(--code-property-color)' },
+  'selector': { color: 'var(--code-property-color)' },
+  'literal-property': { color: 'var(--code-property-color)' },
+  'property-query': { color: 'var(--code-property-color)' },
+  'definition-query': { color: 'var(--code-function-color)' },
+  'bash': { color: 'var(--code-text-color)' },
+  'command': { color: 'var(--code-text-color)' },
+  'shell': { color: 'var(--code-text-color)' },
+  'script': { color: 'var(--code-text-color)' },
 };
 
 export function CodeBlock({ children, className, code, meta, ...props }: CodeBlockProps) {
@@ -90,6 +116,7 @@ export function CodeBlock({ children, className, code, meta, ...props }: CodeBlo
               fontSize: '14px',
               fontFamily: 'var(--font-mono)',
               lineHeight: '1.5',
+              color: 'var(--code-text-color)',
             }
           }}
           useInlineStyles={true}
@@ -105,6 +132,7 @@ export function CodeBlock({ children, className, code, meta, ...props }: CodeBlo
               borderLeft: highlightLines.includes(lineNumber)
                 ? '2px solid var(--highlighted-line-border)'
                 : 'none',
+              color: 'var(--code-text-color)',
             },
           })}
           lineNumberStyle={{

@@ -18,17 +18,32 @@
   --code-tag-color: hsl(5 74% 59%);
   --code-parameter-color: hsl(35 99% 36%);
   --code-object-color: hsl(230 70% 70%);
-  --code-field-color: hsl(230 60% 80%);
+  --code-field-color: hsl(221 87% 60%);
   --code-keyword-color: hsl(301 63% 60%);
   --code-punctuation-color: hsl(230 30% 70%);
+  --code-type-color: hsl(230 70% 70%);
+  --code-attr-color: hsl(35 99% 36%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --code-text-color: hsl(205 8% 61%);
+  --code-comment-color: hsl(230 4% 64%);
+  --code-string-color: hsl(119 34% 67%);
+  --code-number-color: hsl(35 99% 56%);
+  --code-function-color: hsl(221 87% 70%);
+  --code-keyword-color: hsl(301 63% 70%);
+  --code-operator-color: hsl(230 8% 90%);
+  --code-punctuation-color: hsl(230 8% 90%);
+  --code-property-color: hsl(5 74% 69%);
+  --code-tag-color: hsl(5 74% 69%);
+  --code-parameter-color: hsl(35 99% 56%);
+  --code-object-color: hsl(230 70% 80%);
+  --code-field-color: hsl(221 87% 70%);
+  --code-type-color: hsl(230 70% 80%);
+  --code-attr-color: hsl(35 99% 56%);
 }
 
 @layer base {
@@ -99,7 +114,7 @@
     --code-string-color: hsl(212 100% 82%);
     --code-attr-color: hsl(271 81% 83%);
     --code-punctuation-color: hsl(215 13% 53%);
-    --code-text-color: hsl(230 8% 90%);
+    --code-text-color: hsl(205 8% 61%);
     --code-comment-color: hsl(230 4% 64%);
     --code-string-color: hsl(119 34% 67%);
     --code-number-color: hsl(35 99% 56%);
@@ -111,9 +126,11 @@
     --code-tag-color: hsl(5 74% 69%);
     --code-parameter-color: hsl(35 99% 56%);
     --code-object-color: hsl(230 70% 80%);
-    --code-field-color: hsl(230 60% 90%);
+    --code-field-color: hsl(221 87% 70%);
     --code-keyword-color: hsl(301 63% 70%);
     --code-punctuation-color: hsl(230 30% 80%);
+    --code-type-color: hsl(230 70% 80%);
+    --code-attr-color: hsl(35 99% 56%);
   }
 }
 
