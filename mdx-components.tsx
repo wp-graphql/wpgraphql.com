@@ -29,7 +29,7 @@ const components = {
       
       // Convert content to string for checking
       let textContent = '';
-      let remainingElements = [];
+      let remainingElements: React.ReactNode[] = [];
       
       if (Array.isArray(paragraphContent)) {
         textContent = paragraphContent[0];
@@ -45,7 +45,7 @@ const components = {
         const [_, type, alertContent] = alertMatch;
         
         // Create content array with proper spacing
-        const contentArray = [];
+        const contentArray: (string | React.ReactElement)[] = [];
         
         // Add initial text content
         if (alertContent.trim()) {
@@ -60,7 +60,7 @@ const components = {
               !contentArray[contentArray.length - 1].endsWith(' ')) {
             contentArray.push(' ');
           }
-          contentArray.push(element);
+          contentArray.push(element as React.ReactElement);
           // Add a space after each element
           contentArray.push(' ');
         });
