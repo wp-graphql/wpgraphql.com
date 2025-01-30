@@ -32,10 +32,14 @@ const components = {
       let remainingElements: React.ReactNode[] = [];
       
       if (Array.isArray(paragraphContent)) {
-        textContent = paragraphContent[0];
+        // Ensure textContent is a string
+        textContent = typeof paragraphContent[0] === 'string' ? paragraphContent[0] : '';
         remainingElements = paragraphContent.slice(1);
       } else if (typeof paragraphContent === 'string') {
         textContent = paragraphContent;
+      } else {
+        // If it's not a string or array, convert to string
+        textContent = String(paragraphContent || '');
       }
       
       // Match alert pattern: [!TYPE] followed by content
