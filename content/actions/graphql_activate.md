@@ -2,7 +2,7 @@
 title: "graphql_activate"
 since: "Unknown"
 sourceFile: "activation.php"
-sourceLine: 9
+sourceLine: 8
 ---
 
 
@@ -15,7 +15,7 @@ This action has no parameters.
 
 ## Source
 
-This action is defined in [activation.php:9](https://github.com/wp-graphql/wp-graphql/blob/develop/activation.php#L9)
+This action is defined in [activation.php:8](https://github.com/wp-graphql/wp-graphql/blob/develop/activation.php#L8)
 
 
 ## Examples

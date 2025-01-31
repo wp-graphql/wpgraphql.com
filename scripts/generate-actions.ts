@@ -39,24 +39,10 @@ function cleanupTmp() {
 }
 
 async function getWPGraphQLSource(): Promise<string> {
-  const response = await prompt('Would you like to clone WPGraphQL or use a local copy? (clone/local)')
-  
-  if (response.toLowerCase() === 'clone') {
-    const tmpDir = join(process.cwd(), '.tmp')
-    cleanupTmp()
-    execSync('git clone https://github.com/wp-graphql/wp-graphql.git .tmp')
-    return tmpDir
-  } else {
-    let localPath = await prompt('Enter the path to your local WPGraphQL installation:')
-    // Expand tilde to home directory if present
-    if (localPath.startsWith('~')) {
-      localPath = localPath.replace('~', os.homedir())
-    }
-    if (!existsSync(localPath)) {
-      throw new Error('Invalid path provided')
-    }
-    return localPath
-  }
+  const tmpDir = join(process.cwd(), '.tmp')
+  cleanupTmp()
+  execSync('git clone https://github.com/wp-graphql/wp-graphql.git .tmp')
+  return tmpDir
 }
 
 async function parseActions(basePath: string): Promise<ActionDoc[]> {
@@ -90,7 +76,7 @@ async function parseActions(basePath: string): Promise<ActionDoc[]> {
     const docblockRegex = /\/\*\*[\s\S]*?\*\//g
     let match
     while ((match = docblockRegex.exec(code)) !== null) {
-      const docblock = match[1]
+      const docblock = match[0]
       const lineNumber = code.substring(0, match.index).split('\n').length
       docblocks[lineNumber] = docblock
     }
@@ -230,10 +216,16 @@ function parseDocBlock(docblock: string | null): DocBlockResult {
     return { description: '', params: [] }
   }
 
-  const lines = docblock
+  // Clean up the docblock first
+  const cleanedBlock = docblock
+    .replace(/^\/\*\*/, '') // Remove opening /**
+    .replace(/\*\/$/, '') // Remove closing */
     .split('\n')
-    .map(line => line.trim().replace(/^\*\s*/, ''))
+    .map(line => line.trim().replace(/^\*\s*/, '')) // Remove leading asterisks and whitespace
     .filter(Boolean)
+    .join('\n')
+
+  const lines = cleanedBlock.split('\n')
 
   const result: DocBlockResult = {
     description: '',
@@ -272,6 +264,58 @@ function parseDocBlock(docblock: string | null): DocBlockResult {
 
   result.description = descriptionLines.join('\n').trim()
   return result
+}
+
+interface ReferenceSection {
+  title: string
+  description: string
+  pages: Array<{
+    title: string
+    href: string
+    slug: string
+  }>
+}
+
+interface DeveloperReference {
+  sections: ReferenceSection[]
+}
+
+async function updateDeveloperReference(actions: ActionDoc[]) {
+  const refPath = join(process.cwd(), 'content/developer-reference.json')
+  
+  // Read existing content or create new structure
+  let reference: DeveloperReference = {
+    sections: []
+  }
+  
+  if (existsSync(refPath)) {
+    try {
+      reference = JSON.parse(readFileSync(refPath, 'utf8'))
+      // Remove existing actions section if it exists
+      reference.sections = reference.sections.filter(section => section.title !== 'Actions')
+    } catch (e) {
+      console.error('Error reading developer-reference.json, starting fresh', e)
+    }
+  }
+
+  // Add actions section
+  reference.sections.push({
+    title: "Actions",
+    description: "WordPress provides an API called \"actions\" which allow functions to be executed at specific times during a request. WPGraphQL provides many actions throughout its codebase allowing developers to hook into various points of execution.",
+    pages: actions
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map(action => ({
+        title: action.name,
+        href: `/actions/${action.name}`,
+        slug: action.name
+      }))
+  })
+
+  // Write back to file
+  writeFileSync(
+    refPath,
+    JSON.stringify(reference, null, 2)
+  )
 }
 
 async function generateMDXFiles(actions: ActionDoc[]) {
@@ -343,26 +387,8 @@ add_action('${action.name}', function(${action.parameters.map(p => '$' + p.name)
     )
   }
 
-  // After generating the MD files
-  const actionsJson = {
-    sections: [
-      {
-        title: "Actions",
-        pages: actions
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .map(action => ({
-            title: action.name,
-            href: `/actions/${action.name}`,
-            slug: action.name
-          }))
-      }
-    ]
-  }
-
-  writeFileSync(
-    join(process.cwd(), 'content/actions.json'),
-    JSON.stringify(actionsJson, null, 2)
-  )
+  // Replace the JSON generation with the new function
+  await updateDeveloperReference(actions)
 }
 
 async function main() {

@@ -2,7 +2,7 @@
 title: "init_graphql_type_registry"
 since: "Unknown"
 sourceFile: "src/Registry/TypeRegistry.php"
-sourceLine: 263
+sourceLine: 264
 ---
 
 
@@ -17,7 +17,7 @@ Fire an action as the Type registry is being initiated
 
 ## Source
 
-This action is defined in [src/Registry/TypeRegistry.php:263](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Registry/TypeRegistry.php#L263)
+This action is defined in [src/Registry/TypeRegistry.php:264](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Registry/TypeRegistry.php#L264)
 
 
 ## Examples

@@ -1,0 +1,1306 @@
+{
+  "sections": [
+    {
+      "title": "Filters",
+      "description": "WordPress provides an API called \"filters\" which allow functions to modify data of other functions. WPGraphQL applies many filters throughout its codebase allowing developers to customize the Schema and other parts of the GraphQL server. Below are the filters provided by WPGraphQL that are available for developers to hook into.",
+      "pages": [
+        {
+          "title": "all_plugins",
+          "href": "/filters/all_plugins",
+          "slug": "all_plugins"
+        },
+        {
+          "title": "all_plugins",
+          "href": "/filters/all_plugins",
+          "slug": "all_plugins"
+        },
+        {
+          "title": "comment_text",
+          "href": "/filters/comment_text",
+          "slug": "comment_text"
+        },
+        {
+          "title": "get_the_excerpt",
+          "href": "/filters/get_the_excerpt",
+          "slug": "get_the_excerpt"
+        },
+        {
+          "title": "get_the_excerpt",
+          "href": "/filters/get_the_excerpt",
+          "slug": "get_the_excerpt"
+        },
+        {
+          "title": "graphiql_external_fragments",
+          "href": "/filters/graphiql_external_fragments",
+          "slug": "graphiql_external_fragments"
+        },
+        {
+          "title": "graphql_access_control_allow_headers",
+          "href": "/filters/graphql_access_control_allow_headers",
+          "slug": "graphql_access_control_allow_headers"
+        },
+        {
+          "title": "graphql_add_admin_notice",
+          "href": "/filters/graphql_add_admin_notice",
+          "slug": "graphql_add_admin_notice"
+        },
+        {
+          "title": "graphql_admin_notices_is_allowed_admin_page",
+          "href": "/filters/graphql_admin_notices_is_allowed_admin_page",
+          "slug": "graphql_admin_notices_is_allowed_admin_page"
+        },
+        {
+          "title": "graphql_allowed_fields_on_restricted_type",
+          "href": "/filters/graphql_allowed_fields_on_restricted_type",
+          "slug": "graphql_allowed_fields_on_restricted_type"
+        },
+        {
+          "title": "graphql_allowed_setting_groups",
+          "href": "/filters/graphql_allowed_setting_groups",
+          "slug": "graphql_allowed_setting_groups"
+        },
+        {
+          "title": "graphql_allowed_settings_by_group",
+          "href": "/filters/graphql_allowed_settings_by_group",
+          "slug": "graphql_allowed_settings_by_group"
+        },
+        {
+          "title": "graphql_app_context_config",
+          "href": "/filters/graphql_app_context_config",
+          "slug": "graphql_app_context_config"
+        },
+        {
+          "title": "graphql_authentication_errors",
+          "href": "/filters/graphql_authentication_errors",
+          "slug": "graphql_authentication_errors"
+        },
+        {
+          "title": "graphql_cache_collection_get_list_types",
+          "href": "/filters/graphql_cache_collection_get_list_types",
+          "slug": "graphql_cache_collection_get_list_types"
+        },
+        {
+          "title": "graphql_cache_collection_get_query_models",
+          "href": "/filters/graphql_cache_collection_get_query_models",
+          "slug": "graphql_cache_collection_get_query_models"
+        },
+        {
+          "title": "graphql_cache_collection_get_query_types",
+          "href": "/filters/graphql_cache_collection_get_query_types",
+          "slug": "graphql_cache_collection_get_query_types"
+        },
+        {
+          "title": "graphql_comment_connection_args",
+          "href": "/filters/graphql_comment_connection_args",
+          "slug": "graphql_comment_connection_args"
+        },
+        {
+          "title": "graphql_comment_connection_query_args",
+          "href": "/filters/graphql_comment_connection_query_args",
+          "slug": "graphql_comment_connection_query_args"
+        },
+        {
+          "title": "graphql_comment_insert_post_args",
+          "href": "/filters/graphql_comment_insert_post_args",
+          "slug": "graphql_comment_insert_post_args"
+        },
+        {
+          "title": "graphql_connection",
+          "href": "/filters/graphql_connection",
+          "slug": "graphql_connection"
+        },
+        {
+          "title": "graphql_connection_amount_requested",
+          "href": "/filters/graphql_connection_amount_requested",
+          "slug": "graphql_connection_amount_requested"
+        },
+        {
+          "title": "graphql_connection_args",
+          "href": "/filters/graphql_connection_args",
+          "slug": "graphql_connection_args"
+        },
+        {
+          "title": "graphql_connection_default_query_amount",
+          "href": "/filters/graphql_connection_default_query_amount",
+          "slug": "graphql_connection_default_query_amount"
+        },
+        {
+          "title": "graphql_connection_edge",
+          "href": "/filters/graphql_connection_edge",
+          "slug": "graphql_connection_edge"
+        },
+        {
+          "title": "graphql_connection_edges",
+          "href": "/filters/graphql_connection_edges",
+          "slug": "graphql_connection_edges"
+        },
+        {
+          "title": "graphql_connection_ids",
+          "href": "/filters/graphql_connection_ids",
+          "slug": "graphql_connection_ids"
+        },
+        {
+          "title": "graphql_connection_is_valid_model",
+          "href": "/filters/graphql_connection_is_valid_model",
+          "slug": "graphql_connection_is_valid_model"
+        },
+        {
+          "title": "graphql_connection_loader_name",
+          "href": "/filters/graphql_connection_loader_name",
+          "slug": "graphql_connection_loader_name"
+        },
+        {
+          "title": "graphql_connection_max_query_amount",
+          "href": "/filters/graphql_connection_max_query_amount",
+          "slug": "graphql_connection_max_query_amount"
+        },
+        {
+          "title": "graphql_connection_nodes",
+          "href": "/filters/graphql_connection_nodes",
+          "slug": "graphql_connection_nodes"
+        },
+        {
+          "title": "graphql_connection_page_info",
+          "href": "/filters/graphql_connection_page_info",
+          "slug": "graphql_connection_page_info"
+        },
+        {
+          "title": "graphql_connection_pre_get_query",
+          "href": "/filters/graphql_connection_pre_get_query",
+          "slug": "graphql_connection_pre_get_query"
+        },
+        {
+          "title": "graphql_connection_pre_should_execute",
+          "href": "/filters/graphql_connection_pre_should_execute",
+          "slug": "graphql_connection_pre_should_execute"
+        },
+        {
+          "title": "graphql_connection_query",
+          "href": "/filters/graphql_connection_query",
+          "slug": "graphql_connection_query"
+        },
+        {
+          "title": "graphql_connection_query_args",
+          "href": "/filters/graphql_connection_query_args",
+          "slug": "graphql_connection_query_args"
+        },
+        {
+          "title": "graphql_connection_query_class",
+          "href": "/filters/graphql_connection_query_class",
+          "slug": "graphql_connection_query_class"
+        },
+        {
+          "title": "graphql_connection_should_execute",
+          "href": "/filters/graphql_connection_should_execute",
+          "slug": "graphql_connection_should_execute"
+        },
+        {
+          "title": "graphql_cursor_ordering_field",
+          "href": "/filters/graphql_cursor_ordering_field",
+          "slug": "graphql_cursor_ordering_field"
+        },
+        {
+          "title": "graphql_custom_scalar_config",
+          "href": "/filters/graphql_custom_scalar_config",
+          "slug": "graphql_custom_scalar_config"
+        },
+        {
+          "title": "graphql_data_is_private",
+          "href": "/filters/graphql_data_is_private",
+          "slug": "graphql_data_is_private"
+        },
+        {
+          "title": "graphql_data_loaders",
+          "href": "/filters/graphql_data_loaders",
+          "slug": "graphql_data_loaders"
+        },
+        {
+          "title": "graphql_dataloader_get_cached",
+          "href": "/filters/graphql_dataloader_get_cached",
+          "slug": "graphql_dataloader_get_cached"
+        },
+        {
+          "title": "graphql_dataloader_get_model",
+          "href": "/filters/graphql_dataloader_get_model",
+          "slug": "graphql_dataloader_get_model"
+        },
+        {
+          "title": "graphql_dataloader_pre_get_model",
+          "href": "/filters/graphql_dataloader_pre_get_model",
+          "slug": "graphql_dataloader_pre_get_model"
+        },
+        {
+          "title": "graphql_dataloader_set_cached",
+          "href": "/filters/graphql_dataloader_set_cached",
+          "slug": "graphql_dataloader_set_cached"
+        },
+        {
+          "title": "graphql_debug_enabled",
+          "href": "/filters/graphql_debug_enabled",
+          "slug": "graphql_debug_enabled"
+        },
+        {
+          "title": "graphql_debug_log",
+          "href": "/filters/graphql_debug_log",
+          "slug": "graphql_debug_log"
+        },
+        {
+          "title": "graphql_debug_log_entry",
+          "href": "/filters/graphql_debug_log_entry",
+          "slug": "graphql_debug_log_entry"
+        },
+        {
+          "title": "graphql_debug_logs_enabled",
+          "href": "/filters/graphql_debug_logs_enabled",
+          "slug": "graphql_debug_logs_enabled"
+        },
+        {
+          "title": "graphql_enable_graphiql",
+          "href": "/filters/graphql_enable_graphiql",
+          "slug": "graphql_enable_graphiql"
+        },
+        {
+          "title": "graphql_endpoint",
+          "href": "/filters/graphql_endpoint",
+          "slug": "graphql_endpoint"
+        },
+        {
+          "title": "graphql_endpoint",
+          "href": "/filters/graphql_endpoint",
+          "slug": "graphql_endpoint"
+        },
+        {
+          "title": "graphql_enum_values",
+          "href": "/filters/graphql_enum_values",
+          "slug": "graphql_enum_values"
+        },
+        {
+          "title": "graphql_excluded_connections",
+          "href": "/filters/graphql_excluded_connections",
+          "slug": "graphql_excluded_connections"
+        },
+        {
+          "title": "graphql_excluded_mutations",
+          "href": "/filters/graphql_excluded_mutations",
+          "slug": "graphql_excluded_mutations"
+        },
+        {
+          "title": "graphql_excluded_types",
+          "href": "/filters/graphql_excluded_types",
+          "slug": "graphql_excluded_types"
+        },
+        {
+          "title": "graphql_execute_query_params",
+          "href": "/filters/graphql_execute_query_params",
+          "slug": "graphql_execute_query_params"
+        },
+        {
+          "title": "graphql_field_definition",
+          "href": "/filters/graphql_field_definition",
+          "slug": "graphql_field_definition"
+        },
+        {
+          "title": "graphql_field_resolver_auth_error_message",
+          "href": "/filters/graphql_field_resolver_auth_error_message",
+          "slug": "graphql_field_resolver_auth_error_message"
+        },
+        {
+          "title": "graphql_get_dependents",
+          "href": "/filters/graphql_get_dependents",
+          "slug": "graphql_get_dependents"
+        },
+        {
+          "title": "graphql_get_extensions",
+          "href": "/filters/graphql_get_extensions",
+          "slug": "graphql_get_extensions"
+        },
+        {
+          "title": "graphql_get_possible_dependents",
+          "href": "/filters/graphql_get_possible_dependents",
+          "slug": "graphql_get_possible_dependents"
+        },
+        {
+          "title": "graphql_get_setting_section_field_value",
+          "href": "/filters/graphql_get_setting_section_field_value",
+          "slug": "graphql_get_setting_section_field_value"
+        },
+        {
+          "title": "graphql_get_setting_section_fields",
+          "href": "/filters/graphql_get_setting_section_fields",
+          "slug": "graphql_get_setting_section_fields"
+        },
+        {
+          "title": "graphql_get_type",
+          "href": "/filters/graphql_get_type",
+          "slug": "graphql_get_type"
+        },
+        {
+          "title": "graphql_html_entity_decoding_enabled",
+          "href": "/filters/graphql_html_entity_decoding_enabled",
+          "slug": "graphql_html_entity_decoding_enabled"
+        },
+        {
+          "title": "graphql_http_request_response_errors",
+          "href": "/filters/graphql_http_request_response_errors",
+          "slug": "graphql_http_request_response_errors"
+        },
+        {
+          "title": "graphql_input_fields",
+          "href": "/filters/graphql_input_fields",
+          "slug": "graphql_input_fields"
+        },
+        {
+          "title": "graphql_interface_fields",
+          "href": "/filters/graphql_interface_fields",
+          "slug": "graphql_interface_fields"
+        },
+        {
+          "title": "graphql_interface_resolve_type",
+          "href": "/filters/graphql_interface_resolve_type",
+          "slug": "graphql_interface_resolve_type"
+        },
+        {
+          "title": "graphql_is_batch_queries_enabled",
+          "href": "/filters/graphql_is_batch_queries_enabled",
+          "slug": "graphql_is_batch_queries_enabled"
+        },
+        {
+          "title": "graphql_is_graphql_http_request",
+          "href": "/filters/graphql_is_graphql_http_request",
+          "slug": "graphql_is_graphql_http_request"
+        },
+        {
+          "title": "graphql_map_input_fields_to_get_terms",
+          "href": "/filters/graphql_map_input_fields_to_get_terms",
+          "slug": "graphql_map_input_fields_to_get_terms"
+        },
+        {
+          "title": "graphql_map_input_fields_to_wp_comment_query",
+          "href": "/filters/graphql_map_input_fields_to_wp_comment_query",
+          "slug": "graphql_map_input_fields_to_wp_comment_query"
+        },
+        {
+          "title": "graphql_map_input_fields_to_wp_query",
+          "href": "/filters/graphql_map_input_fields_to_wp_query",
+          "slug": "graphql_map_input_fields_to_wp_query"
+        },
+        {
+          "title": "graphql_map_input_fields_to_wp_user_query",
+          "href": "/filters/graphql_map_input_fields_to_wp_user_query",
+          "slug": "graphql_map_input_fields_to_wp_user_query"
+        },
+        {
+          "title": "graphql_media_item_create_allowed_protocols",
+          "href": "/filters/graphql_media_item_create_allowed_protocols",
+          "slug": "graphql_media_item_create_allowed_protocols"
+        },
+        {
+          "title": "graphql_media_item_insert_post_args",
+          "href": "/filters/graphql_media_item_insert_post_args",
+          "slug": "graphql_media_item_insert_post_args"
+        },
+        {
+          "title": "graphql_menu_item_connection_args",
+          "href": "/filters/graphql_menu_item_connection_args",
+          "slug": "graphql_menu_item_connection_args"
+        },
+        {
+          "title": "graphql_model_field_capability",
+          "href": "/filters/graphql_model_field_capability",
+          "slug": "graphql_model_field_capability"
+        },
+        {
+          "title": "graphql_model_prepare_fields",
+          "href": "/filters/graphql_model_prepare_fields",
+          "slug": "graphql_model_prepare_fields"
+        },
+        {
+          "title": "graphql_mutation_input",
+          "href": "/filters/graphql_mutation_input",
+          "slug": "graphql_mutation_input"
+        },
+        {
+          "title": "graphql_mutation_payload",
+          "href": "/filters/graphql_mutation_payload",
+          "slug": "graphql_mutation_payload"
+        },
+        {
+          "title": "graphql_object_fields",
+          "href": "/filters/graphql_object_fields",
+          "slug": "graphql_object_fields"
+        },
+        {
+          "title": "graphql_object_visibility",
+          "href": "/filters/graphql_object_visibility",
+          "slug": "graphql_object_visibility"
+        },
+        {
+          "title": "graphql_post_entities_allowed_post_types",
+          "href": "/filters/graphql_post_entities_allowed_post_types",
+          "slug": "graphql_post_entities_allowed_post_types"
+        },
+        {
+          "title": "graphql_post_object_connection_args",
+          "href": "/filters/graphql_post_object_connection_args",
+          "slug": "graphql_post_object_connection_args"
+        },
+        {
+          "title": "graphql_post_object_connection_query_args",
+          "href": "/filters/graphql_post_object_connection_query_args",
+          "slug": "graphql_post_object_connection_query_args"
+        },
+        {
+          "title": "graphql_post_object_create_default_post_status",
+          "href": "/filters/graphql_post_object_create_default_post_status",
+          "slug": "graphql_post_object_create_default_post_status"
+        },
+        {
+          "title": "graphql_post_object_create_should_set_intended_post_status",
+          "href": "/filters/graphql_post_object_create_should_set_intended_post_status",
+          "slug": "graphql_post_object_create_should_set_intended_post_status"
+        },
+        {
+          "title": "graphql_post_object_cursor_meta_key",
+          "href": "/filters/graphql_post_object_cursor_meta_key",
+          "slug": "graphql_post_object_cursor_meta_key"
+        },
+        {
+          "title": "graphql_post_object_insert_post_args",
+          "href": "/filters/graphql_post_object_insert_post_args",
+          "slug": "graphql_post_object_insert_post_args"
+        },
+        {
+          "title": "graphql_post_object_mutation_set_edit_lock",
+          "href": "/filters/graphql_post_object_mutation_set_edit_lock",
+          "slug": "graphql_post_object_mutation_set_edit_lock"
+        },
+        {
+          "title": "graphql_post_object_mutation_set_edit_lock",
+          "href": "/filters/graphql_post_object_mutation_set_edit_lock",
+          "slug": "graphql_post_object_mutation_set_edit_lock"
+        },
+        {
+          "title": "graphql_post_object_mutations_allow_term_creation",
+          "href": "/filters/graphql_post_object_mutations_allow_term_creation",
+          "slug": "graphql_post_object_mutations_allow_term_creation"
+        },
+        {
+          "title": "graphql_post_resolve_uri",
+          "href": "/filters/graphql_post_resolve_uri",
+          "slug": "graphql_post_resolve_uri"
+        },
+        {
+          "title": "graphql_pre_comment_cursor_node",
+          "href": "/filters/graphql_pre_comment_cursor_node",
+          "slug": "graphql_pre_comment_cursor_node"
+        },
+        {
+          "title": "graphql_pre_format_name",
+          "href": "/filters/graphql_pre_format_name",
+          "slug": "graphql_pre_format_name"
+        },
+        {
+          "title": "graphql_pre_is_graphql_http_request",
+          "href": "/filters/graphql_pre_is_graphql_http_request",
+          "slug": "graphql_pre_is_graphql_http_request"
+        },
+        {
+          "title": "graphql_pre_model_data_is_private",
+          "href": "/filters/graphql_pre_model_data_is_private",
+          "slug": "graphql_pre_model_data_is_private"
+        },
+        {
+          "title": "graphql_pre_mutate_and_get_payload",
+          "href": "/filters/graphql_pre_mutate_and_get_payload",
+          "slug": "graphql_pre_mutate_and_get_payload"
+        },
+        {
+          "title": "graphql_pre_post_cursor_node",
+          "href": "/filters/graphql_pre_post_cursor_node",
+          "slug": "graphql_pre_post_cursor_node"
+        },
+        {
+          "title": "graphql_pre_query_analyzer_get_list_types",
+          "href": "/filters/graphql_pre_query_analyzer_get_list_types",
+          "slug": "graphql_pre_query_analyzer_get_list_types"
+        },
+        {
+          "title": "graphql_pre_query_analyzer_get_models",
+          "href": "/filters/graphql_pre_query_analyzer_get_models",
+          "slug": "graphql_pre_query_analyzer_get_models"
+        },
+        {
+          "title": "graphql_pre_query_analyzer_get_query_types",
+          "href": "/filters/graphql_pre_query_analyzer_get_query_types",
+          "slug": "graphql_pre_query_analyzer_get_query_types"
+        },
+        {
+          "title": "graphql_pre_resolve_field",
+          "href": "/filters/graphql_pre_resolve_field",
+          "slug": "graphql_pre_resolve_field"
+        },
+        {
+          "title": "graphql_pre_resolve_menu_item_connected_node",
+          "href": "/filters/graphql_pre_resolve_menu_item_connected_node",
+          "slug": "graphql_pre_resolve_menu_item_connected_node"
+        },
+        {
+          "title": "graphql_pre_resolve_uri",
+          "href": "/filters/graphql_pre_resolve_uri",
+          "slug": "graphql_pre_resolve_uri"
+        },
+        {
+          "title": "graphql_pre_restrict_endpoint",
+          "href": "/filters/graphql_pre_restrict_endpoint",
+          "slug": "graphql_pre_restrict_endpoint"
+        },
+        {
+          "title": "graphql_pre_return_field_from_model",
+          "href": "/filters/graphql_pre_return_field_from_model",
+          "slug": "graphql_pre_return_field_from_model"
+        },
+        {
+          "title": "graphql_pre_term_cursor_node",
+          "href": "/filters/graphql_pre_term_cursor_node",
+          "slug": "graphql_pre_term_cursor_node"
+        },
+        {
+          "title": "graphql_pre_user_cursor_node",
+          "href": "/filters/graphql_pre_user_cursor_node",
+          "slug": "graphql_pre_user_cursor_node"
+        },
+        {
+          "title": "graphql_pre_wp_comments_query_cursor_pagination_support",
+          "href": "/filters/graphql_pre_wp_comments_query_cursor_pagination_support",
+          "slug": "graphql_pre_wp_comments_query_cursor_pagination_support"
+        },
+        {
+          "title": "graphql_pre_wp_query_cursor_pagination_stability",
+          "href": "/filters/graphql_pre_wp_query_cursor_pagination_stability",
+          "slug": "graphql_pre_wp_query_cursor_pagination_stability"
+        },
+        {
+          "title": "graphql_pre_wp_query_cursor_pagination_support",
+          "href": "/filters/graphql_pre_wp_query_cursor_pagination_support",
+          "slug": "graphql_pre_wp_query_cursor_pagination_support"
+        },
+        {
+          "title": "graphql_pre_wp_term_query_cursor_pagination_support",
+          "href": "/filters/graphql_pre_wp_term_query_cursor_pagination_support",
+          "slug": "graphql_pre_wp_term_query_cursor_pagination_support"
+        },
+        {
+          "title": "graphql_pre_wp_user_query_cursor_pagination_stability",
+          "href": "/filters/graphql_pre_wp_user_query_cursor_pagination_stability",
+          "slug": "graphql_pre_wp_user_query_cursor_pagination_stability"
+        },
+        {
+          "title": "graphql_pre_wp_user_query_cursor_pagination_support",
+          "href": "/filters/graphql_pre_wp_user_query_cursor_pagination_support",
+          "slug": "graphql_pre_wp_user_query_cursor_pagination_support"
+        },
+        {
+          "title": "graphql_query_analyzer_get_headers",
+          "href": "/filters/graphql_query_analyzer_get_headers",
+          "slug": "graphql_query_analyzer_get_headers"
+        },
+        {
+          "title": "graphql_query_analyzer_get_runtime_nodes",
+          "href": "/filters/graphql_query_analyzer_get_runtime_nodes",
+          "slug": "graphql_query_analyzer_get_runtime_nodes"
+        },
+        {
+          "title": "graphql_query_analyzer_graphql_keys",
+          "href": "/filters/graphql_query_analyzer_graphql_keys",
+          "slug": "graphql_query_analyzer_graphql_keys"
+        },
+        {
+          "title": "graphql_query_analyzer_header_length_limit",
+          "href": "/filters/graphql_query_analyzer_header_length_limit",
+          "slug": "graphql_query_analyzer_header_length_limit"
+        },
+        {
+          "title": "graphql_query_analyzer_runtime_node",
+          "href": "/filters/graphql_query_analyzer_runtime_node",
+          "slug": "graphql_query_analyzer_runtime_node"
+        },
+        {
+          "title": "graphql_query_id_hash_algorithm",
+          "href": "/filters/graphql_query_id_hash_algorithm",
+          "slug": "graphql_query_id_hash_algorithm"
+        },
+        {
+          "title": "graphql_render_admin_page",
+          "href": "/filters/graphql_render_admin_page",
+          "slug": "graphql_render_admin_page"
+        },
+        {
+          "title": "graphql_request_data",
+          "href": "/filters/graphql_request_data",
+          "slug": "graphql_request_data"
+        },
+        {
+          "title": "graphql_request_data",
+          "href": "/filters/graphql_request_data",
+          "slug": "graphql_request_data"
+        },
+        {
+          "title": "graphql_request_results",
+          "href": "/filters/graphql_request_results",
+          "slug": "graphql_request_results"
+        },
+        {
+          "title": "graphql_require_authentication_allowed_fields",
+          "href": "/filters/graphql_require_authentication_allowed_fields",
+          "slug": "graphql_require_authentication_allowed_fields"
+        },
+        {
+          "title": "graphql_resolve_field",
+          "href": "/filters/graphql_resolve_field",
+          "slug": "graphql_resolve_field"
+        },
+        {
+          "title": "graphql_resolve_node_type",
+          "href": "/filters/graphql_resolve_node_type",
+          "slug": "graphql_resolve_node_type"
+        },
+        {
+          "title": "graphql_resolve_revision_meta_from_parent",
+          "href": "/filters/graphql_resolve_revision_meta_from_parent",
+          "slug": "graphql_resolve_revision_meta_from_parent"
+        },
+        {
+          "title": "graphql_resolve_uri",
+          "href": "/filters/graphql_resolve_uri",
+          "slug": "graphql_resolve_uri"
+        },
+        {
+          "title": "graphql_resolve_uri_query_class",
+          "href": "/filters/graphql_resolve_uri_query_class",
+          "slug": "graphql_resolve_uri_query_class"
+        },
+        {
+          "title": "graphql_response_headers_to_send",
+          "href": "/filters/graphql_response_headers_to_send",
+          "slug": "graphql_response_headers_to_send"
+        },
+        {
+          "title": "graphql_response_status_code",
+          "href": "/filters/graphql_response_status_code",
+          "slug": "graphql_response_status_code"
+        },
+        {
+          "title": "graphql_restricted_data_cap",
+          "href": "/filters/graphql_restricted_data_cap",
+          "slug": "graphql_restricted_data_cap"
+        },
+        {
+          "title": "graphql_return_field_from_model",
+          "href": "/filters/graphql_return_field_from_model",
+          "slug": "graphql_return_field_from_model"
+        },
+        {
+          "title": "graphql_root_value",
+          "href": "/filters/graphql_root_value",
+          "slug": "graphql_root_value"
+        },
+        {
+          "title": "graphql_schema",
+          "href": "/filters/graphql_schema",
+          "slug": "graphql_schema"
+        },
+        {
+          "title": "graphql_schema",
+          "href": "/filters/graphql_schema",
+          "slug": "graphql_schema"
+        },
+        {
+          "title": "graphql_schema_config",
+          "href": "/filters/graphql_schema_config",
+          "slug": "graphql_schema_config"
+        },
+        {
+          "title": "graphql_send_header",
+          "href": "/filters/graphql_send_header",
+          "slug": "graphql_send_header"
+        },
+        {
+          "title": "graphql_send_nocache_headers",
+          "href": "/filters/graphql_send_nocache_headers",
+          "slug": "graphql_send_nocache_headers"
+        },
+        {
+          "title": "graphql_setting_field_config",
+          "href": "/filters/graphql_setting_field_config",
+          "slug": "graphql_setting_field_config"
+        },
+        {
+          "title": "graphql_settings_sections",
+          "href": "/filters/graphql_settings_sections",
+          "slug": "graphql_settings_sections"
+        },
+        {
+          "title": "graphql_should_analyze_queries",
+          "href": "/filters/graphql_should_analyze_queries",
+          "slug": "graphql_should_analyze_queries"
+        },
+        {
+          "title": "graphql_should_analyze_query",
+          "href": "/filters/graphql_should_analyze_query",
+          "slug": "graphql_should_analyze_query"
+        },
+        {
+          "title": "graphql_should_show_query_analyzer_in_extensions",
+          "href": "/filters/graphql_should_show_query_analyzer_in_extensions",
+          "slug": "graphql_should_show_query_analyzer_in_extensions"
+        },
+        {
+          "title": "graphql_show_admin",
+          "href": "/filters/graphql_show_admin",
+          "slug": "graphql_show_admin"
+        },
+        {
+          "title": "graphql_term_entities_allowed_taxonomies",
+          "href": "/filters/graphql_term_entities_allowed_taxonomies",
+          "slug": "graphql_term_entities_allowed_taxonomies"
+        },
+        {
+          "title": "graphql_term_object_connection_args",
+          "href": "/filters/graphql_term_object_connection_args",
+          "slug": "graphql_term_object_connection_args"
+        },
+        {
+          "title": "graphql_term_object_connection_query_args",
+          "href": "/filters/graphql_term_object_connection_query_args",
+          "slug": "graphql_term_object_connection_query_args"
+        },
+        {
+          "title": "graphql_term_object_insert_term_args",
+          "href": "/filters/graphql_term_object_insert_term_args",
+          "slug": "graphql_term_object_insert_term_args"
+        },
+        {
+          "title": "graphql_tracing_response",
+          "href": "/filters/graphql_tracing_response",
+          "slug": "graphql_tracing_response"
+        },
+        {
+          "title": "graphql_tracing_response",
+          "href": "/filters/graphql_tracing_response",
+          "slug": "graphql_tracing_response"
+        },
+        {
+          "title": "graphql_type_interfaces",
+          "href": "/filters/graphql_type_interfaces",
+          "slug": "graphql_type_interfaces"
+        },
+        {
+          "title": "graphql_type_name",
+          "href": "/filters/graphql_type_name",
+          "slug": "graphql_type_name"
+        },
+        {
+          "title": "graphql_type_name",
+          "href": "/filters/graphql_type_name",
+          "slug": "graphql_type_name"
+        },
+        {
+          "title": "graphql_type_name",
+          "href": "/filters/graphql_type_name",
+          "slug": "graphql_type_name"
+        },
+        {
+          "title": "graphql_type_name",
+          "href": "/filters/graphql_type_name",
+          "slug": "graphql_type_name"
+        },
+        {
+          "title": "graphql_type_name",
+          "href": "/filters/graphql_type_name",
+          "slug": "graphql_type_name"
+        },
+        {
+          "title": "graphql_type_name",
+          "href": "/filters/graphql_type_name",
+          "slug": "graphql_type_name"
+        },
+        {
+          "title": "graphql_type_registry",
+          "href": "/filters/graphql_type_registry",
+          "slug": "graphql_type_registry"
+        },
+        {
+          "title": "graphql_union_possible_types",
+          "href": "/filters/graphql_union_possible_types",
+          "slug": "graphql_union_possible_types"
+        },
+        {
+          "title": "graphql_union_resolve_type",
+          "href": "/filters/graphql_union_resolve_type",
+          "slug": "graphql_union_resolve_type"
+        },
+        {
+          "title": "graphql_user_can_see_query_logs",
+          "href": "/filters/graphql_user_can_see_query_logs",
+          "slug": "graphql_user_can_see_query_logs"
+        },
+        {
+          "title": "graphql_user_can_see_trace_data",
+          "href": "/filters/graphql_user_can_see_trace_data",
+          "slug": "graphql_user_can_see_trace_data"
+        },
+        {
+          "title": "graphql_user_insert_post_args",
+          "href": "/filters/graphql_user_insert_post_args",
+          "slug": "graphql_user_insert_post_args"
+        },
+        {
+          "title": "graphql_user_mutation_input_fields",
+          "href": "/filters/graphql_user_mutation_input_fields",
+          "slug": "graphql_user_mutation_input_fields"
+        },
+        {
+          "title": "graphql_validation_rules",
+          "href": "/filters/graphql_validation_rules",
+          "slug": "graphql_validation_rules"
+        },
+        {
+          "title": "graphql_wp_connection_type_config",
+          "href": "/filters/graphql_wp_connection_type_config",
+          "slug": "graphql_wp_connection_type_config"
+        },
+        {
+          "title": "graphql_wp_interface_type_config",
+          "href": "/filters/graphql_wp_interface_type_config",
+          "slug": "graphql_wp_interface_type_config"
+        },
+        {
+          "title": "graphql_wp_mutation_type_config",
+          "href": "/filters/graphql_wp_mutation_type_config",
+          "slug": "graphql_wp_mutation_type_config"
+        },
+        {
+          "title": "graphql_wp_object_type_config",
+          "href": "/filters/graphql_wp_object_type_config",
+          "slug": "graphql_wp_object_type_config"
+        },
+        {
+          "title": "graphql_wp_union_type_config",
+          "href": "/filters/graphql_wp_union_type_config",
+          "slug": "graphql_wp_union_type_config"
+        },
+        {
+          "title": "pre_graphql_execute_request",
+          "href": "/filters/pre_graphql_execute_request",
+          "slug": "pre_graphql_execute_request"
+        },
+        {
+          "title": "pre_graphql_execute_request",
+          "href": "/filters/pre_graphql_execute_request",
+          "slug": "pre_graphql_execute_request"
+        },
+        {
+          "title": "pre_user_email",
+          "href": "/filters/pre_user_email",
+          "slug": "pre_user_email"
+        },
+        {
+          "title": "pre_user_email",
+          "href": "/filters/pre_user_email",
+          "slug": "pre_user_email"
+        },
+        {
+          "title": "query_vars",
+          "href": "/filters/query_vars",
+          "slug": "query_vars"
+        },
+        {
+          "title": "register_graphql_post_type_args",
+          "href": "/filters/register_graphql_post_type_args",
+          "slug": "register_graphql_post_type_args"
+        },
+        {
+          "title": "register_graphql_taxonomy_args",
+          "href": "/filters/register_graphql_taxonomy_args",
+          "slug": "register_graphql_taxonomy_args"
+        },
+        {
+          "title": "request",
+          "href": "/filters/request",
+          "slug": "request"
+        },
+        {
+          "title": "retrieve_password_message",
+          "href": "/filters/retrieve_password_message",
+          "slug": "retrieve_password_message"
+        },
+        {
+          "title": "retrieve_password_title",
+          "href": "/filters/retrieve_password_title",
+          "slug": "retrieve_password_title"
+        },
+        {
+          "title": "show_advanced_plugins",
+          "href": "/filters/show_advanced_plugins",
+          "slug": "show_advanced_plugins"
+        },
+        {
+          "title": "show_advanced_plugins",
+          "href": "/filters/show_advanced_plugins",
+          "slug": "show_advanced_plugins"
+        },
+        {
+          "title": "show_advanced_plugins",
+          "href": "/filters/show_advanced_plugins",
+          "slug": "show_advanced_plugins"
+        },
+        {
+          "title": "show_advanced_plugins",
+          "href": "/filters/show_advanced_plugins",
+          "slug": "show_advanced_plugins"
+        },
+        {
+          "title": "show_network_active_plugins",
+          "href": "/filters/show_network_active_plugins",
+          "slug": "show_network_active_plugins"
+        },
+        {
+          "title": "the_content",
+          "href": "/filters/the_content",
+          "slug": "the_content"
+        },
+        {
+          "title": "the_content",
+          "href": "/filters/the_content",
+          "slug": "the_content"
+        },
+        {
+          "title": "the_excerpt",
+          "href": "/filters/the_excerpt",
+          "slug": "the_excerpt"
+        },
+        {
+          "title": "the_excerpt",
+          "href": "/filters/the_excerpt",
+          "slug": "the_excerpt"
+        },
+        {
+          "title": "the_title",
+          "href": "/filters/the_title",
+          "slug": "the_title"
+        },
+        {
+          "title": "wpgraphql_enable_major_autoupdates",
+          "href": "/filters/wpgraphql_enable_major_autoupdates",
+          "slug": "wpgraphql_enable_major_autoupdates"
+        },
+        {
+          "title": "wpgraphql_enable_untested_autoupdates",
+          "href": "/filters/wpgraphql_enable_untested_autoupdates",
+          "slug": "wpgraphql_enable_untested_autoupdates"
+        },
+        {
+          "title": "wpgraphql_untested_release_type",
+          "href": "/filters/wpgraphql_untested_release_type",
+          "slug": "wpgraphql_untested_release_type"
+        }
+      ]
+    },
+    {
+      "title": "Actions",
+      "description": "WordPress provides an API called \"actions\" which allow functions to be executed at specific times during a request. WPGraphQL provides many actions throughout its codebase allowing developers to hook into various points of execution.",
+      "pages": [
+        {
+          "title": "do_graphql_request",
+          "href": "/actions/do_graphql_request",
+          "slug": "do_graphql_request"
+        },
+        {
+          "title": "enqueue_graphiql_extension",
+          "href": "/actions/enqueue_graphiql_extension",
+          "slug": "enqueue_graphiql_extension"
+        },
+        {
+          "title": "graphql_activate",
+          "href": "/actions/graphql_activate",
+          "slug": "graphql_activate"
+        },
+        {
+          "title": "graphql_admin_notices_init",
+          "href": "/actions/graphql_admin_notices_init",
+          "slug": "graphql_admin_notices_init"
+        },
+        {
+          "title": "graphql_admin_notices_render_notice",
+          "href": "/actions/graphql_admin_notices_render_notice",
+          "slug": "graphql_admin_notices_render_notice"
+        },
+        {
+          "title": "graphql_admin_notices_render_notices",
+          "href": "/actions/graphql_admin_notices_render_notices",
+          "slug": "graphql_admin_notices_render_notices"
+        },
+        {
+          "title": "graphql_after_execute",
+          "href": "/actions/graphql_after_execute",
+          "slug": "graphql_after_execute"
+        },
+        {
+          "title": "graphql_after_resolve_field",
+          "href": "/actions/graphql_after_resolve_field",
+          "slug": "graphql_after_resolve_field"
+        },
+        {
+          "title": "graphql_after_return_field_from_model",
+          "href": "/actions/graphql_after_return_field_from_model",
+          "slug": "graphql_after_return_field_from_model"
+        },
+        {
+          "title": "graphql_before_execute",
+          "href": "/actions/graphql_before_execute",
+          "slug": "graphql_before_execute"
+        },
+        {
+          "title": "graphql_before_resolve_field",
+          "href": "/actions/graphql_before_resolve_field",
+          "slug": "graphql_before_resolve_field"
+        },
+        {
+          "title": "graphql_comment_object_mutation_update_additional_data",
+          "href": "/actions/graphql_comment_object_mutation_update_additional_data",
+          "slug": "graphql_comment_object_mutation_update_additional_data"
+        },
+        {
+          "title": "graphql_deactivate",
+          "href": "/actions/graphql_deactivate",
+          "slug": "graphql_deactivate"
+        },
+        {
+          "title": "graphql_delete_data",
+          "href": "/actions/graphql_delete_data",
+          "slug": "graphql_delete_data"
+        },
+        {
+          "title": "graphql_determine_graphql_keys",
+          "href": "/actions/graphql_determine_graphql_keys",
+          "slug": "graphql_determine_graphql_keys"
+        },
+        {
+          "title": "graphql_do_update_routine",
+          "href": "/actions/graphql_do_update_routine",
+          "slug": "graphql_do_update_routine"
+        },
+        {
+          "title": "graphql_execute",
+          "href": "/actions/graphql_execute",
+          "slug": "graphql_execute"
+        },
+        {
+          "title": "graphql_execute_batch_queries",
+          "href": "/actions/graphql_execute_batch_queries",
+          "slug": "graphql_execute_batch_queries"
+        },
+        {
+          "title": "graphql_get_debug_log",
+          "href": "/actions/graphql_get_debug_log",
+          "slug": "graphql_get_debug_log"
+        },
+        {
+          "title": "graphql_get_schema",
+          "href": "/actions/graphql_get_schema",
+          "slug": "graphql_get_schema"
+        },
+        {
+          "title": "graphql_get_type_registry",
+          "href": "/actions/graphql_get_type_registry",
+          "slug": "graphql_get_type_registry"
+        },
+        {
+          "title": "graphql_init",
+          "href": "/actions/graphql_init",
+          "slug": "graphql_init"
+        },
+        {
+          "title": "graphql_init_settings",
+          "href": "/actions/graphql_init_settings",
+          "slug": "graphql_init_settings"
+        },
+        {
+          "title": "graphql_insert_post_object",
+          "href": "/actions/graphql_insert_post_object",
+          "slug": "graphql_insert_post_object"
+        },
+        {
+          "title": "graphql_insert_term",
+          "href": "/actions/graphql_insert_term",
+          "slug": "graphql_insert_term"
+        },
+        {
+          "title": "graphql_media_item_mutation_update_additional_data",
+          "href": "/actions/graphql_media_item_mutation_update_additional_data",
+          "slug": "graphql_media_item_mutation_update_additional_data"
+        },
+        {
+          "title": "graphql_mutation_response",
+          "href": "/actions/graphql_mutation_response",
+          "slug": "graphql_mutation_response"
+        },
+        {
+          "title": "graphql_post_object_mutation_set_object_terms",
+          "href": "/actions/graphql_post_object_mutation_set_object_terms",
+          "slug": "graphql_post_object_mutation_set_object_terms"
+        },
+        {
+          "title": "graphql_post_object_mutation_update_additional_data",
+          "href": "/actions/graphql_post_object_mutation_update_additional_data",
+          "slug": "graphql_post_object_mutation_update_additional_data"
+        },
+        {
+          "title": "graphql_process_http_request",
+          "href": "/actions/graphql_process_http_request",
+          "slug": "graphql_process_http_request"
+        },
+        {
+          "title": "graphql_process_http_request_response",
+          "href": "/actions/graphql_process_http_request_response",
+          "slug": "graphql_process_http_request_response"
+        },
+        {
+          "title": "graphql_register_initial_types",
+          "href": "/actions/graphql_register_initial_types",
+          "slug": "graphql_register_initial_types"
+        },
+        {
+          "title": "graphql_register_settings",
+          "href": "/actions/graphql_register_settings",
+          "slug": "graphql_register_settings"
+        },
+        {
+          "title": "graphql_register_types",
+          "href": "/actions/graphql_register_types",
+          "slug": "graphql_register_types"
+        },
+        {
+          "title": "graphql_register_types_late",
+          "href": "/actions/graphql_register_types_late",
+          "slug": "graphql_register_types_late"
+        },
+        {
+          "title": "graphql_response_set_headers",
+          "href": "/actions/graphql_response_set_headers",
+          "slug": "graphql_response_set_headers"
+        },
+        {
+          "title": "graphql_return_response",
+          "href": "/actions/graphql_return_response",
+          "slug": "graphql_return_response"
+        },
+        {
+          "title": "graphql_server_config",
+          "href": "/actions/graphql_server_config",
+          "slug": "graphql_server_config"
+        },
+        {
+          "title": "graphql_settings_enqueue_scripts",
+          "href": "/actions/graphql_settings_enqueue_scripts",
+          "slug": "graphql_settings_enqueue_scripts"
+        },
+        {
+          "title": "graphql_settings_form_bottom",
+          "href": "/actions/graphql_settings_form_bottom",
+          "slug": "graphql_settings_form_bottom"
+        },
+        {
+          "title": "graphql_settings_form_top",
+          "href": "/actions/graphql_settings_form_top",
+          "slug": "graphql_settings_form_top"
+        },
+        {
+          "title": "graphql_update_term",
+          "href": "/actions/graphql_update_term",
+          "slug": "graphql_update_term"
+        },
+        {
+          "title": "graphql_user_object_mutation_update_additional_data",
+          "href": "/actions/graphql_user_object_mutation_update_additional_data",
+          "slug": "graphql_user_object_mutation_update_additional_data"
+        },
+        {
+          "title": "graphql_wp_connection_type",
+          "href": "/actions/graphql_wp_connection_type",
+          "slug": "graphql_wp_connection_type"
+        },
+        {
+          "title": "graphql_wp_mutation_type",
+          "href": "/actions/graphql_wp_mutation_type",
+          "slug": "graphql_wp_mutation_type"
+        },
+        {
+          "title": "graphql_wp_object_type",
+          "href": "/actions/graphql_wp_object_type",
+          "slug": "graphql_wp_object_type"
+        },
+        {
+          "title": "graphql_wp_union_type",
+          "href": "/actions/graphql_wp_union_type",
+          "slug": "graphql_wp_union_type"
+        },
+        {
+          "title": "init_graphql_request",
+          "href": "/actions/init_graphql_request",
+          "slug": "init_graphql_request"
+        },
+        {
+          "title": "init_graphql_request",
+          "href": "/actions/init_graphql_request",
+          "slug": "init_graphql_request"
+        },
+        {
+          "title": "init_graphql_type_registry",
+          "href": "/actions/init_graphql_type_registry",
+          "slug": "init_graphql_type_registry"
+        },
+        {
+          "title": "wp_enqueue_scripts",
+          "href": "/actions/wp_enqueue_scripts",
+          "slug": "wp_enqueue_scripts"
+        },
+        {
+          "title": "wp_enqueue_scripts",
+          "href": "/actions/wp_enqueue_scripts",
+          "slug": "wp_enqueue_scripts"
+        },
+        {
+          "title": "wp_enqueue_scripts",
+          "href": "/actions/wp_enqueue_scripts",
+          "slug": "wp_enqueue_scripts"
+        },
+        {
+          "title": "wp_enqueue_scripts",
+          "href": "/actions/wp_enqueue_scripts",
+          "slug": "wp_enqueue_scripts"
+        },
+        {
+          "title": "wp_enqueue_scripts",
+          "href": "/actions/wp_enqueue_scripts",
+          "slug": "wp_enqueue_scripts"
+        },
+        {
+          "title": "wp_enqueue_scripts",
+          "href": "/actions/wp_enqueue_scripts",
+          "slug": "wp_enqueue_scripts"
+        },
+        {
+          "title": "wp_enqueue_scripts",
+          "href": "/actions/wp_enqueue_scripts",
+          "slug": "wp_enqueue_scripts"
+        },
+        {
+          "title": "wp_enqueue_scripts",
+          "href": "/actions/wp_enqueue_scripts",
+          "slug": "wp_enqueue_scripts"
+        }
+      ]
+    }
+  ]
+}

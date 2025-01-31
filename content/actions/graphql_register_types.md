@@ -2,7 +2,7 @@
 title: "graphql_register_types"
 since: "Unknown"
 sourceFile: "src/Registry/TypeRegistry.php"
-sourceLine: 603
+sourceLine: 605
 ---
 
 
@@ -18,7 +18,7 @@ before the `graphql_register_types` action to allow for earlier hooking
 
 ## Source
 
-This action is defined in [src/Registry/TypeRegistry.php:603](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Registry/TypeRegistry.php#L603)
+This action is defined in [src/Registry/TypeRegistry.php:605](https://github.com/wp-graphql/wp-graphql/blob/develop/src/Registry/TypeRegistry.php#L605)
 
 
 ## Examples

@@ -2,7 +2,7 @@
 title: "graphql_get_schema"
 since: "Unknown"
 sourceFile: "src/WPGraphQL.php"
-sourceLine: 803
+sourceLine: 876
 ---
 
 
@@ -15,7 +15,7 @@ This action has no parameters.
 
 ## Source
 
-This action is defined in [src/WPGraphQL.php:803](https://github.com/wp-graphql/wp-graphql/blob/develop/src/WPGraphQL.php#L803)
+This action is defined in [src/WPGraphQL.php:876](https://github.com/wp-graphql/wp-graphql/blob/develop/src/WPGraphQL.php#L876)
 
 
 ## Examples

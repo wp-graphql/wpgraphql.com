@@ -2,7 +2,7 @@
 title: "graphql_init"
 since: "Unknown"
 sourceFile: "src/WPGraphQL.php"
-sourceLine: 197
+sourceLine: 198
 ---
 
 
@@ -17,7 +17,7 @@ Fire off init action
 
 ## Source
 
-This action is defined in [src/WPGraphQL.php:197](https://github.com/wp-graphql/wp-graphql/blob/develop/src/WPGraphQL.php#L197)
+This action is defined in [src/WPGraphQL.php:198](https://github.com/wp-graphql/wp-graphql/blob/develop/src/WPGraphQL.php#L198)
 
 
 ## Examples

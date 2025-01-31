@@ -2,7 +2,7 @@
 title: "graphql_get_type_registry"
 since: "Unknown"
 sourceFile: "src/WPGraphQL.php"
-sourceLine: 855
+sourceLine: 928
 ---
 
 
@@ -15,7 +15,7 @@ This action has no parameters.
 
 ## Source
 
-This action is defined in [src/WPGraphQL.php:855](https://github.com/wp-graphql/wp-graphql/blob/develop/src/WPGraphQL.php#L855)
+This action is defined in [src/WPGraphQL.php:928](https://github.com/wp-graphql/wp-graphql/blob/develop/src/WPGraphQL.php#L928)
 
 
 ## Examples
