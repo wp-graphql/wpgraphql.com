@@ -38,5 +38,5 @@ next-env.d.ts
 .vscode
 
 
-.possibleTypes.json
+possibleTypes.json
 globalStylesheet.css
